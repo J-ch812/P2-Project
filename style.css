@@ -1,94 +1,103 @@
 :root {
   --color-bg: #cbe2ed;
-  --color-primary: #76add0;
-  --color-primary-dark: #5e9bc3;
+  --color-primary: #76add0; /*#6FADCC, #6eaaca */
+  --color-primary-dark: #5e9bc3; /* --color-border: #5e9bc3; */
   --color-text: #111111;
   --color-white: #ffffff;
-  --color-border: #7fb1d1;
+  
+  --border-width: 1.5px solid;
+  --radius-md: 10px; /*border radius (corners)*/
+  /*--radius-lg: 12px;*/
 
-  --radius-md: 10px;
-  --radius-lg: 12px;
+  /*--space-xs: 0.5rem;*/
+  /*--space-sm: 0.75rem;*/
+  /*--space-md: 1rem;*/
+  /*--space-lg: 1.5rem;*/
+  /*--space-xl: 2rem;*/
+  /*--space-2xl: 3rem;*/
 
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-
-  --container-width: 1100px;
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
+  /*--container-width: 1100px;*/
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.48);   /* color of the shadow when hovering over s button - 0.08 */
 }
 
+
+/* When the width is calculated the padding is factored in */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inria Sans', serif; /* -- Arial, sans-serif*/ /*serif - it a default font if the first dosent work, which it dosent do*/
   color: var(--color-text);
-  background: #f5f5f5;
+  background: var(--color-primary);
 }
 
 .page {
-  width: min(100% - 2rem, var(--container-width));
-  margin: 2rem auto;
+  /*width: min(100% - 2rem, var(--container-width));
+  /*margin: 0rem auto;*/
+  /*border: 2px solid #5aa6d6;*/
+  /*border-radius: 10px;*/
+  /* overflow: hidden;  -- Clips anything that spills outside the box. Useful for keeping rounded corners clean. */
   background: var(--color-bg);
-  border: 2px solid #5aa6d6;
-  border-radius: 6px;
-  overflow: hidden;
 }
+
 
 /* Top navigation */
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 2.5rem;
   background: var(--color-primary);
-  border-bottom: 2px solid #3b9cdc;
+  /*border-bottom: 2px solid #3b9cdc;*/
 }
 
 .topbar__logo img {
-  width: 120px;
+  width: 140px;
   height: auto;
   display: block;
 }
 
-
-.topbar__actions {
+.topbar__actions { /*Search bar + Log in + sign up buttons*/
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-.search-input {
-  width: 180px;
+.search-input { /*Search bar*/
+  width: 200px;
   padding: 0.75rem 1rem;
-  border: none;
-  border-radius: 8px;
+  /*border: none;*/
   outline: none;
+  border: var(--border-width) var(--color-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font: inherit;
 }
 
-.btn {
-  padding: 0.75rem 1.1rem;
-  border-radius: 8px;
-  border: none;
+.btn { /*Log in + sign up buttons*/
+  width: 100px;
+  padding: 0.75rem 1rem;
+  /*border-radius: 8px;*/
+  /*border: none;*/
+  border: var(--border-width) var(--color-bg);
+  border-radius: var(--radius-md);
   cursor: pointer;
   font: inherit;
 }
 
-.btn--ghost {
+.btn--ghost { /*Log in button*/
   background: var(--color-white);
   color: var(--color-text);
 }
 
-.btn--primary {
+.btn--primary { /*Sign up button*/
   background: var(--color-white);
   color: var(--color-text);
-  font-weight: 600;
+  /*font-weight: 600;*/
 }
+
 
 /* Hero */
 .hero {
@@ -97,47 +106,53 @@ body {
 }
 
 .hero h1 {
+  text-align: center;
   margin: 0 0 1rem;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 2.5rem;
+  /*font-size: clamp(2rem, 4vw, 3rem);*/
 }
 
 .hero p {
+  text-align: center;
   margin: 0 0 3rem;
-  line-height: 1.6;
+  line-height: 1.5;
   font-weight: 600;
 }
+
 
 /* Course grid */
 .course-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem 2.5rem;
-  max-width: 900px;
+  gap: 2.5rem 4.5rem;
+  max-width: 1360px;
   margin: 0 auto;
+  padding-bottom: 2rem;
 }
 
 .course-card {
   min-height: 56px;
   padding: 1rem;
-  border: 2px solid var(--color-border);
+  border: 2px solid var(--color-primary-dark);
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.35);
+  background: var(--color-white);   /*background: rgba(255, 255, 255, 0.35);*/
   font: inherit;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .course-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-soft);
 }
 
+
 /* Footer */
 .footer {
-  display: flex;
-  justify-content: space-between;
+  display: flex;  /**/
+  justify-content: space-between; /**/
   gap: 2rem;
-  padding: 1rem 2.5rem 1.5rem;
+  padding: 1rem 2.5rem 0.65rem; /* top, sides, bottom */
   background: var(--color-primary);
 }
 
@@ -146,9 +161,13 @@ body {
   font-size: 1rem;
 }
 
-.footer__column p,
 .footer__column li {
   margin: 0.35rem 0;
+}
+
+.footer__column p {
+  margin: 0.35rem 0;
+  padding-left: 1.25rem;
 }
 
 .footer__column ul {
@@ -156,38 +175,81 @@ body {
   padding-left: 1.25rem;
 }
 
+
 /* Responsive */
 @media (max-width: 900px) {
+  .topbar__actions { /*Search bar + Log in + sign up buttons*/
+    justify-content: flex-end;
+    gap: 0rem;
+    gap: 1.7rem;
+  }
+  .search-input { /*Search bar*/
+    width: 180px;
+  }
   .course-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 0rem;
   }
+}
 
-  .footer {
-    flex-direction: column;
+@media (max-width: 800px) {
+  .topbar__actions { /*Search bar + Log in + sign up buttons*/
+    gap: 1.5rem;
+  }
+  .search-input { /*Search bar*/
+    width: 160px;
+  }
+}
+
+@media (max-width: 700px) {
+  .btn {    /*Log in + sign up buttons*/
+    width: 90px;
+  }
+  .search-input { /*Search bar*/
+    width: 140px;
+  }
+}
+
+@media (max-width: 650px) {
+  .search-input { /*Search bar*/
+    width: 120px;
   }
 }
 
 @media (max-width: 600px) {
   .topbar {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: stretch;
+    padding: 0.5rem 1.5rem;
   }
-
-  .topbar__actions {
-    flex-wrap: wrap;
-    justify-content: center;
+  .btn {    /*Log in + sign up buttons*/
+    width: 70px;
+    padding: 0.75rem 0.5rem;
   }
-
-  .search-input {
-    width: 100%;
+  .search-input { /*Search bar*/
+    width: 115px;
+    padding: 0.75rem 1rem;
   }
-
   .course-grid {
     grid-template-columns: 1fr;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    gap: 1.5rem;
   }
-
-  .hero {
+  /*.hero {
     padding: 2rem 1rem 3rem;
+  }*/
+  .footer {
+    padding: 1rem 1.5rem 0.65rem; /* top, sides, bottom */
+  }
+}
+
+@media (max-width: 550px) {
+  .search-input { /*Search bar*/
+    width: 110px;
+  }
+}
+
+@media (max-width: 500px) {
+  .search-input { /*Search bar*/
+    width: 100px;
   }
 }
