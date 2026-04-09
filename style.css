@@ -1,5 +1,5 @@
 :root {
-  --color_bg: #cbe2ed;
+  --color_bg: #cbe2ed;  /*background: rgba(255, 255, 255, 0.35);*/
   --color_primary: #76add0; /*#6FADCC, #6eaaca */
   --color_primary_dark: #5e9bc3; /* --color-border: #5e9bc3; */
   --color_text: #111111;
@@ -30,7 +30,7 @@ body {
   margin: 0;
   font-family: 'Inria Sans', serif; /* -- Arial, sans-serif*/ /*serif - it is a default font if the first dosent work, which it dosent do*/
   color: var(--color_text);
-  background: var(--color_primary);
+  background: var(--color_bg); /*--color_primary*/
 }
 
 .page {
@@ -159,7 +159,7 @@ body {
   display: flex;  /**/
   justify-content: space-between; /**/
   gap: 2rem;
-  padding: 1rem 2.5rem 0.65rem; /* top, sides, bottom */
+  padding: 2rem 2.5rem 0.65rem; /* top, sides, bottom */ /*padding: 1rem 2.5rem 0.65rem; */
   background: var(--color_primary);
 }
 

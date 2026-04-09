@@ -1,134 +1,80 @@
-:root {
-  --color_bg: #cbe2ed;
-  --color_primary: #76add0; /*#6FADCC, #6eaaca */
-  --color_primary_dark: #5e9bc3; /* --color_border: #5e9bc3; */
-  --color_text: #111111;
-  --color_white: #ffffff;
-  
-  --border_width: 1.5px solid;
-  --radius_md: 10px; /*border radius (corners)*/
-
-  --shadow_soft: 0 2px 8px rgba(0, 0, 0, 0.48);   /* color of the shadow when hovering over s button - 0.08 */
-}
-
-
-/* When the width is calculated the padding is factored in */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Inria Sans', serif; /* -- Arial, sans-serif*/ /*serif - it is a default font if the first dosent work, which it dosent do*/
-  color: var(--color_text);
-  background: var(--color_bg);
-}
-
-
 .container{
     max-width: 1440px;
     display: grid;
     height: 100vh;
-    grid-template-columns: 240px auto;
-    grid-template-rows: 100px auto 160px;
+    grid-template-columns: 290px auto;
+    grid-template-rows: 100px 3rem auto 120px;
     grid-template-areas:
-        "header header"   
+        "header header"
+        "title title"   
         "aside main"
         "footer footer";
-    grid-gap: 1.5rem;
+    grid-gap: 2rem;
 }
 
-header, aside, main, footer{
-    border: black 2px solid;
+header, section, aside, main, footer{
+    font: inherit;
+
+    cursor: pointer;
 }
+
+aside, main{
+    border: 2px solid var(--color_primary_dark);
+    border-radius: var(--radius_md);    
+    background: var(--color_white);
+    padding: 1rem;
+
+    
+}
+
 
 header{
     grid-area: header;
 }
-
+section{
+    grid-area: title;
+    margin-left: 2.75rem;
+    margin-right: 2.75rem;
+}
 aside{
     grid-area: aside;
+    margin-left: 2.75rem;
+    margin-right: 1rem;
 }
 
 main{
     grid-area: main;
+    margin-left: 1rem;
+    margin-right: 2.75rem;
 }
 
 footer{
     grid-area: footer;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    align-items: center;
+
 }
 
 
-
-
-
-
-
-/* Top navigation */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 2.5rem;
-  background: var(--color_primary);
+.btn_profile {
+    padding-left: 0rem;     /*Not really necessary, but just to be sure, it's aligned correctly*/
+    padding-right: 0rem;    /*Not really necessary, but just to be sure, it's aligned correctly*/
+    text-align: center;
+    width: 50px;
 }
 
-.topbar_logo img {
-  width: 140px;
-  height: auto;
-  display: block;
-}
 
-.topbar_actions { /*Search bar + Log in + sign up buttons*/
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.search_input { /*Search bar*/
-  width: 200px;
-  padding: 0.75rem 1rem;
-  /*border: none;*/
-  outline: none;
-  border: var(--border_width) var(--color_bg);
-  border-radius: var(--radius_md);
-  overflow: hidden;
-  font: inherit;
-}
-
-.btn { /*Log in + sign up buttons*/
-  width: 100px;
-  padding: 0.75rem 1rem;
-  border: var(--border_width) var(--color_bg);
-  border-radius: var(--radius_md);
-  cursor: pointer;
-  font: inherit;
-  background: var(--color_white);
-  color: var(--color_text);
-  text-decoration: none;
+.hero {
   text-align: center;
+  padding: 0rem 0rem 0rem;
 }
 
-.btn_back { /*Log in button*/
-  background: var(--color_white);
-  color: var(--color_text);
+.hero h1 {
+  text-align: center;
+  margin: 0 0 0;
+  padding: 0rem 0rem 0rem;
 }
-
-.btn_profile { /*Sign up button*/
-  background: var(--color_white);
-  color: var(--color_text);
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
