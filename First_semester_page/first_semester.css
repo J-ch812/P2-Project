@@ -18,18 +18,8 @@ header, section, aside, main, footer{
     cursor: pointer;
 }
 
-aside, main{
-    border: 2px solid var(--color_primary_dark);
-    border-radius: var(--radius_md);    
-    background: var(--color_white);
-    padding: 1rem;
-
-    
-}
-
-
 header{
-    grid-area: header;
+    grid-area: header; 
 }
 section{
     grid-area: title;
@@ -38,14 +28,27 @@ section{
 }
 aside{
     grid-area: aside;
+    border: 2px solid var(--color_primary_dark);
+    border-radius: var(--radius_md);    
+    background: var(--color_white);
+    padding: 1rem;
     margin-left: 2.75rem;
     margin-right: 1rem;
 }
 
 main{
     grid-area: main;
-    margin-left: 1rem;
-    margin-right: 2.75rem;
+
+    margin-left: 0rem;
+    margin-right: 0rem;
+
+/*
+    border: 2px solid var(--color_primary_dark);
+    border-radius: var(--radius_md);    
+    background: var(--color_white);
+    padding: 1rem;
+*/
+
 }
 
 footer{
@@ -57,6 +60,14 @@ footer{
 }
 
 
+
+.topbar_right { /*Search bar + Log in + sign up buttons*/
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+
 .btn_profile {
     padding-left: 0rem;     /*Not really necessary, but just to be sure, it's aligned correctly*/
     padding-right: 0rem;    /*Not really necessary, but just to be sure, it's aligned correctly*/
@@ -65,16 +76,33 @@ footer{
 }
 
 
+
+
+.course_grid {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    gap: 1.5rem;
+}
+
+
+
+
+
+
 .hero {
   text-align: center;
   padding: 0rem 0rem 0rem;
 }
 
+/*
 .hero h1 {
   text-align: center;
   margin: 0 0 0;
   padding: 0rem 0rem 0rem;
 }
+*/
+
+
 
 
 
@@ -84,11 +112,20 @@ footer{
         grid-template-rows: auto;
         grid-template-areas:
             "header"
+            "title"
             "aside"
             "main"
             "footer";
     }
-    .footer {
-        flex-direction: column;
+
+    section, aside, main{
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
     }
+    .course_grid {
+    grid-template-columns: 1fr;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    gap: 1.5rem;
+  }
 }

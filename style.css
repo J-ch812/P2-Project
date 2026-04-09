@@ -58,6 +58,8 @@ body {
   display: block;
 }
 
+
+
 .topbar_actions { /*Search bar + Log in + sign up buttons*/
   display: flex;
   align-items: center;
