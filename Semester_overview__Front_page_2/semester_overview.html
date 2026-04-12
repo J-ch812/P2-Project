@@ -1,36 +1,33 @@
-<!-- The front page og the website. -->
-<!-- --Most of the links are not linked -->
-
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
     <meta charset="UTF-8">  <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/svg+xml" href="imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
-    <link rel="stylesheet" href="style.css"/>  <!-- --Linking this file to the CSS file-->
-  <script src="script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
-    <title>Exam Ease - Front Page</title>  <!-- --Title on the web tab-->
+    <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
+    <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
+  <script src="#.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+    <title>Exam Ease - Semester Overview</title>  <!-- --Title on the web tab-->
 </head>
 <body>
     <div class="container">
         <header class="topbar">
             <div class="topbar_left">
                 <div class="topbar_logo">
-                    <a href="index.html" aria-label="Go to homepage">    <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
-                        <img src="imgs/Logo.svg" alt="Exam Ease logo"/>
+                    <a href="../index.html" aria-label="Go to homepage">    <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                        <img src="../imgs/Logo.svg" alt="Exam Ease logo"/>
                     </a>
                 </div>
+                <a href="../index.html" class="btn btn_back">Back</a>
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search_icon">🔍</button>  <!-- --!-- Find a real icon picture for this-->
                 <input class="search_bar" type="text" placeholder="Search"/>
-                <a href="#" class="btn btn_ghost_login">Log in</a>
-                <a href="#" class="btn btn_signup">Sign up</a>
+                <a href="#" class="btn btn_profile">Pf</a>
             </div>
         </header>
         <main class="main">
             <section class="heading">
-                <h1>Exam Ease</h1>
+                <h1>Software - AAU, Bachelor</h1>
                 <p>
                 Study smarter, stress less.
                 <br>
@@ -40,12 +37,12 @@
             <div class="main_components">
                 <section class="main_section">  
                     <section class="course_grid course_grid_front_page">
-                        <a href="#" class="course_card">Software - AAU, Bachelor</a>
-                        <a href="#" class="course_card">Cybersecurity - AAU, Bachelor</a>  
-                        <a href="#" class="course_card">Biology - AAU, Bachelor</a>
-                        <a href="#" class="course_card">Psychology - AAU, Bachelor</a>                          
-                        <a href="#" class="course_card">History - AAU, Bachelor</a>
-                        <a href="#" class="course_card">Biotechnology - AAU, Bachelor</a>
+                        <a href="#" class="course_card">1. Semester</a>
+                        <a href="#" class="course_card">2. Semester</a>  
+                        <a href="#" class="course_card">3. Semester</a>
+                        <a href="#" class="course_card">4. Semester</a>                          
+                        <a href="#" class="course_card">5. Semester</a>
+                        <a href="#" class="course_card">6. Semester</a>
                     </section>
                 </section>
             </div>

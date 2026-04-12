@@ -1,15 +1,18 @@
 <!-- This is the header for pages that are logged OUT-->
 
 <header class="topbar">
-    <div class="topbar_logo">
-        <a href="../index.html">
-            <img src="../imgs/Logo.svg" alt="Exam Ease logo">
-        </a>
+    <div class="topbar_left">
+        <div class="topbar_logo">
+            <a href="../index.html" aria-label="Go to homepage">    <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                <img src="../imgs/Logo.svg" alt="Exam Ease logo"/>
+            </a>
+        </div>
     </div>
-
-    <div class="topbar_actions">
-        <input class="search_input" type="text" placeholder="Search"/>
+    <div class="topbar_right">
+        <button class="btn btn_search_icon">🔍</button>  <!-- --!-- Find a real icon picture for this-->
+        <input class="search_bar" type="text" placeholder="Search"/>
         <a href="#" class="btn btn_ghost_login">Log in</a>
         <a href="#" class="btn btn_signup">Sign up</a>
     </div>
+    <!-- <nav>nav</nav> -->
 </header>
