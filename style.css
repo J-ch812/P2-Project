@@ -116,11 +116,21 @@ body {
   height: 45px;
 }
 
+
+
 .btn_profile {  /* --Profile button */
-  padding-left: 0rem;
-  padding-right: 0rem;
   width: 45px;
+  height: 45px;
+  padding: 0;
 }
+
+.btn_profile img {
+  width: 80%;
+  height: auto;
+  display: block;  /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
+  margin: auto;
+}
+
 
 
 /*---- MAIN CONTENT AREA (MAIN) ----*/ /* --Uses CSS Grid for layout structure.*/
