@@ -22,9 +22,22 @@
             <div class="topbar_right">
                 <button class="btn btn_search_icon">🔍</button>  <!-- --!-- Find a real icon picture for this-->
                 <input class="search_bar" type="text" placeholder="Search"/>
-                <button class="btn btn_profile">
-                    <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
-                </button>
+                <div class="dropdown">
+                    <button class="btn btn_profile dropdownButton">
+                        <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
+                    </button>
+                    <aside class="popup profile_dropdown dropdown_content">
+                        <p>Username: Sara</p>
+                        <p>E-mail: Sara.hansen@student.aau.dk</p>
+                        <p>School: Aalborg University Copenhagen</p>
+                        <p>Field of study: Software</p>
+                        <p>Semester: 1. Semester</p>
+                        <div class="buttons">
+                            <button class="small_btn btn_logout">Logout</button>
+                            <button class="small_btn btn_delete">Delete profile</button>
+                        </div>
+                    </aside>
+                </div>
             </div>
         </header>
         <main class="main">
@@ -88,8 +101,8 @@
                         <a href="#" class="course_card">Exam Information</a>
                         <a href="#" class="course_card">Prior Exams</a>
                         <div class="dropdown">
-                            <button class="course_card dropdownButton">Blocks</button>  <!-- id="dropdownButton" -->
-                            <div class="dropdown_content">  <!-- id="dropdownContent" -->
+                            <button class="course_card dropdownButton blocks">Blocks</button>
+                            <div class="dropdown_content">
                                 <a href="#">Block 1</a>
                                 <a href="#">Block 2</a>
                                 <a href="#">Block 3</a>
