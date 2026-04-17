@@ -168,62 +168,6 @@ body {
   margin-top: var(--gap-between-elements);
 }
 
-.popup {
-  width: 430px;
-  background-color: #ffffff;
-  border-radius: var(--radius_md);
-  padding: 0.75rem 1rem;
-
-  /*så alt er i midten */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  border: 2px solid var(--color-primary);
-}
-
-.popup.delete_profile {
-  width: 630px;
-  height: 400px;
-  text-align: center;
-  padding: 90px 35px 50px; /* top; sides; buttom */
-}
-
-.popup.delete_profile p {
-  text-align: center;
-  padding: 50px;
-}
-
-.popup.profile_dropdown {
-  width: 400px;
-  height: 384px;
-  font-size: 20px;
-}
-
-.popup.profile_dropdown p {
-  margin-bottom: 35px;
-}
-
-.button {
-  width: 100px;
-  height: 40px;
-  border-radius: var(--radius_md);
-  background-color: var(--color-bg);
-  border: 2px solid var(--color-primary_dark);
-}
-
-.button.delete {
-  font-size: 13px;
-  background-color: var(--color-white);
-  border: 2px solid var(--color-bg);
-}
-
-.button.logout {
-  font-size: 15px;
-  margin-right: 150px;
-}
-
 /*---- Progress Section (SIDEBAR, PROGRESS_GRID) ----*/ /*** --Progress bar ***/
 .progress_section {
   grid-area: progress_section;
@@ -409,6 +353,64 @@ body {
 .footer_column ul,
 .footer_column p {
   padding-left: 1.5rem;
+}
+
+/** POPUPS **/
+
+.popup {
+  width: 430px;
+  background-color: #ffffff;
+  border-radius: var(--radius_md);
+  padding: 0.75rem 1rem;
+
+  /*så alt er i midten */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 2px solid var(--color-primary);
+}
+
+.popup.delete_profile {
+  width: 630px;
+  height: 400px;
+  text-align: center;
+  padding: 90px 35px 50px; /* top; sides; buttom */
+}
+
+.popup.delete_profile p {
+  text-align: center;
+  padding: 50px;
+}
+
+.popup.profile_dropdown {
+  width: 400px;
+  height: 384px;
+  font-size: 20px;
+}
+
+.popup.profile_dropdown p {
+  margin-bottom: 35px;
+}
+
+.button {
+  width: 100px;
+  height: 40px;
+  border-radius: var(--radius_md);
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-primary_dark);
+}
+
+.button.delete {
+  font-size: 13px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-bg);
+}
+
+.button.logout {
+  font-size: 15px;
+  margin-right: 150px;
 }
 
 /*---- RESPONSIVE DESIGN ----*/
