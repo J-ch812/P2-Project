@@ -356,7 +356,6 @@ body {
 }
 
 /** POPUPS **/
-
 .popup {
   width: 430px;
   background-color: #ffffff;
@@ -412,6 +411,9 @@ body {
   font-size: 15px;
   margin-right: 150px;
 }
+
+
+
 
 /*---- RESPONSIVE DESIGN ----*/
 @media screen and (max-width: 900px) {
