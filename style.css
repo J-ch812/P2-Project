@@ -359,7 +359,7 @@ body {
 .popup {
   width: 430px;
   background-color: #ffffff;
-  border-radius: var(--radius_md);
+  border-radius: var(--radius-md);
   padding: 0.75rem 1rem;
 
   /*så alt er i midten */
@@ -396,9 +396,9 @@ body {
 .button {
   width: 100px;
   height: 40px;
-  border-radius: var(--radius_md);
+  border-radius: var(--radius-md);
   background-color: var(--color-bg);
-  border: 2px solid var(--color-primary_dark);
+  border: 2px solid var(--color-primary-dark);
 }
 
 .button.delete {
