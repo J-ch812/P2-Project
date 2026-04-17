@@ -3,26 +3,23 @@
 :root {
   --color-bg: #cbe2ed;
   --color-primary: #76add0;
-  --color-primary_dark: #5e9bc3;
+  /*--color-primary-dark: #5e9bc3;*/
   --color-text: #111111;
   --color-white: #ffffff;
 
   /* Spacing */
   /* --The margin size between the sides of the screen and the first element */
-  --margin_sides_largescreen: 2.5rem; /* --Used as primary (default) */
-  --margin_sides_smallscreen: 1.25rem; /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
-  --gap_between_elements: clamp(
-    0.5rem,
-    2.5vw,
-    2.5rem
-  ); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
-
+  --margin-sides-largescreen: 2.5rem;  /* --Used as primary (default) */
+  --margin-sides-smallscreen: 1.25rem;  /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
+  --gap-between-elements: clamp(0.5rem, 2.5vw, 2.5rem);  /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
+  
   /* Borders & radius */
-  --border_default: 1.5px solid var(--color-bg);
-  --radius_md: 10px; /* --Border radius of corners */
-
+  --border-default: 1.5px solid var(--color-bg);
+  --border-dark-background: 2px solid var(--color-primary);
+  --radius-md: 10px;  /* --Border radius of corners */
+  
   /* Effects */
-  --shadow_soft: 0 2px 8px rgba(0, 0, 0, 0.38);
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.38);
 }
 
 /*---- --GLOBAL RESET & BASE STYLES ----*/ /* --Ensures consistent layout across browsers. */
@@ -36,8 +33,7 @@ body {
   margin: 0; /* --Removes the default spacing from browsers */
   padding: 0; /* --Removes the default spacing from browsers */
   min-height: 100vh;
-  font-family:
-    "Inria Sans", serif; /* --!--Inria Sans dose not work*/ /* -Fallback fonts are used if Inria Sans does not load */
+  font-family: 'Inria Sans', serif; /* --!--Inria Sans dose not work*/ /* -Fallback fonts are used if Inria Sans does not load */
   color: var(--color-text);
   background: var(--color-bg);
 }
@@ -55,8 +51,8 @@ body {
 .btn {
   width: 100px;
   padding: 0.75rem 1rem;
-  border: var(--border_default);
-  border-radius: var(--radius_md);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
   background: var(--color-white);
   color: var(--color-text);
   text-decoration: none;
@@ -72,27 +68,25 @@ body {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  gap: var(--gap_between_elements);
+  gap: var(--gap-between-elements);
 }
 
 .topbar_left,
 .topbar_right {
   display: flex;
   align-items: center;
-  gap: var(--gap_between_elements);
-  min-width: 0; /* --Allows flex items to shrink properly */
+  gap: var(--gap-between-elements);
+  min-width: 0;  /* --Allows flex items to shrink properly */
 }
 
 /* Left side: logo and navigation */
-.topbar_left {
-  /* --Logged in: Logo + Back button */ /* --Logged out: Logo */
-  margin: 0.6rem 0 0.6rem var(--margin_sides_largescreen);
+.topbar_left {  /* --Logged in: Logo + Back button */ /* --Logged out: Logo */
+  margin: 0.6rem 0 0.6rem var(--margin-sides-largescreen);
 }
 
 /* Right side: search, profile, log in, sign up */
-.topbar_right {
-  /* --Logged in: Search_bar(+ search button) + Profile */ /* --Logged out: Search bar(+ search button) + Log in + sign up buttons*/
-  margin: 0.6rem var(--margin_sides_largescreen) 0.6rem 0;
+.topbar_right {  /* --Logged in: Search_bar(+ search button) + Profile */ /* --Logged out: Search bar(+ search button) + Log in + sign up buttons*/
+  margin: 0.6rem var(--margin-sides-largescreen) 0.6rem 0;  
 }
 
 /*---- Header Elements (Icons and buttons) ----*/
@@ -107,8 +101,8 @@ body {
   width: clamp(100px, 25vw, 200px);
   padding: 0.75rem 1rem;
   outline: none;
-  border: var(--border_default);
-  border-radius: var(--radius_md);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
   font: inherit;
 }
 
@@ -121,12 +115,21 @@ body {
   height: 45px;
 }
 
-.btn_profile {
-  /* --Profile button */
-  padding-left: 0rem;
-  padding-right: 0rem;
+
+
+.btn_profile {  /* --Profile button */
   width: 45px;
+  height: 45px;
+  padding: 0;
 }
+
+.btn_profile img {
+  width: 80%;
+  height: auto;
+  display: block;  /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
+  margin: auto;
+}
+
 
 /*---- MAIN CONTENT AREA (MAIN) ----*/ /* --Uses CSS Grid for layout structure.*/
 /*** --Structure/layout of the main part of the page ***/
@@ -139,8 +142,8 @@ body {
     "main_components";
   flex: 1;
   gap: clamp(0.5rem, 1vw, 1rem);
-  margin-left: var(--margin_sides_largescreen);
-  margin-right: var(--margin_sides_largescreen);
+  margin-left: var(--margin-sides-largescreen);
+  margin-right: var(--margin-sides-largescreen);
 }
 
 .heading {
@@ -160,8 +163,9 @@ body {
 /* Fallback layout when no progress section exists */ /* --If progress_section does not exist then switch to a full width layout */
 .main_components:not(:has(.progress_section)) {
   grid-template-columns: 1fr;
-  grid-template-areas: "main_section";
-  margin-top: var(--gap_between_elements);
+  grid-template-areas:
+      "main_section";
+  margin-top: var(--gap-between-elements);
 }
 
 .popup {
@@ -225,8 +229,8 @@ body {
   grid-area: progress_section;
   height: fit-content;
   background-color: var(--color-white);
-  border: 2px solid var(--color-primary);
-  border-radius: var(--radius_md);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
   padding: 0rem 1rem 1rem;
 }
 
@@ -249,17 +253,16 @@ body {
   column-gap: 1.25rem;
 }
 
-.progress_bar,
-.progress_percentage {
+.progress_bar, .progress_percentage {
   color: var(--color-text);
-  text-decoration: none;
+  text-decoration: none;  
   font: inherit;
 }
 
 /* Progress bar appearance */
 .progress_bar {
   border: 0.75px solid var(--color-text);
-  border-radius: var(--radius_md);
+  border-radius: var(--radius-md);
   padding: 0.25rem 1rem;
   text-align: left;
 }
@@ -293,7 +296,7 @@ body {
   grid-area: main_section;
 }
 
-/* Grid of course cards */
+/*- Grid of course cards -*/
 /** --Course grid - for the pages with a grid of buttons (eg. first semester and front page) **/
 .course_grid {
   display: grid;
@@ -304,8 +307,8 @@ body {
 .course_card {
   min-height: 56px;
   padding: 1rem;
-  border: 2px solid var(--color-primary);
-  border-radius: var(--radius_md);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
   background: var(--color-white);
   text-decoration: none;
   color: var(--color-text);
@@ -319,27 +322,76 @@ body {
 /* --The effect when hovering the mouse over one of the buttons on the grid */
 .course_card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow_soft);
+  box-shadow: var(--shadow-soft);
 }
 
 .course_grid_semester_page {
   grid-template-columns: repeat(2, 1fr);
 }
 
+/*- Dropdown for blocks under DTG -*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdownButton {
+  width: 100%;
+}
+
+.dropdownButton:hover {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* --Hidden by default */
+.dropdown_content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  min-width: 100%;
+  z-index: 100;
+}
+
+/* Links inside dropdown */
+.dropdown_content a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin: 0.35rem 0;
+}
+
+.dropdown_content a:hover {
+  background-color: var(--color-bg);
+}
+
+/* Show dropdown when active */
+.dropdown.active .dropdown_content {
+  display: block;
+}
+
+
 /*---- FOOTER (FOOTER) ----*/
 .footer {
   background-color: var(--color-primary);
   display: flex;
   justify-content: space-between;
-  gap: var(--gap_between_elements);
+  gap: var(--gap-between-elements);
 }
 
 .footer_column_left {
-  margin: 0.6rem 0 0.6rem var(--margin_sides_largescreen);
+  margin: 0.6rem 0 0.6rem var(--margin-sides-largescreen);
 }
 
 .footer_column_right {
-  margin: 0.6rem var(--margin_sides_largescreen) 0.6rem 0;
+  margin: 0.6rem var(--margin-sides-largescreen) 0.6rem 0;
 }
 
 /** --Font size and -margin/padding -- Footer **/
@@ -391,7 +443,7 @@ body {
     grid-template-areas:
       "progress_section"
       "main_section";
-    row-gap: var(--gap_between_elements);
+    row-gap: var(--gap-between-elements);
   }
 
   /* Progress grid becomes two columns */ /* --The progress bars becomes two columns instead of one */
@@ -410,16 +462,12 @@ body {
 @media screen and (max-width: 540px) {
   /* Reduce side margins on small screens */
   /* --The left side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_left,
-  .main,
-  .footer_column_left {
-    margin-left: var(--margin_sides_smallscreen);
+  .topbar_left, .main, .footer_column_left {
+    margin-left: var(--margin-sides-smallscreen);    
   }
 
   /* The right side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_right,
-  .main,
-  .footer_column_right {
-    margin-right: var(--margin_sides_smallscreen);
+  .topbar_right, .main, .footer_column_right {
+    margin-right: var(--margin-sides-smallscreen);    
   }
 }

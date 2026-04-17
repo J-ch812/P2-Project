@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
-  <script src="#.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->   
+  <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->   
     <title>Exam Ease - DTG Overview</title>
 </head>
 <body>
@@ -17,12 +17,14 @@
                         <img src="../imgs/Logo.svg" alt="Exam Ease logo"/>
                     </a>
                 </div>
-                <a href="#" class="btn btn_back">Back</a>  <!-- CHANGE BACK-->
+                <button class="btn btn_back">Back</button>  <!-- Go to the previous page -->
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search_icon">🔍</button>  <!-- --!-- Find a real icon picture for this-->
                 <input class="search_bar" type="text" placeholder="Search"/>
-                <a href="#" class="btn btn_profile">Pf</a>
+                <button class="btn btn_profile">
+                    <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
+                </button>
             </div>
         </header>
         <main class="main">
@@ -55,7 +57,6 @@
                                 <a href="#" class="progress_percentage sub">0%</a> 
                             </div>
                         </div>
-                    
                         <div class="progress_group P0">
                             <div class="progress_item P0">
                                 <a href="#" class="progress_bar">P0</a>
@@ -80,15 +81,21 @@
                                 <a href="#" class="progress_percentage">0%</a>                              
                             </div>
                         </div>
-                        <!--
-                        -->
                     </section>
                 </aside>
                 <section class="main_section">  
                     <section class="course_grid course_grid_semester_page DTG_overview">
                         <a href="#" class="course_card">Exam Information</a>
-                        <a href="#" class="course_card">Prior Exams</a>  
-                        <a href="#" class="course_card">Blocks</a>
+                        <a href="#" class="course_card">Prior Exams</a>
+                        <div class="dropdown">
+                            <button class="course_card dropdownButton">Blocks</button>  <!-- id="dropdownButton" -->
+                            <div class="dropdown_content">  <!-- id="dropdownContent" -->
+                                <a href="#">Block 1</a>
+                                <a href="#">Block 2</a>
+                                <a href="#">Block 3</a>
+                                <a href="#">Block 4</a>
+                            </div>
+                        </div>
                     </section>
                 </section>
             </div>
