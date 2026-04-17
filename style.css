@@ -12,12 +12,12 @@
   --margin-sides-largescreen: 2.5rem;  /* --Used as primary (default) */
   --margin-sides-smallscreen: 1.25rem;  /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
   --gap-between-elements: clamp(0.5rem, 2.5vw, 2.5rem);  /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
-  
+
   /* Borders & radius */
   --border-default: 1.5px solid var(--color-bg);
   --border-dark-background: 2px solid var(--color-primary);
-  --radius-md: 10px;  /* --Border radius of corners */
-  
+  --radius-md: 10px; /* --Border radius of corners */
+
   /* Effects */
   --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.38);
 }
@@ -33,7 +33,8 @@ body {
   margin: 0; /* --Removes the default spacing from browsers */
   padding: 0; /* --Removes the default spacing from browsers */
   min-height: 100vh;
-  font-family: 'Inria Sans', serif; /* --!--Inria Sans dose not work*/ /* -Fallback fonts are used if Inria Sans does not load */
+  font-family:
+    "Inria Sans", serif; /* --!--Inria Sans dose not work*/ /* -Fallback fonts are used if Inria Sans does not load */
   color: var(--color-text);
   background: var(--color-bg);
 }
@@ -76,17 +77,19 @@ body {
   display: flex;
   align-items: center;
   gap: var(--gap-between-elements);
-  min-width: 0;  /* --Allows flex items to shrink properly */
+  min-width: 0; /* --Allows flex items to shrink properly */
 }
 
 /* Left side: logo and navigation */
-.topbar_left {  /* --Logged in: Logo + Back button */ /* --Logged out: Logo */
+.topbar_left {
+  /* --Logged in: Logo + Back button */ /* --Logged out: Logo */
   margin: 0.6rem 0 0.6rem var(--margin-sides-largescreen);
 }
 
 /* Right side: search, profile, log in, sign up */
-.topbar_right {  /* --Logged in: Search_bar(+ search button) + Profile */ /* --Logged out: Search bar(+ search button) + Log in + sign up buttons*/
-  margin: 0.6rem var(--margin-sides-largescreen) 0.6rem 0;  
+.topbar_right {
+  /* --Logged in: Search_bar(+ search button) + Profile */ /* --Logged out: Search bar(+ search button) + Log in + sign up buttons*/
+  margin: 0.6rem var(--margin-sides-largescreen) 0.6rem 0;
 }
 
 /*---- Header Elements (Icons and buttons) ----*/
@@ -115,9 +118,8 @@ body {
   height: 45px;
 }
 
-
-
-.btn_profile {  /* --Profile button */
+.btn_profile {
+  /* --Profile button */
   width: 45px;
   height: 45px;
   padding: 0;
@@ -126,10 +128,9 @@ body {
 .btn_profile img {
   width: 80%;
   height: auto;
-  display: block;  /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
+  display: block; /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
   margin: auto;
 }
-
 
 /*---- MAIN CONTENT AREA (MAIN) ----*/ /* --Uses CSS Grid for layout structure.*/
 /*** --Structure/layout of the main part of the page ***/
@@ -163,8 +164,7 @@ body {
 /* Fallback layout when no progress section exists */ /* --If progress_section does not exist then switch to a full width layout */
 .main_components:not(:has(.progress_section)) {
   grid-template-columns: 1fr;
-  grid-template-areas:
-      "main_section";
+  grid-template-areas: "main_section";
   margin-top: var(--gap-between-elements);
 }
 
@@ -197,9 +197,10 @@ body {
   column-gap: 1.25rem;
 }
 
-.progress_bar, .progress_percentage {
+.progress_bar,
+.progress_percentage {
   color: var(--color-text);
-  text-decoration: none;  
+  text-decoration: none;
   font: inherit;
 }
 
@@ -321,7 +322,6 @@ body {
   display: block;
 }
 
-
 /*---- FOOTER (FOOTER) ----*/
 .footer {
   background-color: var(--color-primary);
@@ -411,10 +411,6 @@ body {
   font-size: 15px;
   margin-right: 150px;
 }
-
-
-
-
 /*---- RESPONSIVE DESIGN ----*/
 @media screen and (max-width: 900px) {
   /* --The grid of buttons becomes one column instead of two - on a semester page*/
@@ -466,12 +462,16 @@ body {
 @media screen and (max-width: 540px) {
   /* Reduce side margins on small screens */
   /* --The left side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_left, .main, .footer_column_left {
-    margin-left: var(--margin-sides-smallscreen);    
+  .topbar_left,
+  .main,
+  .footer_column_left {
+    margin-left: var(--margin-sides-smallscreen);
   }
 
   /* The right side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_right, .main, .footer_column_right {
-    margin-right: var(--margin-sides-smallscreen);    
+  .topbar_right,
+  .main,
+  .footer_column_right {
+    margin-right: var(--margin-sides-smallscreen);
   }
 }
