@@ -7,7 +7,7 @@
   --color-text: #111111;
   --color-white: #ffffff;
 
-  /* Spacing */ 
+  /* Spacing */
   /* --The margin size between the sides of the screen and the first element */
   --margin-sides-largescreen: 2.5rem;  /* --Used as primary (default) */
   --margin-sides-smallscreen: 1.25rem;  /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
@@ -22,22 +22,21 @@
   --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.38);
 }
 
-
 /*---- --GLOBAL RESET & BASE STYLES ----*/ /* --Ensures consistent layout across browsers. */
 /**** --Overall structure & layout of the page on the website ****/
-* {  /* --* = All elements */
-  box-sizing: border-box;  /* --When the width is calculated the padding is factored in */
+* {
+  /* --* = All elements */
+  box-sizing: border-box; /* --When the width is calculated the padding is factored in */
 }
 
 body {
-  margin: 0;  /* --Removes the default spacing from browsers */
-  padding: 0;  /* --Removes the default spacing from browsers */
+  margin: 0; /* --Removes the default spacing from browsers */
+  padding: 0; /* --Removes the default spacing from browsers */
   min-height: 100vh;
   font-family: 'Inria Sans', serif; /* --!--Inria Sans dose not work*/ /* -Fallback fonts are used if Inria Sans does not load */
   color: var(--color-text);
   background: var(--color-bg);
 }
-
 
 /*---- PAGE LAYOUT CONTAINER ----*/ /* --Wraps the entire page structure */
 .container {
@@ -47,10 +46,9 @@ body {
   gap: clamp(0.5rem, 1vw, 1rem);
 }
 
-
 /*---- COMPONENTS ----*/ /* --Reusable base style for eg. buttons and links */
 /*---- Button Component ----*/ /** --Basis for buttons and navigation links (links to other pages on the site) **/ /* --!-- This is the complete layout of the Log in and Sign up buttons */
-.btn { 
+.btn {
   width: 100px;
   padding: 0.75rem 1rem;
   border: var(--border-default);
@@ -63,7 +61,6 @@ body {
   font: inherit;
 }
 
-
 /*---- TOP NAVIGATION (HEADER) ----*/ /* --Main horizontal navigation bar */
 .topbar {
   background-color: var(--color-primary);
@@ -74,7 +71,8 @@ body {
   gap: var(--gap-between-elements);
 }
 
-.topbar_left, .topbar_right { 
+.topbar_left,
+.topbar_right {
   display: flex;
   align-items: center;
   gap: var(--gap-between-elements);
@@ -92,10 +90,11 @@ body {
 }
 
 /*---- Header Elements (Icons and buttons) ----*/
-.topbar_logo img {  /* --Logo */
-  width: 140px;  /* --Controls size */
-  height: auto;  /* --Keeps aspect ratio */
-  display: block;  /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
+.topbar_logo img {
+  /* --Logo */
+  width: 140px; /* --Controls size */
+  height: auto; /* --Keeps aspect ratio */
+  display: block; /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
 }
 
 .search_bar {
@@ -109,7 +108,7 @@ body {
 
 /* Search icon button (visible on small screens) */
 .btn_search_icon {
-  display: none;  /* --Hidden by default */
+  display: none; /* --Hidden by default */
   padding-left: 0rem;
   padding-right: 0rem;
   width: 45px;
@@ -132,11 +131,10 @@ body {
 }
 
 
-
 /*---- MAIN CONTENT AREA (MAIN) ----*/ /* --Uses CSS Grid for layout structure.*/
 /*** --Structure/layout of the main part of the page ***/
 .main {
-  display: grid;    
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
@@ -158,8 +156,7 @@ body {
   grid-area: main_components;
   display: grid;
   grid-template-columns: 260px 1fr;
-  grid-template-areas:
-    "progress_section main_section";
+  grid-template-areas: "progress_section main_section";
   column-gap: 5rem;
 }
 
@@ -169,6 +166,62 @@ body {
   grid-template-areas:
       "main_section";
   margin-top: var(--gap-between-elements);
+}
+
+.popup {
+  width: 430px;
+  background-color: #ffffff;
+  border-radius: var(--radius_md);
+  padding: 0.75rem 1rem;
+
+  /*så alt er i midten */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 2px solid var(--color-primary);
+}
+
+.popup.delete_profile {
+  width: 630px;
+  height: 400px;
+  text-align: center;
+  padding: 90px 35px 50px; /* top; sides; buttom */
+}
+
+.popup.delete_profile p {
+  text-align: center;
+  padding: 50px;
+}
+
+.popup.profile_dropdown {
+  width: 400px;
+  height: 384px;
+  font-size: 20px;
+}
+
+.popup.profile_dropdown p {
+  margin-bottom: 35px;
+}
+
+.button {
+  width: 100px;
+  height: 40px;
+  border-radius: var(--radius_md);
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-primary_dark);
+}
+
+.button.delete {
+  font-size: 13px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-bg);
+}
+
+.button.logout {
+  font-size: 15px;
+  margin-right: 150px;
 }
 
 /*---- Progress Section (SIDEBAR, PROGRESS_GRID) ----*/ /*** --Progress bar ***/
@@ -223,18 +276,19 @@ body {
 }
 
 /* -Smaller (sub-level elements) progress items */ /** --Design of the small progress bars (sub) - Progress bar **/
-.progress_bar.sub, .progress_percentage.sub {
+.progress_bar.sub,
+.progress_percentage.sub {
   font-size: 14px;
   margin-top: 0.25rem;
 }
 
 .progress_bar.sub {
-  padding: 0.10rem 1rem;
+  padding: 0.1rem 1rem;
   margin-left: 1rem;
 }
 
 .progress_percentage.sub {
-  padding: 0.10rem 0;
+  padding: 0.1rem 0;
 }
 
 /*---- Main Section ----*/
@@ -260,7 +314,9 @@ body {
   color: var(--color-text);
   text-align: center;
   font: inherit;
-  transition: transform 0.15s ease, box-shadow 0.15s ease; 
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 /* --The effect when hovering the mouse over one of the buttons on the grid */
@@ -344,14 +400,16 @@ body {
   font-size: 16px;
 }
 
-.footer_column ul, .footer_column li, .footer_column p {
+.footer_column ul,
+.footer_column li,
+.footer_column p {
   margin: 0.35rem 0 0;
 }
 
-.footer_column ul, .footer_column p {
+.footer_column ul,
+.footer_column p {
   padding-left: 1.5rem;
 }
-
 
 /*---- RESPONSIVE DESIGN ----*/
 @media screen and (max-width: 900px) {
@@ -360,7 +418,7 @@ body {
     grid-template-columns: 1fr;
     row-gap: clamp(0.5rem, 2vw, 2rem);
   }
-  
+
   /* --The grid of buttons becomes two columns instead of three - on a front page*/
   .course_grid_front_page {
     grid-template-columns: repeat(2, 1fr);
@@ -407,7 +465,7 @@ body {
   .topbar_left, .main, .footer_column_left {
     margin-left: var(--margin-sides-smallscreen);    
   }
-  
+
   /* The right side margins are changed to become slimmer - sides of the screen to the first element */
   .topbar_right, .main, .footer_column_right {
     margin-right: var(--margin-sides-smallscreen);    
