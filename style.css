@@ -375,7 +375,6 @@ body {
   padding-left: 1.5rem;
 }
 
-
 /*---- PUPUPS, DROPDOWN, & OVERLAYS ----*/
 .popup {
   width: max-content;
@@ -395,10 +394,10 @@ body {
 
 .profile_dropdown p {
   margin: 0;
-  padding: 0.6rem 0 ;
+  padding: 0.6rem 0;
 }
 
-.buttons{
+.buttons {
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
@@ -415,7 +414,7 @@ body {
 }
 
 /*---- Successfully Deleted Profile Overlay ----*/
-.delete_profile{
+.delete_profile {
   width: 630px;
   height: 400px;
   /*så alt er i midten */
@@ -423,18 +422,89 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  border: 2px solid var(--color-primary);
-}
-
-.popup.delete_profile {
-  width: 630px;
-  height: 400px;
+  border: 3px solid var(--color-primary);
   text-align: center;
   padding: 90px 35px 50px;
 }
 
 .delete_profile p {
   padding: 50px;
+}
+
+<<<<<<< HEAD .button {
+  width: 100px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-primary-dark);
+}
+
+.button.delete {
+  font-size: 13px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-bg);
+}
+
+.button.logout {
+  font-size: 15px;
+  margin-right: 150px;
+  border: 2px solid var(--color-primary);
+}
+
+.popup.submission_check {
+  width: 564px;
+  height: 210px;
+}
+
+.popup.submission_check p {
+  margin-bottom: 50px;
+  font-size: 25px;
+}
+
+.button.cancel {
+  width: 160px;
+  font-size: 17px;
+  border: 2px solid #dc1919;
+  margin-right: 200px;
+}
+
+.button.submit {
+  width: 160px;
+  font-size: 17px;
+  border: 2px solid;
+}
+
+.popup.submission_succes {
+  width: 773px;
+  height: 561px;
+  font-size: 24px;
+}
+
+.popup.submission_succes h2 {
+  text-align: center;
+}
+
+.popup.submission_succes p {
+  font-size: 26px;
+
+  margin-bottom: 50px;
+}
+
+.popup.submission_succes .question {
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.button.no {
+  font-size: 20px;
+  margin-right: 320px;
+  border: 2px solid var(--color-primary);
+}
+
+.button.yes {
+  width: 300px;
+  font-size: 20px;
+  border: 2px solid var(--color-text);
 }
 
 /*---- RESPONSIVE DESIGN ----*/
