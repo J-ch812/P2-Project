@@ -19,6 +19,7 @@
 
   /* Borders & radius */
   --border-default: 1.5px solid var(--color-bg);
+  --border-small-btn: 1.5px solid var(--color-primary);
   --border-dark-background: 2px solid var(--color-primary);
   --radius-md: 10px; /* --Border radius of corners */
 
@@ -64,6 +65,21 @@ body {
   text-align: center;
   cursor: pointer;
   font: inherit;
+}
+
+.small_btn {
+  width: 80px;
+  height: 30px;
+  padding: 0.25rem;
+  border: var(--border-small-btn);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
 }
 
 /*---- TOP NAVIGATION (HEADER) ----*/ /* --Main horizontal navigation bar */
@@ -285,11 +301,11 @@ body {
   width: 100%;
 }
 
-.dropdownButton {
+.dropdownButton.blocks {
   width: 100%;
 }
 
-.dropdownButton:hover {
+.dropdownButton.blocks:hover {
   transform: translateY(0);
   box-shadow: none;
 }
@@ -359,118 +375,66 @@ body {
   padding-left: 1.5rem;
 }
 
-/** POPUPS **/
-.popup {
-  width: 430px;
-  background-color: #ffffff;
-  border-radius: var(--radius-md);
-  padding: 0.75rem 1rem;
 
-  /*så alt er i midten */
+/*---- PUPUPS, DROPDOWN, & OVERLAYS ----*/
+.popup {
+  width: max-content;
+  height: max-content;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  border: var(--border-dark-background);
   position: absolute;
+  padding: 0.75rem 1rem;
+}
+
+/*---- Profile Dropdown ----*/
+.profile_dropdown {
+  margin-top: 0.6rem;
+  font-size: 14px; /* 0.7rem */
+}
+
+.profile_dropdown p {
+  margin: 0;
+  padding: 0.6rem 0 ;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.btn_delete {
+  border: var(--border-default);
+  background: var(--color-white);
+}
+
+.dropdown.active .profile_dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+/*---- Successfully Deleted Profile Overlay ----*/
+.delete_profile{
+  width: 630px;
+  height: 400px;
+  /*så alt er i midten */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  border: 3px solid var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .popup.delete_profile {
   width: 630px;
   height: 400px;
   text-align: center;
-  padding: 90px 35px 50px; /* top; sides; buttom */
+  padding: 90px 35px 50px;
 }
 
-.popup.delete_profile p {
-  text-align: center;
+.delete_profile p {
   padding: 50px;
-}
-
-.popup.profile_dropdown {
-  width: 400px;
-  height: 384px;
-  font-size: 20px;
-}
-
-.popup.profile_dropdown p {
-  margin-bottom: 35px;
-}
-
-.button {
-  width: 100px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg);
-  border: 2px solid var(--color-primary-dark);
-}
-
-.button.delete {
-  font-size: 13px;
-  background-color: var(--color-white);
-  border: 2px solid var(--color-bg);
-}
-
-.button.logout {
-  font-size: 15px;
-  margin-right: 150px;
-  border: 2px solid var(--color-primary);
-}
-
-.popup.submission_check {
-  width: 564px;
-  height: 210px;
-}
-
-.popup.submission_check p {
-  margin-bottom: 50px;
-  font-size: 25px;
-}
-
-.button.cancel {
-  width: 160px;
-  font-size: 17px;
-  border: 2px solid #dc1919;
-  margin-right: 200px;
-}
-
-.button.submit {
-  width: 160px;
-  font-size: 17px;
-  border: 2px solid;
-}
-
-.popup.submission_succes {
-  width: 773px;
-  height: 561px;
-  font-size: 24px;
-}
-
-.popup.submission_succes h2 {
-  text-align: center;
-}
-
-.popup.submission_succes p {
-  font-size: 26px;
-
-  margin-bottom: 50px;
-}
-
-.popup.submission_succes .question {
-  margin-top: 80px;
-  margin-bottom: 30px;
-}
-
-.button.no {
-  font-size: 20px;
-  margin-right: 320px;
-  border: 2px solid var(--color-primary);
-}
-
-.button.yes {
-  width: 300px;
-  font-size: 20px;
-  border: 2px solid var(--color-text);
 }
 
 /*---- RESPONSIVE DESIGN ----*/
