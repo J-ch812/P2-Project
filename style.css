@@ -357,6 +357,7 @@ body {
 .big-box {
   width: 60%;
   margin: 0 auto; 
+  margin-bottom: 20px; /* laver afstand mellem boksen og footer */
   background-color: #ffffff;
   padding: 30px;
   border-radius: 10px;
@@ -377,7 +378,7 @@ body {
 }
 
 .button-container {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .btn1 {
