@@ -32,3 +32,25 @@ document.addEventListener("click", (e) => {
     }
   });
 });
+
+
+
+
+
+//DELETE OF PROFILE SUCCESSFUL
+function on() {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("body").style.overflow = "hidden";  //Disable the scrolling function
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("body").style.overflow = "";  //Enable the scrolling function
+}
+
+
+
+  //display: block; /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
+  //margin: auto;
+
+
