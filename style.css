@@ -353,3 +353,43 @@ body {
     margin-right: var(--margin_sides_smallscreen);    
   }
 }
+
+.big-box {
+  width: 60%;
+  margin: 0 auto; 
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid var(--color_primary);
+}
+
+  .main section {
+    --color_bg: #cbe2ed;
+    padding: 40px 0; 
+  }
+
+.title {
+  text-align: center; 
+}
+
+.small-text {
+  font-size: 12px
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.btn1 {
+  display: inline-block; /* ved ikke, den gør ikke noget */
+  padding: 5px 24px;  /* styrer hvor tynde og aflange de skal være */
+  margin-right: 10px; /* laver afstand til næste knap */
+  background-color: #cbe2ed; /* farven i boksen */
+  border: 2px solid var(--color_primary); /* kantens farve om boksen */
+  border-radius: 10px; /* gør knappens hjørner runde  */
+  font-size: 14px; /* skriftstørrelse  */
+  
+text-decoration: none; /* fjerner underline under teksten i knapperne  */
+color: #111111; /* skriftfarven */
+
+}
