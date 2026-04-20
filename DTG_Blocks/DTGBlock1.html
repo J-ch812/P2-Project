@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">  <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
+    <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
+  <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->   
+    <title>Exam Ease - DTG Overview</title>
+</head>
+<body>
+    <div class="container">
+        <header class="topbar">
+            <div class="topbar_left">
+                <div class="topbar_logo">
+                    <a href="../index.html" aria-label="Go to homepage">    <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                        <img src="../imgs/Logo.svg" alt="Exam Ease logo"/>
+                    </a>
+                </div>
+                <button class="btn btn_back">Back</button>  <!-- Go to the previous page -->
+            </div>
+            <div class="topbar_right">
+                <button class="btn btn_search">
+                    <img src="../imgs/search-icon.webp" alt="Search icon"/>
+                </button>
+                <input class="search_bar" type="text" placeholder="Search"/>
+                <div class="dropdown">
+                    <button class="btn btn_profile dropdownButton">
+                        <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
+                    </button>
+                    <aside class="popup profile_dropdown dropdown_content">
+                        <p>Username: Sara</p>
+                        <p>E-mail: Sara.hansen@student.aau.dk</p>
+                        <p>School: Aalborg University Copenhagen</p>
+                        <p>Field of study: Software</p>
+                        <p>Semester: 1. Semester</p>
+                        <div class="buttons">
+                            <button class="small_btn btn_logout">Logout</button>
+                            <button class="small_btn btn_delete" onclick="on()">Delete profile</button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="heading"> 
+                <h1>Block 1</h1>
+            </section>
+            <div class="main_components">
+                <aside class="progress_section">
+                    <h3>Progress</h3>
+                    <section class="progress_grid expanded">
+                        <div class="progress_group DTG">
+                            <div class="progress_item DTG">
+                                <a href="#" class="progress_bar">DTG</a>
+                                <a href="#" class="progress_percentage">0%</a>
+                            </div>
+                            <div class="progress_item sub">
+                                <a href="#" class="progress_bar sub block1">Block 1</a>
+                                <a href="#" class="progress_percentage sub">0%</a>  
+                            </div>
+                            <div class="progress_item sub">
+                                <a href="#" class="progress_bar sub block2">Block 2</a>
+                                <a href="#" class="progress_percentage sub">0%</a> 
+                            </div>
+                            <div class="progress_item sub">
+                                <a href="#" class="progress_bar sub block3">Block 3</a>
+                                <a href="#" class="progress_percentage sub">0%</a> 
+                            </div>
+                            <div class="progress_item sub">
+                                <a href="#" class="progress_bar sub block4">Block 4</a>
+                                <a href="#" class="progress_percentage sub">0%</a> 
+                            </div>
+                        </div>
+                        <div class="progress_group P0">
+                            <div class="progress_item P0">
+                                <a href="#" class="progress_bar">P0</a>
+                                <a href="#" class="progress_percentage">0%</a>                            
+                            </div>
+                        </div>
+                        <div class="progress_group IMPR">
+                            <div class="progress_item IMPR">
+                                <a href="#" class="progress_bar">IMPR</a>
+                                <a href="#" class="progress_percentage">0%</a>                            
+                            </div>
+                        </div>
+                        <div class="progress_group P1">
+                            <div class="progress_item P1">
+                                <a href="#" class="progress_bar">P1</a>
+                                <a href="#" class="progress_percentage">0%</a>                            
+                            </div>
+                        </div>
+                        <div class="progress_group PBL">
+                            <div class="progress_item PBL">
+                                <a href="#" class="progress_bar">PBL</a>
+                                <a href="#" class="progress_percentage">0%</a>                              
+                            </div>
+                        </div>
+                    </section>
+                </aside>
+                <section class="main_section">  
+                    <section class="course_grid course_grid_semester_page DTG_overview">
+                        <div class="block_section">
+                            <ul class="lecture_list">
+                                <li>
+                                    <details class="lecture_dropdown">
+                                        <summary class="lecture_item">
+                                            <input type="checkbox">
+                                            <span>Lecture 1: Logic and Sets</span>
+                                            <span class="lecture_arrow">▾</span>
+                                        </summary>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Operations on sets</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Set identities</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Subset</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Powerset</span>
+                                            </input>
+                                        </div>
+                                    </details>
+                                </li>
+                                <li>
+                                     <details class="lecture_dropdown">
+                                        <summary class="lecture_item">
+                                            <input type="checkbox">
+                                            <span>Lecture 2: Cartesian Product & Power set</span>
+                                            <span class="lecture_arrow">▾</span>
+                                        </summary>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Operations on sets</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Set identities</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Subset</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Powerset</span>
+                                            </input>
+                                        </div>
+                                    </details>
+                                </li>
+                                <li>
+                                     <details class="lecture_dropdown">
+                                        <summary class="lecture_item">
+                                            <input type="checkbox">
+                                            <span>Lecture 3: Equiv. Relations & Orders</span>
+                                            <span class="lecture_arrow">▾</span>
+                                        </summary>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Operations on sets</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Set identities</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Subset</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Powerset</span>
+                                            </input>
+                                        </div>
+                                    </details>
+                                </li>
+                                <li>
+                                     <details class="lecture_dropdown">
+                                        <summary class="lecture_item">
+                                            <input type="checkbox">
+                                            <span>Lecture 4: Closures of Relations</span>
+                                            <span class="lecture_arrow">▾</span>
+                                        </summary>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Operations on sets</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Set identities</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Subset</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Powerset</span>
+                                            </input>
+                                        </div>
+                                    </details>
+                                </li>
+                                <li>
+                                     <details class="lecture_dropdown">
+                                        <summary class="lecture_item">
+                                            <input type="checkbox">
+                                            <span>Lecture 5: </span>
+                                            <span class="lecture_arrow">▾</span>
+                                        </summary>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Operations on sets</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Set identities</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Subset</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Powerset</span>
+                                            </input>
+                                        </div>
+                                    </details>
+                                </li>
+                                <li>
+                                     <details class="lecture_dropdown">
+                                        <summary class="lecture_item">
+                                            <input type="checkbox">
+                                            <span>Lecture 6:</span>
+                                            <span class="lecture_arrow">▾</span>
+                                        </summary>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Operations on sets</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Set identities</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Subset</span>
+                                            </input>
+                                        </div>
+                                        <div class="lecture_content">
+                                            <input type="checkbox">
+                                                <span>Powerset</span>
+                                            </input>
+                                        </div>
+                                    </details>
+                                </li>
+                                <li>
+                                     <details class="lecture_dropdown">
+                                        <summary class="lecture_item">
+                                            <input type="checkbox">
+                                            <span>Workshop 1</span>
+                                        </summary>
+                                    </details>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer_column footer_column_left">
+                <h4>Submit your input</h4>
+                <ul>
+                    <li><a href="#">Submission info</a></li>
+                    <li><a href="#">Students – submission form</a></li>
+                    <li><a href="#">Professors – submission form</a></li>
+                </ul>
+            </div>
+            <div class="footer_column footer_column_right visible_link">
+                <h4>IT support</h4>
+                <p><a href="#">Tel: +45 00 00 00 00</a></p>
+                <p><a href="#">E-mail: itservice@support.dk</a></p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- FULL SCREEN OVERLAY -->
+    <div id="overlay" onclick="off()">
+        <div class="delete_profile" id="inside_overlay" onclick="event.stopPropagation()">
+            <h1>Your profile has been successfully deleted</h1>
+            <!-- <p>Redirecting to front page...</p> --> 
+            <a href="../index.html" class="small_btn btn_close" onclick="off()">Close</a>
+        </div>
+    </div>
+</body>
+</html>
