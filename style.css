@@ -1,12 +1,12 @@
 /*---- GLOBAL VARIABLES (Style Sheet) ----*/
 /* --Reusable values for colors, spacing, borders, and shadows. Helps maintain consistency and simplifies updates. */
 :root {
-  --color-bg: hsl(201, 49%, 90%);  /* --color-bg: #cbe2ed; */  /* A lighter version of --color-primary */
+  --color-bg: hsl(201, 49%, 88%);  /* --color-bg: #cbe2ed; */  /* A lighter version of --color-primary */
   --color-primary: hsl(201, 49%, 62%);  /* --color-primary: #76add0; */
   /*--color-primary-dark: #5e9bc3;*/
   --color-hover-bg: hsl(201, 49%, 82%); /* A less lighter version of --color-primary */
   --color-hover-text: hsl(45, 100%, 62%);
-  --color-hover-bg-light: hsl(201, 49%, 94%);
+  --color-hover-bg-light: hsl(201, 49%, 92%);
 
   --color-text: #111111;
   --color-white: #ffffff;
@@ -15,11 +15,7 @@
   /* --The margin size between the sides of the screen and the first element */
   --margin-sides-largescreen: 2.5rem; /* --Used as primary (default) */
   --margin-sides-smallscreen: 1.25rem; /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
-  --gap-between-elements: clamp(
-    0.5rem,
-    2.5vw,
-    2.5rem
-  ); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
+  --gap-between-elements: clamp(0.5rem, 2.5vw, 2.5rem); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
 
   /* Borders & radius */
   --border-default: 1.5px solid var(--color-bg);
@@ -46,7 +42,7 @@ body {
   font-family:
     "Inria Sans", serif; /* --!--Inria Sans dose not work*/ /* -Fallback fonts are used if Inria Sans does not load */
   color: var(--color-text);
-  background: var(--color-bg);
+  background-color: var(--color-bg);
 }
 
 /*---- PAGE LAYOUT CONTAINER ----*/ /* --Wraps the entire page structure */
@@ -64,7 +60,7 @@ body {
   padding: 0.75rem 1rem;
   border: var(--border-default);
   border-radius: var(--radius-md);
-  background: var(--color-white);
+  background-color: var(--color-white);
   color: var(--color-text);
   text-decoration: none;
   text-align: center;
@@ -76,13 +72,33 @@ body {
   background-color: var(--color-hover-bg-light);
 }
 
+.md_btn {
+  width: 160px;
+  height: 40px;
+  padding: 0.25rem;
+  border: var(--border-dark-background);  /* border: 2px solid var(--color-primary-dark);*/
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  align-content: center;
+  text-align: center;
+  cursor: pointer;
+  font: inherit;
+  font-size: 17px;
+}
+
+.md_btn:hover {
+  background-color: var(--color-hover-bg);
+}
+
 .small_btn {
   width: 80px;
   height: 30px;
   padding: 0.25rem;
   border: var(--border-small-btn);
   border-radius: var(--radius-md);
-  background: var(--color-bg);
+  background-color: var(--color-bg);
   color: var(--color-text);
   text-decoration: none;
   text-align: center;
@@ -96,6 +112,7 @@ body {
 }
 
 
+
 /*---- TOP NAVIGATION (HEADER) ----*/ /* --Main horizontal navigation bar */
 .topbar {
   background-color: var(--color-primary);
@@ -106,8 +123,7 @@ body {
   gap: var(--gap-between-elements);
 }
 
-.topbar_left,
-.topbar_right {
+.topbar_left, .topbar_right {
   display: flex;
   align-items: center;
   gap: var(--gap-between-elements);
@@ -235,8 +251,7 @@ body {
   column-gap: 1.25rem;
 }
 
-.progress_bar,
-.progress_percentage {
+.progress_bar, .progress_percentage {
   color: var(--color-text);
   text-decoration: none;
   font: inherit;
@@ -259,8 +274,7 @@ body {
 }
 
 /* -Smaller (sub-level elements) progress items */ /** --Design of the small progress bars (sub) - Progress bar **/
-.progress_bar.sub,
-.progress_percentage.sub {
+.progress_bar.sub, .progress_percentage.sub {
   font-size: 14px;
   margin-top: 0.25rem;
 }
@@ -292,7 +306,7 @@ body {
   padding: 1rem;
   border: var(--border-dark-background);
   border-radius: var(--radius-md);
-  background: var(--color-white);
+  background-color: var(--color-white);
   text-decoration: none;
   color: var(--color-text);
   text-align: center;
@@ -361,6 +375,8 @@ body {
   display: block;
 }
 
+
+
 /*---- FOOTER (FOOTER) ----*/
 .footer {
   background-color: var(--color-primary);
@@ -406,8 +422,7 @@ body {
 
 
 
-
-/*---- PUPUPS, DROPDOWN, & OVERLAYS ----*/
+/*---- POPUPS, DROPDOWN, & OVERLAYS ----*/
 .popup {
   width: max-content;
   height: max-content;
@@ -432,12 +447,13 @@ body {
 .buttons {
   display: flex;
   justify-content: space-between;
-  padding-top: 1rem;
+  padding-top: 0.75rem;
+  width: 100%;
 }
 
 .btn_delete {
   border: var(--border-default);
-  background: var(--color-white);
+  background-color: var(--color-white);
 }
 
 .dropdown.active .profile_dropdown {
@@ -445,12 +461,10 @@ body {
   flex-direction: column;
 }
 
-
-
-
-/*---- Successfully Deleted Profile Overlay ----*/
-#overlay {
+/*---- Overlay ----*/
+.overlay {
   position: fixed;
+  /* display: none; */
   display: none;
   width: 100%;
   height: 100%;
@@ -460,118 +474,65 @@ body {
   right: 0;
   background-color: rgba(0, 0, 0, 0.3); /* var(--color-hover-bg) */
   z-index: 3;
-
   justify-content: center;
   align-items: center;
 }
 
-#inside_overlay{
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.overlay.active {
+  display: flex; 
+}
+
+.inside_overlay{
+  padding: var(--gap-between-elements);
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
   border: var(--border-dark-background);
-  padding: 2.5rem;
-  z-index: 3;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.delete_profile {
-  text-align: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-
-.btn_close {
-  margin-top: auto;   /* pushes button to bottom */
-  align-content: center;
-}
-
-.button {
-  width: 100px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg);
-  border: 2px solid var(--color-primary-dark);
-}
-
-.button.delete {
-  font-size: 13px;
-  background-color: var(--color-white);
-  border: 2px solid var(--color-bg);
-}
-
-.button.logout {
-  font-size: 15px;
-  margin-right: 150px;
-  border: 2px solid var(--color-primary);
-}
-
-.popup.submission_check {
-  width: 564px;
-  height: 210px;
-}
-
-.popup.submission_check p {
-  margin-bottom: 50px;
-  font-size: 25px;
-}
-
-.button.cancel {
-  width: 160px;
-  font-size: 17px;
-  border: 2px solid #dc1919;
-  margin-right: 200px;
-}
-
-.button.submit {
-  width: 160px;
-  font-size: 17px;
-  border: 2px solid;
-}
-
-.popup.submission_succes {
-  width: 773px;
-  height: 561px;
-  font-size: 24px;
-}
-
-.popup.submission_succes h2 {
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.popup.submission_succes p {
-  font-size: 26px;
-
-  margin-bottom: 50px;
+/*---- Successfully Deleted Profile Overlay ----*/
+.delete_profile {
+  width: min(65%, 700px);
+  row-gap: var(--margin-sides-largescreen);
 }
 
-.popup.submission_succes .question {
-  margin-top: 80px;
-  margin-bottom: 30px;
+/*---- Submission Check Overlay ----*/
+.submission_check {
+  max-height: 210px;
+  width: min(50%, 600px);
+  row-gap: var(--margin-sides-largescreen);
 }
 
-.button.no {
-  font-size: 20px;
-  margin-right: 320px;
-  border: 2px solid var(--color-primary);
+.md_btn.cancel {
+  border-color: #dc1919;
 }
 
-.button.yes {
-  width: 300px;
-  font-size: 20px;
-  border: 2px solid var(--color-text);
+.md_btn.submit {
+  border-color: var(--color-text);
 }
 
+.inside_overlay h2 {
+  margin: 0;
+}
+
+/*---- Submission Successful Overlay ----*/
+.submission_succes {
+  width: min(65%, 800px); /*   width: 773px; */
+  max-height: 562px;
+}
+
+.md_btn.yes {
+  width: 200px;
+  /* border-color: var(--color-text); */
+}
+
+.submission_succes .question {
+  font-weight: 600;
+}
 
 
 
@@ -586,6 +547,15 @@ body {
   /* --The grid of buttons becomes two columns instead of three - on a front page*/
   .course_grid_front_page {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --Overlays */
+  .inside_overlay h2{
+    font-size: large;
+  }
+  
+  .md_btn.cancel, .md_btn.submit, .md_btn.no {
+    width: clamp((90/16) * 1rem, (140/16) * 1vh, (140/16) * 1rem);
   }
 }
 
@@ -614,6 +584,12 @@ body {
   .progress_grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* --Overlays */
+  .inside_overlay{
+    padding: var(--margin-sides-smallscreen);
+    row-gap: var(--margin-sides-smallscreen);
+  }
 }
 
 @media screen and (max-width: 610px) {
@@ -626,18 +602,12 @@ body {
 @media screen and (max-width: 540px) {
   /* Reduce side margins on small screens */
   /* --The left side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_left,
-  .main,
-  .footer_column_left {
+  .topbar_left, .main, .footer_column_left {
     margin-left: var(--margin-sides-smallscreen);
   }
 
-
-
   /* The right side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_right,
-  .main,
-  .footer_column_right {
+  .topbar_right, .main, .footer_column_right {
     margin-right: var(--margin-sides-smallscreen);
   }
 }

@@ -2,7 +2,7 @@
 // --Go back to previous page when clicking on the Back button
   // --?-- if the same page is loaded multiple times it just goes back to the same page.
 // The buttions in which the goBack() function is applied
-document.querySelectorAll(".btn_back, .md_button.no, .md_button.yes").forEach(btn => {
+document.querySelectorAll(".btn_back, .md_btn.no, .md_btn.yes").forEach(btn => {
   btn.addEventListener("click", goBack);
 });
 
@@ -17,7 +17,7 @@ function goBack() {
 
 
 
-//DROPDOWN BLOCKS
+//DROPDOWN BLOCKS & Profile
 // Show dropdown when cliked
 document.querySelectorAll(".dropdownButton").forEach((button) => {
   //--Finds all elements with class .dropdownButton, returning them as a list (NodeList), and then runs the code for each button
@@ -42,7 +42,7 @@ document.addEventListener("click", (e) => {
 
 
 
-//OVERLAYS: DELETE OF PROFILE SUCCESSFUL
+//OVERLAYS
 document.querySelectorAll(".overlay").forEach(overlay => {
   overlay.addEventListener("click", e => {
     e.stopPropagation();

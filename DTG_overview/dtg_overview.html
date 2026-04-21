@@ -36,7 +36,7 @@
                         <p>Semester: 1. Semester</p>
                         <div class="buttons">
                             <button class="small_btn btn_logout">Logout</button>
-                            <button class="small_btn btn_delete" onclick="on()">Delete profile</button>
+                            <button class="small_btn btn_delete">Delete profile</button>
                         </div>
                     </aside>
                 </div>
@@ -130,15 +130,6 @@
                 <p><a href="#">E-mail: itservice@support.dk</a></p>
             </div>
         </footer>
-    </div>
-    
-    <!-- FULL SCREEN OVERLAY -->
-    <div id="overlay" onclick="off()">
-        <div class="delete_profile" id="inside_overlay" onclick="event.stopPropagation()">
-            <h1>Your profile has been successfully deleted</h1>
-            <!-- <p>Redirecting to front page...</p> --> 
-            <a href="../index.html" class="small_btn btn_close" onclick="off()">Close</a>
-        </div>
     </div>
 </body>
 </html>

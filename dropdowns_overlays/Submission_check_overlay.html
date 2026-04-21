@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /> <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" /> <!-- --Picture on the web tab-->
+    <link rel="stylesheet" href="../style.css" />  <!-- --Linking this file to the CSS file-->
+    <script src="#.js" defer></script>
+    <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+    <title>Submission check pop-up</title>
+</head>
+<body>
+
+
+
+    <!-- The User Is Asked If They Do Want To Submit -->
+        <!-- --The botton should look somehting like this:  <button class="small_btn btn_logout" onclick="on('submitOverlay')">Logout</button> -->
+    <div class="overlay" id="submitOverlay">
+        <div class="inside_overlay submission_check">
+            <h2>
+                Once you submit the form, it cannot be withdrawn. 
+                <br>
+                Are you ready to submit the form?
+            </h2>
+            <div class="buttons">
+                <button class="md_btn cancel" onclick="off('submitOverlay')">Cancel</button>
+                <button class="md_btn submit" onclick="off('submitOverlay'); on('successOverlay')">Submit</button>
+            </div>
+        </div>        
+    </div>
+
+
+</body>
+</html>
