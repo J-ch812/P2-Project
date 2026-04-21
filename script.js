@@ -1,14 +1,21 @@
-//alert("Velkommen til P2 projekt");
-
-// BACK BUTTON
+// GO BACK FUNCTION
 // --Go back to previous page when clicking on the Back button
-document.querySelector(".btn_back").addEventListener("click", () => {
-  if (history.length > 1) {
-    history.back(); //Or: history.go(-1);
-  } else {
-    window.location.href = "../index.html"; // fallback
-  }
+  // --?-- if the same page is loaded multiple times it just goes back to the same page.
+// The buttions in which the goBack() function is applied
+document.querySelectorAll(".btn_back, .md_button.no, .md_button.yes").forEach(btn => {
+  btn.addEventListener("click", goBack);
 });
+
+// --The actual function for goBack()
+function goBack() {
+  if (history.length > 1) {
+    history.back();  //Or: history.go(-1);
+  } else {
+    window.location.href = "../index.html";  //Fallback
+  }
+}
+
+
 
 //DROPDOWN BLOCKS
 // Show dropdown when cliked
@@ -35,22 +42,26 @@ document.addEventListener("click", (e) => {
 
 
 
+//OVERLAYS: DELETE OF PROFILE SUCCESSFUL
+document.querySelectorAll(".overlay").forEach(overlay => {
+  overlay.addEventListener("click", e => {
+    e.stopPropagation();
+  });
+});
 
-
-//DELETE OF PROFILE SUCCESSFUL
-function on() {
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("body").style.overflow = "hidden";  //Disable the scrolling function
+function on(id) {
+  const overlay = document.getElementById(id);
+  overlay.classList.add("active");
+  // close dropdowns
+  document.querySelectorAll(".dropdown").forEach(d => {
+    d.classList.remove("active");
+  });
+  //Removes the ability to scroll
+  document.body.style.overflow = "hidden";
 }
 
-function off() {
-  document.getElementById("overlay").style.display = "none";
-  document.getElementById("body").style.overflow = "";  //Enable the scrolling function
+function off(id) {
+  const overlay = document.getElementById(id);
+  overlay.classList.remove("active");
+  document.body.style.overflow = "";
 }
-
-
-
-  //display: block; /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
-  //margin: auto;
-
-
