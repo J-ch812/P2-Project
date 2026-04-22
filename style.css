@@ -1,44 +1,66 @@
 /*---- GLOBAL VARIABLES (Style Sheet) ----*/
 /* --Reusable values for colors, spacing, borders, and shadows. Helps maintain consistency and simplifies updates. */
 :root {
-  --color_bg: #cbe2ed;
-  --color_primary: #76add0;
-  --color_primary_dark: #5e9bc3;
-  --color_text: #111111;
-  --color_white: #ffffff;
+  --color-bg: hsl(201, 49%, 90%);
+  /* --color-bg: #cbe2ed; */
+  /* A lighter version of --color-primary */
+  --color-primary: hsl(201, 49%, 62%);
+  /* --color-primary: #76add0; */
+  /*--color-primary-dark: #5e9bc3;*/
+  --color-hover-bg: hsl(201, 49%, 82%);
+  /* A less lighter version of --color-primary */
+  --color-hover-text: hsl(45, 100%, 62%);
+  --color-hover-bg-light: hsl(201, 49%, 94%);
 
-  /* Spacing */ 
+  --color-text: #111111;
+  --color-white: #ffffff;
+
+  /* Spacing */
   /* --The margin size between the sides of the screen and the first element */
-  --margin_sides_largescreen: 2.5rem;  /* --Used as primary (default) */
-  --margin_sides_smallscreen: 1.25rem;  /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
-  --gap_between_elements: clamp(0.5rem, 2.5vw, 2.5rem);  /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
-  
+  --margin-sides-largescreen: 2.5rem;
+  /* --Used as primary (default) */
+  --margin-sides-smallscreen: 1.25rem;
+  /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
+  --gap-between-elements: clamp(0.5rem, 2.5vw, 2.5rem);
+  /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
+
   /* Borders & radius */
-  --border_default: 1.5px solid var(--color_bg);
-  --radius_md: 10px;  /* --Border radius of corners */
-  
+  --border-default: 1.5px solid var(--color-bg);
+  --border-small-btn: 1.5px solid var(--color-primary);
+  --border-dark-background: 2px solid var(--color-primary);
+  --radius-md: 10px;
+  /* --Border radius of corners on BUTTONS */
+  --radius-lg: 25px;
+  /* --Border radius of corners on OVERLAY */
+
   /* Effects */
-  --shadow_soft: 0 2px 8px rgba(0, 0, 0, 0.38);
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.38);
 }
 
-
-/*---- --GLOBAL RESET & BASE STYLES ----*/ /* --Ensures consistent layout across browsers. */
+/*---- --GLOBAL RESET & BASE STYLES ----*/
+/* --Ensures consistent layout across browsers. */
 /**** --Overall structure & layout of the page on the website ****/
-* {  /* --* = All elements */
-  box-sizing: border-box;  /* --When the width is calculated the padding is factored in */
+* {
+  /* --* = All elements */
+  box-sizing: border-box;
+  /* --When the width is calculated the padding is factored in */
 }
 
 body {
-  margin: 0;  /* --Removes the default spacing from browsers */
-  padding: 0;  /* --Removes the default spacing from browsers */
+  margin: 0;
+  /* --Removes the default spacing from browsers */
+  padding: 0;
+  /* --Removes the default spacing from browsers */
   min-height: 100vh;
-  font-family: 'Inria Sans', serif; /* --!--Inria Sans dose not work*/ /* -Fallback fonts are used if Inria Sans does not load */
-  color: var(--color_text);
-  background: var(--color_bg);
+  font-family: "Inria Sans", serif;
+  /* --!--Inria Sans dose not work*/
+  /* -Fallback fonts are used if Inria Sans does not load */
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
-
-/*---- PAGE LAYOUT CONTAINER ----*/ /* --Wraps the entire page structure */
+/*---- PAGE LAYOUT CONTAINER ----*/
+/* --Wraps the entire page structure */
 .container {
   min-height: 100vh;
   display: flex;
@@ -46,86 +68,133 @@ body {
   gap: clamp(0.5rem, 1vw, 1rem);
 }
 
-
-/*---- COMPONENTS ----*/ /* --Reusable base style for eg. buttons and links */
-/*---- Button Component ----*/ /** --Basis for buttons and navigation links (links to other pages on the site) **/ /* --!-- This is the complete layout of the Log in and Sign up buttons */
-.btn { 
+/*---- COMPONENTS ----*/
+/* --Reusable base style for eg. buttons and links */
+/*---- Button Components ----*/
+/** --Basis for buttons and navigation links (links to other pages on the site) **/
+/* --!-- This is the complete layout of the Log in and Sign up buttons */
+.btn {
   width: 100px;
   padding: 0.75rem 1rem;
-  border: var(--border_default);
-  border-radius: var(--radius_md);
-  background: var(--color_white);
-  color: var(--color_text);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-text);
   text-decoration: none;
   text-align: center;
   cursor: pointer;
   font: inherit;
 }
 
+.btn:hover {
+  background-color: var(--color-hover-bg-light);
+}
 
-/*---- TOP NAVIGATION (HEADER) ----*/ /* --Main horizontal navigation bar */
+.small_btn {
+  width: 80px;
+  height: 30px;
+  padding: 0.25rem;
+  border: var(--border-small-btn);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.small_btn:hover {
+  background-color: var(--color-hover-bg-light);
+}
+
+/*---- TOP NAVIGATION (HEADER) ----*/
+/* --Main horizontal navigation bar */
 .topbar {
-  background-color: var(--color_primary);
+  background-color: var(--color-primary);
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  gap: var(--gap_between_elements);
+  gap: var(--gap-between-elements);
 }
 
-.topbar_left, .topbar_right { 
+.topbar_left,
+.topbar_right {
   display: flex;
   align-items: center;
-  gap: var(--gap_between_elements);
-  min-width: 0;  /* --Allows flex items to shrink properly */
+  gap: var(--gap-between-elements);
+  min-width: 0;
+  /* --Allows flex items to shrink properly */
 }
 
 /* Left side: logo and navigation */
-.topbar_left {  /* --Logged in: Logo + Back button */ /* --Logged out: Logo */
-  margin: 0.6rem 0 0.6rem var(--margin_sides_largescreen);
+.topbar_left {
+  /* --Logged in: Logo + Back button */
+  /* --Logged out: Logo */
+  margin: 0.6rem 0 0.6rem var(--margin-sides-largescreen);
 }
 
 /* Right side: search, profile, log in, sign up */
-.topbar_right {  /* --Logged in: Search_bar(+ search button) + Profile */ /* --Logged out: Search bar(+ search button) + Log in + sign up buttons*/
-  margin: 0.6rem var(--margin_sides_largescreen) 0.6rem 0;  
+.topbar_right {
+  /* --Logged in: Search_bar(+ search button) + Profile */
+  /* --Logged out: Search bar(+ search button) + Log in + sign up buttons*/
+  margin: 0.6rem var(--margin-sides-largescreen) 0.6rem 0;
 }
 
 /*---- Header Elements (Icons and buttons) ----*/
-.topbar_logo img {  /* --Logo */
-  width: 140px;  /* --Controls size */
-  height: auto;  /* --Keeps aspect ratio */
-  display: block;  /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
+.topbar_logo img {
+  /* --Logo */
+  width: 140px;
+  /* --Controls size */
+  height: auto;
+  /* --Keeps aspect ratio */
+  display: block;
+  /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
 }
 
 .search_bar {
   width: clamp(100px, 25vw, 200px);
   padding: 0.75rem 1rem;
   outline: none;
-  border: var(--border_default);
-  border-radius: var(--radius_md);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
   font: inherit;
 }
 
-/* Search icon button (visible on small screens) */
-.btn_search_icon {
-  display: none;  /* --Hidden by default */
-  padding-left: 0rem;
-  padding-right: 0rem;
+/* --Profile button & Search button */
+.btn_profile,
+.btn_search {
   width: 45px;
   height: 45px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn_profile {  /* --Profile button */
-  padding-left: 0rem;
-  padding-right: 0rem;
-  width: 45px;
+.btn_profile img {
+  width: 80%;
+  height: auto;
 }
 
+.btn_search img {
+  padding: 0.6rem;
+  height: 100%;
+  width: auto;
+}
 
-/*---- MAIN CONTENT AREA (MAIN) ----*/ /* --Uses CSS Grid for layout structure.*/
+.btn_search {
+  display: none;
+  /* --Hidden by default (visible on small screens) */
+}
+
+/*---- MAIN CONTENT AREA (MAIN) ----*/
+/* --Uses CSS Grid for layout structure.*/
 /*** --Structure/layout of the main part of the page ***/
 .main {
-  display: grid;    
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
@@ -133,8 +202,8 @@ body {
     "main_components";
   flex: 1;
   gap: clamp(0.5rem, 1vw, 1rem);
-  margin-left: var(--margin_sides_largescreen);
-  margin-right: var(--margin_sides_largescreen);
+  margin-left: var(--margin-sides-largescreen);
+  margin-right: var(--margin-sides-largescreen);
 }
 
 .heading {
@@ -142,31 +211,32 @@ body {
   text-align: center;
 }
 
-/* Main layout with sidebar (progress section) and content */ /* --Default layout - If a page has a progress_section then it gets a layout with two columns */
+/* Main layout with sidebar (progress section) and content */
+/* --Default layout - If a page has a progress_section then it gets a layout with two columns */
 .main_components {
   grid-area: main_components;
   display: grid;
   grid-template-columns: 260px 1fr;
-  grid-template-areas:
-    "progress_section main_section";
+  grid-template-areas: "progress_section main_section";
   column-gap: 5rem;
 }
 
-/* Fallback layout when no progress section exists */ /* --If progress_section does not exist then switch to a full width layout */
+/* Fallback layout when no progress section exists */
+/* --If progress_section does not exist then switch to a full width layout */
 .main_components:not(:has(.progress_section)) {
   grid-template-columns: 1fr;
-  grid-template-areas:
-      "main_section";
-  margin-top: var(--gap_between_elements);
+  grid-template-areas: "main_section";
+  margin-top: var(--gap-between-elements);
 }
 
-/*---- Progress Section (SIDEBAR, PROGRESS_GRID) ----*/ /*** --Progress bar ***/
+/*---- Progress Section (SIDEBAR, PROGRESS_GRID) ----*/
+/*** --Progress bar ***/
 .progress_section {
   grid-area: progress_section;
   height: fit-content;
-  background-color: var(--color_white);
-  border: 2px solid var(--color_primary);
-  border-radius: var(--radius_md);
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
   padding: 0rem 1rem 1rem;
 }
 
@@ -174,7 +244,8 @@ body {
   text-align: center;
 }
 
-/* Grid layout for progress items */ /** --Layout/structure of the progressbars - Progress bar **/
+/* Grid layout for progress items */
+/** --Layout/structure of the progressbars - Progress bar **/
 .progress_grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -189,16 +260,17 @@ body {
   column-gap: 1.25rem;
 }
 
-.progress_bar, .progress_percentage {
-  color: var(--color_text);
-  text-decoration: none;  
+.progress_bar,
+.progress_percentage {
+  color: var(--color-text);
+  text-decoration: none;
   font: inherit;
 }
 
 /* Progress bar appearance */
 .progress_bar {
-  border: 0.75px solid var(--color_text);
-  border-radius: var(--radius_md);
+  border: 0.75px solid var(--color-text);
+  border-radius: var(--radius-md);
   padding: 0.25rem 1rem;
   text-align: left;
 }
@@ -211,19 +283,21 @@ body {
   justify-self: end;
 }
 
-/* -Smaller (sub-level elements) progress items */ /** --Design of the small progress bars (sub) - Progress bar **/
-.progress_bar.sub, .progress_percentage.sub {
+/* -Smaller (sub-level elements) progress items */
+/** --Design of the small progress bars (sub) - Progress bar **/
+.progress_bar.sub,
+.progress_percentage.sub {
   font-size: 14px;
   margin-top: 0.25rem;
 }
 
 .progress_bar.sub {
-  padding: 0.10rem 1rem;
+  padding: 0.1rem 1rem;
   margin-left: 1rem;
 }
 
 .progress_percentage.sub {
-  padding: 0.10rem 0;
+  padding: 0.1rem 0;
 }
 
 /*---- Main Section ----*/
@@ -231,7 +305,7 @@ body {
   grid-area: main_section;
 }
 
-/* Grid of course cards */
+/*- Grid of course cards -*/
 /** --Course grid - for the pages with a grid of buttons (eg. first semester and front page) **/
 .course_grid {
   display: grid;
@@ -242,40 +316,91 @@ body {
 .course_card {
   min-height: 56px;
   padding: 1rem;
-  border: 2px solid var(--color_primary);
-  border-radius: var(--radius_md);
-  background: var(--color_white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
   text-decoration: none;
-  color: var(--color_text);
+  color: var(--color-text);
   text-align: center;
   font: inherit;
-  transition: transform 0.15s ease, box-shadow 0.15s ease; 
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 /* --The effect when hovering the mouse over one of the buttons on the grid */
 .course_card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow_soft);
+  transform: translateY(-2.5px);
+  /* box-shadow: var(--shadow-soft); */
+  background-color: var(--color-hover-bg);
 }
 
 .course_grid_semester_page {
   grid-template-columns: repeat(2, 1fr);
 }
 
+/*- Dropdown for blocks under DTG -*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdownButton.blocks {
+  width: 100%;
+}
+
+.dropdownButton.blocks:hover {
+  transform: translateY(0);
+  /*box-shadow: none;*/
+}
+
+/* --Hidden by default */
+.dropdown_content {
+  display: none;
+  position: static;
+  top: 100%;
+  right: 0;
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  min-width: 100%;
+  z-index: 2;
+}
+
+/* Links inside dropdown */
+.dropdown_content a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin: 0.35rem 0;
+}
+
+.dropdown_content a:hover {
+  background-color: var(--color-bg);
+}
+
+/* Show dropdown when active */
+.dropdown.active .dropdown_content {
+  display: block;
+}
+
 /*---- FOOTER (FOOTER) ----*/
 .footer {
-  background-color: var(--color_primary);
+  background-color: var(--color-primary);
   display: flex;
   justify-content: space-between;
-  gap: var(--gap_between_elements);
+  gap: var(--gap-between-elements);
 }
 
 .footer_column_left {
-  margin: 0.6rem 0 0.6rem var(--margin_sides_largescreen);
+  margin: 0.6rem 0 0.6rem var(--margin-sides-largescreen);
 }
 
 .footer_column_right {
-  margin: 0.6rem var(--margin_sides_largescreen) 0.6rem 0;
+  margin: 0.6rem var(--margin-sides-largescreen) 0.6rem 0;
 }
 
 /** --Font size and -margin/padding -- Footer **/
@@ -284,14 +409,353 @@ body {
   font-size: 16px;
 }
 
-.footer_column ul, .footer_column li, .footer_column p {
+.footer_column ul,
+.footer_column li,
+.footer_column p {
   margin: 0.35rem 0 0;
 }
 
-.footer_column ul, .footer_column p {
+.footer_column ul,
+.footer_column p {
   padding-left: 1.5rem;
 }
 
+.footer_column a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.footer_column.visible_link a:hover {
+  text-decoration: underline;
+}
+
+.footer_column a:hover,
+.footer_column li:hover {
+  color: var(--color-hover-text);
+}
+
+/*---- PUPUPS, DROPDOWN, & OVERLAYS ----*/
+.popup {
+  width: max-content;
+  height: max-content;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  border: var(--border-dark-background);
+  position: absolute;
+  padding: 0.75rem 1rem;
+}
+
+/*---- Profile Dropdown ----*/
+.profile_dropdown {
+  margin-top: 0.6rem;
+  font-size: 14px;
+  /* 0.7rem */
+}
+
+.profile_dropdown p {
+  margin: 0;
+  padding: 0.6rem 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.btn_delete {
+  border: var(--border-default);
+  background: var(--color-white);
+}
+
+.dropdown.active .profile_dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+/*---- Successfully Deleted Profile Overlay ----*/
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* var(--color-hover-bg) */
+  z-index: 3;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#inside_overlay {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: var(--border-dark-background);
+  padding: 2.5rem;
+  z-index: 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete_profile {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.btn_close {
+  margin-top: auto;
+  /* pushes button to bottom */
+  align-content: center;
+}
+
+.button {
+  width: 100px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-primary-dark);
+}
+
+.button.delete {
+  font-size: 13px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-bg);
+}
+
+.button.logout {
+  font-size: 15px;
+  margin-right: 150px;
+  border: 2px solid var(--color-primary);
+}
+
+.popup.submission_check {
+  width: 564px;
+  height: 210px;
+}
+
+.popup.submission_check p {
+  margin-bottom: 50px;
+  font-size: 25px;
+}
+
+.button.cancel {
+  width: 160px;
+  font-size: 17px;
+  border: 2px solid #dc1919;
+  margin-right: 200px;
+}
+
+.button.submit {
+  width: 160px;
+  font-size: 17px;
+  border: 2px solid;
+}
+
+.popup.submission_succes {
+  width: 773px;
+  height: 561px;
+  font-size: 24px;
+}
+
+.popup.submission_succes h2 {
+  text-align: center;
+}
+
+.popup.submission_succes p {
+  font-size: 26px;
+
+  margin-bottom: 50px;
+}
+
+.popup.submission_succes .question {
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.button.no {
+  font-size: 20px;
+  margin-right: 320px;
+  border: 2px solid var(--color-primary);
+}
+
+.button.yes {
+  width: 300px;
+  font-size: 20px;
+  border: 2px solid var(--color-text);
+}
+
+.signup-container {
+  width: 750px;
+  height: 540px;
+  background-color: var(--color-primary);
+  border-radius: 14px;
+  padding: 2rem 5rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.signup-container h1 {
+  text-align: center;
+  margin-top: auto;
+  font-size: 44px;
+  margin-bottom: 15px;
+    font-family: "Inria Sans", serif;
+
+}
+
+.signup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 2rem;
+}
+
+.signup-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-item label {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: var(--color-text);
+  font-family: "Inria Sans", serif;
+}
+
+.signup-item input {
+  width: 100%;
+  height: 45px;
+  padding: 0 1rem;
+  border: 2px solid var(--color-hover-bg);
+  border-radius: 12px;
+  background-color: var(--color-white);
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  font-family: "Inria Sans", serif;
+}
+
+.signup-item select {
+  width: 100%;
+  height: 45px;
+  padding: 0 1rem;
+  border: 2px solid var(--color-hover-bg);
+  border-radius: 12px;
+  background-color: var(--color-white);
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  color: #6b6b6b;
+}
+
+.signup-role {
+  height: 45px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-hover-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.2rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+.role-option {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.role-option input {
+  width: 18px;
+  height: 18px;
+  margin-top: 10px;
+}
+
+.role-option p {
+  margin-top: 23px;
+  color: #6b6b6b;
+  font-size: 16px;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--color-text);
+  cursor: pointer;
+}
+
+.signup-row-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  grid-column: 1 / 3;
+}
+
+#field {
+  width: 200px;
+  height: 45px;
+  cursor: pointer;
+  font-family: "Inria Sans", serif;
+}
+
+#semester {
+  width: 105px;
+  height: 45px;
+  cursor: pointer;
+  font-family: "Inria Sans", serif;
+}
+
+#university {
+  width: 240px;
+  height: 45px;
+  cursor: pointer;
+  font-family: "Inria Sans", serif;
+}
+
+.emails {
+  grid-column: 1 / 3;
+}
+
+.signup-row-four {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  grid-column: 1 / 3;
+}
+
+.signup-btn {
+  display: block;
+  width: 220px;
+  margin: 1.5rem auto 0; /* centrerer */
+  padding: 0.9rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-hover-bg);
+  border-radius: 12px;
+    font-family: "Inria Sans", serif;
+}
+
+.signup-btn:hover {
+  background-color: var(--color-white);
+}
 
 /*---- RESPONSIVE DESIGN ----*/
 @media screen and (max-width: 900px) {
@@ -300,7 +764,7 @@ body {
     grid-template-columns: 1fr;
     row-gap: clamp(0.5rem, 2vw, 2rem);
   }
-  
+
   /* --The grid of buttons becomes two columns instead of three - on a front page*/
   .course_grid_front_page {
     grid-template-columns: repeat(2, 1fr);
@@ -315,20 +779,22 @@ body {
   }
 
   /* --Show icon instead of search bar */
-  .btn_search_icon {
+  .btn_search {
     display: block;
   }
 
-  /* Stack sidebar and content vertically */ /* --Pages with a sidebar become one column */
+  /* Stack sidebar and content vertically */
+  /* --Pages with a sidebar become one column */
   .main_components {
     grid-template-columns: 1fr;
     grid-template-areas:
       "progress_section"
       "main_section";
-    row-gap: var(--gap_between_elements);
+    row-gap: var(--gap-between-elements);
   }
 
-  /* Progress grid becomes two columns */ /* --The progress bars becomes two columns instead of one */
+  /* Progress grid becomes two columns */
+  /* --The progress bars becomes two columns instead of one */
   .progress_grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -344,12 +810,73 @@ body {
 @media screen and (max-width: 540px) {
   /* Reduce side margins on small screens */
   /* --The left side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_left, .main, .footer_column_left {
-    margin-left: var(--margin_sides_smallscreen);    
+  .topbar_left,
+  .main,
+  .footer_column_left {
+    margin-left: var(--margin-sides-smallscreen);
   }
-  
+
   /* The right side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_right, .main, .footer_column_right {
-    margin-right: var(--margin_sides_smallscreen);    
+  .topbar_right,
+  .main,
+  .footer_column_right {
+    margin-right: var(--margin-sides-smallscreen);
   }
+}
+.block_section {
+  grid-column: 1 / -1;
+  height: auto;
+  width: 900px;
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  padding: 0rem 1rem 1rem;
+}
+
+.lecture_list {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0 0;
+}
+
+.lecture_item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  cursor: pointer;
+}
+
+.lecture_item input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-text)
+}
+.lecture_dropdown {
+  border-bottom: 1px solid var(--color-bg);
+}
+
+.lecture_item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.lecture_content {
+  padding: 0 0 1rem 3rem;
+  accent-color: var(--color-text);
+}
+
+input[type="checkbox"]{
+  cursor: pointer;
+}
+
+.lecture_arrow {
+  transform: rotate(270deg);
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+.lecture_dropdown[open] .lecture_arrow{
+  transform: rotate(360deg);
 }

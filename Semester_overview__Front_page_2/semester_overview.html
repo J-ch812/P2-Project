@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
-  <script src="#.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+  <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
     <title>Exam Ease - Semester Overview</title>  <!-- --Title on the web tab-->
 </head>
-<body>
+<body id="body">
     <div class="container">
         <header class="topbar">
             <div class="topbar_left">
@@ -17,12 +17,29 @@
                         <img src="../imgs/Logo.svg" alt="Exam Ease logo"/>
                     </a>
                 </div>
-                <a href="../index.html" class="btn btn_back">Back</a>
+                <button class="btn btn_back">Back</button>  <!-- Go to the previous page -->
             </div>
             <div class="topbar_right">
-                <button class="btn btn_search_icon">🔍</button>  <!-- --!-- Find a real icon picture for this-->
+                <button class="btn btn_search">
+                    <img src="../imgs/search-icon.webp" alt="Search icon"/>
+                </button>
                 <input class="search_bar" type="text" placeholder="Search"/>
-                <a href="#" class="btn btn_profile">Pf</a>
+                <div class="dropdown">
+                    <button class="btn btn_profile dropdownButton">
+                        <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
+                    </button>
+                    <aside class="popup profile_dropdown dropdown_content">
+                        <p>Username: Sara</p>
+                        <p>E-mail: Sara.hansen@student.aau.dk</p>
+                        <p>School: Aalborg University Copenhagen</p>
+                        <p>Field of study: Software</p>
+                        <p>Semester: 1. Semester</p>
+                        <div class="buttons">
+                            <button class="small_btn btn_logout">Logout</button>
+                            <button class="small_btn btn_delete" onclick="on()">Delete profile</button>
+                        </div>
+                    </aside>
+                </div>
             </div>
         </header>
         <main class="main">
@@ -37,7 +54,7 @@
             <div class="main_components">
                 <section class="main_section">  
                     <section class="course_grid course_grid_front_page">
-                        <a href="#" class="course_card">1. Semester</a>
+                        <a href="../First_semester_page/first_semester.html" class="course_card">1. Semester</a>
                         <a href="#" class="course_card">2. Semester</a>  
                         <a href="#" class="course_card">3. Semester</a>
                         <a href="#" class="course_card">4. Semester</a>                          
@@ -51,17 +68,27 @@
             <div class="footer_column footer_column_left">
                 <h4>Submit your input</h4>
                 <ul>
-                    <li>Submission info</li>
-                    <li>Students – submission form</li>
-                    <li>Professors – submission form</li>
+                    <li><a href="#">Submission info</a></li>
+                    <li><a href="#">Students – submission form</a></li>
+                    <li><a href="#">Professors – submission form</a></li>
                 </ul>
             </div>
-            <div class="footer_column footer_column_right">
+            <div class="footer_column footer_column_right visible_link">
                 <h4>IT support</h4>
-                <p>Tel: +45 00 00 00 00</p>
-                <p>E-mail: itservice@support.dk</p>
+                <p><a href="#">Tel: +45 00 00 00 00</a></p>
+                <p><a href="#">E-mail: itservice@support.dk</a></p>
             </div>
         </footer>
     </div>
+
+    <!-- FULL SCREEN OVERLAY -->
+    <div id="overlay" onclick="off()">
+        <div class="delete_profile" id="inside_overlay" onclick="event.stopPropagation()">
+            <h1>Your profile has been successfully deleted</h1>
+            <!-- <p>Redirecting to front page...</p> --> 
+            <a href="../index.html" class="small_btn btn_close" onclick="off()">Close</a>
+        </div>
+    </div>
+
 </body>
 </html>

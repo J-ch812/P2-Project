@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" /><!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" /> <!-- --Picture on the web tab-->
+	<link rel="stylesheet" href="../style.css" /> <!-- --Linking this file to the CSS file-->
+	<script src="#.js" defer></script> <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+	<title>Delete pop-up</title>
+</head>
+<body>
+	<div class="container">
+
+
+
+    <!-- FULL SCREEN OVERLAY -->
+	<!-- --Include some async code so the backgroud for the overlay is the loggedout front page? -->
+
+
+    <div id="overlay" onclick="off()">
+        <div class="delete_profile" id="inside_overlay" onclick="event.stopPropagation()">
+            <h1>Your profile has been successfully deleted</h1>
+            <!-- <p>Redirecting to front page...</p> --> 
+            <a href="../index.html" class="small_btn btn_close" onclick="off()">Close</a>
+        </div>
+    </div>
+
+
+
+
+	</div>
+</body>
+</html>

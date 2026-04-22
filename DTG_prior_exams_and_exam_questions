@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
-  <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->   
-    <title>Exam Ease - First Semester</title>
+  <script src="#.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->   
+    <title>Exam Ease - DTG Overview</title>
 </head>
 <body>
     <div class="container">
@@ -17,34 +17,17 @@
                         <img src="../imgs/Logo.svg" alt="Exam Ease logo"/>
                     </a>
                 </div>
-                <button class="btn btn_back">Back</button>  <!-- Go to the previous page -->
+                <a href="#" class="btn btn_back">Back</a>  <!-- CHANGE BACK-->
             </div>
             <div class="topbar_right">
+                <button class="btn btn_search_icon">🔍</button>  <!-- --!-- Find a real icon picture for this-->
                 <input class="search_bar" type="text" placeholder="Search"/>
-                <button class="btn btn_search">
-                    <img src="../imgs/search-icon.webp" alt="Search icon"/>
-                </button>
-                <div class="dropdown">
-                    <button class="btn btn_profile dropdownButton">
-                        <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
-                    </button>
-                    <aside class="popup profile_dropdown dropdown_content">
-                        <p>Username: Sara</p>
-                        <p>E-mail: Sara.hansen@student.aau.dk</p>
-                        <p>School: Aalborg University Copenhagen</p>
-                        <p>Field of study: Software</p>
-                        <p>Semester: 1. Semester</p>
-                        <div class="buttons">
-                            <button class="small_btn btn_logout">Logout</button>
-                            <button class="small_btn btn_delete" onclick="on()">Delete profile</button>
-                        </div>
-                    </aside>
-                </div>
+                <a href="#" class="btn btn_profile">Pf</a>
             </div>
         </header>
         <main class="main">
             <section class="heading"> 
-                <h1>First Semester</h1>
+                <h1>DTG - Prior Exams and Exam Questions</h1>
             </section>
             <div class="main_components">
                 <aside class="progress_section">
@@ -54,8 +37,8 @@
                             <div class="progress_item DTG">
                                 <a href="#" class="progress_bar">DTG</a>
                                 <a href="#" class="progress_percentage">0%</a>
-                            </div>
                         </div>
+                    
                         <div class="progress_group P0">
                             <div class="progress_item P0">
                                 <a href="#" class="progress_bar">P0</a>
@@ -80,15 +63,33 @@
                                 <a href="#" class="progress_percentage">0%</a>                              
                             </div>
                         </div>
+                        <!--
+                        -->
                     </section>
                 </aside>
                 <section class="main_section">  
-                    <section class="course_grid course_grid_semester_page">
-                        <a href="../DTG_overview/dtg_overview.html" class="course_card">DTG - The Theoretical Foundations of Computer Science</a>
-                        <a href="#" class="course_card">P0 - First Project</a>  
-                        <a href="#" class="course_card">IMPR - Imperative Programming</a>
-                        <a href="#" class="course_card">P1 - Second Project</a>                          
-                        <a href="#" class="course_card">PBL - Problem Based Learning</a>
+                    <section class="course_grid course_grid_semester_page DTG_overview">
+                        
+                        <div class="course_card">
+                <h3>Questions asked at the oral exam</h3>
+                    <div class="exam_list">
+                        <br><a href="#">Exam 2025</a><br><br>
+                        <a href="#">Exam 2024</a><br><br>
+                        <a href="#">Exam 2023</a><br><br>
+                        <a href="#">Exam 2022</a><br><br>
+                        <a href="#">Exam 2021</a>
+                 </div>
+                 </div>
+                        <div class="course_card">
+                <h3>Written exams - Workshops</h3>
+                 <div class="exam_list">
+                     <br><a href="#">Exam 2025</a><br><br>
+                      <a href="#">Exam 2024</a><br><br>
+                     <a href="#">Exam 2023</a><br><br>
+                     <a href="#">Exam 2022</a><br><br>
+                     <a href="#">Exam 2021</a>
+                 </div>
+             </div>
                     </section>
                 </section>
             </div>
@@ -97,26 +98,17 @@
             <div class="footer_column footer_column_left">
                 <h4>Submit your input</h4>
                 <ul>
-                    <li><a href="#">Submission info</a></li>
-                    <li><a href="#">Students – submission form</a></li>
-                    <li><a href="#">Professors – submission form</a></li>
+                    <li>Submission info</li>
+                    <li>Students – submission form</li>
+                    <li>Professors – submission form</li>
                 </ul>
             </div>
-            <div class="footer_column footer_column_right visible_link">
+            <div class="footer_column footer_column_right">
                 <h4>IT support</h4>
-                <p><a href="#">Tel: +45 00 00 00 00</a></p>
-                <p><a href="#">E-mail: itservice@support.dk</a></p>
+                <p>Tel: +45 00 00 00 00</p>
+                <p>E-mail: itservice@support.dk</p>
             </div>
         </footer>
-    </div>
-
-    <!-- FULL SCREEN OVERLAY -->
-    <div id="overlay" onclick="off()">
-        <div class="delete_profile" id="inside_overlay" onclick="event.stopPropagation()">
-            <h1>Your profile has been successfully deleted</h1>
-            <!-- <p>Redirecting to front page...</p> --> 
-            <a href="../index.html" class="small_btn btn_close" onclick="off()">Close</a>
-        </div>
     </div>
 </body>
 </html>
