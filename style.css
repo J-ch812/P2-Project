@@ -369,6 +369,17 @@ body {
   grid-template-columns: repeat(2, 1fr);
 }
 
+/* --No hover effect on page: DTG - Prior Exams and Exam Questions */
+.course_card.prior_exams{
+  cursor:default;
+}
+
+.course_card.prior_exams:hover{
+  transform: translateY(0);
+  /* box-shadow: var(--shadow-soft); */
+  background-color: var(--color-white);
+}
+
 /*- Dropdown for blocks under DTG -*/
 .dropdown {
   position: relative;

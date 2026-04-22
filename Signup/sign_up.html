@@ -1,158 +1,124 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" />
-    <!-- --Picture on the web tab-->
-    <link rel="stylesheet" href="../style.css" />
-    <!-- --Linking this file to the CSS file-->
-    <script src="../script.js" defer></script>
-    <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
-    <title>Sign up</title>
-  </head>
-  <body>
-    <div class="container">
-      <header class="topbar">
-        <div class="topbar_left">
-          <div class="topbar_logo">
-            <a href="../index.html" aria-label="Go to homepage">
-              <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
-              <img src="../imgs/Logo.svg" alt="Exam Ease logo" />
-            </a>
-          </div>
-        </div>
-        <div class="topbar_right">
-          <button class="btn btn_search">
-            <img src="imgs/search-icon.webp" alt="Search icon" />
-          </button>
-          <input class="search_bar" type="text" placeholder="Search" />
-          <a href="#" class="btn btn_ghost_login">Log in</a>
-          <a href="sign_up.html" class="btn btn_ghost_login"
-            >Sign up</a
-          >
-        </div>
-      </header>
-      <main class="main">
-        <div class="signup-container">
-          <h1>Sign up</h1>
-
-          <div class="signup-grid">
-            <div class="signup-item">
-              <label for="name">First- and last name</label>
-              <input type="text" class="name" placeholder="E.g. Sara Hansen" />
-            </div>
-
-            <div class="signup-item">
-              <label>I am a...</label>
-              <div class="signup-role">
-                <label class="role-option" for="student">
-                  <input type="checkbox" class="checkbox" />
-                  <p>Student</p>
-                </label>
-
-                <label class="role-option" for="professor">
-                  <input type="checkbox" class="checkbox" />
-                  <p>Professor</p>
-                </label>
-              </div>
-            </div>
-
-            <div class="signup-row-two">
-              <div class="signup-item">
-                <label for="university">University</label>
-                <div class="dropdown">
-                  <select name="university" id="university">
-                    <option value="" disabled selected>Select a university</option>
-                      <option value="Aalborg university CPH">
-                        Aalborg University (CPH)
-                      </option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="signup-item">
-                <label for="field" >Field of study</label>
-                <div class="dropdown">
-                  <select name="field" id="field">
-                    <option value="" disabled selected>Select a field of study</option>
-                      <option value="Software">Software, Bachelor</option>
-                      <option value="Cybersecurity">
-                        Cybersecurity, Bachlor
-                      </option>
-                      <option value="Biology">Biology, Bachelor</option>
-                      <option value="Psychology">Psychology, Bachelor</option>
-                      <option value="History">History, Bachelor</option>
-                      <option value="Biotechnology">
-                        Biotechnology, Bachelor
-                      </option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="signup-item semester">
-                <label for="semester">Semester</label>
-                <div class="dropdown">
-                  <select name="semester" id="semester">
-                    <option value="" disabled selected>Select a semester</option>
-                      <option value="1">1. Semester</option>
-                      <option value="2">2. Semester</option>
-                      <option value="3">3. Semester</option>
-                      <option value="4">4. Semester</option>
-                      <option value="5">5. Semester</option>
-                      <option value="6">6. Semester</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="signup-item emails">
-              <label for="email">E-mail</label>
-              <input
-                type="email"
-                class="email"
-                placeholder="E.g. Sara.hansen@student.aau.dk"
-              />
-            </div>
-
-            <div class="signup-row-four">
-              <div class="signup-item">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="E.g. Sara123!" />
-              </div>
-
-              <div class="signup-item">
-                <label for="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  placeholder="E.g. Exam!ease1234"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <a href="../First_semester_page/first_semester.html" class="signup-btn">Sign up</a>
-          </div>
-        </div>
-      </main>
-      <footer class="footer">
-        <div class="footer_column footer_column_left">
-          <h4>Submit your input</h4>
-          <ul>
-            <li><a href="#">Submission information</a></li>
-            <li><a href="#">Students – submission form</a></li>
-            <li><a href="#">Professors – submission form</a></li>
-          </ul>
-        </div>
-        <div class="footer_column footer_column_right visible_link">
-          <h4>IT support</h4>
-          <p><a href="#">Tel: +45 00 00 00 00</a></p>
-          <p><a href="#">E-mail: itservice@support.dk</a></p>
-        </div>
-      </footer>
-    </div>
-  </body>
+<head>
+	<meta charset="UTF-8" /><!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" /><!-- --Picture on the web tab-->
+	<link rel="stylesheet" href="../style.css" /><!-- --Linking this file to the CSS file-->
+	<script src="../script.js" defer></script><!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+	<title>Sign up</title>
+</head>
+<body>
+	<div class="container">
+		<header class="topbar">
+			<div class="topbar_left">
+				<div class="topbar_logo">
+					<a href="../index.html" aria-label="Go to homepage"><!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+						<img src="../imgs/Logo.svg" alt="Exam Ease logo" />
+					</a>
+				</div>
+			</div>
+			<div class="topbar_right">
+				<button class="btn btn_search">
+					<img src="imgs/search-icon.webp" alt="Search icon" />
+				</button>
+				<input class="search_bar" type="text" placeholder="Search" />
+				<a href="#" class="btn btn_ghost_login">Log in</a>
+				<a href="sign_up.html" class="btn btn_ghost_login">Sign up</a>
+			</div>
+		</header>
+		<main class="main">
+			<div class="signup-container">
+				<h1>Sign up</h1>
+				<div class="signup-grid">
+					<div class="signup-item">
+						<label for="name">First- and last name</label>
+						<input type="text" class="name" placeholder="E.g. Sara Hansen" />
+					</div>
+					<div class="signup-item">
+						<label>I am a...</label>
+						<div class="signup-role">
+							<label class="role-option" for="student">
+								<input type="checkbox" class="checkbox" />
+								<p>Student</p>
+							</label>
+							<label class="role-option" for="professor">
+								<input type="checkbox" class="checkbox" />
+								<p>Professor</p>
+							</label>
+						</div>
+					</div>
+					<div class="signup-row-two">
+						<div class="signup-item">
+							<label for="university">University</label>
+							<div class="dropdown">
+								<select name="university" id="university">
+									<option value="" disabled selected>Select a university</option>
+									<option value="Aalborg university CPH">Aalborg University (CPH)</option>
+								</select>
+							</div>
+						</div>
+						<div class="signup-item">
+							<label for="field" >Field of study</label>
+							<div class="dropdown">
+								<select name="field" id="field">
+									<option value="" disabled selected>Select a field of study</option>
+									<option value="Software">Software, Bachelor</option>
+									<option value="Cybersecurity">Cybersecurity, Bachlor</option>
+									<option value="Biology">Biology, Bachelor</option>
+									<option value="Psychology">Psychology, Bachelor</option>
+									<option value="History">History, Bachelor</option>
+									<option value="Biotechnology">Biotechnology, Bachelor</option>
+								</select>
+							</div>
+						</div>
+						<div class="signup-item semester">
+							<label for="semester">Semester</label>
+							<div class="dropdown">
+								<select name="semester" id="semester">
+									<option value="" disabled selected>Select a semester</option>
+									<option value="1">1. Semester</option>
+									<option value="2">2. Semester</option>
+									<option value="3">3. Semester</option>
+									<option value="4">4. Semester</option>
+									<option value="5">5. Semester</option>
+									<option value="6">6. Semester</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="signup-item emails">
+						<label for="email">E-mail</label>
+						<input type="email" class="email" placeholder="E.g. Sara.hansen@student.aau.dk"/>
+					</div>
+					<div class="signup-row-four">
+						<div class="signup-item">
+							<label for="username">Username</label>
+							<input type="text" id="username" placeholder="E.g. Sara123!" />
+						</div>
+						<div class="signup-item">
+							<label for="password">Password</label>
+							<input type="password" id="password" placeholder="E.g. Exam!ease1234"/>
+						</div>
+					</div>
+				</div>
+				<a href="../First_semester_page/first_semester.html" class="signup-btn">Sign up</a>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer_column footer_column_left">
+				<h4>Submissions</h4> <!-- --?-- "Submissions" instead of "Submit Your Input" or something else? -->
+				<ul>
+					<li><a href="#">Submission Information</a></li>
+					<li><a href="#">Submission Form</a></li>
+				</ul>
+			</div>
+			<div class="footer_column footer_column_right visible_link">
+				<h4>IT Support</h4>
+				<p><a href="#">Tel: +45 00 00 00 00</a></p>
+				<p><a href="#">E-mail: itservice@support.dk</a></p>
+			</div>
+		</footer>
+	</div>
+</body>
 </html>

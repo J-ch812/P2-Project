@@ -17,12 +17,29 @@
                         <img src="../imgs/Logo.svg" alt="Exam Ease logo"/>
                     </a>
                 </div>
-                <a href="#" class="btn btn_back">Back</a>  <!-- CHANGE BACK-->
+                <button class="btn btn_back">Back</button> <!-- Go to the previous page -->
             </div>
             <div class="topbar_right">
-                <button class="btn btn_search_icon">🔍</button>  <!-- --!-- Find a real icon picture for this-->
+                <button class="btn btn_search">
+                    <img src="imgs/search-icon.webp" alt="Search icon" />
+                </button>
                 <input class="search_bar" type="text" placeholder="Search"/>
-                <a href="#" class="btn btn_profile">Pf</a>
+                <div class="dropdown">
+                    <button class="btn btn_profile dropdownButton">
+                        <img src="../imgs/profile_icon.svg" alt="Profile icon" />
+                    </button>
+                    <aside class="popup profile_dropdown dropdown_content">
+                        <p>Username: Sara</p>
+                        <p>E-mail: Sara.hansen@student.aau.dk</p>
+                        <p>School: Aalborg University Copenhagen</p>
+                        <p>Field of study: Software</p>
+                        <p>Semester: 1. Semester</p>
+                        <div class="buttons">
+                            <button class="small_btn btn_logout">Logout</button>
+                            <button class="small_btn btn_delete">Delete profile</button>
+                        </div>
+                    </aside>
+                </div>
             </div>
         </header>
         <main class="main">
@@ -35,10 +52,10 @@
                     <section class="progress_grid expanded">
                         <div class="progress_group DTG">
                             <div class="progress_item DTG">
-                                <a href="../DTG_Blocks/DTGBlock1.html" class="progress_bar">DTG</a>
-                                <a href="../DTG_Blocks/DTGBlock1.html" class="progress_percentage">0%</a>
+                                <a href="../DTG_overview/dtg_overview.html" class="progress_bar">DTG</a>
+                                <a href="../DTG_overview/dtg_overview.html" class="progress_percentage">0%</a>
+                            </div>
                         </div>
-                    
                         <div class="progress_group P0">
                             <div class="progress_item P0">
                                 <a href="#" class="progress_bar">P0</a>
@@ -63,50 +80,56 @@
                                 <a href="#" class="progress_percentage">0%</a>                              
                             </div>
                         </div>
-                        <!--
-                        -->
                     </section>
                 </aside>
                 <section class="main_section">  
-                    <section class="course_grid course_grid_semester_page DTG_overview">
-                        
-                        <div class="course_card">
-                <h3>Questions asked at the oral exam</h3>
-                    <div class="exam_list">
-                        <br><a href="#">Exam 2025</a><br><br>
-                        <a href="#">Exam 2024</a><br><br>
-                        <a href="#">Exam 2023</a><br><br>
-                        <a href="#">Exam 2022</a><br><br>
-                        <a href="#">Exam 2021</a>
-                 </div>
-                 </div>
-                        <div class="course_card">
-                <h3>Written exams - Workshops</h3>
-                 <div class="exam_list">
-                     <br><a href="#">Exam 2025</a><br><br>
-                      <a href="#">Exam 2024</a><br><br>
-                     <a href="#">Exam 2023</a><br><br>
-                     <a href="#">Exam 2022</a><br><br>
-                     <a href="#">Exam 2021</a>
-                 </div>
-             </div>
+                    <section class="course_grid course_grid_semester_page">
+                        <div class="course_card prior_exams">
+                            <h3>Questions asked at the oral exam</h3>
+                            <div class="exam_list">
+                                <br>
+                                <a href="#">Exam 2025</a>
+                                <br><br>
+                                <a href="#">Exam 2024</a>
+                                <br><br>
+                                <a href="#">Exam 2023</a>
+                                <br><br>
+                                <a href="#">Exam 2022</a>
+                                <br><br>
+                                <a href="#">Exam 2021</a>
+                            </div>
+                        </div>
+                        <div class="course_card prior_exams">
+                            <h3>Written exams - Workshops</h3>
+                            <div class="exam_list">
+                                <br>
+                                <a href="#">Exam 2025</a>
+                                <br><br>
+                                <a href="#">Exam 2024</a>
+                                <br><br>
+                                <a href="#">Exam 2023</a>
+                                <br><br>
+                                <a href="#">Exam 2022</a>
+                                <br><br>
+                                <a href="#">Exam 2021</a>
+                            </div>
+                        </div>
                     </section>
                 </section>
             </div>
         </main>
         <footer class="footer">
             <div class="footer_column footer_column_left">
-                <h4>Submit your input</h4>
+                <h4>Submissions</h4> <!-- --?-- "Submissions" instead of "Submit Your Input" or something else? -->
                 <ul>
-                    <li>Submission info</li>
-                    <li>Students – submission form</li>
-                    <li>Professors – submission form</li>
+                    <li><a href="#">Submission Information</a></li>
+                    <li><a href="#">Submission Form</a></li>
                 </ul>
             </div>
-            <div class="footer_column footer_column_right">
-                <h4>IT support</h4>
-                <p>Tel: +45 00 00 00 00</p>
-                <p>E-mail: itservice@support.dk</p>
+            <div class="footer_column footer_column_right visible_link">
+                <h4>IT Support</h4>
+                <p><a href="#">Tel: +45 00 00 00 00</a></p>
+                <p><a href="#">E-mail: itservice@support.dk</a></p>
             </div>
         </footer>
     </div>
