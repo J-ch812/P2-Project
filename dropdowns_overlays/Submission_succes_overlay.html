@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /> <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" /> <!-- --Picture on the web tab-->
+    <link rel="stylesheet" href="../style.css" /> <!-- --Linking this file to the CSS file-->
+    <script src="../script.js" defer></script> <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+    <title>Submission successful pop-up</title>
+</head>
+<body>
+
+    <!-- The Submission Was Successful -->
+    <div class="overlay" id="successOverlay">
+        <div class="inside_overlay submission_succes">
+            <h2>Your submission was successful!</h2>
+            <p>
+            Your efforts to help expand and improve the site's contents are greatly appreciated!
+            </p>
+            <p>
+            Our administrators will carefully review your submission and publish any portions that 
+            are deemed appropriate to supplement and enhance the current content of the website.
+            </p>
+            <p class="question">
+            Would you like an email stating what has been published from your submission?
+            </p>
+            <div class="buttons">
+                <!-- --?-- Add Checkboxes: Dont ask me again; yes always -->
+                <button class="md_btn no">No</button>  <!-- Go to the previous page -->
+                <button class="md_btn yes">Yes, I would like an email</button>  <!-- Go to the previous page -->
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
