@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
     <meta charset="UTF-8">  <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
   <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->   
-    <title>Exam Ease - First Semester</title>
+    <title>Exam Information</title>
 </head>
 <body>
     <div class="container">
@@ -20,10 +20,10 @@
                 <button class="btn btn_back">Back</button>  <!-- Go to the previous page -->
             </div>
             <div class="topbar_right">
-                <input class="search_bar" type="text" placeholder="Search"/>
                 <button class="btn btn_search">
                     <img src="../imgs/search-icon.webp" alt="Search icon"/>
                 </button>
+                <input class="search_bar" type="text" placeholder="Search"/>
                 <div class="dropdown">
                     <button class="btn btn_profile dropdownButton">
                         <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
@@ -36,69 +36,98 @@
                         <p>Semester: 1. Semester</p>
                         <div class="buttons">
                             <button class="small_btn btn_logout">Logout</button>
-                            <button class="small_btn btn_delete">Delete profile</button>
+                            <button class="small_btn btn_delete" onclick="on()">Delete profile</button>
                         </div>
                     </aside>
                 </div>
             </div>
         </header>
-        <main class="main">
+            <main class="main">
             <section class="heading"> 
-                <h1>First Semester</h1>
-            </section>
-            <div class="main_components">
+                <h1>DTG - Exam Information</h1>
+                </header>
+                </section>
+
+         
+            
+              <div class="main_components">
                 <aside class="progress_section">
                     <h3>Progress</h3>
                     <section class="progress_grid expanded">
                         <div class="progress_group DTG">
                             <div class="progress_item DTG">
-                                <a href="../DTG_overview/dtg_overview.html" class="progress_bar">DTG</a>
-                                <a href="../DTG_overview/dtg_overview.html" class="progress_percentage">0%</a>
-                            </div>
+                                <a href="#" class="progress_bar">DTG</a>
+                                <a href="#" class="progress_percentage">0%</a>
+                
                         </div>
-                        <div class="progress_group P0">
-                            <div class="progress_item P0">
-                                <a href="#" class="progress_bar">P0</a>
-                                <a href="#" class="progress_percentage">0%</a>                            
-                            </div>
                         </div>
+                        
+
                         <div class="progress_group IMPR">
                             <div class="progress_item IMPR">
                                 <a href="#" class="progress_bar">IMPR</a>
                                 <a href="#" class="progress_percentage">0%</a>                            
                             </div>
+        
                         </div>
-                        <div class="progress_group P1">
-                            <div class="progress_item P1">
-                                <a href="#" class="progress_bar">P1</a>
-                                <a href="#" class="progress_percentage">0%</a>                            
-                            </div>
-                        </div>
+
                         <div class="progress_group PBL">
                             <div class="progress_item PBL">
                                 <a href="#" class="progress_bar">PBL</a>
-                                <a href="#" class="progress_percentage">0%</a>                              
-                            </div>
-                        </div>
-                    </section>
-                </aside>
-                <section class="main_section">  
-                    <section class="course_grid course_grid_semester_page">
-                        <a href="../DTG_overview/dtg_overview.html" class="course_card">DTG - The Theoretical Foundations of Computer Science</a>
-                        <a href="#" class="course_card">P0 - First Project</a>  
-                        <a href="#" class="course_card">IMPR - Imperative Programming</a>
-                        <a href="#" class="course_card">P1 - Second Project</a>                          
-                        <a href="#" class="course_card">PBL - Problem Based Learning</a>
-                    </section>
-                </section>
-            </div>
-        </main>
-        <footer class="footer">
+                                <a href="#" class="progress_percentage">0%</a>    
+                                <div>
+
+                                </div>    
+                                </section>
+                                    </aside>
+                                        
+                           
+                        
+                            <div class="main_section">
+                                <div class="progress_section">
+                                <p><strong>Course credits:</strong> 5 ECTS points</p>
+<p><strong>Grading:</strong> 7-point scale</p>
+<p><strong>Censor:</strong> Internal exam</p>
+<p><strong>Exam format:</strong> Oral, individual</p>
+<p><strong>Exam duration:</strong> 15 minutes (including deliberation)</p>
+<p><strong>Preparation:</strong> Before the exam, prepare a 5-minute presentation for each workshops key points.</p>
+</div> 
+
+
+
+<div class="Exam Information">
+
+<div class="progress_section">
+    <h3>Exam procedure:</h3>
+    
+
+    
+<ul>
+<li>You will randomly draw one of the workshops to present.</li>
+<li>No preparation time after drawing.</li>
+<li>Present only key points, no code.</li>
+<li>Discussion may include other course topics.</li>
+<li>Final grade follows the 7-point scale.</li>
+</ul>
+</div>
+
+
+                            
+
+                    
+
+
+
+
+
+                        </main>
+                    <footer class="footer">
             <div class="footer_column footer_column_left">
-                <h4>Submissions</h4>
+                <h4>Submit your input</h4>
                 <ul>
-                    <li><a href="#">Submission Information</a></li>
-                    <li><a href="#">Submission Form</a></li>
+                    <li><a href="#">Submission info</a></li>
+                    <li><a href="#">Students – submission form</a></li>
+                    <li><a href="#">Professors – submission form</a></li>
                 </ul>
             </div>
             <div class="footer_column footer_column_right visible_link">
@@ -110,3 +139,27 @@
     </div>
 </body>
 </html>
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+                            
+            
+          

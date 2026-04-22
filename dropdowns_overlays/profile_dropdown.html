@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" /> <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" /> <!-- --Picture on the web tab-->
+	<link rel="stylesheet" href="../style.css" /> <!-- --Linking this file to the CSS file-->
+  <script src="../script.js" defer></script> <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+	<title>Profile dropdown</title>
+</head>
+<body>
+	<div class="container">
+		<div class="dropdown">
+			<button class="btn btn_profile dropdownButton">
+				<img src="../imgs/profile_icon.svg" alt="Profile icon"/>
+			</button>
+			<aside class="popup profile_dropdown dropdown_content">
+				<p>Username: Sara</p>
+				<p>E-mail: Sara.hansen@student.aau.dk</p>
+				<p>School: Aalborg University Copenhagen</p>
+				<p>Field of study: Software</p>
+				<p>Semester: 1. Semester</p>
+				<div class="buttons">
+					<button class="small_btn btn_logout">Logout</button>
+					<button class="small_btn btn_delete">Delete profile</button>
+
+				</div>
+			</aside>
+		</div>
+	</div>
+</body>
+</html>
