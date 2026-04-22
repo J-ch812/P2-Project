@@ -1,6 +1,8 @@
 // GO BACK FUNCTION
 // --Go back to previous page when clicking on the Back button
   // --?-- if the same page is loaded multiple times it just goes back to the same page.
+  // --?-- if the page is opened on another page than index.html and the user have gone to other pages and then back to the original page the button will not go to index.com (as it should based on the fallback), because the history is longer than 1, but there is no more history.
+  // --?-- maybe we should include a history tracker or something.
 // The buttions in which the goBack() function is applied
 document.querySelectorAll(".btn_back, .md_btn.no, .md_btn.yes").forEach(btn => {
   btn.addEventListener("click", goBack);
