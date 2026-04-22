@@ -823,3 +823,60 @@ input[type="checkbox"] {
     margin-right: var(--margin-sides-smallscreen);
   }
 }
+.block_section {
+  grid-column: 1 / -1;
+  height: auto;
+  width: 900px;
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  padding: 0rem 1rem 1rem;
+}
+
+.lecture_list {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0 0;
+}
+
+.lecture_item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  cursor: pointer;
+}
+
+.lecture_item input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-text)
+}
+.lecture_dropdown {
+  border-bottom: 1px solid var(--color-bg);
+}
+
+.lecture_item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.lecture_content {
+  padding: 0 0 1rem 3rem;
+  accent-color: var(--color-text);
+}
+
+input[type="checkbox"]{
+  cursor: pointer;
+}
+
+.lecture_arrow {
+  transform: rotate(270deg);
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+.lecture_dropdown[open] .lecture_arrow{
+  transform: rotate(360deg);
+}
