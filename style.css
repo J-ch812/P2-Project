@@ -935,3 +935,64 @@ input[type="checkbox"] {
 .lecture_dropdown[open] .lecture_arrow {
   transform: rotate(180deg);
 }
+
+.submission h1 {
+  text-align: center;
+  font-size: 42px;
+  margin: 10px 10px 25px;
+  color: var(--color-text);
+}
+
+.submission_box {
+  width: 1170px;
+  height: 490px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 65px 20px 0px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.btn_submission {
+  width: 105px;
+  height: 45px;
+  border-radius: var(--radius-md);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-primary);
+  padding: 10px 14px;
+}
+
+.submission_header {
+  background-color: var(--color-primary);
+  margin-top: 20px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.submission_header h2 {
+  font-size: 20px;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.submission_row {
+  width: 100x;
+  margin: 10px 0px 0px 10px;
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 20px;
+  color: var(--color-text);
+}
+
+.date {
+  color: #6f7f88;
+}
