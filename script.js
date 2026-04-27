@@ -80,6 +80,7 @@ document.querySelectorAll(".lecture_dropdown").forEach((lecture) => {
   topicCheckboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", () => {
       updateLectureCounter(lecture);
+      saveCurrentBlockCheckboxStates();
       updateBlockProgress();
     });
   });
@@ -98,6 +99,7 @@ document.querySelectorAll(".lecture_dropdown").forEach((lecture) => {
     }
     
     updateLectureCounter(lecture);
+    saveCurrentBlockCheckboxStates();
     updateBlockProgress();
   });
 });
@@ -168,6 +170,43 @@ function getCurrentBlockNumber(){
   return match ? match[1] : null;
 }
 
+// Finds all checkboxes in the lecture list on the actual block-side
+function getCurrentBlockCheckboxes(){
+  return document.querySelectorAll(".lecture_dropdown input[type='checkbox']");
+}
+
+// Saves the states of the checkboxes
+function saveCurrentBlockCheckboxStates(){
+  const currentBlockNumber = getCurrentBlockNumber();
+
+  if(!currentBlockNumber){
+    return;
+  }
+
+  getCurrentBlockCheckboxes().forEach((checkbox, index) => {
+    const checkboxKey = "dtg-block-" + currentBlockNumber + "-checkbox-" + index;
+    localStorage.setItem(checkboxKey, checkbox.checked);
+  });
+}
+
+// Loads the states of the checkboxes
+function loadCurrentBlockCheckboxStates(){
+  const currentBlockNumber = getCurrentBlockNumber();
+
+  if(!currentBlockNumber){
+    return;
+  }
+
+  getCurrentBlockCheckboxes().forEach((checkbox, index) => {
+    const checkboxKey = "dtg-block-" + currentBlockNumber + "-checkbox-" + index;
+    const savedState = localStorage.getItem(checkboxKey);
+
+    if(savedState !== null){
+      checkbox.checked = savedState === "true";
+    }
+  });
+}
+
 // Updates the overall DTG progress based on the four block percentages shown in the sidebar.
 function updateDTGProgress(){
   const dtgBar = document.querySelector(".dtg_bar");
@@ -219,4 +258,5 @@ function loadSavedBlockProgress(){
 
 // Initialize the progress bars when the page loads.
 loadSavedBlockProgress();
+loadCurrentBlockCheckboxStates();
 updateBlockProgress();
