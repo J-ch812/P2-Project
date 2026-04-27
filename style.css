@@ -1,8 +1,12 @@
 /*---- GLOBAL VARIABLES (Style Sheet) ----*/
 /* --Reusable values for colors, spacing, borders, and shadows. Helps maintain consistency and simplifies updates. */
 :root {
-  --color-bg: hsl(201, 49%, 88%);  /* --color-bg: #cbe2ed; */  /* A lighter version of --color-primary */
-  --color-primary: hsl(201, 49%, 62%);  /* --color-primary: #76add0; */
+  --color-bg: hsl(
+    201,
+    49%,
+    88%
+  ); /* --color-bg: #cbe2ed; */ /* A lighter version of --color-primary */
+  --color-primary: hsl(201, 49%, 62%); /* --color-primary: #76add0; */
   /*--color-primary-dark: #5e9bc3;*/
   --color-hover-bg: hsl(201, 49%, 82%);
   /* A less lighter version of --color-primary */
@@ -16,7 +20,11 @@
   /* --The margin size between the sides of the screen and the first element */
   --margin-sides-largescreen: 2.5rem; /* --Used as primary (default) */
   --margin-sides-smallscreen: 1.25rem; /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
-  --gap-between-elements: clamp(0.5rem, 2.5vw, 2.5rem); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
+  --gap-between-elements: clamp(
+    0.5rem,
+    2.5vw,
+    2.5rem
+  ); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
 
   /* Borders & radius */
   --border-default: 1.5px solid var(--color-bg);
@@ -88,7 +96,9 @@ body {
   width: 160px;
   height: 40px;
   padding: 0.25rem;
-  border: var(--border-dark-background);  /* border: 2px solid var(--color-primary-dark);*/
+  border: var(
+    --border-dark-background
+  ); /* border: 2px solid var(--color-primary-dark);*/
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -123,8 +133,6 @@ body {
   background-color: var(--color-hover-bg-light);
 }
 
-
-
 /*---- TOP NAVIGATION (HEADER) ----*/ /* --Main horizontal navigation bar */
 .topbar {
   background-color: var(--color-primary);
@@ -135,7 +143,8 @@ body {
   gap: var(--gap-between-elements);
 }
 
-.topbar_left, .topbar_right {
+.topbar_left,
+.topbar_right {
   display: flex;
   align-items: center;
   gap: var(--gap-between-elements);
@@ -245,11 +254,11 @@ body {
   margin-bottom: 20px;
 }
 
-.dtg_info h3{
+.dtg_info h3 {
   margin-top: 5px;
 }
 
-.dtg_info li{
+.dtg_info li {
   margin-top: 15px;
 }
 
@@ -292,7 +301,8 @@ body {
   column-gap: 1.25rem;
 }
 
-.progress_bar, .progress_percentage {
+.progress_bar,
+.progress_percentage {
   color: var(--color-text);
   text-decoration: none;
   font: inherit;
@@ -321,7 +331,8 @@ body {
 }
 
 /* -Smaller (sub-level elements) progress items */ /** --Design of the small progress bars (sub) - Progress bar **/
-.progress_bar.sub, .progress_percentage.sub {
+.progress_bar.sub,
+.progress_percentage.sub {
   font-size: 14px;
   margin-top: 0.25rem;
 }
@@ -434,8 +445,6 @@ body {
   display: block;
 }
 
-
-
 /*---- FOOTER (FOOTER) ----*/
 .footer {
   background-color: var(--color-primary);
@@ -483,8 +492,6 @@ body {
   color: var(--color-hover-text);
 }
 
-
-
 /*---- POPUPS, DROPDOWN, & OVERLAYS ----*/
 .popup {
   width: max-content;
@@ -501,11 +508,25 @@ body {
   margin-top: 0.6rem;
   font-size: 14px;
   /* 0.7rem */
+  width: 280px;
 }
 
 .profile_dropdown p {
   margin: 0;
   padding: 0.6rem 0;
+}
+
+.profile_dropdown a {
+  padding-left: 0px;
+}
+.profile_dropdown h4 {
+  margin-bottom: 10px;
+}
+
+.profile_dropdown hr {
+  width: 70%;
+  border-top: 1px solid black;
+  margin: 10px 0px 0px 0px;
 }
 
 .buttons {
@@ -544,10 +565,10 @@ body {
 }
 
 .overlay.active {
-  display: flex; 
+  display: flex;
 }
 
-.inside_overlay{
+.inside_overlay {
   padding: var(--gap-between-elements);
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
@@ -693,6 +714,10 @@ body {
   font-size: 16px;
 }
 
+.role-option input:checked + p {
+  color: var(--color-text);
+}
+
 input[type="checkbox"] {
   accent-color: var(--color-text);
   cursor: pointer;
@@ -703,6 +728,10 @@ input[type="checkbox"] {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
   grid-column: 1 / 3;
+}
+
+.signup-item [option="value"] {
+  color: var(--color-text);
 }
 
 #field {
@@ -769,11 +798,13 @@ input[type="checkbox"] {
   }
 
   /* --Overlays */
-  .inside_overlay h2{
+  .inside_overlay h2 {
     font-size: large;
   }
-  
-  .md_btn.cancel, .md_btn.submit, .md_btn.no {
+
+  .md_btn.cancel,
+  .md_btn.submit,
+  .md_btn.no {
     width: clamp((90/16) * 1rem, (140/16) * 1vh, (140/16) * 1rem);
   }
 }
@@ -807,7 +838,7 @@ input[type="checkbox"] {
   }
 
   /* --Overlays */
-  .inside_overlay{
+  .inside_overlay {
     padding: var(--margin-sides-smallscreen);
     row-gap: var(--margin-sides-smallscreen);
   }
@@ -823,12 +854,16 @@ input[type="checkbox"] {
 @media screen and (max-width: 540px) {
   /* Reduce side margins on small screens */
   /* --The left side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_left, .main, .footer_column_left {
+  .topbar_left,
+  .main,
+  .footer_column_left {
     margin-left: var(--margin-sides-smallscreen);
   }
 
   /* The right side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_right, .main, .footer_column_right {
+  .topbar_right,
+  .main,
+  .footer_column_right {
     margin-right: var(--margin-sides-smallscreen);
   }
 }

@@ -260,3 +260,12 @@ function loadSavedBlockProgress(){
 loadSavedBlockProgress();
 loadCurrentBlockCheckboxStates();
 updateBlockProgress();
+
+//Chekbox: select one
+function ChooseOne(id) {
+  for (var i = 1; i <= 2; i++) {
+    //goes through all the boxes and unchek them
+    document.getElementById("Check" + i).checked = false;
+    }
+    document.getElementById(id).checked = true;
+  }
