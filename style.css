@@ -304,7 +304,13 @@ body {
   border-radius: var(--radius-md);
   padding: 0.25rem 1rem;
   text-align: left;
+  background: linear-gradient(
+    to right,
+    var(--color-primary) var(--progress, 0%),
+    var(--color-white) var(--progress, 0%)
+  );
 }
+
 
 /* Percentage text */
 .progress_percentage {
@@ -867,6 +873,9 @@ input[type="checkbox"] {
 }
 
 .lecture_content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   padding: 0 0 1rem 3rem;
   accent-color: var(--color-text);
 }
@@ -875,11 +884,19 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-.lecture_arrow {
-  transform: rotate(270deg);
+.lecture_counter {
   margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+.lecture_arrow {
   transition: transform 0.2s ease;
 }
+
+.invisible_arrow {
+  visibility: hidden;
+}
+
 .lecture_dropdown[open] .lecture_arrow {
-  transform: rotate(360deg);
+  transform: rotate(180deg);
 }
