@@ -219,7 +219,7 @@ function updateDTGProgress(){
   const blockPercentages = [1, 2, 3, 4].map((blockNumber) => {
     const percentageElement = document.querySelector(".block" + blockNumber + "_percentage");
     if(!percentageElement){
-      return 0;
+      return Number(localStorage.getItem("dtg-block-" + blockNumber + "-progress")) || 0;
     }
 
     return Number(percentageElement.textContent.replace("%", "")) || 0;
