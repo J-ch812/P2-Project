@@ -270,6 +270,11 @@ body {
   margin-top: var(--gap-between-elements);
 }
 
+.main_components:has(.progress_section.collapsed) {
+  grid-template-columns: 48px 1fr;
+  column-gap: 2rem;
+}
+
 /*---- Progress Section (SIDEBAR, PROGRESS_GRID) ----*/
 /*** --Progress bar ***/
 .progress_section {
@@ -319,6 +324,41 @@ body {
     var(--color-primary) var(--progress, 0%),
     var(--color-white) var(--progress, 0%)
   );
+}
+
+.progress_section {
+  position: relative;
+}
+
+.progress_toggle_btn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 28px;
+  height: 28px;
+  border: var(--border-small-btn);
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+}
+
+.progress_section.collapsed {
+  width: 48px;
+  min-height: 48px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress_section.collapsed .progress_content {
+  display: none;
+}
+
+.progress_section.collapsed .progress_toggle_btn {
+  position: static;
 }
 
 
@@ -831,6 +871,14 @@ input[type="checkbox"] {
     row-gap: var(--gap-between-elements);
   }
 
+  .main_components:has(.progress_section.collapsed) {
+    grid-template-columns: 1fr;
+  }
+
+  .progress_section.collapsed {
+    justify-self: start;
+  }
+
   /* Progress grid becomes two columns */
   /* --The progress bars becomes two columns instead of one */
   .progress_grid {
@@ -870,7 +918,8 @@ input[type="checkbox"] {
 .block_section {
   grid-column: 1 / -1;
   height: auto;
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
   background-color: var(--color-white);
   border: var(--border-dark-background);
   border-radius: var(--radius-md);
@@ -898,13 +947,6 @@ input[type="checkbox"] {
 }
 .lecture_dropdown {
   border-bottom: 1px solid var(--color-bg);
-}
-
-.lecture_item {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0.75rem 0;
 }
 
 .lecture_content {
