@@ -282,10 +282,8 @@ document.querySelectorAll(".progress_toggle_btn").forEach((toggleProgressBtn) =>
     progressSection.classList.toggle("collapsed");
 
     if (progressSection.classList.contains("collapsed")) {
-      toggleProgressBtn.textContent = ">";
       toggleProgressBtn.setAttribute("aria-label", "Show progress");
     } else {
-      toggleProgressBtn.textContent = "<";
       toggleProgressBtn.setAttribute("aria-label", "Hide progress");
     }
   });

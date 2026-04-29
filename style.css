@@ -332,17 +332,29 @@ body {
 
 .progress_toggle_btn {
   position: absolute;
-  top: 0.4rem;
-  right: 0.4rem;
-  width: 28px;
-  height: 28px;
-  border: var(--border-small-btn);
-  border-radius: 50%;
-  background-color: var(--color-bg);
-  cursor: pointer;
-  font: inherit;
-  line-height: 1;
+  top: 0.25rem;
+  left: 0.4rem;
+  display: grid;
+  place-items: center;
+  font-size: 0;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
+.progress_toggle_btn:hover {
+  background-color: var(--color-hover-bg-light);
+  box-shadow: var(--shadow-soft);
+  transform: scale(1.05);
+}
+
+.progress_toggle_btn::before {
+  content: "<";
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
 
 .progress_section.collapsed {
   width: 48px;
@@ -359,6 +371,10 @@ body {
 
 .progress_section.collapsed .progress_toggle_btn {
   position: static;
+}
+
+.progress_section.collapsed .progress_toggle_btn::before {
+  transform: rotate(180deg);
 }
 
 
