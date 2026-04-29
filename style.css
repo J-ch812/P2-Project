@@ -1053,3 +1053,184 @@ input[type="checkbox"] {
 .date {
   color: #6f7f88;
 }
+
+/* Page layout: stick footer to bottom, don't stretch content */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+/* Submission form specific styles */
+.submission-card {
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.5rem 1.5rem;
+  width: 100%;
+}
+
+.card-hint {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+/* Three dropdown row */
+.select-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.select-row select {
+  width: 100%;
+  height: 38px;
+  padding: 0 0.75rem;
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  font: inherit;
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  appearance: auto;
+}
+
+/* Two-column text area row */
+.text-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.text-row > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.field-label {
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+  color: var(--color-text);
+}
+
+.ta-main {
+  width: 100%;
+  min-height: 220px;
+  padding: 0.6rem 0.75rem;
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 0.9rem;
+  resize: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ta-comment {
+  width: 100%;
+  min-height: 110px;
+  padding: 0.6rem 0.75rem;
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 0.9rem;
+  resize: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Attachment upload box */
+.attach-box {
+  width: 100%;
+  height: 90px;
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: #555;
+  background-color: var(--color-white);
+  box-sizing: border-box;
+}
+
+.attach-box:hover {
+  background-color: var(--color-hover-bg-light);
+}
+
+#fileInput {
+  display: none;
+}
+
+.file-list {
+  margin-top: 0.4rem;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  padding: 0.2rem 0;
+}
+
+.file-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  font-size: 0.8rem;
+}
+
+/* Submit row */
+.submit-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-submit {
+  width: 110px;
+  height: 36px;
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: var(--color-hover-bg-light);
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(60px);
+  background: #333;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
