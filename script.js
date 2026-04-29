@@ -269,3 +269,24 @@ function ChooseOne(id) {
     }
     document.getElementById(id).checked = true;
   }
+
+// Hide and show progressbar
+document.querySelectorAll(".progress_toggle_btn").forEach((toggleProgressBtn) => {
+  toggleProgressBtn.addEventListener("click", () => {
+    const progressSection = toggleProgressBtn.closest(".progress_section");
+
+    if (!progressSection) {
+      return;
+    }
+
+    progressSection.classList.toggle("collapsed");
+
+    if (progressSection.classList.contains("collapsed")) {
+      toggleProgressBtn.textContent = ">";
+      toggleProgressBtn.setAttribute("aria-label", "Show progress");
+    } else {
+      toggleProgressBtn.textContent = "<";
+      toggleProgressBtn.setAttribute("aria-label", "Hide progress");
+    }
+  });
+});
