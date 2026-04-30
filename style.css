@@ -1,18 +1,43 @@
 /*---- GLOBAL VARIABLES (Style Sheet) ----*/
 /* --Reusable values for colors, spacing, borders, and shadows. Helps maintain consistency and simplifies updates. */
 :root {
+<<<<<<< HEAD
   --color_bg: #cbe2ed;
   --color_primary: #76add0;
   --color_primary_dark: #5e9bc3;
   --color_text: #111111;
   --color_white: #ffffff;
+=======
+  --color-bg: hsl(
+    201,
+    49%,
+    88%
+  ); /* --color-bg: #cbe2ed; */ /* A lighter version of --color-primary */
+  --color-primary: hsl(201, 49%, 62%); /* --color-primary: #76add0; */
+  /*--color-primary-dark: #5e9bc3;*/
+  --color-hover-bg: hsl(201, 49%, 82%);
+  /* A less lighter version of --color-primary */
+  --color-hover-text: hsl(45, 100%, 62%);
+  --color-hover-bg-light: hsl(201, 49%, 92%);
+>>>>>>> origin/main
 
   /* Spacing */ 
   /* --The margin size between the sides of the screen and the first element */
+<<<<<<< HEAD
   --margin_sides_largescreen: 2.5rem;  /* --Used as primary (default) */
   --margin_sides_smallscreen: 1.25rem;  /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
   --gap_between_elements: clamp(0.5rem, 2.5vw, 2.5rem);  /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
   
+=======
+  --margin-sides-largescreen: 2.5rem; /* --Used as primary (default) */
+  --margin-sides-smallscreen: 1.25rem; /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
+  --gap-between-elements: clamp(
+    0.5rem,
+    2.5vw,
+    2.5rem
+  ); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
+
+>>>>>>> origin/main
   /* Borders & radius */
   --border_default: 1.5px solid var(--color_bg);
   --radius_md: 10px;  /* --Border radius of corners */
@@ -62,6 +87,53 @@ body {
   font: inherit;
 }
 
+<<<<<<< HEAD
+=======
+.btn:hover {
+  background-color: var(--color-hover-bg-light);
+}
+
+.md_btn {
+  width: 160px;
+  height: 40px;
+  padding: 0.25rem;
+  border: var(
+    --border-dark-background
+  ); /* border: 2px solid var(--color-primary-dark);*/
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  align-content: center;
+  text-align: center;
+  cursor: pointer;
+  font: inherit;
+  font-size: 17px;
+}
+
+.md_btn:hover {
+  background-color: var(--color-hover-bg);
+}
+
+.small_btn {
+  width: 80px;
+  height: 30px;
+  padding: 0.25rem;
+  border: var(--border-small-btn);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.small_btn:hover {
+  background-color: var(--color-hover-bg-light);
+}
+>>>>>>> origin/main
 
 /*---- TOP NAVIGATION (HEADER) ----*/ /* --Main horizontal navigation bar */
 .topbar {
@@ -73,7 +145,12 @@ body {
   gap: var(--gap_between_elements);
 }
 
+<<<<<<< HEAD
 .topbar_left, .topbar_right { 
+=======
+.topbar_left,
+.topbar_right {
+>>>>>>> origin/main
   display: flex;
   align-items: center;
   gap: var(--gap_between_elements);
@@ -152,7 +229,30 @@ body {
   column-gap: 5rem;
 }
 
+<<<<<<< HEAD
 /* Fallback layout when no progress section exists */ /* --If progress_section does not exist then switch to a full width layout */
+=======
+.dtg_info {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.5rem;
+  width: 940px;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.dtg_info h3 {
+  margin-top: 5px;
+}
+
+.dtg_info li {
+  margin-top: 15px;
+}
+
+/* Fallback layout when no progress section exists */
+/* --If progress_section does not exist then switch to a full width layout */
+>>>>>>> origin/main
 .main_components:not(:has(.progress_section)) {
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -160,7 +260,17 @@ body {
   margin-top: var(--gap_between_elements);
 }
 
+<<<<<<< HEAD
 /*---- Progress Section (SIDEBAR, PROGRESS_GRID) ----*/ /*** --Progress bar ***/
+=======
+.main_components:has(.progress_section.collapsed) {
+  grid-template-columns: 260px 1fr;
+  column-gap: 5rem;
+}
+
+/*---- Progress Section (SIDEBAR, PROGRESS_GRID) ----*/
+/*** --Progress bar ***/
+>>>>>>> origin/main
 .progress_section {
   grid-area: progress_section;
   height: fit-content;
@@ -189,9 +299,16 @@ body {
   column-gap: 1.25rem;
 }
 
+<<<<<<< HEAD
 .progress_bar, .progress_percentage {
   color: var(--color_text);
   text-decoration: none;  
+=======
+.progress_bar,
+.progress_percentage {
+  color: var(--color-text);
+  text-decoration: none;
+>>>>>>> origin/main
   font: inherit;
 }
 
@@ -201,7 +318,66 @@ body {
   border-radius: var(--radius_md);
   padding: 0.25rem 1rem;
   text-align: left;
+  background: linear-gradient(
+    to right,
+    var(--color-primary) var(--progress, 0%),
+    var(--color-white) var(--progress, 0%)
+  );
 }
+
+.progress_section {
+  position: relative;
+}
+
+.progress_toggle_btn {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.4rem;
+  display: grid;
+  place-items: center;
+  font-size: 0;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.progress_toggle_btn:hover {
+  background-color: var(--color-hover-bg-light);
+  box-shadow: var(--shadow-soft);
+  transform: scale(1.05);
+}
+
+.progress_toggle_btn::before {
+  content: "<";
+  font-size: 1rem;
+  transition: transform 0.25s ease;
+}
+
+
+.progress_section.collapsed {
+  width: 260px;
+  min-height: 48px;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.progress_section.collapsed .progress_content {
+  display: none;
+}
+
+.progress_section.collapsed .progress_toggle_btn {
+  position: static;
+}
+
+.progress_section.collapsed .progress_toggle_btn::before {
+  transform: rotate(180deg);
+}
+
 
 /* Percentage text */
 .progress_percentage {
@@ -212,7 +388,8 @@ body {
 }
 
 /* -Smaller (sub-level elements) progress items */ /** --Design of the small progress bars (sub) - Progress bar **/
-.progress_bar.sub, .progress_percentage.sub {
+.progress_bar.sub,
+.progress_percentage.sub {
   font-size: 14px;
   margin-top: 0.25rem;
 }
@@ -262,6 +439,68 @@ body {
   grid-template-columns: repeat(2, 1fr);
 }
 
+<<<<<<< HEAD
+=======
+/* --No hover effect on page: DTG - Prior Exams and Exam Questions */
+.course_card.prior_exams{
+  cursor:default;
+}
+
+.course_card.prior_exams:hover{
+  transform: translateY(0);
+  /* box-shadow: var(--shadow-soft); */
+  background-color: var(--color-white);
+}
+
+/*- Dropdown for blocks under DTG -*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdownButton.blocks {
+  width: 100%;
+}
+
+.dropdownButton.blocks:hover {
+  transform: translateY(0);
+  /*box-shadow: none;*/
+}
+
+/* --Hidden by default */
+.dropdown_content {
+  display: none;
+  position: static;
+  top: 100%;
+  right: 0;
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  min-width: 100%;
+  z-index: 2;
+}
+
+/* Links inside dropdown */
+.dropdown_content a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin: 0.35rem 0;
+}
+
+.dropdown_content a:hover {
+  background-color: var(--color-bg);
+}
+
+/* Show dropdown when active */
+.dropdown.active .dropdown_content {
+  display: block;
+}
+
+>>>>>>> origin/main
 /*---- FOOTER (FOOTER) ----*/
 .footer {
   background-color: var(--color_primary);
@@ -292,6 +531,314 @@ body {
   padding-left: 1.5rem;
 }
 
+<<<<<<< HEAD
+=======
+.footer_column a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.footer_column.visible_link a:hover {
+  text-decoration: underline;
+}
+
+.footer_column a:hover,
+.footer_column li:hover {
+  color: var(--color-hover-text);
+}
+
+/*---- POPUPS, DROPDOWN, & OVERLAYS ----*/
+.popup {
+  width: max-content;
+  height: max-content;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  border: var(--border-dark-background);
+  position: absolute;
+  padding: 0.75rem 1rem;
+}
+
+/*---- Profile Dropdown ----*/
+.profile_dropdown {
+  margin-top: 0.6rem;
+  font-size: 14px;
+  /* 0.7rem */
+  width: 280px;
+}
+
+.profile_dropdown p {
+  margin: 0;
+  padding: 0.6rem 0;
+}
+
+.profile_dropdown a {
+  padding-left: 0px;
+}
+.profile_dropdown h4 {
+  margin-bottom: 10px;
+}
+
+.profile_dropdown hr {
+  width: 70%;
+  border-top: 1px solid black;
+  margin: 10px 0px 0px 0px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  width: 100%;
+}
+
+.btn_delete {
+  border: var(--border-default);
+  background-color: var(--color-white);
+}
+
+.dropdown.active .profile_dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+/*---- Overlay ----*/
+.overlay {
+  position: fixed;
+  /* display: none; */
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* var(--color-hover-bg) */
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.inside_overlay {
+  padding: var(--gap-between-elements);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: var(--border-dark-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*---- Successfully Deleted Profile Overlay ----*/
+.delete_profile {
+  width: min(65%, 700px);
+  row-gap: var(--margin-sides-largescreen);
+}
+
+/*---- Submission Check Overlay ----*/
+.submission_check {
+  max-height: 210px;
+  width: min(50%, 600px);
+  row-gap: var(--margin-sides-largescreen);
+}
+
+.md_btn.cancel {
+  border-color: #dc1919;
+}
+
+.md_btn.submit {
+  border-color: var(--color-text);
+}
+
+.inside_overlay h2 {
+  margin: 0;
+}
+
+/*---- Submission Successful Overlay ----*/
+.submission_succes {
+  width: min(65%, 800px); /*   width: 773px; */
+  max-height: 562px;
+}
+
+.md_btn.yes {
+  width: 200px;
+  /* border-color: var(--color-text); */
+}
+
+.submission_succes .question {
+  font-weight: 600;
+}
+
+.signup-container {
+  width: 750px;
+  height: 540px;
+  background-color: var(--color-primary);
+  border-radius: 14px;
+  padding: 2rem 5rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.signup-container h1 {
+  text-align: center;
+  margin-top: auto;
+  font-size: 44px;
+  margin-bottom: 15px;
+  font-family: "Inria Sans", serif;
+}
+
+.signup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 2rem;
+}
+
+.signup-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-item label {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: var(--color-text);
+  font-family: "Inria Sans", serif;
+}
+
+.signup-item input {
+  width: 100%;
+  height: 45px;
+  padding: 0 1rem;
+  border: 2px solid var(--color-hover-bg);
+  border-radius: 12px;
+  background-color: var(--color-white);
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  font-family: "Inria Sans", serif;
+}
+
+.signup-item select {
+  width: 100%;
+  height: 45px;
+  padding: 0 1rem;
+  border: 2px solid var(--color-hover-bg);
+  border-radius: 12px;
+  background-color: var(--color-white);
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  color: #6b6b6b;
+}
+
+.signup-role {
+  height: 45px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-hover-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.2rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+.role-option {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.role-option input {
+  width: 18px;
+  height: 18px;
+  margin-top: 10px;
+}
+
+.role-option p {
+  margin-top: 23px;
+  color: #6b6b6b;
+  font-size: 16px;
+}
+
+.role-option input:checked + p {
+  color: var(--color-text);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--color-text);
+  cursor: pointer;
+}
+
+.signup-row-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  grid-column: 1 / 3;
+}
+
+.signup-item [option="value"] {
+  color: var(--color-text);
+}
+
+#field {
+  width: 198px;
+  height: 45px;
+  cursor: pointer;
+  font-family: "Inria Sans", serif;
+}
+
+#semester {
+  width: 155px;
+  height: 45px;
+  cursor: pointer;
+  font-family: "Inria Sans", serif;
+}
+#university {
+  width: 206px;
+  height: 45px;
+  cursor: pointer;
+  font-family: "Inria Sans", serif;
+}
+
+.emails {
+  grid-column: 1 / 3;
+}
+
+.signup-row-four {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  grid-column: 1 / 3;
+}
+
+.signup-btn {
+  display: block;
+  width: 220px;
+  margin: 1.5rem auto 0; /* centrerer */
+  padding: 0.9rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-hover-bg);
+  border-radius: 12px;
+  font-family: "Inria Sans", serif;
+}
+
+.signup-btn:hover {
+  background-color: var(--color-white);
+}
+>>>>>>> origin/main
 
 /*---- RESPONSIVE DESIGN ----*/
 @media screen and (max-width: 900px) {
@@ -305,6 +852,20 @@ body {
   .course_grid_front_page {
     grid-template-columns: repeat(2, 1fr);
   }
+<<<<<<< HEAD
+=======
+
+  /* --Overlays */
+  .inside_overlay h2 {
+    font-size: large;
+  }
+
+  .md_btn.cancel,
+  .md_btn.submit,
+  .md_btn.no {
+    width: clamp((90/16) * 1rem, (140/16) * 1vh, (140/16) * 1rem);
+  }
+>>>>>>> origin/main
 }
 
 @media screen and (max-width: 710px) {
@@ -328,10 +889,32 @@ body {
     row-gap: var(--gap_between_elements);
   }
 
+<<<<<<< HEAD
   /* Progress grid becomes two columns */ /* --The progress bars becomes two columns instead of one */
   .progress_grid {
     grid-template-columns: repeat(2, 1fr);
   }
+=======
+  .main_components:has(.progress_section.collapsed) {
+    grid-template-columns: 1fr;
+  }
+
+  .progress_section.collapsed {
+    justify-self: start;
+  }
+
+  /* Progress grid becomes two columns */
+  /* --The progress bars becomes two columns instead of one */
+  .progress_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --Overlays */
+  .inside_overlay {
+    padding: var(--margin-sides-smallscreen);
+    row-gap: var(--margin-sides-smallscreen);
+  }
+>>>>>>> origin/main
 }
 
 @media screen and (max-width: 610px) {
@@ -344,11 +927,19 @@ body {
 @media screen and (max-width: 540px) {
   /* Reduce side margins on small screens */
   /* --The left side margins are changed to become slimmer - sides of the screen to the first element */
+<<<<<<< HEAD
   .topbar_left, .main, .footer_column_left {
     margin-left: var(--margin_sides_smallscreen);    
+=======
+  .topbar_left,
+  .main,
+  .footer_column_left {
+    margin-left: var(--margin-sides-smallscreen);
+>>>>>>> origin/main
   }
   
   /* The right side margins are changed to become slimmer - sides of the screen to the first element */
+<<<<<<< HEAD
   .topbar_right, .main, .footer_column_right {
     margin-right: var(--margin_sides_smallscreen);    
   }
@@ -362,6 +953,23 @@ body {
   padding: 30px;
   border-radius: 10px;
   border: 2px solid var(--color_primary);
+=======
+  .topbar_right,
+  .main,
+  .footer_column_right {
+    margin-right: var(--margin-sides-smallscreen);
+  }
+}
+.block_section {
+  grid-column: 1 / -1;
+  height: auto;
+  width: 100%;
+  max-width: 900px;
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  padding: 0rem 1rem 1rem;
+>>>>>>> origin/main
 }
 
   .main section {
@@ -440,6 +1048,7 @@ color: #111111; /* skriftfarven */
 
 }
 
+<<<<<<< HEAD
 .login_actions p {
 font-size: 16px; 
 }
@@ -448,8 +1057,276 @@ font-size: 16px;
   text-decoration: underline;
   margin-top: 15px;
   text-align: left; 
+=======
+.lecture_content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 0 1rem 3rem;
+  accent-color: var(--color-text);
+>>>>>>> origin/main
 }
 
 
+<<<<<<< HEAD
 
 
+=======
+.lecture_counter {
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+.lecture_arrow {
+  transition: transform 0.2s ease;
+}
+
+.invisible_arrow {
+  visibility: hidden;
+}
+
+.lecture_dropdown[open] .lecture_arrow {
+  transform: rotate(180deg);
+}
+
+.submission h1 {
+  text-align: center;
+  margin: 30px 10px 20px;
+  color: var(--color-text);
+}
+
+.submission_box {
+  width: 1170px;
+  height: 490px;
+  margin: 0px auto 0px;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 65px 20px 0px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.btn_submission {
+  width: 105px;
+  height: 45px;
+  border-radius: var(--radius-md);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-primary);
+  padding: 10px 14px;
+}
+
+.submission_header {
+  background-color: var(--color-primary);
+  margin-top: 20px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.submission_header h2 {
+  font-size: 20px;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.submission_row {
+  width: 100x;
+  margin: 10px 0px 0px 10px;
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 20px;
+  color: var(--color-text);
+}
+
+.date {
+  color: #6f7f88;
+}
+
+/* Page layout: stick footer to bottom, don't stretch content */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+/* Submission form specific styles */
+.submission-card {
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.5rem 1.5rem;
+  width: 100%;
+}
+
+.card-hint {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+/* Three dropdown row */
+.select-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.select-row select {
+  width: 100%;
+  height: 38px;
+  padding: 0 0.75rem;
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  font: inherit;
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  appearance: auto;
+}
+
+/* Two-column text area row */
+.text-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.text-row > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.field-label {
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+  color: var(--color-text);
+}
+
+.ta-main {
+  width: 100%;
+  min-height: 220px;
+  padding: 0.6rem 0.75rem;
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 0.9rem;
+  resize: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ta-comment {
+  width: 100%;
+  min-height: 110px;
+  padding: 0.6rem 0.75rem;
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 0.9rem;
+  resize: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Attachment upload box */
+.attach-box {
+  width: 100%;
+  height: 90px;
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: #555;
+  background-color: var(--color-white);
+  box-sizing: border-box;
+}
+
+.attach-box:hover {
+  background-color: var(--color-hover-bg-light);
+}
+
+#fileInput {
+  display: none;
+}
+
+.file-list {
+  margin-top: 0.4rem;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  padding: 0.2rem 0;
+}
+
+.file-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  font-size: 0.8rem;
+}
+
+/* Submit row */
+.submit-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-submit {
+  width: 110px;
+  height: 36px;
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: var(--color-hover-bg-light);
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(60px);
+  background: #333;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+>>>>>>> origin/main
