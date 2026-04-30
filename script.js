@@ -271,17 +271,34 @@ function ChooseOne(id) {
   }
 
 // Hide and show progressbar
+const progressStorageKey = "progressbar-collapsed";
+
+document.querySelectorAll(".progress_section").forEach((progressSection) => {
+  const toggleProgressBtn = progressSection.querySelector(".progress_toggle_btn");
+  
+  if(localStorage.getItem(progressStorageKey) === "true"){
+    progressSection.classList.add("collapsed");
+
+    if(toggleProgressBtn){
+      toggleProgressBtn.setAttribute("aria-label", "show progress");
+    }
+  }
+});
+
 document.querySelectorAll(".progress_toggle_btn").forEach((toggleProgressBtn) => {
   toggleProgressBtn.addEventListener("click", () => {
     const progressSection = toggleProgressBtn.closest(".progress_section");
 
-    if (!progressSection) {
+    if(!progressSection){
       return;
     }
 
     progressSection.classList.toggle("collapsed");
 
-    if (progressSection.classList.contains("collapsed")) {
+    const isCollapsed = progressSection.classList.contains("collapsed");
+    localStorage.setItem(progressStorageKey, isCollapsed);
+
+    if (isCollapsed) {
       toggleProgressBtn.setAttribute("aria-label", "Show progress");
     } else {
       toggleProgressBtn.setAttribute("aria-label", "Hide progress");
