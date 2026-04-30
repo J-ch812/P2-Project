@@ -4,188 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student – Submission Form</title>
-  <link rel="stylesheet" href="Styles/Styles.css" />
-  <style>
-    /* Page layout: stick footer to bottom, don't stretch content */
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .main {
-      flex: 1;
-    }
-
-    /* Submission form specific styles */
-    .submission-card {
-      background-color: var(--color-white);
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      padding: 1.2rem 1.5rem 1.5rem;
-      width: 100%;
-    }
-
-    .card-hint {
-      margin: 0 0 1rem;
-      font-size: 0.95rem;
-    }
-
-    /* Three dropdown row */
-    .select-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .select-row select {
-      width: 100%;
-      height: 38px;
-      padding: 0 0.75rem;
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      background-color: var(--color-white);
-      font: inherit;
-      font-size: 0.9rem;
-      color: #555;
-      cursor: pointer;
-      appearance: auto;
-    }
-
-    /* Two-column text area row */
-    .text-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .field-label {
-      font-size: 0.88rem;
-      margin-bottom: 0.35rem;
-      color: var(--color-text);
-    }
-
-    .ta-main {
-      width: 100%;
-      height: 220px;
-      padding: 0.6rem 0.75rem;
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      font: inherit;
-      font-size: 0.9rem;
-      resize: vertical;
-      box-sizing: border-box;
-    }
-
-    .ta-comment {
-      width: 100%;
-      height: 110px;
-      padding: 0.6rem 0.75rem;
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      font: inherit;
-      font-size: 0.9rem;
-      resize: vertical;
-      box-sizing: border-box;
-    }
-
-    /* Attachment upload box */
-    .attach-box {
-      width: 100%;
-      height: 90px;
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.3rem;
-      cursor: pointer;
-      font-size: 0.82rem;
-      color: #555;
-      background-color: var(--color-white);
-      box-sizing: border-box;
-    }
-
-    .attach-box:hover {
-      background-color: var(--color-hover-bg-light);
-    }
-
-    #fileInput {
-      display: none;
-    }
-
-    .file-list {
-      margin-top: 0.4rem;
-    }
-
-    .file-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.82rem;
-      padding: 0.2rem 0;
-    }
-
-    .file-item button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #999;
-      font-size: 0.8rem;
-    }
-
-    /* Submit row */
-    .submit-row {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .btn-submit {
-      width: 110px;
-      height: 36px;
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      background-color: var(--color-white);
-      color: var(--color-text);
-      font: inherit;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-
-    .btn-submit:hover {
-      background-color: var(--color-hover-bg-light);
-    }
-
-    /* Toast notification */
-    .toast {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%) translateY(60px);
-      background: #333;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius-md);
-      font-size: 0.9rem;
-      opacity: 0;
-      transition: opacity 0.3s, transform 0.3s;
-      pointer-events: none;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-  </style>
+  <link rel="stylesheet" href="../style.css" />
+ 
 </head>
 <body>
 
 <!-- NAV / TOPBAR -->
 <nav class="topbar">
   <div class="topbar_left">
-    <div class="topbar_logo"><img src="logo.svg" alt="Logo" /></div>
+    <div class="topbar_logo"><img src="../imgs/Logo.svg" alt="Logo" /></div>
     <button class="btn">Back</button>
   </div>
   <div class="topbar_right">
@@ -196,7 +23,7 @@
       </svg>
     </button>
     <button class="btn btn_profile">
-      <img src="profile_icon.svg" alt="Profile" width="18" height="18" />
+      <img src="../imgs/profile_icon.svg" alt="Profile" width="18" height="18" />
     </button>
   </div>
 </nav>
@@ -241,17 +68,20 @@
         </div>
 
         <!-- Text areas -->
+        <!-- Row 1: Full width main content -->
+        <div style="margin-bottom:1rem;">
+          <div class="field-label">Your content</div>
+          <textarea class="ta-main" placeholder="Type here…" oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"></textarea>
+        </div>
+
+        <!-- Row 2: Comments + Attachments side by side -->
         <div class="text-row">
           <div>
-            <div class="field-label">Your content</div>
-            <textarea class="ta-main" placeholder="Type here…"></textarea>
+            <div class="field-label">Additional comments or suggestions</div>
+            <textarea class="ta-comment" placeholder="Type here…" oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"></textarea>
           </div>
           <div>
-            <div class="field-label">Additional comments or suggestions</div>
-            <textarea class="ta-comment" placeholder="Type here…"></textarea>
-
-            <!-- Attachments -->
-            <div class="field-label" style="margin-top:10px;">Attachments</div>
+            <div class="field-label">Attachments</div>
             <div class="attach-box" id="attachBox" onclick="document.getElementById('fileInput').click()">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                 <polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/>
