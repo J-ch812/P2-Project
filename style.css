@@ -679,8 +679,10 @@ body {
 }
 
 .signup-container {
-  width: 750px;
-  height: 560px;
+ width: 100%;
+max-width: 750px;
+min-height: 560px;
+height: auto;
   background-color: var(--color-primary);
   border-radius: 14px;
   padding: 2rem 5rem;
