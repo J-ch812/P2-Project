@@ -1,11 +1,7 @@
 /*---- GLOBAL VARIABLES (Style Sheet) ----*/
 /* --Reusable values for colors, spacing, borders, and shadows. Helps maintain consistency and simplifies updates. */
 :root {
-  --color-bg: hsl(
-    201,
-    49%,
-    88%
-  ); /* --color-bg: #cbe2ed; */ /* A lighter version of --color-primary */
+  --color-bg: hsl(201, 49%, 88%); /* --color-bg: #cbe2ed; */ /* A lighter version of --color-primary */
   --color-primary: hsl(201, 49%, 62%); /* --color-primary: #76add0; */
   /*--color-primary-dark: #5e9bc3;*/
   --color-hover-bg: hsl(201, 49%, 82%);
@@ -20,11 +16,7 @@
   /* --The margin size between the sides of the screen and the first element */
   --margin-sides-largescreen: 2.5rem; /* --Used as primary (default) */
   --margin-sides-smallscreen: 1.25rem; /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
-  --gap-between-elements: clamp(
-    0.5rem,
-    2.5vw,
-    2.5rem
-  ); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
+  --gap-between-elements: clamp(0.5rem, 2.5vw, 2.5rem); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
 
   /* Borders & radius */
   --border-default: 1.5px solid var(--color-bg);
@@ -36,7 +28,7 @@
   /* --Border radius of corners on OVERLAY */
 
   /* Effects */
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.38);
+  /*--shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.38);*/
 }
 
 /*---- --GLOBAL RESET & BASE STYLES ----*/
@@ -44,19 +36,14 @@
 /**** --Overall structure & layout of the page on the website ****/
 * {
   /* --* = All elements */
-  box-sizing: border-box;
-  /* --When the width is calculated the padding is factored in */
+  box-sizing: border-box;  /* --When the width is calculated the padding is factored in */
 }
 
 body {
-  margin: 0;
-  /* --Removes the default spacing from browsers */
-  padding: 0;
-  /* --Removes the default spacing from browsers */
+  margin: 0;  /* --Removes the default spacing from browsers */
+  padding: 0;  /* --Removes the default spacing from browsers */
   min-height: 100vh;
-  font-family: "Inria Sans", serif;
-  /* --!--Inria Sans dose not work*/
-  /* -Fallback fonts are used if Inria Sans does not load */
+  font-family: "Inria Sans", serif;  /* --!--Inria Sans dose not work*/ /* -Fallback fonts are used if Inria Sans does not load */
   color: var(--color-text);
   background-color: var(--color-bg);
 }
@@ -96,9 +83,7 @@ body {
   width: 160px;
   height: 40px;
   padding: 0.25rem;
-  border: var(
-    --border-dark-background
-  ); /* border: 2px solid var(--color-primary-dark);*/
+  border: var(--border-dark-background); /* border: 2px solid var(--color-primary-dark);*/
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -133,6 +118,9 @@ body {
   background-color: var(--color-hover-bg-light);
 }
 
+
+
+
 /*---- TOP NAVIGATION (HEADER) ----*/ /* --Main horizontal navigation bar */
 .topbar {
   background-color: var(--color-primary);
@@ -143,8 +131,7 @@ body {
   gap: var(--gap-between-elements);
 }
 
-.topbar_left,
-.topbar_right {
+.topbar_left, .topbar_right {
   display: flex;
   align-items: center;
   gap: var(--gap-between-elements);
@@ -153,9 +140,7 @@ body {
 }
 
 /* Left side: logo and navigation */
-.topbar_left {
-  /* --Logged in: Logo + Back button */
-  /* --Logged out: Logo */
+.topbar_left {  /* --Logged in: Logo + Back button */  /* --Logged out: Logo */
   margin: 0.6rem 0 0.6rem var(--margin-sides-largescreen);
 }
 
@@ -187,8 +172,7 @@ body {
 }
 
 /* --Profile button & Search button */
-.btn_profile,
-.btn_search {
+.btn_profile, .btn_search {
   width: 45px;
   height: 45px;
   padding: 0;
@@ -227,6 +211,9 @@ body {
   gap: clamp(0.5rem, 1vw, 1rem);
   margin-left: var(--margin-sides-largescreen);
   margin-right: var(--margin-sides-largescreen);
+
+
+  margin-bottom: var(--margin-sides-largescreen); /**************************************************/
 }
 
 .heading {
@@ -240,34 +227,23 @@ body {
   grid-area: main_components;
   display: grid;
   grid-template-columns: 260px 1fr;
-  grid-template-areas: "progress_section main_section";
+  grid-template-areas: 
+    "progress_section main_section";
   column-gap: 5rem;
 }
 
-.dtg_info {
-  background-color: var(--color-white);
-  border: 2px solid var(--color-primary);
-  border-radius: var(--radius-md);
-  padding: 1.2rem 1.5rem;
-  width: 940px;
-  height: 250px;
-  margin-bottom: 20px;
-}
-
-.dtg_info h3 {
-  margin-top: 5px;
-}
-
-.dtg_info li {
-  margin-top: 15px;
-}
 
 /* Fallback layout when no progress section exists */
 /* --If progress_section does not exist then switch to a full width layout */
 .main_components:not(:has(.progress_section)) {
   grid-template-columns: 1fr;
-  grid-template-areas: "main_section";
+  grid-template-areas:
+    "main_section";
   margin-top: var(--gap-between-elements);
+}
+
+.main_components.no_top_margin{
+  margin-top: 0;
 }
 
 .main_components:has(.progress_section.collapsed) {
@@ -306,8 +282,7 @@ body {
   column-gap: 1.25rem;
 }
 
-.progress_bar,
-.progress_percentage {
+.progress_bar, .progress_percentage {
   color: var(--color-text);
   text-decoration: none;
   font: inherit;
@@ -355,7 +330,6 @@ body {
   transition: transform 0.25s ease;
 }
 
-
 .progress_section.collapsed {
   width: 260px;
   min-height: 48px;
@@ -379,7 +353,6 @@ body {
   transform: rotate(180deg);
 }
 
-
 /* Percentage text */
 .progress_percentage {
   width: fit-content;
@@ -389,8 +362,7 @@ body {
 }
 
 /* -Smaller (sub-level elements) progress items */ /** --Design of the small progress bars (sub) - Progress bar **/
-.progress_bar.sub,
-.progress_percentage.sub {
+.progress_bar.sub, .progress_percentage.sub {
   font-size: 14px;
   margin-top: 0.25rem;
 }
@@ -454,6 +426,29 @@ body {
   /* box-shadow: var(--shadow-soft); */
   background-color: var(--color-white);
 }
+
+
+/* -DTG Information page */
+.dtg_info {
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-md);
+  padding: 0rem 1.5rem 1.2rem 1.5rem; /*    padding: 0rem 1rem 1rem;    ******//**************************************************/
+  height: max-content;
+}
+
+.dtg_info.one{
+  margin-bottom: 20px;
+}
+
+.dtg_info h3 {
+  margin-bottom: 5px;
+}
+
+.dtg_info li {
+   margin-top: 10px;
+}
+
 
 /*- Dropdown for blocks under DTG -*/
 .dropdown {
@@ -842,6 +837,80 @@ input[type="checkbox"] {
   background-color: var(--color-white);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Submission info Page*/
+.big_box {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: var(--border-dark-background);
+  padding: 30px;
+  justify-self: center;
+  width: 80%;
+  line-height: 1.5;
+}
+
+.small_submit_header.one, .big_box h3, .big_box p {
+  margin: 0;
+}
+
+.small_submit_header.one{
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.big_box h3 {
+  margin-top: 10px;
+}
+
+.big_box p {
+  font-size: 18px;
+}
+
+.small_text.one, .small_text.two {
+  margin-bottom: 10px;
+  font-size: 14px;  /*The same as 10.5pt - pt is used in e.g. words and drev*/ 
+}
+
+.md_btn.submission{
+  block-size: fit-content;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*---- RESPONSIVE DESIGN ----*/
 @media screen and (max-width: 900px) {
   /* --The grid of buttons becomes one column instead of two - on a semester page*/
@@ -855,14 +924,17 @@ input[type="checkbox"] {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* -Submission info page*/
+  .big_box{
+    width: 100%;
+  }
+
   /* --Overlays */
   .inside_overlay h2 {
     font-size: large;
   }
 
-  .md_btn.cancel,
-  .md_btn.submit,
-  .md_btn.no {
+  .md_btn.cancel, .md_btn.submit, .md_btn.no {
     width: clamp((90/16) * 1rem, (140/16) * 1vh, (140/16) * 1rem);
   }
 }
@@ -920,19 +992,22 @@ input[type="checkbox"] {
 @media screen and (max-width: 540px) {
   /* Reduce side margins on small screens */
   /* --The left side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_left,
-  .main,
-  .footer_column_left {
+  .topbar_left, .main, .footer_column_left {
     margin-left: var(--margin-sides-smallscreen);
   }
 
   /* The right side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_right,
-  .main,
-  .footer_column_right {
+  .topbar_right, .main, .footer_column_right {
     margin-right: var(--margin-sides-smallscreen);
   }
 }
+
+
+
+
+
+
+
 .block_section {
   grid-column: 1 / -1;
   height: auto;
