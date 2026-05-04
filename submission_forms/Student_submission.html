@@ -1,33 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student – Submission Form</title>
-  <link rel="stylesheet" href="../style.css" />
- 
+    <meta charset="UTF-8">  <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
+    <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
+    <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+    <title>Exam Ease - Submission Information</title>  <!-- --Title on the web tab-->
 </head>
 <body>
+    <div class="container">
+        <header class="topbar">
+            <div class="topbar_left">
+                <div class="topbar_logo">
+                    <a href="../index.html" aria-label="Go to homepage">    <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                        <img src="../imgs/Logo.svg" alt="Exam Ease logo"/>
+                    </a>
+                </div>
+                <button class="btn btn_back">Back</button>  <!-- Go to the previous page -->
+            </div>
+            <div class="topbar_right">
+                <button class="btn btn_search">
+                    <img src="../imgs/search-icon.webp" alt="Search icon"/>
+                </button>
+                <input class="search_bar" type="text" placeholder="Search"/>
+                <div class="dropdown">
+                    <button class="btn btn_profile dropdownButton">
+                        <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
+                    </button>
+                    <aside class="popup profile_dropdown dropdown_content">
+                        <p>Sara123!</p>
+                        <hr />
+                        <h4><a href="../my_submission/my_submission.html">My submissions</a></h4>
+                        <hr />
+                        <h4>Profile</h4>
+                        <p>Sara Hansen</p>
+                        <p>Sara.hansen@student.aau.dk</p>
+                        <p>Aalborg University Copenhagen</p>
+                        <p>Software, bachelor</p>
+                        <p>1. Semester</p>
+                        <p>Student</p>
+                        <div class="buttons">
+                            <button class="small_btn btn_logout">Logout</button>
+                            <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </header>
 
-<!-- NAV / TOPBAR -->
-<nav class="topbar">
-  <div class="topbar_left">
-    <div class="topbar_logo"><img src="../imgs/Logo.svg" alt="Logo" /></div>
-    <button class="btn">Back</button>
-  </div>
-  <div class="topbar_right">
-    <input class="search_bar" type="text" placeholder="Search" />
-    <button class="btn btn_search">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-    </button>
-    <button class="btn btn_profile">
-      <img src="../imgs/profile_icon.svg" alt="Profile" width="18" height="18" />
-    </button>
-  </div>
-</nav>
-
+        
 <!-- MAIN -->
 <div class="main">
   <div class="heading" style="margin: 0.5rem 0;">

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
-    <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->   
-    <title>Exam Ease - First Semester</title>
+    <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+    <title>Exam Ease - Submission Information</title>  <!-- --Title on the web tab-->
 </head>
 <body>
     <div class="container">
@@ -20,10 +20,10 @@
                 <button class="btn btn_back">Back</button>  <!-- Go to the previous page -->
             </div>
             <div class="topbar_right">
-                <input class="search_bar" type="text" placeholder="Search"/>
                 <button class="btn btn_search">
                     <img src="../imgs/search-icon.webp" alt="Search icon"/>
                 </button>
+                <input class="search_bar" type="text" placeholder="Search"/>
                 <div class="dropdown">
                     <button class="btn btn_profile dropdownButton">
                         <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
@@ -49,58 +49,41 @@
             </div>
         </header>
         <main class="main">
-            <section class="heading"> 
-                <h1>First Semester</h1>
+            <section class="heading">
+                <h1>Submission Information</h1>
             </section>
-            <div class="main_components">
-                <aside class="progress_section">
-                    <button class="progress_toggle_btn" aria-label="Hide progress">
-                        &lt;
-                    </button>
-                    <div class="progress_content">
-                        <h3>Progress</h3>
-
-                        <section class="progress_grid expanded">
-                        <div class="progress_group DTG">
-                            <div class="progress_item DTG">
-                                <a href="../DTG_overview/dtg_overview.html" class="progress_bar dtg_bar">DTG</a>
-                                <a href="../DTG_overview/dtg_overview.html" class="progress_percentage dtg_percentage">0%</a>
-                            </div>
-                        </div>
-                        <div class="progress_group P0">
-                            <div class="progress_item P0">
-                                <a href="#" class="progress_bar">P0</a>
-                                <a href="#" class="progress_percentage">0%</a>                            
-                            </div>
-                        </div>
-                        <div class="progress_group IMPR">
-                            <div class="progress_item IMPR">
-                                <a href="#" class="progress_bar">IMPR</a>
-                                <a href="#" class="progress_percentage">0%</a>                            
-                            </div>
-                        </div>
-                        <div class="progress_group P1">
-                            <div class="progress_item P1">
-                                <a href="#" class="progress_bar">P1</a>
-                                <a href="#" class="progress_percentage">0%</a>                            
-                            </div>
-                        </div>
-                        <div class="progress_group PBL">
-                            <div class="progress_item PBL">
-                                <a href="#" class="progress_bar">PBL</a>
-                                <a href="#" class="progress_percentage">0%</a>                              
-                            </div>
-                        </div>
-                    </section>
-                    </div>
-                </aside>
-                <section class="main_section">  
-                    <section class="course_grid course_grid_semester_page">
-                        <a href="../DTG_overview/dtg_overview.html" class="course_card">DTG - The Theoretical Foundations of Computer Science</a>
-                        <a href="#" class="course_card">P0 - First Project</a>  
-                        <a href="#" class="course_card">IMPR - Imperative Programming</a>
-                        <a href="#" class="course_card">P1 - Second Project</a>                          
-                        <a href="#" class="course_card">PBL - Problem Based Learning</a>
+            <div class="main_components no_top_margin">
+                <section class="main_section">
+                    <section class="big_box">
+                        <h3 class="small_submit_header one">Submit your own content and feeedback</h3>
+                        <p><strong>This site is largely built with content created by students and is continuously updated with new content.*</strong></p> 
+                        <p>Your submissions and contributions help grow and improve the platform, and are greatly appreciated.**</p>
+                        <p>In order to contribute with content, you must be a registered user. 
+                            This helps ensure the course information submitted is reliable and properly sourced, 
+                            your profile will therefore also be linked to your submissions.
+                        </p>
+                        <br>
+                        <h3>Students</h3>
+                        <p>As a student you can help build and support the site by submitting your own materials and materials from class. 
+                            This can include but is not limited to study lists, guides, and tips or old worksheeets, 
+                            previous exams and exam questions (e.g questions you got asked during an oral exam). 
+                            The submisson form can also be used to report errors or suggested corrections to existing material.
+                        </p>
+                        <br>
+                        <h3>Professors (of the featured courses)</h3>
+                        <p>As a professor you can help supplement the content by submitting feedback or materials. 
+                            This can include but is not limited to reporting errors or issues in existing content, curriculum updates or changes, 
+                            additional material that would benefit students.
+                        </p>
+                        <br>
+                        <br>
+                        <p class="small_text one">*If you only see sparce or no information about a course, it is most likely due to there not having been any submissions on that course. 
+                            However, you can write an e-mail or call IT support if in doubt.
+                        </p>
+                        <p class="small_text two">**By submitting content, you grant the site owners and administrators permission to use, publish, edit, and distribute your materials on this platform. 
+                        Submitted content may be edited and may remain published even if you later delete your account.
+                        </p>
+                        <button class="md_btn submission">Submission Form</button>
                     </section>
                 </section>
             </div>
