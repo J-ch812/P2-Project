@@ -10,15 +10,41 @@
 </head>
 <body>
     <div class="container">
+        
         <header class="topbar">
             <div class="topbar_left">
+                <a href="../index.html" aria-label="Go to homepage" class="brand">  <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                    <img src="../imgs/Logo.svg" alt="Exam Ease logo">
+                    <span class="brand_name">Exam Ease</span>
+                </a>
+                <!-- Normal nav (desktop) -->
+                <div class="nav_links">
+                    <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
+                    <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                    <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                </div>
+                <!-- Dropdown (mobile) -->
+                <div class="dropdown">
+                    <button class="btn nav_dropdown dropdownButton">Menu</button>
+                    <div class="dropdown_content nav_links">
+                        <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
+                        <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                        <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                    </div>
+                </div> 
+            </div>
+
+            <!--
+            <div class="topbar_left">
                 <div class="topbar_logo">
-                    <a href="../index.html" aria-label="Go to homepage">    <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                    <a href="../index.html" aria-label="Go to homepage">  -->  <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->  <!--
                         <img src="../imgs/Logo.svg" alt="Exam Ease logo"/>
                     </a>
                 </div>
-                <button class="btn btn_back">Back</button>  <!-- Go to the previous page -->
-            </div>
+                <button class="btn btn_back">Back</button> --> <!-- Go to the previous page -->  <!--
+            </div>               
+            -->
+
             <div class="topbar_right">
                 <button class="btn btn_search">
                     <img src="../imgs/search-icon.webp" alt="Search icon"/>
@@ -49,9 +75,24 @@
             </div>
         </header>
         <main class="main">
+
+            <section class="heading_wrapper">
+                <h1 class="heading">DTG Information</h1>
+                <div class="breadcrumbs">
+                    <a href="../First_semester_page/first_semester.html">First Semester</a>
+                    <span>/</span>
+                    <a href="../DTG_overview/dtg_overview.html">DTG Overview</a>
+                    <span>/</span>
+                    <span class="current">DTG Information</span>
+                </div>
+            </section>
+
+            <!--
             <section class="heading"> 
                 <h1>DTG Information</h1>
-            </section>
+            </section>         
+            -->
+
             <div class="main_components">
                 <aside class="progress_section">
                     <button class="progress_toggle_btn" aria-label="Hide progress">
@@ -93,35 +134,27 @@
                     </section>
                     </div>
                 </aside>
-                
                 <section class="main_section">  
-
-
-                        <section class="info">
-                            <div class="dtg_info one">
-                                <p><strong>Course credits:</strong> 5 ECTS points</p>
-                                <p><strong>Grading:</strong> 7-point scale</p>
-                                <p><strong>Censor:</strong> Internal exam</p>
-                                <p><strong>Exam format:</strong> Oral, individual</p>
-                                <p><strong>Exam duration:</strong> 15 minutes (including deliberation)</p>
-                                <p><strong>Preparation:</strong> Before the exam, prepare a 5-minute presentation for each workshops key points.</p>
-                            </div>
-
-                            <div class="dtg_info">
-                                <h3>Exam procedure:</h3>
-                                <ul>
-                                    <li>
-                                        You will randomly draw one of the workshops to present.
-                                    </li>
-                                    <li>No preparation time after drawing.</li>
-                                    <li>Present only key points, no code.</li>
-                                    <li>Discussion may include other course topics.</li>
-                                    <li>Final grade follows the 7-point scale.</li>
-                                </ul>
-                            </div>
-                        </section>
-
-                            
+                    <section class="info">
+                        <div class="dtg_info one">
+                            <p><strong>Course credits:</strong> 5 ECTS points</p>
+                            <p><strong>Grading:</strong> 7-point scale</p>
+                            <p><strong>Censor:</strong> Internal exam</p>
+                            <p><strong>Exam format:</strong> Oral, individual</p>
+                            <p><strong>Exam duration:</strong> 15 minutes (including deliberation)</p>
+                            <p><strong>Preparation:</strong> Before the exam, prepare a 5-minute presentation for each workshops key points.</p>
+                        </div>
+                        <div class="dtg_info">
+                            <h3>Exam procedure:</h3>
+                            <ul>
+                                <li>You will randomly draw one of the workshops to present.</li>
+                                <li>No preparation time after drawing.</li>
+                                <li>Present only key points, no code.</li>
+                                <li>Discussion may include other course topics.</li>
+                                <li>Final grade follows the 7-point scale.</li>
+                            </ul>
+                        </div>
+                    </section>
                 </section>
             </div>
         </main>

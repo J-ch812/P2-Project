@@ -154,13 +154,82 @@ body {
 /*---- Header Elements (Icons and buttons) ----*/
 .topbar_logo img {
   /* --Logo */
-  width: 140px;
-  /* --Controls size */
-  height: auto;
-  /* --Keeps aspect ratio */
-  display: block;
-  /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
+  width: 140px;  /* --Controls size */
+  height: auto;  /* --Keeps aspect ratio */
+  display: block;  /* --Cleans up spacing issues: Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
 }
+
+
+
+
+
+/* ----?!---- Start*/
+/* site name, combined with logo */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+}
+
+.brand img {
+  width: 80px; /* smaller than before */
+  height: auto;
+  display: block;
+}
+
+.brand_name {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  min-width: max-content;
+  /* text-transform: uppercase; */
+}
+
+/* Navigation link beside logo */
+/* Default (desktop) */
+.nav_links {
+  display: flex;
+  min-width: max-content;
+}
+
+.nav_links a, .nav_dropdown {
+  width: fit-content;
+  border: #55555500;
+  background-color: #55555500;
+  /* padding: 0.4rem 0.6rem; */
+  /*color: #525960;*/
+}
+
+.nav_links a:hover, .brand:hover {
+  background-color: var(--color-hover-bg-light);
+}
+
+/* Hide dropdown on desktop */
+/* Dropdown styling */
+.nav_dropdown {
+  display: none;
+  position: relative;
+}
+
+.dropdown_content.nav_links {
+  position: absolute;
+  top: 125%;
+  left: 0;
+  width: max-content;
+}
+
+.dropdown_content.nav_links a {
+  display: block;
+  padding: 0.25rem 0.75rem;
+  width: 100%;
+  text-align: left;
+}
+/* ----?!----  slut */
+
+
 
 .search_bar {
   width: clamp(100px, 25vw, 200px);
@@ -197,6 +266,27 @@ body {
   /* --Hidden by default (visible on small screens) */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*---- MAIN CONTENT AREA (MAIN) ----*/
 /* --Uses CSS Grid for layout structure.*/
 /*** --Structure/layout of the main part of the page ***/
@@ -214,12 +304,99 @@ body {
 
 
   margin-bottom: var(--margin-sides-largescreen); /**************************************************/
+
+
 }
 
 .heading {
   grid-area: heading;
   text-align: center;
 }
+
+
+/** The Path/Breadcrumbs **/
+.heading_wrapper {
+  position: relative;
+}
+
+.breadcrumbs {
+  position: absolute;
+  padding-left: 2px;  /* 2px is then alligned with the white part of the progressbar, 0px is then alliged witht the boarder*/
+  top: 57%; /* Same baseline as heading: 57%; Same center as heading 50% (or 49.4 ish) */
+  transform: translateY(-50%);
+  font-size: 14px; 
+
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breadcrumbs.back {
+  /* letter-spacing: 0.08em; */
+  /*  text-transform: uppercase; */
+}
+
+.breadcrumbs.back .arrow {
+  font-size: 1.2rem;
+  line-height: 0;
+}
+
+/* Links */
+.breadcrumbs a {
+  text-decoration: none;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* Spacing between items */
+.breadcrumbs span {
+  margin: 0 0.25rem;
+}
+
+/* Current page */
+.breadcrumbs .current {
+  font-weight: 500;
+}
+
+.breadcrumbs.back:hover {
+  text-decoration: underline;
+}
+
+
+/* Instead of writing / manually: */
+/*
+.breadcrumb a::after {
+  content: " /";
+  margin-left: 0.25rem;
+}
+
+.breadcrumb a:last-of-type::after {
+  content: "";
+}
+  This avoids extra <span> elements.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Main layout with sidebar (progress section) and content */
 /* --Default layout - If a page has a progress_section then it gets a layout with two columns */
@@ -461,10 +638,12 @@ body {
   width: 100%;
 }
 
+/* ----?!----
 .dropdownButton.blocks:hover {
   transform: translateY(0);
-  /*box-shadow: none;*/
 }
+*/
+
 
 /* --Hidden by default */
 .dropdown_content {
@@ -903,15 +1082,34 @@ input[type="checkbox"] {
 
 
 
-
-
-
-
-
-
-
-
 /*---- RESPONSIVE DESIGN ----*/
+
+/* ----?!---- start*/
+/** The Path/Breadcrumbs **/
+@media screen and (max-width: 1000px) {
+
+  /** The Path/Breadcrumbs **/
+  .main_components:has(.progress_section) {
+    margin-top: var(--gap-between-elements);
+  }
+
+  .heading_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .breadcrumbs {
+    position: static;
+    transform: none;
+    /* margin-top: 0.25rem; */
+    text-align: center;
+    padding-left: 0;
+  }
+}
+/* ----?!---- end*/
+
+
 @media screen and (max-width: 900px) {
   /* --The grid of buttons becomes one column instead of two - on a semester page*/
   .course_grid_semester_page {
@@ -938,6 +1136,20 @@ input[type="checkbox"] {
     width: clamp((90/16) * 1rem, (140/16) * 1vh, (140/16) * 1rem);
   }
 }
+
+/* ----?!---- start*/
+@media screen and (max-width: 800px) {
+  .nav_links {
+    display: none;
+  }
+
+  .nav_dropdown {
+    display: block;
+  }
+}
+/* ----?!---- end */
+
+
 
 @media screen and (max-width: 710px) {
   /* Replace search bar with icon */
