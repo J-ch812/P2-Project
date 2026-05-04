@@ -282,13 +282,13 @@ function updateProgressToggleState(toggleProgressBtn, isCollapsed){
     toggleProgressBtn.setAttribute("aria-label", "Show progress");
 
     if(tooltipBox){
-      tooltipBox.textContent = "Show progress bar.";
+      tooltipBox.textContent = "Show progress bar";
     }
   } else {
     toggleProgressBtn.setAttribute("aria-label", "Hide progress");
 
     if(tooltipBox){
-      tooltipBox.textContent = "Hide progress bar.";
+      tooltipBox.textContent = "Hide progress bar";
     }
   }
 }

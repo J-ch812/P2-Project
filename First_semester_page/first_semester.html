@@ -12,18 +12,32 @@
     <div class="container">
         <header class="topbar">
             <div class="topbar_left">
-                <div class="topbar_logo">
-                    <a href="../index.html" aria-label="Go to homepage">    <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
-                        <img src="../imgs/Logo.svg" alt="Exam Ease logo"/>
-                    </a>
+                <a href="../Semester_overview__Front_page_2/semester_overview.html" aria-label="Go to homepage" class="brand">
+                    <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                    <img src="../imgs/Logo.svg" alt="Exam Ease logo">
+                    <span class="brand_name">Exam Ease</span>
+                </a>
+                <!-- Normal nav (desktop) -->
+                <div class="nav_links">
+                    <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
+                    <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                    <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                 </div>
-                <button class="btn btn_back">Back</button>  <!-- Go to the previous page -->
+                <!-- Dropdown (mobile) -->
+                <div class="dropdown">
+                    <button class="btn nav_dropdown dropdownButton">Menu</button>
+                    <div class="dropdown_content nav_links">
+                        <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
+                        <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                        <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                    </div>
+                </div>
             </div>
             <div class="topbar_right">
-                <input class="search_bar" type="text" placeholder="Search"/>
                 <button class="btn btn_search">
                     <img src="../imgs/search-icon.webp" alt="Search icon"/>
                 </button>
+                <input class="search_bar" type="text" placeholder="Search" />
                 <div class="dropdown">
                     <button class="btn btn_profile dropdownButton">
                         <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
@@ -33,15 +47,14 @@
                         <hr />
                         <h4><a href="../my_submission/my_submission.html">My submissions</a></h4>
                         <hr />
-                        <h4>Profile</h4>
+                        <h4>Profile (Student)</h4>
                         <p>Sara Hansen</p>
                         <p>Sara.hansen@student.aau.dk</p>
                         <p>Aalborg University Copenhagen</p>
-                        <p>Software, bachelor</p>
                         <p>1. Semester</p>
-                        <p>Student</p>
+                        <p>Software, Bachelor</p>
                         <div class="buttons">
-                            <button class="small_btn btn_logout">Logout</button>
+                            <button class="small_btn btn_logout"><a href="../index.html">Logout</a></button>
                             <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
                         </div>
                     </aside>
@@ -49,8 +62,14 @@
             </div>
         </header>
         <main class="main">
-            <section class="heading"> 
-                <h1>First Semester</h1>
+            <section class="heading_wrapper">
+                <h1 class="heading">First Semester</h1>
+                <div class="breadcrumbs back">
+                    <a href="../Semester_overview__Front_page_2/semester_overview.html">
+                        <span class="arrow">‹</span> <!-- &larr; -->
+                        Back to Homepage <!-- Semester Overview page-->
+                    </a>
+                </div>
             </section>
             <div class="main_components">
                 <aside class="progress_section">
@@ -60,12 +79,11 @@
                         </button>
 
                         <div class="progress_toggle_tooltip_box">
-                            Hide progress bar.
+                            Hide progress bar
                         </div>
                     </div>
                     <div class="progress_content">
                         <h3>Progress</h3>
-
                         <section class="progress_grid expanded">
                         <div class="progress_group DTG tooltip_container">
                             <div class="progress_item DTG">
@@ -73,7 +91,7 @@
                                 <a href="../DTG_overview/dtg_overview.html" class="progress_percentage dtg_percentage">0%</a>
                             </div>
                             <div class="tooltip_box">
-                                Navigate to DTG page.
+                                Navigate to DTG Overview
                             </div>
                         </div>
                         <div class="progress_group P0">

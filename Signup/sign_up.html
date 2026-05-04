@@ -11,13 +11,25 @@
 <body>
 	<div class="container">
 		<header class="topbar">
-			<div class="topbar_left">
-				<div class="topbar_logo">
-					<a href="../index.html" aria-label="Go to homepage"><!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
-						<img src="../imgs/Logo.svg" alt="Exam Ease logo" />
-					</a>
-				</div>
-			</div>
+            <div class="topbar_left">
+                <a href="../index.html" aria-label="Go to homepage" class="brand">  <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                    <img src="../imgs/Logo.svg" alt="Exam Ease logo">
+                    <span class="brand_name">Exam Ease</span>
+                </a>
+                <!-- Normal nav (desktop) -->
+                <div class="nav_links">
+                    <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                    <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                </div>
+                <!-- Dropdown (mobile) -->
+                <div class="dropdown">
+                    <button class="btn nav_dropdown dropdownButton">Menu</button>
+                    <div class="dropdown_content nav_links">
+                        <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                        <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                    </div>
+                </div> 
+            </div>
 			<div class="topbar_right">
 				<button class="btn btn_search">
 					<img src="../imgs/search-icon.webp" alt="Search icon" />

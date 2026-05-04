@@ -1,149 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" />
-  <link rel="stylesheet" href="../style.css" />
-  <script src="File_handeling.js" defer></script>
-  <title>Professor – Submission Form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="File_handeling.js" defer></script>
+    <script src="../script.js" defer></script>
+    <title>Exam Ease - Professor – Submission Form</title>
 </head>
 <body>
-
-<div class="container">
-
-  <!-- TOPBAR -->
-  <header class="topbar">
-    <div class="topbar_left">
-      <div class="topbar_logo">
-        <a href="../index.html" aria-label="Go to homepage">
-          <img src="../imgs/Logo.svg" alt="Exam Ease logo" />
-        </a>
-      </div>
-      <button class="btn btn_back">Back</button>
-    </div>
-    <div class="topbar_right">
-      <button class="btn btn_search">
-        <img src="../imgs/search-icon.webp" alt="Search icon" />
-      </button>
-      <input class="search_bar" type="text" placeholder="Search" />
-      <div class="dropdown">
-        <button class="btn btn_profile dropdownButton">
-          <img src="../imgs/profile_icon.svg" alt="Profile icon" />
-        </button>
-        <aside class="popup profile_dropdown dropdown_content">
-          <p>Sara123!</p>
-          <hr />
-          <h4><a href="/My submission/my_submission.html">My submission</a></h4>
-          <hr />
-          <h4>Profile</h4>
-          <p>Sara Hansen</p>
-          <p>Sara.hansen@student.aau.dk</p>
-          <p>Aalborg University Copenhagen</p>
-          <p>Software, bachelor</p>
-          <p>1. Semester</p>
-          <p>Student</p>
-          <div class="buttons">
-            <button class="small_btn btn_logout">Logout</button>
-            <button class="small_btn btn_delete" onclick="on()">Delete profile</button>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </header>
-
-  <!-- MAIN -->
-  <main class="main">
-    <section class="heading">
-      <h1>Professor – Submission Form</h1>
-    </section>
-
-    <div class="main_components">
-      <div class="main_section">
-        <div class="submission-card">
-          <p class="card-hint">Based on where the content should be published, please complete all the information:</p>
-
-          <!-- Dropdowns -->
-          <div class="select-row">
-            <select>
-              <option value="" disabled selected>University, field of expertise</option>
-              <option>AAU - Applied Industrial Electronics</option>
-              <option>AAU - Bioteknologi</option>
-              <option>AAU - Globale Forretningssystemer</option>
-              <option>AAU - Software</option>
-            </select>
-            <select>
-              <option value="" disabled selected>Semester, course</option>
-              <option>Semester 1</option>
-              <option>Semester 2</option>
-              <option>Semester 3</option>
-              <option>Semester 4</option>
-              <option>Semester 5</option>
-              <option>Semester 6</option>
-            </select>
-            <select>
-              <option value="" disabled selected>Type of content</option>
-              <option>Assignment</option>
-              <option>Add to curriculum</option>
-              <option>Presentation</option>
-              <option>Exam questions</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <!-- Row 1: Full width main content -->
-          <div style="margin-bottom:1rem;">
-            <div class="field-label">Your content</div>
-            <textarea class="ta-main" placeholder="Type here…" oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"></textarea>
-          </div>
-
-          <!-- Row 2: Comments + Attachments side by side -->
-          <div class="text-row">
-            <div>
-              <div class="field-label">Additional comments or suggestions</div>
-              <textarea class="ta-comment" placeholder="Type here…" oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"></textarea>
+    <div class="container">
+    <!-- TOPBAR -->
+        <header class="topbar">
+            <div class="topbar_left">
+                <a href="../Semester_overview__Front_page_2/semester_overview.html" aria-label="Go to homepage" class="brand">  <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                    <img src="../imgs/Logo.svg" alt="Exam Ease logo">
+                    <span class="brand_name">Exam Ease</span>
+                </a>
+                <!-- Normal nav (desktop) -->
+                <div class="nav_links">
+                    <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
+                    <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                    <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                </div>
+                <!-- Dropdown (mobile) -->
+                <div class="dropdown">
+                    <button class="btn nav_dropdown dropdownButton">Menu</button>
+                    <div class="dropdown_content nav_links">
+                        <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
+                        <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                        <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                    </div>
+                </div> 
             </div>
-            <div>
-              <div class="field-label">Attachments</div>
-              <div class="attach-box" id="attachBox" onclick="document.getElementById('fileInput').click()">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                  <polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/>
-                  <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
-                </svg>
-                <span>Click to upload files</span>
-              </div>
-              <input type="file" id="fileInput" multiple onchange="addFiles(this.files)" />
-              <div class="file-list" id="fileList"></div>
+            <div class="topbar_right">
+                <button class="btn btn_search">
+                    <img src="../imgs/search-icon.webp" alt="Search icon"/>
+                </button>
+                <input class="search_bar" type="text" placeholder="Search"/>
+                <div class="dropdown">
+                    <button class="btn btn_profile dropdownButton">
+                        <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
+                    </button>
+                    <aside class="popup profile_dropdown dropdown_content">
+                        <p>Sara123!</p>
+                        <hr/>
+                        <h4><a href="../my_submission/my_submission.html">My submissions</a></h4>
+                        <hr/>
+                        <h4>Profile (Student)</h4>
+                        <p>Sara Hansen</p>
+                        <p>Sara.hansen@student.aau.dk</p>
+                        <p>Aalborg University Copenhagen</p>
+                        <p>1. Semester</p>
+                        <p>Software, Bachelor</p>
+                        <div class="buttons">
+                            <button class="small_btn btn_logout"><a href="../index.html">Logout</a></button>
+                            <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
+                        </div>
+                    </aside>
+                </div>
             </div>
-          </div>
+        </header>
+        <!-- MAIN -->
+        <main class="main">
+            <section class="heading_wrapper">
+                <h1 class="heading">Submission Form - Professor</h1>
+                <div class="breadcrumbs back">
+                    <a href="../First_semester_page/first_semester.html">
+                        <span class="arrow">‹</span> <!-- &larr; -->
+                        Back to Course Overview (First Semester) <!-- First Semester page-->
+                    </a>
+                </div>
+            </section>
+            <div class="main_components">
+                <div class="main_section">
+                    <div class="submission-card">
+                        <p class="card-hint">Based on where the content should be published, please complete all the information:</p>
 
-          <!-- Submit -->
-          <div class="submit-row">
-            <button class="btn-submit" onclick="handleSubmit()">Submit</button>
-          </div>
-        </div>
-      </div>
+                        <!-- Dropdowns -->
+                        <div class="select-row">
+                            <select>
+                                <option value="" disabled selected>University, field of expertise</option>
+                                <option>AAU - Software, Bachelor</option>
+                                <option>AAU - Cybersecurity, Bachelor</option>
+                                <option>AAU - Biology, Bachelor</option>
+                                <option>AAU - Psychology, Bachelor</option>
+                                <option>AAU - History, Bachelor</option>
+                                <option>AAU - Biotechnology, Bachelor</option>
+                            </select>
+
+                            <select>
+                                <option value="" disabled selected>Semester, course</option>
+                                <option>Semester 1</option>
+                                <option>Semester 2</option>
+                                <option>Semester 3</option>
+                                <option>Semester 4</option>
+                                <option>Semester 5</option>
+                                <option>Semester 6</option>
+                            </select>
+
+                            <select>
+                                <option value="" disabled selected>Type of content</option>
+                                <option>Assignment</option>
+                                <option>Add to curriculum</option>
+                                <option>Presentation</option>
+                                <option>Exam questions</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Row 1: Full width main content -->
+                        <div style="margin-bottom:1rem;">
+                            <div class="field-label">Your content</div>
+                            <textarea
+                                class="ta-main"
+                                placeholder="Type here…"
+                                oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"
+                            ></textarea>
+                        </div>
+
+                        <!-- Row 2: Comments + Attachments side by side -->
+                        <div class="text-row">
+                            <div>
+                                <div class="field-label">Additional comments or suggestions</div>
+                                <textarea
+                                    class="ta-comment"
+                                    placeholder="Type here…"
+                                    oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"
+                                ></textarea>
+                            </div>
+
+                            <div>
+                                <div class="field-label">Attachments</div>
+
+                                <div class="attach-box" id="attachBox" onclick="document.getElementById('fileInput').click()">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                        <polyline points="16 16 12 12 8 16"></polyline>
+                                        <line x1="12" y1="12" x2="12" y2="21"></line>
+                                        <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+                                    </svg>
+                                    <span>Click to upload files</span>
+                                </div>
+
+                                <input type="file" id="fileInput" multiple onchange="addFiles(this.files)" />
+                                <div class="file-list" id="fileList"></div>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="submit-row">
+                            <button class="btn-submit" onclick="handleSubmit()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- TOAST -->
+        <div class="toast" id="toast">✓ Submission received!</div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer_column footer_column_left">
+                <h4>Submissions</h4>
+                <ul>
+                    <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
+                    <li><a href="Professor_submission.html">Submission Form</a></li>
+                </ul>
+            </div>
+            <div class="footer_column footer_column_right visible_link">
+                <h4>IT Support</h4>
+                <p><a href="#">Tel: +45 00 00 00 00</a></p>
+                <p><a href="#">E-mail: itservice@support.dk</a></p>
+            </div>
+        </footer>
     </div>
-  </main>
 
-  <!-- TOAST -->
-  <div class="toast" id="toast">✓ Submission received!</div>
-
-  <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer_column footer_column_left">
-          <h4>Submissions</h4>
-          <ul>
-            <li><a href="#">Submission Information</a></li>
-            <li><a href="Student_submission.html">Submission Form</a></li>
-          </ul>
+<!-- FULL SCREEN OVERLAYS -->
+    <!-- Profile Has Been Successfully Deleted -->
+    <div class="overlay" id="deleteOverlay">
+        <div class="inside_overlay delete_profile">
+            <h1>Your profile has been successfully deleted!</h1>
+            <a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
         </div>
-        <div class="footer_column footer_column_right visible_link">
-          <h4>IT Support</h4>
-          <p><a href="#">Tel: +45 00 00 00 00</a></p>
-          <p><a href="#">E-mail: itservice@support.dk</a></p>
-        </div>
-      </footer>
     </div>
-  </body>
+</body>
 </html>

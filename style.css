@@ -1127,9 +1127,11 @@ input[type="checkbox"] {
   font-size: 14px;  /*The same as 10.5pt - pt is used in e.g. words and drev*/ 
 }
 
-.md_btn.submission{
+.md_btn.submission a{
   block-size: fit-content;
   margin-top: 20px;
+  text-decoration: none;
+  color: var(--color-text);
 }
 
 

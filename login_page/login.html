@@ -8,76 +8,72 @@
     <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
     <title>Exam Ease - Login</title>  <!-- --Title on the web tab-->
 </head>
-
-  <body>
-    <div class="blackborder">
-      <div class="container">
+<body>
+    <div class="container">
         <header class="topbar">
-          <div class="topbar_left">
-            <div class="topbar_logo">
-              <a href="../index.html" aria-label="Go to homepage"
-                ><!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
-                <img src="../imgs/Logo.svg" alt="Exam Ease logo" />
-              </a>
+            <div class="topbar_left">
+                <a href="../index.html" aria-label="Go to homepage" class="brand">  <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                    <img src="../imgs/Logo.svg" alt="Exam Ease logo">
+                    <span class="brand_name">Exam Ease</span>
+                </a>
+                <!-- Normal nav (desktop) -->
+                <div class="nav_links">
+                    <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                    <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                </div>
+                <!-- Dropdown (mobile) -->
+                <div class="dropdown">
+                    <button class="btn nav_dropdown dropdownButton">Menu</button>
+                    <div class="dropdown_content nav_links">
+                        <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                        <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                    </div>
+                </div> 
             </div>
-          </div>
-          <div class="topbar_right">
-            <button class="btn btn_search">
-              <img src="../imgs/search-icon.webp" alt="Search icon" />
-            </button>
-            <input class="search_bar" type="text" placeholder="Search" />
-            <a href="login.html" class="btn btn_ghost_login">Log in</a>
-            <a href="../Signup/sign_up.html" class="btn btn_ghost_login">Sign up</a>
-          </div>
+            <div class="topbar_right">
+                <button class="btn btn_search">
+                    <img src="../imgs/search-icon.webp" alt="Search icon" />
+                </button>
+                <input class="search_bar" type="text" placeholder="Search" />
+                <a href="login.html" class="btn btn_ghost_login">Log in</a>
+                <a href="../Signup/sign_up.html" class="btn btn_ghost_login">Sign up</a>
+            </div>
         </header>
-
         <main class="main">
-          <div class="signup-container">
-            <h1>Login</h1>
-            <div class="login-item">
-              <div class="login-box">
-                <div class="login-row-one-two">
-                  <label for="username">Username</label>
-                  <input
-                    type="text"
-                    id="username"
-                    placeholder="E.g. Sara123!"
-                  />
+            <div class="signup-container">
+                <h1>Login</h1>
+                <div class="login-item">
+                    <div class="login-box">
+                        <div class="login-row-one-two">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="E.g. Sara123!" />
+                        </div>
+                        <div class="login-row-one-two">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="E.g. Exam!ease1234"/>
+                        </div>
+                        <a href="../First_semester_page/first_semester.html" class="signup-btn">Login</a>
+                        <div class="login-row-four">
+                            <a href="../Signup/sign_up.html" class="signup-link">Sign up</a>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="login-row-one-two">
-                  <label for="password">Password</label>
-                  <input type="password" id="password" placeholder="E.g. Exam!ease1234"/>
-                </div>
-
-                <a href="../First_semester_page/first_semester.html" class="signup-btn">Login</a>
-
-                <div class="login-row-four">
-                  <a href="/Signup/sign_up.html" class="signup-link">Sign up</a>
-                  <div class="question">
-                    <a href="#">Forgot your username or password?</a>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </main>
-
         <footer class="footer">
-          <div class="footer_column footer_column_left">
-            <h4>Submissions</h4>
-            <ul>
-              <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
-              <li><a href="#">Submission Form</a></li>
-            </ul>
-          </div>
-          <div class="footer_column footer_column_right visible_link">
-            <h4>IT Support</h4>
-            <p><a href="#">Tel: +45 00 00 00 00</a></p>
-            <p><a href="#">E-mail: itservice@support.dk</a></p>
-          </div>
+            <div class="footer_column footer_column_left">
+                <h4>Submissions</h4>
+                <ul>
+                    <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
+                    <li><a href="../submission_forms/Student_submission.html">Submission Form</a></li>
+                </ul>
+            </div>
+            <div class="footer_column footer_column_right visible_link">
+                <h4>IT Support</h4>
+                <p><a href="#">Tel: +45 00 00 00 00</a></p>
+                <p><a href="#">E-mail: itservice@support.dk</a></p>
+            </div>
         </footer>
-      </div>
     </div>
-  </body>
+</body>
 </html>
