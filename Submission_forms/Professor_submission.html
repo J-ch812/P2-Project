@@ -3,296 +3,147 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exam Ease - Professor – Submission Form</title>
+  <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" />
   <link rel="stylesheet" href="../style.css" />
-  <style>
-    /* Page layout: stick footer to bottom, don't stretch content */
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .main {
-      flex: 1;
-    }
-
-    /* Submission form specific styles */
-    .submission-card {
-      background-color: var(--color-white);
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      padding: 1.2rem 1.5rem 1.5rem;
-      width: 100%;
-    }
-
-    .card-hint {
-      margin: 0 0 1rem;
-      font-size: 0.95rem;
-    }
-
-    /* Three dropdown row */
-    .select-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .select-row select {
-      width: 100%;
-      height: 38px;
-      padding: 0 0.75rem;
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      background-color: var(--color-white);
-      font: inherit;
-      font-size: 0.9rem;
-      color: #555;
-      cursor: pointer;
-      appearance: auto;
-    }
-
-    /* Two-column text area row */
-    .text-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .field-label {
-      font-size: 0.88rem;
-      margin-bottom: 0.35rem;
-      color: var(--color-text);
-    }
-
-    .ta-main {
-      width: 100%;
-      height: 220px;
-      padding: 0.6rem 0.75rem;
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      font: inherit;
-      font-size: 0.9rem;
-      resize: vertical;
-      box-sizing: border-box;
-    }
-
-    .ta-comment {
-      width: 100%;
-      height: 110px;
-      padding: 0.6rem 0.75rem;
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      font: inherit;
-      font-size: 0.9rem;
-      resize: vertical;
-      box-sizing: border-box;
-    }
-
-    /* Attachment upload box */
-    .attach-box {
-      width: 100%;
-      height: 90px;
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.3rem;
-      cursor: pointer;
-      font-size: 0.82rem;
-      color: #555;
-      background-color: var(--color-white);
-      box-sizing: border-box;
-    }
-
-    .attach-box:hover {
-      background-color: var(--color-hover-bg-light);
-    }
-
-    #fileInput {
-      display: none;
-    }
-
-    .file-list {
-      margin-top: 0.4rem;
-    }
-
-    .file-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.82rem;
-      padding: 0.2rem 0;
-    }
-
-    .file-item button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #999;
-      font-size: 0.8rem;
-    }
-
-    /* Submit row */
-    .submit-row {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .btn-submit {
-      width: 110px;
-      height: 36px;
-      border: var(--border-dark-background);
-      border-radius: var(--radius-md);
-      background-color: var(--color-white);
-      color: var(--color-text);
-      font: inherit;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-
-    .btn-submit:hover {
-      background-color: var(--color-hover-bg-light);
-    }
-
-    /* Toast notification */
-    .toast {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%) translateY(60px);
-      background: #333;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius-md);
-      font-size: 0.9rem;
-      opacity: 0;
-      transition: opacity 0.3s, transform 0.3s;
-      pointer-events: none;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-  </style>
+  <script src="File_handeling.js" defer></script>
+  <title>Professor – Submission Form</title>
 </head>
 <body>
 
-<!-- NAV / TOPBAR -->
-<nav class="topbar">
-  <div class="topbar_left">
-    <div class="topbar_logo"><img src="Logo.svg" alt="Logo" /></div>
-    <button class="btn">Back</button>
-  </div>
-  <div class="topbar_right">
-    <input class="search_bar" type="text" placeholder="Search" />
-    <button class="btn btn_search">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-    </button>
-    <button class="btn btn_profile">
-      <img src="profile_icon.svg" alt="Profile" width="18" height="18" />
-    </button>
-  </div>
-</nav>
+<div class="container">
 
-<!-- MAIN -->
-<div class="main">
-  <div class="heading" style="margin: 0.5rem 0;">
-    <h1 style="margin: 0.4rem 0;">Student – Submission Form</h1>
-  </div>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar_left">
+      <div class="topbar_logo">
+        <a href="../index.html" aria-label="Go to homepage">
+          <img src="../imgs/Logo.svg" alt="Exam Ease logo" />
+        </a>
+      </div>
+      <button class="btn btn_back">Back</button>
+    </div>
+    <div class="topbar_right">
+      <button class="btn btn_search">
+        <img src="../imgs/search-icon.webp" alt="Search icon" />
+      </button>
+      <input class="search_bar" type="text" placeholder="Search" />
+      <div class="dropdown">
+        <button class="btn btn_profile dropdownButton">
+          <img src="../imgs/profile_icon.svg" alt="Profile icon" />
+        </button>
+        <aside class="popup profile_dropdown dropdown_content">
+          <p>Sara123!</p>
+          <hr />
+          <h4><a href="/My submission/my_submission.html">My submission</a></h4>
+          <hr />
+          <h4>Profile</h4>
+          <p>Sara Hansen</p>
+          <p>Sara.hansen@student.aau.dk</p>
+          <p>Aalborg University Copenhagen</p>
+          <p>Software, bachelor</p>
+          <p>1. Semester</p>
+          <p>Student</p>
+          <div class="buttons">
+            <button class="small_btn btn_logout">Logout</button>
+            <button class="small_btn btn_delete" onclick="on()">Delete profile</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
 
-  <div class="main_components">
-    <div class="main_section">
-      <div class="submission-card">
-        <p class="card-hint">Based on where the content should be published, please complete all the information:</p>
+  <!-- MAIN -->
+  <main class="main">
+    <section class="heading">
+      <h1>Professor – Submission Form</h1>
+    </section>
 
-        <!-- Dropdowns -->
-        <div class="select-row">
-          <select>
-            <option value="" disabled selected>University, field of expertise</option>
-            <option>AAU - Applied Industrial Electronics</option>
-            <option>AAU - Bioteknologi</option>
-            <option>AAU - Globale Forretningssystemer</option>
-            <option>AAU - Software</option>
-          </select>
-          <select>
-            <option value="" disabled selected>Semester, course</option>
-            <option>Semester 1</option>
-            <option>Semester 2</option>
-            <option>Semester 3</option>
-            <option>Semester 4</option>
-            <option>Semester 5</option>
-            <option>Semester 6</option>
-          </select>
-          <select>
-            <option value="" disabled selected>Type of content</option>
-            <option>Assignment</option>
-            <option>Add to curriculum</option>
-            <option>Presentation</option>
-            <option>Exam questions</option>
-            <option>Other</option>
-          </select>
-        </div>
+    <div class="main_components">
+      <div class="main_section">
+        <div class="submission-card">
+          <p class="card-hint">Based on where the content should be published, please complete all the information:</p>
 
-        <!-- Text areas -->
-        <div class="text-row">
-          <div>
+          <!-- Dropdowns -->
+          <div class="select-row">
+            <select>
+              <option value="" disabled selected>University, field of expertise</option>
+              <option>AAU - Applied Industrial Electronics</option>
+              <option>AAU - Bioteknologi</option>
+              <option>AAU - Globale Forretningssystemer</option>
+              <option>AAU - Software</option>
+            </select>
+            <select>
+              <option value="" disabled selected>Semester, course</option>
+              <option>Semester 1</option>
+              <option>Semester 2</option>
+              <option>Semester 3</option>
+              <option>Semester 4</option>
+              <option>Semester 5</option>
+              <option>Semester 6</option>
+            </select>
+            <select>
+              <option value="" disabled selected>Type of content</option>
+              <option>Assignment</option>
+              <option>Add to curriculum</option>
+              <option>Presentation</option>
+              <option>Exam questions</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Row 1: Full width main content -->
+          <div style="margin-bottom:1rem;">
             <div class="field-label">Your content</div>
-            <textarea class="ta-main" placeholder="Type here…"></textarea>
+            <textarea class="ta-main" placeholder="Type here…" oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"></textarea>
           </div>
-          <div>
-            <div class="field-label">Additional comments or suggestions</div>
-            <textarea class="ta-comment" placeholder="Type here…"></textarea>
 
-            <!-- Attachments -->
-            <div class="field-label" style="margin-top:10px;">Attachments</div>
-            <div class="attach-box" id="attachBox" onclick="document.getElementById('fileInput').click()">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/>
-                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
-              </svg>
-              <span>Click to upload files</span>
+          <!-- Row 2: Comments + Attachments side by side -->
+          <div class="text-row">
+            <div>
+              <div class="field-label">Additional comments or suggestions</div>
+              <textarea class="ta-comment" placeholder="Type here…" oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"></textarea>
             </div>
-            <input type="file" id="fileInput" multiple onchange="addFiles(this.files)" />
-            <div class="file-list" id="fileList"></div>
+            <div>
+              <div class="field-label">Attachments</div>
+              <div class="attach-box" id="attachBox" onclick="document.getElementById('fileInput').click()">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/>
+                  <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+                </svg>
+                <span>Click to upload files</span>
+              </div>
+              <input type="file" id="fileInput" multiple onchange="addFiles(this.files)" />
+              <div class="file-list" id="fileList"></div>
+            </div>
           </div>
-        </div>
 
-        <!-- Submit -->
-        <div class="submit-row">
-          <button class="btn-submit" onclick="handleSubmit()">Submit</button>
+          <!-- Submit -->
+          <div class="submit-row">
+            <button class="btn-submit" onclick="handleSubmit()">Submit</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </main>
 
-<!-- TOAST -->
-<div class="toast" id="toast">✓ Submission received!</div>
+  <!-- TOAST -->
+  <div class="toast" id="toast">✓ Submission received!</div>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer_column footer_column_left">
-    <h4>Submit your input</h4>
-    <ul>
-      <li>Submission info</li>
-      <li>Students – submission form</li>
-      <li>Professors – submission form</li>
-    </ul>
-  </div>
-  <div class="footer_column footer_column_right">
-    <h4>IT support</h4>
-    <p>Tel: + 45 00 00 00 00</p>
-    <p>E-mail: itservice@support.dk</p>
-  </div>
-</footer>
-
-<script src="Student_submission.js"></script>
-</body>
+  <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer_column footer_column_left">
+          <h4>Submissions</h4>
+          <ul>
+            <li><a href="#">Submission Information</a></li>
+            <li><a href="Student_submission.html">Submission Form</a></li>
+          </ul>
+        </div>
+        <div class="footer_column footer_column_right visible_link">
+          <h4>IT Support</h4>
+          <p><a href="#">Tel: +45 00 00 00 00</a></p>
+          <p><a href="#">E-mail: itservice@support.dk</a></p>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
