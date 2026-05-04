@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
-  <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->   
-    <title>Exam Ease - DTG Overview</title>
+    <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->   
+    <title>Exam Ease - DTG Block 2</title>
 </head>
 <body>
     <div class="container">
@@ -29,24 +29,22 @@
                         <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
                     </button>
                     <aside class="popup profile_dropdown dropdown_content">
-              <p>Sara123!</p>
-              <hr />
-              <h4><a href="/My submission/my_submission.html">My submission</a></h4>
-              <hr />
-              <h4>Profile</h4>
-              <p>Sara Hansen</p>
-              <p>Sara.hansen@student.aau.dk</p>
-              <p>Aalborg University Copenhagen</p>
-              <p>Software, bachelor</p>
-              <p>1. Semester</p>
-              <p>Student</p>
-              <div class="buttons">
-                <button class="small_btn btn_logout">Logout</button>
-                <button class="small_btn btn_delete" onclick="on()">
-                  Delete profile
-                </button>
-              </div>
-            </aside>
+                        <p>Sara123!</p>
+                        <hr />
+                        <h4><a href="../my_submission/my_submission.html">My submissions</a></h4>
+                        <hr />
+                        <h4>Profile</h4>
+                        <p>Sara Hansen</p>
+                        <p>Sara.hansen@student.aau.dk</p>
+                        <p>Aalborg University Copenhagen</p>
+                        <p>Software, bachelor</p>
+                        <p>1. Semester</p>
+                        <p>Student</p>
+                        <div class="buttons">
+                            <button class="small_btn btn_logout">Logout</button>
+                            <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </header>
@@ -237,8 +235,8 @@
             <div class="footer_column footer_column_left">
                 <h4>Submissions</h4> <!-- --?-- "Submissions" instead of "Submit Your Input" or something else? -->
                 <ul>
-                    <li><a href="#">Submission Information</a></li>
-                    <li><a href="#">Submission Form</a></li>
+                    <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
+                    <li><a href="../submission_forms/Student_submission.html">Submission Form</a></li>
                 </ul>
             </div>
             <div class="footer_column footer_column_right visible_link">
@@ -248,5 +246,13 @@
             </div>
         </footer>
     </div>
+<!-- FULL SCREEN OVERLAYS -->
+	<!-- Profile Has Been Successfully Deleted -->
+	<div class="overlay" id="deleteOverlay">
+		<div class="inside_overlay delete_profile">
+		<h1>Your profile has been successfully deleted!</h1>
+		<a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+		</div>
+	</div>
 </body>
 </html>
