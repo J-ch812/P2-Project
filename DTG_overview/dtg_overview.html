@@ -1,13 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+    <meta charset="UTF-8" /><!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" /> <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="../style.css" /> <!-- --Linking this file to the CSS file-->
-    <script src="../script.js" defer></script>
-    <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+    <script src="../script.js" defer></script><!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
     <title>Exam Ease - DTG Overview</title>
 </head>
 <body>
@@ -18,7 +16,7 @@
                     <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
                     <img src="../imgs/Logo.svg" alt="Exam Ease logo">
                     <span class="brand_name">Exam Ease</span>
-                    </a>
+                </a>
                 <!-- Normal nav (desktop) -->
                 <div class="nav_links">
                     <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
@@ -34,12 +32,12 @@
                         <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
                 </div>
-                </div>
-                <div class="topbar_right">
-                    <button class="btn btn_search">
-                        <img src="../imgs/search-icon.webp" alt="Search icon" />
-                    </button>
-                    <input class="search_bar" type="text" placeholder="Search" />
+            </div>
+            <div class="topbar_right">
+                <button class="btn btn_search">
+                    <img src="../imgs/search-icon.webp" alt="Search icon" />
+                </button>
+                <input class="search_bar" type="text" placeholder="Search" />
                 <div class="dropdown">
                     <button class="btn btn_profile dropdownButton">
                         <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
@@ -62,9 +60,8 @@
                     </aside>
                 </div>
             </div>
-            </header>
-            <main class="main">
-
+        </header>
+        <main class="main">
             <section class="heading_wrapper">
                 <h1 class="heading">DTG Overview</h1>
                 <div class="breadcrumbs back">
@@ -74,135 +71,119 @@
                     </a>
                 </div>
             </section>
-
-
-
-
-
-
-
-    
-
-            <!--
-                                    <section class="heading">
-                                    <h1>DTG Overview</h1>
-                                    </section>
-                                    -->
-
             <div class="main_components">
                 <aside class="progress_section">
                     <div class="progress_toggle_tooltip_container">
                         <button class="progress_toggle_btn" aria-label="Hide progress">
                             &lt;
                         </button>
-                    <div class="progress_toggle_tooltip_box">
-                        Hide progress bar
+                        <div class="progress_toggle_tooltip_box">
+                            Hide progress bar
                         </div>
+                    </div>
+                    <div class="progress_content">
+                        <h3>Progress</h3>
+                        <section class="progress_grid expanded">
+                            <div class="progress_group DTG">
+                                <div class="progress_item DTG">
+                                    <a href="dtg_overview.html" class="progress_bar dtg_bar">DTG</a>
+                                    <a href="dtg_overview.html" class="progress_percentage dtg_percentage">0%</a>
+                                </div>
+                                <div class="tooltip_container">
+                                    <div class="progress_item sub">
+                                        <a href="../DTG_Blocks/DTGBlock1.html" class="progress_bar sub block1">Block 1</a>
+                                        <a href="../DTG_Blocks/DTGBlock1.html" class="progress_percentage sub block1_percentage">0%</a>
+                                    </div>
+                                    <div class="tooltip_box">
+                                        Navigate to Block 1
+                                    </div>
+                                </div>
+                                <div class="tooltip_container">
+                                    <div class="progress_item sub">
+                                        <a href="../DTG_Blocks/DTGBlock2.html" class="progress_bar sub block1">Block 2</a>
+                                        <a href="../DTG_Blocks/DTGBlock2.html" class="progress_percentage sub block1_percentage">0%</a>
+                                    </div>
+                                    <div class="tooltip_box">
+                                        Navigate to Block 2
+                                    </div>
+                                </div>
+                                <div class="tooltip_container">
+                                    <div class="progress_item sub">
+                                        <a href="../DTG_Blocks/DTGBlock3.html" class="progress_bar sub block1">Block 3</a>
+                                        <a href="../DTG_Blocks/DTGBlock3.html" class="progress_percentage sub block1_percentage">0%</a>
+                                    </div>
+                                    <div class="tooltip_box">
+                                        Navigate to Block 3
+                                    </div>
+                                </div>
+                                <div class="tooltip_container">
+                                    <div class="progress_item sub">
+                                        <a href="../DTG_Blocks/DTGBlock4.html" class="progress_bar sub block1">Block 4</a>
+                                        <a href="../DTG_Blocks/DTGBlock4.html" class="progress_percentage sub block1_percentage">0%</a>
+                                    </div>
+                                    <div class="tooltip_box">
+                                        Navigate to Block 4
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress_group P0">
+                                <div class="progress_item P0">
+                                    <a href="#" class="progress_bar">P0</a>
+                                    <a href="#" class="progress_percentage">0%</a>
+                                </div>
+                            </div>
+                            <div class="progress_group IMPR">
+                                <div class="progress_item IMPR">
+                                    <a href="#" class="progress_bar">IMPR</a>
+                                    <a href="#" class="progress_percentage">0%</a>
+                                </div>
+                            </div>
+                            <div class="progress_group P1">
+                                <div class="progress_item P1">
+                                    <a href="#" class="progress_bar">P1</a>
+                                    <a href="#" class="progress_percentage">0%</a>
+                                </div>
+                            </div>
+                            <div class="progress_group PBL">
+                                <div class="progress_item PBL">
+                                    <a href="#" class="progress_bar">PBL</a>
+                                    <a href="#" class="progress_percentage">0%</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </aside>
+                <section class="main_section">
+                    <section class="course_grid course_grid_semester_page DTG_overview">
+                        <a href="../DTG_exam_information/dtg_exam_info.html" class="course_card">Exam Information</a>
+                        <a href="../DTG_prior_exams_and_exam_questions/DTG_prior_exams_and_exam_questions.html" class="course_card">Prior Exams</a>
+                        <div class="dropdown">
+                            <button class="course_card dropdownButton blocks">Blocks</button>
+                            <div class="dropdown_content">
+                                <a href="../DTG_Blocks/DTGBlock1.html">Block 1: Logic, Sets & Relations</a>
+                                <a href="../DTG_Blocks/DTGBlock2.html">Block 2: Functions & Complexity</a>
+                                <a href="../DTG_Blocks/DTGBlock3.html">Block 3: Induction & Recursion</a>
+                                <a href="../DTG_Blocks/DTGBlock4.html">Block 4: Proofs, Number Theory & Combinatorics</a>
+                            </div>
                         </div>
-                        <div class="progress_content">
-                            <h3>Progress</h3>
-                            <section class="progress_grid expanded">
-                                <div class="progress_group DTG">
-                                    <div class="progress_item DTG">
-                                        <a href="dtg_overview.html" class="progress_bar dtg_bar">DTG</a>
-                                        <a href="dtg_overview.html" class="progress_percentage dtg_percentage">0%</a>
-                                    </div>
-                                    <div class="tooltip_container">
-                                        <div class="progress_item sub">
-                                            <a href="../DTG_Blocks/DTGBlock1.html" class="progress_bar sub block1">Block 1</a>
-                                            <a href="../DTG_Blocks/DTGBlock1.html" class="progress_percentage sub block1_percentage">0%</a>
-                                        </div>
-                                <div class="tooltip_box">
-                                    Navigate to Block 1
-                                    </div>
-                                    </div>
-                                    <div class="tooltip_container">
-                                        <div class="progress_item sub">
-                                            <a href="../DTG_Blocks/DTGBlock2.html" class="progress_bar sub block1">Block 2</a>
-                                            <a href="../DTG_Blocks/DTGBlock2.html" class="progress_percentage sub block1_percentage">0%</a>
-                                        </div>
-                                <div class="tooltip_box">
-                                    Navigate to Block 2
-                                    </div>
-                                    </div>
-                                    <div class="tooltip_container">
-                                        <div class="progress_item sub">
-                                            <a href="../DTG_Blocks/DTGBlock3.html" class="progress_bar sub block1">Block 3</a>
-                                            <a href="../DTG_Blocks/DTGBlock3.html" class="progress_percentage sub block1_percentage">0%</a>
-                                        </div>
-                                <div class="tooltip_box">
-                                    Navigate to Block 3
-                                    </div>
-                                    </div>
-                                    <div class="tooltip_container">
-                                        <div class="progress_item sub">
-                                            <a href="../DTG_Blocks/DTGBlock4.html" class="progress_bar sub block1">Block 4</a>
-                                            <a href="../DTG_Blocks/DTGBlock4.html" class="progress_percentage sub block1_percentage">0%</a>
-                                        </div>
-                                <div class="tooltip_box">
-                                    Navigate to Block 4
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <div class="progress_group P0">
-                                        <div class="progress_item P0">
-                                            <a href="#" class="progress_bar">P0</a>
-                                            <a href="#" class="progress_percentage">0%</a>
-                                        </div>
-                                    </div>
-                                    <div class="progress_group IMPR">
-                                        <div class="progress_item IMPR">
-                                            <a href="#" class="progress_bar">IMPR</a>
-                                            <a href="#" class="progress_percentage">0%</a>
-                                        </div>
-                                    </div>
-                                    <div class="progress_group P1">
-                                        <div class="progress_item P1">
-                                            <a href="#" class="progress_bar">P1</a>
-                                            <a href="#" class="progress_percentage">0%</a>
-                                        </div>
-                                    </div>
-                                    <div class="progress_group PBL">
-                                        <div class="progress_item PBL">
-                                            <a href="#" class="progress_bar">PBL</a>
-                                            <a href="#" class="progress_percentage">0%</a>
-                                        </div>
-                                    </div>
-                                    </section>
-                                    </div>
-                                    </aside>
-                                    <section class="main_section">
-                                        <section class="course_grid course_grid_semester_page DTG_overview">
-                                            <a href="../DTG_exam_information/dtg_exam_info.html" class="course_card">Exam Information</a>
-                                            <a href="../DTG_prior_exams_and_exam_questions/DTG_prior_exams_and_exam_questions.html" class="course_card">Prior
-                                                Exams</a>
-                                            <div class="dropdown">
-                                                <button class="course_card dropdownButton blocks">Blocks</button>
-                                                <div class="dropdown_content">
-                            <a href="../DTG_Blocks/DTGBlock1.html">Block 1: Logic, Sets & Relations</a>
-                            <a href="../DTG_Blocks/DTGBlock2.html">Block 2: Functions & Complexity</a>
-                            <a href="../DTG_Blocks/DTGBlock3.html">Block 3: Induction & Recursion</a>
-                            <a href="../DTG_Blocks/DTGBlock4.html">Block 4: Proofs, Number Theory & Combinatorics</a>
-                            </div>
-                            </div>
-                            </section>
-                            </section>
-                            </div>
-                            </main>
-                            <footer class="footer">
-                                <div class="footer_column footer_column_left">
-                                    <h4>Submissions</h4>
-                                    <ul>
-                                        <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
-                                        <li><a href="../submission_forms/Student_submission.html">Submission Form</a></li>
-                                    </ul>
-                                </div>
-                                <div class="footer_column footer_column_right visible_link">
-                                    <h4>IT Support</h4>
-                                    <p><a href="#">Tel: +45 00 00 00 00</a></p>
-                                    <p><a href="#">E-mail: itservice@support.dk</a></p>
-                                </div>
-                            </footer>
+                    </section>
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer_column footer_column_left">
+                <h4>Submissions</h4>
+                <ul>
+                    <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
+                    <li><a href="../submission_forms/Student_submission.html">Submission Form</a></li>
+                </ul>
+            </div>
+            <div class="footer_column footer_column_right visible_link">
+                <h4>IT Support</h4>
+                <p><a href="#">Tel: +45 00 00 00 00</a></p>
+                <p><a href="#">E-mail: itservice@support.dk</a></p>
+            </div>
+        </footer>
     </div>
         
 <!-- FULL SCREEN OVERLAYS -->
