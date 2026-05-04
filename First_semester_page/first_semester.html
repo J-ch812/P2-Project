@@ -56,17 +56,26 @@
             </section>
             <div class="main_components">
                 <aside class="progress_section">
-                    <button class="progress_toggle_btn" aria-label="Hide progress">
-                        &lt;
-                    </button>
+                    <div class="progress_toggle_tooltip_container">
+                        <button class="progress_toggle_btn" aria-label="Hide progress">
+                            &lt;
+                        </button>
+
+                        <div class="progress_toggle_tooltip_box">
+                            Hide progress bar.
+                        </div>
+                    </div>
                     <div class="progress_content">
                         <h3>Progress</h3>
 
                         <section class="progress_grid expanded">
-                        <div class="progress_group DTG">
+                        <div class="progress_group DTG tooltip_container">
                             <div class="progress_item DTG">
                                 <a href="../DTG_overview/dtg_overview.html" class="progress_bar dtg_bar">DTG</a>
                                 <a href="../DTG_overview/dtg_overview.html" class="progress_percentage dtg_percentage">0%</a>
+                            </div>
+                            <div class="tooltip_box">
+                                Navigate to DTG page.
                             </div>
                         </div>
                         <div class="progress_group P0">
