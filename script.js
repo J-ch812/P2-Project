@@ -273,15 +273,36 @@ function ChooseOne(id) {
 // Hide and show progressbar
 const progressStorageKey = "progressbar-collapsed";
 
+function updateProgressToggleState(toggleProgressBtn, isCollapsed){
+  const tooltipBox = toggleProgressBtn
+    .closest(".progress_toggle_tooltip_container")
+    ?.querySelector(".progress_toggle_tooltip_box");
+
+  if (isCollapsed) {
+    toggleProgressBtn.setAttribute("aria-label", "Show progress");
+
+    if(tooltipBox){
+      tooltipBox.textContent = "Show progress bar.";
+    }
+  } else {
+    toggleProgressBtn.setAttribute("aria-label", "Hide progress");
+
+    if(tooltipBox){
+      tooltipBox.textContent = "Hide progress bar.";
+    }
+  }
+}
+
 document.querySelectorAll(".progress_section").forEach((progressSection) => {
   const toggleProgressBtn = progressSection.querySelector(".progress_toggle_btn");
+  const isCollapsed = localStorage.getItem(progressStorageKey) === "true";
   
-  if(localStorage.getItem(progressStorageKey) === "true"){
+  if(isCollapsed){
     progressSection.classList.add("collapsed");
+  }
 
-    if(toggleProgressBtn){
-      toggleProgressBtn.setAttribute("aria-label", "show progress");
-    }
+  if(toggleProgressBtn){
+    updateProgressToggleState(toggleProgressBtn, isCollapsed);
   }
 });
 
@@ -297,11 +318,6 @@ document.querySelectorAll(".progress_toggle_btn").forEach((toggleProgressBtn) =>
 
     const isCollapsed = progressSection.classList.contains("collapsed");
     localStorage.setItem(progressStorageKey, isCollapsed);
-
-    if (isCollapsed) {
-      toggleProgressBtn.setAttribute("aria-label", "Show progress");
-    } else {
-      toggleProgressBtn.setAttribute("aria-label", "Hide progress");
-    }
+    updateProgressToggleState(toggleProgressBtn, isCollapsed);
   });
 });

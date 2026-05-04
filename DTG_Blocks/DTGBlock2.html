@@ -54,32 +54,62 @@
             </section>
             <div class="main_components">
                 <aside class="progress_section">
-                    <button class="progress_toggle_btn" aria-label="Hide progress">
-                        &lt;
-                    </button>
+                    <div class="progress_toggle_tooltip_container">
+                        <button class="progress_toggle_btn" aria-label="Hide progress">
+                            &lt;
+                        </button>
+
+                        <div class="progress_toggle_tooltip_box">
+                            Hide progress bar.
+                        </div>
+                    </div>
                     <div class="progress_content"> 
                     <h3>Progress</h3>
                     <section class="progress_grid expanded">
                         <div class="progress_group DTG">
-                            <div class="progress_item DTG">
-                                <a href="../DTG_overview/dtg_overview.html" class="progress_bar dtg_bar">DTG</a>
-                                <a href="../DTG_overview/dtg_overview.html" class="progress_percentage dtg_percentage">0%</a>
+                            <div class="tooltip_container">
+                                <div class="progress_item DTG">
+                                    <a href="../DTG_overview/dtg_overview.html" class="progress_bar dtg_bar">DTG</a>
+                                    <a href="../DTG_overview/dtg_overview.html" class="progress_percentage dtg_percentage">0%</a>
+                                </div>
+
+                                <div class="tooltip_box">
+                                    Navigate to DTG page.
+                                </div>
                             </div>
-                            <div class="progress_item sub">
-                                <a href="DTGBlock1.html" class="progress_bar sub block1">Block 1</a>
-                                <a href="DTGBlock1.html" class="progress_percentage sub block1_percentage">0%</a>  
+                            <div class="tooltip_container">
+                                <div class="progress_item sub">
+                                    <a href="DTGBlock1.html" class="progress_bar sub block1">Block 1</a>
+                                    <a href="DTGBlock1.html" class="progress_percentage sub block1_percentage">0%</a>  
+                                </div>
+
+                                <div class="tooltip_box">
+                                    Navigate to Block 1.
+                                </div>
                             </div>
                             <div class="progress_item sub">
                                 <a href="DTGBlock2.html" class="progress_bar sub block2">Block 2</a>
                                 <a href="DTGBlock2.html" class="progress_percentage sub block2_percentage">0%</a> 
                             </div>
-                            <div class="progress_item sub">
-                                <a href="DTGBlock3.html" class="progress_bar sub block3">Block 3</a>
-                                <a href="DTGBlock3.html" class="progress_percentage sub block3_percentage">0%</a> 
+                            <div class="tooltip_container">
+                                <div class="progress_item sub">
+                                    <a href="DTGBlock3.html" class="progress_bar sub block3">Block 3</a>
+                                    <a href="DTGBlock3.html" class="progress_percentage sub block3_percentage">0%</a> 
+                                </div>
+
+                                <div class="tooltip_box">
+                                    Navigate to Block 3.
+                                </div>
                             </div>
-                            <div class="progress_item sub">
-                                <a href="DTGBlock4.html" class="progress_bar sub block4">Block 4</a>
-                                <a href="DTGBlock4.html" class="progress_percentage sub block4_percentage">0%</a> 
+                            <div class="tooltip_container">
+                                <div class="progress_item sub">
+                                    <a href="DTGBlock4.html" class="progress_bar sub block4">Block 4</a>
+                                    <a href="DTGBlock4.html" class="progress_percentage sub block4_percentage">0%</a> 
+                                </div>
+
+                                <div class="tooltip_box">
+                                    Navigate to Block 4.
+                                </div>
                             </div>
                         </div>
                         <div class="progress_group P0">
@@ -117,79 +147,79 @@
                                     <details class="lecture_dropdown">
                                         <summary class="lecture_item">
                                             <input id="lecture-1" class="lecture_checkbox" type="checkbox">
-                                            <label for="lecture-1">Lecture 1: Functions</label>
+                                            <span>Lecture 1: Functions</span>
                                             <span class="lecture_counter">0/1</span>
                                             <span class="lecture_arrow">▾</span>
                                         </summary>
-                                        <label class="lecture_content">
+                                        <div class="lecture_content">
                                             <input class="topic_checkbox" type="checkbox">
                                             <span>Functions</span>                                           
-                                        </label>
+                                        </div>
                                     </details>
                                 </li>
                                 <li>
                                      <details class="lecture_dropdown">
                                         <summary class="lecture_item">
                                             <input id="lecture-2" class="lecture_checkbox" type="checkbox">
-                                            <label for="lecture-2">Lecture 2: Complexity notation</label>
+                                            <span>Lecture 2: Complexity notation</span>
                                             <span class="lecture_counter">0/3</span>                                            
                                             <span class="lecture_arrow">▾</span>
                                         </summary>
-                                        <label class="lecture_content">
+                                        <div class="lecture_content">
                                             <input class="topic_checkbox" type="checkbox">
                                             <span>Big-O notation</span>                                           
-                                        </label>
-                                        <label class="lecture_content">
+                                        </div>
+                                        <div class="lecture_content">
                                             <input class="topic_checkbox" type="checkbox">
                                             <span>Big Theta notation</span>                                           
-                                        </label>
-                                        <label class="lecture_content">
+                                        </div>
+                                        <div class="lecture_content">
                                             <input class="topic_checkbox" type="checkbox">
                                             <span>Big Omega notation</span>                                        
-                                        </label>
+                                        </div>
                                     </details>
                                 </li>
                                 <li>
                                      <details class="lecture_dropdown">
                                         <summary class="lecture_item">
                                             <input id="lecture-3" class="lecture_checkbox" type="checkbox">
-                                            <label for="lecture-3">Lecture 3: Algorithm complexity</label>
+                                            <span>Lecture 3: Algorithm complexity</span>
                                             <span class="lecture_counter">0/2</span>                                             
                                             <span class="lecture_arrow">▾</span>
                                         </summary>
-                                        <label class="lecture_content">
+                                        <div class="lecture_content">
                                             <input class="topic_checkbox" type="checkbox">
                                             <span>Complexity of findMax</span>                                          
-                                        </label>
-                                        <label class="lecture_content">
+                                        </div>
+                                        <div class="lecture_content">
                                             <input class="topic_checkbox" type="checkbox">
                                             <span>Complexity of linear search</span>                                          
-                                        </label>
+                                        </div>
                                     </details>
                                 </li>
                                 <li>
                                      <details class="lecture_dropdown">
                                         <summary class="lecture_item">
                                             <input id="lecture-4" class="lecture_checkbox" type="checkbox">
-                                            <label for="lecture-4">Lecture 4: Searching & Sorting</label>
+                                            <span>Lecture 4: Searching & Sorting</span>
                                             <span class="lecture_counter">0/2</span>                                             
                                             <span class="lecture_arrow">▾</span>
                                         </summary>
-                                        <label class="lecture_content">
+                                        <div class="lecture_content">
                                             <input class="topic_checkbox" type="checkbox">
                                             <span>Searching</span>
-                                        </label>
-                                        <label class="lecture_content">
+                                        </div>
+                                        <div class="lecture_content">
                                             <input class="topic_checkbox" type="checkbox">
                                             <span>Sorting</span>                                         
-                                        </label>
+                                        </div>
                                     </details>
                                 </li>
                                 <li>
                                      <details class="lecture_dropdown">
                                         <summary class="lecture_item">
                                             <input id="workshop-1" class="lecture_checkbox" type="checkbox">
-                                            <label for="workshop-1">Workshop 2</label>
+                                            <span>Workshop 2</span>
                                             <span class="lecture_counter">0/1</span>
                                             <span class="lecture_arrow invisible_arrow">▾</span>                                             
                                         </summary>
