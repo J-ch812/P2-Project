@@ -262,7 +262,7 @@ loadCurrentBlockCheckboxStates();
 updateBlockProgress();
 
 //Chekbox: select one
-function ChooseOne(id) {
+function chooseOne(id) {
   for (var i = 1; i <= 2; i++) {
     //goes through all the boxes and unchek them
     document.getElementById("Check" + i).checked = false;
