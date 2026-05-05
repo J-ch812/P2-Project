@@ -276,7 +276,7 @@ const progressStorageKey = "progressbar-collapsed";
 function updateProgressToggleState(toggleProgressBtn, isCollapsed){
   const tooltipBox = toggleProgressBtn
     .closest(".progress_toggle_tooltip_container")
-    ?.querySelector(".progress_toggle_tooltip_box");
+    ?.querySelector(".progress_toggle");
 
   if (isCollapsed) {
     toggleProgressBtn.setAttribute("aria-label", "Show progress");
@@ -288,7 +288,7 @@ function updateProgressToggleState(toggleProgressBtn, isCollapsed){
     toggleProgressBtn.setAttribute("aria-label", "Hide progress");
 
     if(tooltipBox){
-      tooltipBox.textContent = "Hide progress bar";
+      tooltipBox.textContent = "Hide Progress bar";
     }
   }
 }
