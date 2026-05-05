@@ -76,7 +76,7 @@
         <!-- MAIN -->
         <main class="main">
             <section class="heading_wrapper">
-                <h1 class="heading">Submission Form - Student</h1>
+                <h1 class="heading">Submission Form (Students)</h1>
                 <div class="breadcrumbs back">
                     <a href="../first_semester/first_semester.html">
                         <span class="arrow">‹</span> <!-- &larr; -->
@@ -131,21 +131,11 @@
                         <div class="text-row">
                             <div>
                                 <div class="field-label">Additional comments or suggestions</div>
-                                <textarea
-                                    class="ta-comment"
-                                    placeholder="Type here…"
-                                    oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"
-                                ></textarea>
+                                <textarea class="ta-comment" placeholder="Type here…" oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"></textarea>
                             </div>
-
                             <div>
                                 <div class="field-label">Attachments</div>
-
-                                <div
-                                    class="attach-box"
-                                    id="attachBox"
-                                    onclick="document.getElementById('fileInput').click()"
-                                >
+                                <div class="attach-box" id="attachBox" onclick="document.getElementById('fileInput').click()">
                                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                                         <polyline points="16 16 12 12 8 16"></polyline>
                                         <line x1="12" y1="12" x2="12" y2="21"></line>
@@ -153,7 +143,6 @@
                                     </svg>
                                     <span>Click to upload files</span>
                                 </div>
-
                                 <input type="file" id="fileInput" multiple onchange="addFiles(this.files)" />
                                 <div class="file-list" id="fileList"></div>
                             </div>
@@ -161,7 +150,7 @@
 
                         <!-- Submit -->
                         <div class="submit-row">
-                            <button class="btn-submit" onclick="handleSubmit()">Submit</button>
+                            <button class="small_btn btn_logout btn-submit" onclick="on('submitOverlay')">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -194,6 +183,36 @@
         <div class="inside_overlay delete_profile">
             <h1>Your profile has been successfully deleted!</h1>
             <a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+        </div>
+    </div>
+
+    <!-- The User Is Asked If They Do Want To Submit -->
+    <!-- --The botton should look somehting like this:  <button class="small_btn btn_logout" onclick="on('submitOverlay')">Log out</button> -->
+    <div class="overlay" id="submitOverlay">
+        <div class="inside_overlay submission_check">
+            <h2>
+                Once you submit the form, it cannot be withdrawn.
+                <br/>
+                Are you ready to submit the form?
+            </h2>
+            <div class="buttons">
+                <button class="md_btn cancel" onclick="off('submitOverlay')">Cancel</button>
+                <button class="md_btn submit" onclick="off('submitOverlay'); on('successOverlay'); handleSubmit()" >Submit</button>
+            </div>
+        </div>
+    </div>
+    <!-- The Submission Was Successful -->
+    <div class="overlay" id="successOverlay">
+        <div class="inside_overlay submission_succes">
+            <h2>Your submission was successful!</h2>
+            <p>Your efforts to help expand and improve the site's contents are greatly appreciated!</p>
+            <p>
+                Our administrators will carefully review your submission and publish any portions that
+                are deemed appropriate to supplement and enhance the current content of the website.
+            </p>
+            <div class="buttons">
+                <button class="md_btn yes" onclick="handleSubmit()">Close</button> <!-- Go to the previous page -->
+            </div>
         </div>
     </div>
 </body>
