@@ -650,8 +650,8 @@ body {
 }
 
 /* --No hover effect on page: DTG - Prior Exams and Exam Questions */
-.course_card.prior_exams{
-  cursor:default;
+.course_card.prior_exams {
+  cursor: default;
 }
 
 .course_card.prior_exams:hover{
@@ -1661,4 +1661,17 @@ body {
 
 #navLoggedOutDesktop, #navLoggedOutMobile, #authButtons {
   border: 2px solid #dc1919;  /* Just to test*/
+}
+
+
+
+
+
+
+
+
+.exam_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
