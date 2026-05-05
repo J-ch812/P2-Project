@@ -17,15 +17,17 @@
   --margin-sides-largescreen: 2.5rem; /* --Used as primary (default) */
   --margin-sides-smallscreen: 1.25rem; /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
   --gap-between-elements: clamp(0.5rem, 2.5vw, 2.5rem); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
+  --padding-btn: clamp(0.5rem, 1vw, 1rem); 
+  --padding-header: 0.5rem clamp(0.5rem, 1vw, 1rem);
 
   /* Borders & radius */
   --border-default: 1.5px solid var(--color-bg);
   --border-small-btn: 1.5px solid var(--color-primary);
   --border-dark-background: 2px solid var(--color-primary);
-  --radius-md: 10px;
-  /* --Border radius of corners on BUTTONS */
-  --radius-lg: 25px;
-  /* --Border radius of corners on OVERLAY */
+  
+  --radius-sm: 5px;   /* --Border radius of corners on SMALL components (toggle btn, hover lables) */
+  --radius-md: 10px;  /* --Border radius of corners on BUTTONS */
+  --radius-lg: 25px;  /* --Border radius of corners on OVERLAY */
 
   /* Effects */
   /*--shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.38);*/
@@ -64,7 +66,7 @@ body {
 /* --!-- This is the complete layout of the Log in and Sign up buttons */
 .btn {
   width: 100px;
-  padding: 0.75rem 1rem;
+  padding: var(--padding-header); /* Before padding: 0.75rem 1rem */
   border: var(--border-default);
   border-radius: var(--radius-md);
   background-color: var(--color-white);
@@ -137,18 +139,19 @@ body {
   gap: var(--gap-between-elements);
   min-width: 0;
   /* --Allows flex items to shrink properly */
+  
 }
 
 /* Left side: logo and navigation */
 .topbar_left {  /* --Logged in: Logo + Back button */  /* --Logged out: Logo */
-  margin: 0.6rem 0 0.6rem var(--margin-sides-largescreen);
+  margin: 0.45rem 0 0.45rem var(--margin-sides-largescreen);
 }
 
 /* Right side: search, profile, log in, sign up */
 .topbar_right {
   /* --Logged in: Search_bar(+ search button) + Profile */
   /* --Logged out: Search bar(+ search button) + Log in + sign up buttons*/
-  margin: 0.6rem var(--margin-sides-largescreen) 0.6rem 0;
+  margin: 0.45rem var(--margin-sides-largescreen) 0.45rem 0;
 }
 
 /*---- Header Elements (Icons and buttons) ----*/
@@ -172,19 +175,21 @@ body {
   text-decoration: none;
   color: var(--color-text);
   border-radius: var(--radius-md);
+  padding: 0.15rem 0.5rem;
 }
 
 .brand img {
-  width: 80px; /* smaller than before */
+  width: 60px; /* smaller than before */
   height: auto;
   display: block;
 }
 
 .brand_name {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.2px;
   min-width: max-content;
+  padding-left: 0.30rem;
   /* text-transform: uppercase; */
 }
 
@@ -223,7 +228,7 @@ body {
 
 .dropdown_content.nav_links a {
   display: block;
-  padding: 0.25rem 0.75rem;
+  padding: var(--padding-header);
   width: 100%;
   text-align: left;
 }
@@ -233,7 +238,7 @@ body {
 
 .search_bar {
   width: clamp(100px, 25vw, 200px);
-  padding: 0.75rem 1rem;
+  padding: var(--padding-header);
   outline: none;
   border: var(--border-default);
   border-radius: var(--radius-md);
@@ -242,8 +247,8 @@ body {
 
 /* --Profile button & Search button */
 .btn_profile, .btn_search {
-  width: 45px;
-  height: 45px;
+  width: 37.3px;
+  height: 37.3px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -256,7 +261,7 @@ body {
 }
 
 .btn_search img {
-  padding: 0.6rem;
+  padding: 0.5rem;
   height: 100%;
   width: auto;
 }
@@ -490,20 +495,30 @@ body {
   width: max-content;
   max-width: 160px;
   padding: 0.35rem 0.5rem;
-  background-color: white;
+  background-color: hsl(0, 0%, 95%);
   color: var(--color-text);
-  border: 0.75px solid var(--color-text);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius-sm);
   z-index: 20;
   font-size: 0.75rem;
 }
 
+.tooltip_box.header_left, .tooltip_box.header_rigth{
+  top: 100%;
+  transform: translate(-50%, 0.4rem);
+}
+
+.tooltip_box.header_left {
+  left: 100%;
+}
+
+.tooltip_box.header_rigth {
+  left: 0%;
+}
 
 .tooltip_container:hover > .tooltip_box {
   display: block;
 }
-
 
 .progress_section {
   position: relative;
@@ -520,24 +535,7 @@ body {
   position: static;
 }
 
-.progress_toggle_tooltip_box {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  transform: translate(0.4rem, -50%);
-  width: max-content;
-  max-width: 160px;
-  padding: 0.35rem 0.5rem;
-  background-color: white;
-  color: var(--color-text);
-  border: 0.75px solid var(--color-text);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-soft);
-  font-size: 0.75rem;
-}
-
-.progress_toggle_tooltip_container:hover .progress_toggle_tooltip_box {
+.progress_toggle_tooltip_container:hover .progress_toggle {
   display: block;
 }
 
@@ -548,16 +546,15 @@ body {
   display: grid;
   place-items: center;
   font-size: 0;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  background-color: var(--color-white);
+  border: var(--border-dark-background);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
 }
 
 .progress_toggle_btn:hover {
-  background-color: var(--color-hover-bg-light);
-  box-shadow: var(--shadow-soft);
-  transform: scale(1.05);
+  background-color: var(--color-hover-bg);
+  border-color: var(--color-text);
 }
 
 .progress_toggle_btn::before {

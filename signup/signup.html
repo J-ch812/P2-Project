@@ -3,40 +3,46 @@
 <head>
 	<meta charset="UTF-8" /><!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg+xml" href="../imgs/Logo.svg" /><!-- --Picture on the web tab-->
+	<link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg" /><!-- --Picture on the web tab-->
 	<link rel="stylesheet" href="../style.css" /><!-- --Linking this file to the CSS file-->
 	<script src="../script.js" defer></script><!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
-	<title>Exam Ease - Sign Up</title>
+	<title>Exam Ease - Sign up</title>
 </head>
 <body>
 	<div class="container">
 		<header class="topbar">
-            <div class="topbar_left">
-                <a href="../index.html" aria-label="Go to homepage" class="brand">  <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
-                    <img src="../imgs/Logo.svg" alt="Exam Ease logo">
-                    <span class="brand_name">Exam Ease</span>
-                </a>
-                <!-- Normal nav (desktop) -->
-                <div class="nav_links">
-                    <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
-                    <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                </div>
-                <!-- Dropdown (mobile) -->
-                <div class="dropdown">
-                    <button class="btn nav_dropdown dropdownButton">Menu</button>
-                    <div class="dropdown_content nav_links">
-                        <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
-                        <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                    </div>
-                </div> 
-            </div>
+			<div class="topbar_left">
+				<div class="tooltip_container">
+					<a href="../index.html" aria-label="Go to Frontpage"
+						class="brand"><!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+						<img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
+						<span class="brand_name">Exam Ease</span>
+					</a>
+					<div class="tooltip_box header_left">
+						Navigate to Frontpage
+					</div>
+				</div>
+				<!-- Normal nav (desktop) -->
+				<div class="nav_links">
+					<a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
+					<a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+				</div>
+				<!-- Dropdown (mobile) -->
+				<div class="dropdown">
+					<button class="btn nav_dropdown dropdownButton">Menu</button>
+					<div class="dropdown_content nav_links">
+						<a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
+						<a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+					</div>
+				</div>
+			</div>
 			<div class="topbar_right">
 				<button class="btn btn_search">
 					<img src="../imgs/search-icon.webp" alt="Search icon" />
 				</button>
 				<input class="search_bar" type="text" placeholder="Search" />
-				<a href="../login_page/login.html" class="btn btn_ghost_login">Log in</a>
-				<a href="sign_up.html" class="btn btn_ghost_login">Sign up</a>
+				<a href="../login/login.html" class="btn btn_ghost_login">Log in</a>
+				<a href="../signup/signup.html" class="btn btn_signup">Sign up</a>
 			</div>
 		</header>
 		<main class="main">
@@ -114,7 +120,7 @@
 						</div>
 					</div>
 				</div>
-				<a href="../First_semester_page/first_semester.html" class="signup-btn">Sign up</a>
+				<a href="../first_semester/first_semester.html" class="signup-btn">Sign up</a>
 			</div>
 		</main>
 		<footer class="footer">
@@ -122,7 +128,7 @@
 				<h4>Submissions</h4> <!-- --?-- "Submissions" instead of "Submit Your Input" or something else? -->
 				<ul>
 					<li><a href="../submission_info/submission_info.html">Submission Information</a></li>
-					<li><a href="../submission_forms/Student_submission.html">Submission Form</a></li>
+					<li><a href="../submission_forms/student_submission.html">Submission Form</a></li>
 				</ul>
 			</div>
 			<div class="footer_column footer_column_right visible_link">

@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">  <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/svg+xml" href="imgs/Logo.svg"/>  <!-- --Picture on the web tab-->
+    <link rel="icon" type="image/svg+xml" href="imgs/Logo_website_tab.svg"/>  <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="style.css"/>  <!-- --Linking this file to the CSS file-->
     <script src="script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
     <title>Exam Ease - Front Page</title>  <!-- --Title on the web tab-->
@@ -16,32 +16,31 @@
     <div class="container">
         <header class="topbar">
             <div class="topbar_left">
-                <a href="index.html" aria-label="Go to homepage" class="brand">  <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
-                    <img src="imgs/Logo.svg" alt="Exam Ease logo">
+                <a href="index.html" aria-label="Go to Frontpage" class="brand"><!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                    <img src="imgs/Logo_header.svg" alt="Exam Ease logo">
                     <span class="brand_name">Exam Ease</span>
                 </a>
                 <!-- Normal nav (desktop) -->
                 <div class="nav_links">
-                    <a href="submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                    <a href="submission_forms/student_submission.html" class="btn">Submission Form</a>
                     <a href="submission_info/submission_info.html" class="btn">Submission Information</a>
                 </div>
                 <!-- Dropdown (mobile) -->
                 <div class="dropdown">
                     <button class="btn nav_dropdown dropdownButton">Menu</button>
                     <div class="dropdown_content nav_links">
-                        <a href="my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
-                        <a href="submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                        <a href="submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
-                </div> 
+                </div>
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search">
-                    <img src="imgs/search-icon.webp" alt="Search icon"/>
+                    <img src="imgs/search-icon.webp" alt="Search icon" />
                 </button>
-                <input class="search_bar" type="text" placeholder="Search"/>
-                <a href="login_page/login.html" class="btn btn_ghost_login">Log in</a>
-                <a href="Signup/sign_up.html" class="btn btn_signup">Sign up</a>
+                <input class="search_bar" type="text" placeholder="Search" />
+                <a href="login/login.html" class="btn btn_ghost_login">Log in</a>
+                <a href="signup/signup.html" class="btn btn_signup">Sign up</a>
             </div>
         </header>
         <main class="main">
@@ -56,7 +55,7 @@
             <div class="main_components">
                 <section class="main_section">  
                     <section class="course_grid course_grid_front_page">
-                        <a href="Semester_overview__Front_page_2/semester_overview.html" class="course_card">Software - AAU, Bachelor</a>
+                        <a href="semester_overview_homepage/semester_overview.html" class="course_card">Software - AAU, Bachelor</a>
                         <a href="#" class="course_card">Cybersecurity - AAU, Bachelor</a>  
                         <a href="#" class="course_card">Biology - AAU, Bachelor</a>
                         <a href="#" class="course_card">Psychology - AAU, Bachelor</a>                          
@@ -71,7 +70,7 @@
                 <h4>Submissions</h4>
                 <ul>
                     <li><a href="submission_info/submission_info.html">Submission Information</a></li>
-                    <li><a href="submission_forms/Student_submission.html">Submission Form</a></li>
+                    <li><a href="submission_forms/student_submission.html">Submission Form</a></li>
                 </ul>
             </div>
             <div class="footer_column footer_column_right visible_link">

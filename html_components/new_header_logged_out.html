@@ -11,34 +11,37 @@
 
 
         <header class="topbar">
-            
             <div class="topbar_left">
-                <a href="../index.html" aria-label="Go to homepage" class="brand">  <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
-                    <img src="../imgs/Logo.svg" alt="Exam Ease logo">
-                    <span class="brand_name">Exam Ease</span>
-                </a>
+                <div class="tooltip_container">
+                    <a href="../index.html" aria-label="Go to Frontpage" class="brand"><!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                        <img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
+                        <span class="brand_name">Exam Ease</span>
+                    </a>
+                    <div class="tooltip_box header_left">
+                        Navigate to Frontpage
+                    </div>
+                </div>
                 <!-- Normal nav (desktop) -->
                 <div class="nav_links">
-                    <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                    <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                     <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                 </div>
                 <!-- Dropdown (mobile) -->
                 <div class="dropdown">
                     <button class="btn nav_dropdown dropdownButton">Menu</button>
                     <div class="dropdown_content nav_links">
-                        <a href="../submission_forms/Student_submission.html" class="btn">Submission Form</a>
+                        <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
                 </div> 
             </div>
-
             <div class="topbar_right">
                 <button class="btn btn_search">
                     <img src="../imgs/search-icon.webp" alt="Search icon"/>
                 </button>
                 <input class="search_bar" type="text" placeholder="Search"/>
-                <a href="../login_page/login.html" class="btn btn_ghost_login">Log in</a>
-                <a href="../Signup/sign_up.html" class="btn btn_signup">Sign up</a>
+                <a href="../login/login.html" class="btn btn_ghost_login">Log in</a>
+                <a href="../signup/signup.html" class="btn btn_signup">Sign up</a>
             </div>
         </header>
 
