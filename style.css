@@ -12,6 +12,11 @@
   --color-text: #111111;
   --color-white: #ffffff;
 
+
+  /* ----?!---- Letters*/
+  /* letter-spacing: 0.08em; */
+  /*  text-transform: uppercase; */
+
   /* Spacing */
   /* --The margin size between the sides of the screen and the first element */
   --margin-sides-largescreen: 2.5rem; /* --Used as primary (default) */
@@ -335,11 +340,6 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.breadcrumbs.back {
-  /* letter-spacing: 0.08em; */
-  /*  text-transform: uppercase; */
 }
 
 .breadcrumbs.back .arrow {
@@ -909,10 +909,10 @@ body {
 }
 
 .signup-container {
- width: 100%;
-max-width: 750px;
-min-height: 560px;
-height: auto;
+  width: 100%;
+  max-width: 750px;
+  min-height: 560px;
+  height: auto;
   background-color: var(--color-primary);
   border-radius: 14px;
   padding: 2rem 5rem;
