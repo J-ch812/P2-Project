@@ -25,8 +25,10 @@ const registerUser = async (req,res) => {
      });
 
     } catch (error){
+       
 
       res.status(500).json({message: "Technical issue", error} )
+
       
 
     };
@@ -95,6 +97,9 @@ const logoutUser = async (req, res)  => {
          message: "user not found"
 
       })
+
+      return res.status(200).json({ message: "Successfully logged out" });
+
    } catch (error) {
       res.status(500).json({
          message: "technical issue", error

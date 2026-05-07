@@ -7,19 +7,16 @@ const userSchema = new Schema(
             type:String,
             required: true,
             unique: true,
-            lowercase: true,
             trim: true,
-            miniLength: 1,
+            minLength: 1,
             maxLength: 40,
         },
 
         password:{
             type:String,
             required: true,
-            unique: true,
-            lowercase: true,
-            miniLength: 8,
-            maxLengthth: 40,
+            minLength: 8,
+            maxLength: 40,
 
         },
 
@@ -38,11 +35,14 @@ const userSchema = new Schema(
     }
     
 );
-userSchema.pre("save", async function (next) {
+
+userSchema.pre("save", async function() {
+    
+ 
     if(!this.isModified("password")) return next();
     this.password = await bcrypt.hash(this.password, 10);
 
-    next();
+    
     
 });
 
