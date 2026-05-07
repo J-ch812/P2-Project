@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/>  <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
-    <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+    <script src="../script.js" defer></script> 
+    <script src="./login.js" defer></script> <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
     <title>Exam Ease - Log in</title>  <!-- --Title on the web tab-->
 </head>
 <body>
@@ -51,14 +52,16 @@
                 <div class="login-item">
                     <div class="login-box">
                         <div class="login-row-one-two">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" placeholder="E.g. Sara123!" />
+                            <label for="email">E-mail</label>
+                            <input type="text" id="email" placeholder="E.g. Sara123" />
                         </div>
                         <div class="login-row-one-two">
                             <label for="password">Password</label>
-                            <input type="password" id="password" placeholder="E.g. Exam!ease1234"/>
+                            <input type="password" id="password"/>
                         </div>
-                        <a href="../first_semester/first_semester.html" class="signup-btn">Log in</a>
+                        <a href="../first_semester/first_semester.html" class="signup-btn" id="loginBtn">Log in</a> 
+
+
                         <div class="login-row-four">
                             <a href="../signup/signup.html" class="signup-link">Don’t have an account? Sign up</a>
                         </div>
