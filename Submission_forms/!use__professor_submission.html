@@ -18,26 +18,24 @@
                     <a href="../semester_overview_homepage/semester_overview.html" aria-label="Go to homepage" class="brand"> <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
                         <img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
                         <span class="brand_name">Exam Ease</span>
-                        </a>
+                    </a>
                     <div class="tooltip_box header_left">
                         Navigate to Homepage
                     </div>
-                    </div>
-                <!-- Normal nav (desktop) -->
-                <div class="nav_links">
+                </div>
+                <nav class="nav_links">
                     <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
                     <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                     <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                </div>
-                <!-- Dropdown (mobile) -->
-                <div class="dropdown">
+                </nav>
+                <nav class="dropdown">
                     <button class="btn nav_dropdown dropdownButton">Menu</button>
                     <div class="dropdown_content nav_links">
                         <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
                         <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
-                </div>
+                </nav>
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search">
@@ -46,7 +44,7 @@
                 <input class="search_bar" type="text" placeholder="Search"/>
                 <div class="dropdown">
                     <div class="tooltip_container">
-                        <button class="btn btn_profile dropdownButton">
+                        <button class="btn btn_profile dropdownButton" aria-label="Show profile">
                             <img src="../imgs/profile_icon.svg" alt="Profile icon" />
                             </button>
                         <div class="tooltip_box header_rigth">
@@ -85,11 +83,11 @@
             </section>
             <div class="main_components">
                 <div class="main_section">
-                    <div class="submission-card">
-                        <p class="card-hint">Based on where the content should be published, please complete all the information:</p>
+                    <div class="submission_card">
+                        <p class="card_hint">Based on where the content should be published, please complete all the information:</p>
 
                         <!-- Dropdowns -->
-                        <div class="select-row">
+                        <div class="select_row">
                             <select>
                                 <option value="" disabled selected>University, field of expertise</option>
                                 <option>AAU - Software, Bachelor</option>
@@ -122,29 +120,28 @@
 
                         <!-- Row 1: Full width main content -->
                         <div style="margin-bottom:1rem;">
-                            <div class="field-label">Your content</div>
+                            <div class="field_label">Your content</div>
                             <textarea
-                                class="ta-main"
+                                class="ta content"
                                 placeholder="Type here…"
                                 oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"
                             ></textarea>
                         </div>
 
                         <!-- Row 2: Comments + Attachments side by side -->
-                        <div class="text-row">
+                        <div class="text_row">
                             <div>
-                                <div class="field-label">Additional comments or suggestions</div>
-                                <textarea
-                                    class="ta-comment"
+                                <div class="field_label">Additional comments or suggestions</div>
+                                <textarea class="ta comments"
                                     placeholder="Type here…"
                                     oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"
                                 ></textarea>
                             </div>
 
                             <div>
-                                <div class="field-label">Attachments</div>
+                                <div class="field_label">Attachments</div>
 
-                                <div class="attach-box" id="attachBox" onclick="document.getElementById('fileInput').click()">
+                                <div class="attach_box" id="attachBox" onclick="document.getElementById('fileInput').click()">
                                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                                         <polyline points="16 16 12 12 8 16"></polyline>
                                         <line x1="12" y1="12" x2="12" y2="21"></line>
@@ -154,13 +151,22 @@
                                 </div>
 
                                 <input type="file" id="fileInput" multiple onchange="addFiles(this.files)" />
-                                <div class="file-list" id="fileList"></div>
+                                <div class="file_list" id="fileList"></div>
                             </div>
+
+
+                            
+
+
+
+
+
+
                         </div>
 
                         <!-- Submit -->
-                        <div class="submit-row">
-                            <button class="small_btn btn_logout btn-submit" onclick="on('submitOverlay')">Submit</button>
+                        <div class="submit_row">
+                            <button class="small_btn btn_logout btn_submit" onclick="on('submitOverlay')">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -200,11 +206,11 @@
     <!-- --The botton should look somehting like this:  <button class="small_btn btn_logout" onclick="on('submitOverlay')">Log out</button> -->
     <div class="overlay" id="submitOverlay">
         <div class="inside_overlay submission_check">
-            <h2>
+            <h4>
                 Once you submit the form, it cannot be withdrawn.
                 <br />
                 Are you ready to submit the form?
-            </h2>
+            </h4>
             <div class="buttons">
                 <button class="md_btn cancel" onclick="off('submitOverlay')">Cancel</button>
                 <button class="md_btn submit"

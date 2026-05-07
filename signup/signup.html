@@ -22,19 +22,17 @@
 						Navigate to Frontpage
 					</div>
 				</div>
-				<!-- Normal nav (desktop) -->
-				<div class="nav_links">
+				<nav class="nav_links">
 					<a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
 					<a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-				</div>
-				<!-- Dropdown (mobile) -->
-				<div class="dropdown">
+				</nav>
+				<nav class="dropdown">
 					<button class="btn nav_dropdown dropdownButton">Menu</button>
 					<div class="dropdown_content nav_links">
 						<a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
 						<a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
 					</div>
-				</div>
+				</nav>
 			</div>
 			<div class="topbar_right">
 				<button class="btn btn_search">
@@ -49,25 +47,25 @@
 			<div class="signup-container">
 				<h1>Sign up</h1>
 				<div class="signup-grid">
-					<div class="signup-item">
+					<div class="signup_item">
 						<label for="name">First- and last name</label>
 						<input type="text" class="name" placeholder="E.g. Sara Hansen" />
 					</div>
-					<div class="signup-item">
+					<div class="signup_item">
 						<label>I am a...</label>
 						<div class="signup-role">
-							<label class="role-option" for="student">
+							<label class="role_option" for="student">
 								<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)" />
 								<p>Student</p>
 							</label>
-							<label class="role-option" for="professor">
+							<label class="role_option" for="professor">
 								<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)" />
 								<p>Professor</p>
 							</label>
 						</div>
 					</div>
 					<div class="signup-row-two">
-						<div class="signup-item">
+						<div class="signup_item">
 							<label for="university">University</label>
 							<div class="dropdown">
 								<select name="university" id="university">
@@ -76,7 +74,7 @@
 								</select>
 							</div>
 						</div>
-						<div class="signup-item">
+						<div class="signup_item">
 							<label for="field" >Field of study</label>
 							<div class="dropdown">
 								<select name="field" id="field">
@@ -90,7 +88,7 @@
 								</select>
 							</div>
 						</div>
-						<div class="signup-item semester">
+						<div class="signup_item semester">
 							<label for="semester">Semester</label>
 							<div class="dropdown">
 								<select name="semester" id="semester">
@@ -105,16 +103,16 @@
 							</div>
 						</div>
 					</div>
-					<div class="signup-item emails">
+					<div class="signup_item emails">
 						<label for="email">E-mail</label>
 						<input type="email" class="email" placeholder="E.g. Sara.hansen@student.aau.dk"/>
 					</div>
 					<div class="signup-row-four">
-						<div class="signup-item">
+						<div class="signup_item">
 							<label for="username">Username</label>
 							<input type="text" id="username" placeholder="E.g. Sara123!" />
 						</div>
-						<div class="signup-item">
+						<div class="signup_item">
 							<label for="password">Password</label>
 							<input type="password" id="password" placeholder="E.g. Exam!ease1234"/>
 						</div>

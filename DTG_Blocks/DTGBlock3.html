@@ -20,22 +20,20 @@
                     <div class="tooltip_box header_left">
                         Navigate to Homepage
                     </div>
-                    </div>
-                <!-- Normal nav (desktop) -->
-                <div class="nav_links">
+                </div>
+                <nav class="nav_links">
                     <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
                     <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                     <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                </div>
-                <!-- Dropdown (mobile) -->
-                <div class="dropdown">
+                </nav>
+                <nav class="dropdown">
                     <button class="btn nav_dropdown dropdownButton">Menu</button>
                     <div class="dropdown_content nav_links">
                         <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
                         <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
-                </div>
+                </nav>
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search">
@@ -44,24 +42,28 @@
                 <input class="search_bar" type="text" placeholder="Search"/>
                 <div class="dropdown">
                     <div class="tooltip_container">
-                        <button class="btn btn_profile dropdownButton">
+                        <button class="btn btn_profile dropdownButton" aria-label="Show profile">
                             <img src="../imgs/profile_icon.svg" alt="Profile icon" />
                             </button>
                         <div class="tooltip_box header_rigth">
                             Show Profile
                         </div>
-                        </div>
+                    </div>
                     <aside class="popup profile_dropdown dropdown_content">
-                        <p>Sara123!</p>
-                        <hr />
-                        <h4><a href="../my_submission/my_submission.html">My submissions</a></h4>
-                        <hr />
-                        <h4>Profile (Student)</h4>
-                        <p>Sara Hansen</p>
-                        <p>Sara.hansen@student.aau.dk</p>
-                        <p>Aalborg University Copenhagen</p>
-                        <p>1. Semester</p>
-                        <p>Software, Bachelor</p>
+                        <div class="profile_header">Sara123!</div>
+                        <div class="profile_divider">
+                            <hr/>
+                            <a class="profile_link" href="../my_submission/my_submission.html">My submissions</a>
+                            <hr/>
+                        </div>
+                        <div class="profile_section_title">Profile (Student)</div>
+                        <div class="profile_info">
+                            <span>Sara Hansen</span>
+                            <span>Sara.hansen@student.aau.dk</span>
+                            <span>Aalborg University Copenhagen</span>
+                            <span>1. Semester</span>
+                            <span>Software, Bachelor</span>
+                        </div>
                         <div class="buttons">
                             <button class="small_btn btn_logout"><a href="../index.html">Log out</a></button>
                             <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
@@ -74,7 +76,7 @@
             <section class="heading_wrapper">
                 <h1 class="heading">Block 3: Induction & Recursion</h1>
                 <div class="breadcrumbs">
-                    <a href="../first_semester/first_semester.html">First Semester</a>
+                    <a href="../first_semester/first_semester.html">Course Overview</a>
                     <span>/</span>
                     <a href="../DTG_overview/dtg_overview.html">DTG Overview</a>
                     <span>/</span>

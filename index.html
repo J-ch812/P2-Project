@@ -14,6 +14,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- TOPBAR -->
         <header class="topbar">
             <div class="topbar_left">
                 <a href="index.html" aria-label="Go to Frontpage" class="brand"><!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
@@ -21,18 +22,18 @@
                     <span class="brand_name">Exam Ease</span>
                 </a>
                 <!-- Normal nav (desktop) -->
-                <div class="nav_links">
+                <nav class="nav_links">
                     <a href="submission_forms/student_submission.html" class="btn">Submission Form</a>
                     <a href="submission_info/submission_info.html" class="btn">Submission Information</a>
-                </div>
+                </nav>
                 <!-- Dropdown (mobile) -->
-                <div class="dropdown">
+                <nav class="dropdown">
                     <button class="btn nav_dropdown dropdownButton">Menu</button>
                     <div class="dropdown_content nav_links">
                         <a href="submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
-                </div>
+                </nav>
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search">
@@ -43,14 +44,12 @@
                 <a href="signup/signup.html" class="btn btn_signup">Sign up</a>
             </div>
         </header>
+        <!-- MAIN -->
         <main class="main">
-            <section class="heading">
-                <h1>Exam Ease</h1>
-                <p>
-                Study smarter, stress less.
-                <br>
-                Helping students navigate their courses and curriculum.
-                </p>
+            <section class="heading_wrapper">
+                <h1 class="heading">Exam Ease</h1>
+                <p>Study smarter, stress less.</p>
+                <p>Helping students navigate their courses and curriculum.</p>
             </section>
             <div class="main_components">
                 <section class="main_section">  
@@ -65,6 +64,7 @@
                 </section>
             </div>
         </main>
+        <!-- FOOTER -->
         <footer class="footer">
             <div class="footer_column footer_column_left">
                 <h4>Submissions</h4>
