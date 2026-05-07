@@ -1,6 +1,9 @@
 import { Router } from 'express';
-import{registerUser} from '../Profile verification/user.js';
+import { registerUser, loginUser, logoutUser} from "../Profile-verification/user.js";
 const router = Router();
-router.route('/register').post(registerUser);
+
+router.route('/register').post( registerUser );
+router.route('/login').post( loginUser );
+router.route('/logout').post( logoutUser );
 
 export default router;
