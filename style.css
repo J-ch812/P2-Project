@@ -1724,14 +1724,15 @@ input[type="checkbox"] {
 
 
 /* Default is logged out, so remove logged in components */
+/* Just to test*/
 #navLoggedInDesktop, #navLoggedInMobile, #userProfile {
   display: none;
-  border: 2px solid #fff;  /* Just to test*/
+  /* border: 2px solid #fff;   */
 }
 
-#navLoggedOutDesktop, #navLoggedOutMobile, #authButtons {
-  border: 2px solid #dc1919;  /* Just to test*/
-}
+/* #navLoggedOutDesktop, #navLoggedOutMobile, #authButtons {
+  border: 2px solid #dc1919;  
+} */
 
 
 
@@ -1919,6 +1920,11 @@ input[type="checkbox"] {
   /* Pages without a sidebar becomes one column */
   .main_components:not(:has(.progress_section)) {
     grid-template-columns: 1fr;
+  }
+
+  /** Hide brand_name (Site title) **/
+  .topbar.logged_out .brand_name {
+    display: none;
   }
 }
 
