@@ -764,6 +764,10 @@ textarea::placeholder {
   background-color: var(--color-hover-bg);
 }
 
+.course_grid_front_page {
+  column-gap: clamp(1.25rem, 5vw, 5rem);
+}
+
 .course_grid_semester_page {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -1788,10 +1792,6 @@ input[type="checkbox"] {
 
 @media screen and (max-width: 1000px) {
   /** The Path/Breadcrumbs **/
-  .main_components:has(.progress_section) {
-    margin-top: var(--gap-between-elements);
-  }
-
   .heading_wrapper {
     display: flex;
     flex-direction: column;
@@ -1804,12 +1804,13 @@ input[type="checkbox"] {
     /* margin-top: 0.25rem; */
     text-align: center;
     padding-left: 0;
+    margin-bottom: 0.25rem;
   }
 
   /* -Submission info page*/
-  .big_box {
+  /* .big_box {
     width: 100%;
-  }
+  } */
 }
 
 @media screen and (max-width: 900px) {
