@@ -551,6 +551,7 @@ textarea::placeholder {
 .main_components:has(.progress_section.collapsed) {
   grid-template-columns: auto 1fr;
   column-gap: 5rem;
+  margin-right: 5rem;
 }
 
 /*---- Progress Section (SIDEBAR, PROGRESS_GRID) ----*/
@@ -1259,7 +1260,7 @@ input[type="checkbox"] {
   border: var(--border-light-background);
   padding: 2rem;
   justify-self: center;
-  width: 85%;
+  width: 100%; /* 85%? */
   line-height: 1.5;
 }
 
@@ -1885,6 +1886,7 @@ input[type="checkbox"] {
 
   .main_components:has(.progress_section.collapsed) {
     grid-template-columns: 1fr;
+    margin-right: 0rem;
   }
 
   .progress_section.collapsed {
