@@ -1,7 +1,7 @@
 import {User} from "../Profile-model/user.js";
 const registerUser = async (req,res) => {
 
-    try{ const {email, username, password} = req.body;
+    try{ const {email, username, password,semester,fieldofstudy,university,role} = req.body;
 
      if (!username||!email||!password) {
         return res.status(400).json({ message:"Fill in all your information"})
@@ -16,6 +16,10 @@ const registerUser = async (req,res) => {
       username,
       email: email.toLowerCase(),
       password,
+      fieldofstudy,
+      university,
+      semester,
+      role,
       loggedIn: false,
       
      });
@@ -65,6 +69,11 @@ const registerUser = async (req,res) => {
       id: user._id ,
    email: user.email,
    username: user.username,
+   semester: user.semester,
+   fieldofstudy: user.fieldofstudy,
+   university: user.university,
+   role: user.role
+
 
    } 
    })

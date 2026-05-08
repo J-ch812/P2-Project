@@ -12,11 +12,14 @@ web.use(express.json());
 
 
 web.use('/api', userRouter);
+web.use('/uploads', express.static('uploads'));
             
 
 
   web.get("/", (req, res) => {
    res.send("API WORKING");
+   
+
 
 
 
