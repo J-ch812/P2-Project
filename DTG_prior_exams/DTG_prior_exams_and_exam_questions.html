@@ -6,14 +6,14 @@
     <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/>  <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
     <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->   
-    <title>Exam Ease - DTG Prior Exams</title>
+    <title>Exam Ease - DTG Previous Exams</title>
 </head>
 <body>
     <div class="container">
         <header class="topbar">
             <div class="topbar_left">
                 <div class="tooltip_container">
-                    <a href="../semester_overview_homepage/semester_overview.html" aria-label="Go to homepage" class="brand"> <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                    <a href="../semester_overview_homepage/semester_overview.html" class="brand" aria-label="Go to homepage">
                         <img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
                         <span class="brand_name">Exam Ease</span>
                         </a>
@@ -21,47 +21,49 @@
                         Navigate to Homepage
                     </div>
                 </div>
-                <!-- Normal nav (desktop) -->
-                <div class="nav_links">
+                <nav class="nav_links">
                     <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
                     <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                     <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                </div>
-                <!-- Dropdown (mobile) -->
-                <div class="dropdown">
+                </nav>
+                <nav class="dropdown">
                     <button class="btn nav_dropdown dropdownButton">Menu</button>
                     <div class="dropdown_content nav_links">
                         <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
                         <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
-                </div>
+                </nav>
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search">
-                    <img src="../imgs/search-icon.webp" alt="Search icon"/>
+                    <img src="../imgs/search-icon.webp" alt="Search icon">
                 </button>
                 <input class="search_bar" type="text" placeholder="Search"/>
                 <div class="dropdown">
                     <div class="tooltip_container">
-                        <button class="btn btn_profile dropdownButton">
-                            <img src="../imgs/profile_icon.svg" alt="Profile icon" />
+                        <button class="btn btn_profile dropdownButton" aria-label="Show profile">
+                            <img src="../imgs/profile_icon.svg" alt="Profile icon">
                             </button>
                         <div class="tooltip_box header_rigth">
                             Show Profile
                         </div>
                     </div>
                     <aside class="popup profile_dropdown dropdown_content">
-                        <p>Sara123!</p>
-                        <hr />
-                        <h4><a href="../my_submission/my_submission.html">My submissions</a></h4>
-                        <hr />
-                        <h4>Profile (Student)</h4>
-                        <p>Sara Hansen</p>
-                        <p>Sara.hansen@student.aau.dk</p>
-                        <p>Aalborg University Copenhagen</p>
-                        <p>1. Semester</p>
-                        <p>Software, Bachelor</p>
+                        <div class="profile_header">Sara123!</div>
+                        <div class="profile_divider">
+                            <hr/>
+                            <a class="profile_link" href="../my_submission/my_submission.html">My submissions</a>
+                            <hr/>
+                        </div>
+                        <div class="profile_section_title">Profile (Student)</div>
+                        <div class="profile_info">
+                            <span>Sara Hansen</span>
+                            <span>Sara.hansen@student.aau.dk</span>
+                            <span>Aalborg University Copenhagen</span>
+                            <span>1. Semester</span>
+                            <span>Software, Bachelor</span>
+                        </div>
                         <div class="buttons">
                             <button class="small_btn btn_logout"><a href="../index.html">Log out</a></button>
                             <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
@@ -72,13 +74,13 @@
         </header>
         <main class="main">
             <section class="heading_wrapper">
-                <h1 class="heading">DTG - Prior Exams and Exam Questions</h1>
+                <h1 class="heading">DTG Previous Exams</h1>
                 <div class="breadcrumbs">
-                    <a href="../first_semester/first_semester.html">First Semester</a>
+                    <a href="../first_semester/first_semester.html">Course Overview</a>
                     <span>/</span>
                     <a href="../DTG_overview/dtg_overview.html">DTG Overview</a>
                     <span>/</span>
-                    <span class="current">DTG Prior Exams</span>
+                    <span class="current">DTG Previous Exams</span>
                 </div>
             </section>
             <div class="main_components">
@@ -140,7 +142,6 @@
                                     <a href="../DTG_Blocks/DTGBlock4.html" class="progress_bar sub block4">Block 4</a>
                                     <a href="../DTG_Blocks/DTGBlock4.html" class="progress_percentage sub block4_percentage">0%</a> 
                                 </div>
-
                                 <div class="tooltip_box">
                                     Navigate to Block 4
                                 </div>
@@ -154,31 +155,21 @@
                         <div class="course_card prior_exams">
                             <h3>Questions asked at the oral exam</h3>
                             <div class="exam_list">
-                                <br>
-                                <a href="#/">Exam 2025</a>
-                                <br><br>
-                                <a href="#">Exam 2024</a>
-                                <br><br>
-                                <a href="#">Exam 2023</a>
-                                <br><br>
-                                <a href="#">Exam 2022</a>
-                                <br><br>
-                                <a href="#">Exam 2021</a>
+                                <a href="../files/exam_questions/2025/exam25_questions.pdf" download="Exam2025-Questions.pdf">Exam 2025</a>
+                                <a href="../files/exam_questions/2024/exam24_questions.pdf" download="Exam2024-Questions.pdf">Exam 2024</a>
+                                <a href="../files/exam_questions/2023/exam23_questions.pdf" download="Exam2023-Questions.pdf">Exam 2023</a>
+                                <a href="../files/exam_questions/2022/exam22_questions.pdf" download="Exam2022-Questions.pdf">Exam 2022</a>
+                                <a href="../files/exam_questions/2021/exam21_questions.pdf" download="Exam2021-Questions.pdf">Exam 2021</a>
                             </div>
                         </div>
                         <div class="course_card prior_exams">
-                            <h3>Written exams - Workshops</h3>
+                            <h3>Written exams (Workshops)</h3>
                             <div class="exam_list">
-                                <br>
-                                <a href="#/">Exam 2025</a>
-                                <br><br>
-                                <a href="#">Exam 2024</a>
-                                <br><br>
-                                <a href="#">Exam 2023</a>
-                                <br><br>
-                                <a href="#">Exam 2022</a>
-                                <br><br>
-                                <a href="#">Exam 2021</a>
+                                <a href="../files/Workshops/2025/exam25_workshops.pdf" download="Exam2025-Workshops.pdf">Exam 2025</a>
+                                <a href="../files/Workshops/2024/exam24_workshops.pdf" download="Exam2024-Workshops.pdf">Exam 2024</a>
+                                <a href="../files/Workshops/2023/exam23_workshops.pdf" download="Exam2023-Workshops.pdf">Exam 2023</a>
+                                <a href="../files/Workshops/2022/exam22_workshops.pdf" download="Exam2022-Workshops.pdf">Exam 2022</a>
+                                <a href="../files/Workshops/2021/exam21_workshops.pdf" download="Exam2021-Workshops.pdf">Exam 2021</a>
                             </div>
                         </div>
                     </section>

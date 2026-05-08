@@ -42,6 +42,15 @@ document.addEventListener("click", (e) => {
   });
 });
 
+// Hide dropdowns when resizeing the width of the screen (used for all, but made for the nav_dropdown)
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1150) {
+    document.querySelectorAll(".dropdown").forEach((dropdown) => {
+      dropdown.classList.remove("active");
+    });
+  }
+});
+
 
 
 //OVERLAYS
@@ -67,6 +76,8 @@ function off(id) {
   overlay.classList.remove("active");
   document.body.style.overflow = "";
 }
+
+
 
 // LECTURE PROGRESS COUNTERS
 // Sets up the connection between each lecture, its topic checkboxes, its lecture checkbox,
@@ -123,6 +134,14 @@ function updateLectureCounter(lecture) {
   if (topicCheckboxes.length > 0){
     lectureCheckbox.checked = checkedTopics.length === topicCheckboxes.length;
   }
+}
+
+// Updates the counters for all lectures after saved checkbox states are loaded. 
+// Ensures the visible counters (for example "2/4") match the restored progress when the page is refreshed or revisited.
+function updateAllLectureCounters(){
+  document.querySelectorAll(".lecture_dropdown").forEach((lecture) => {
+    updateLectureCounter(lecture);
+  });
 }
 
 // Updates the progress for the current DTG block page.
@@ -259,16 +278,8 @@ function loadSavedBlockProgress(){
 // Initialize the progress bars when the page loads.
 loadSavedBlockProgress();
 loadCurrentBlockCheckboxStates();
+updateAllLectureCounters();
 updateBlockProgress();
-
-//Chekbox: select one
-function ChooseOne(id) {
-  for (var i = 1; i <= 2; i++) {
-    //goes through all the boxes and unchek them
-    document.getElementById("Check" + i).checked = false;
-    }
-    document.getElementById(id).checked = true;
-}
 
 // Hide and show progressbar
 const progressStorageKey = "progressbar-collapsed";
@@ -288,7 +299,7 @@ function updateProgressToggleState(toggleProgressBtn, isCollapsed){
     toggleProgressBtn.setAttribute("aria-label", "Hide progress");
 
     if(tooltipBox){
-      tooltipBox.textContent = "Hide Progress bar";
+      tooltipBox.textContent = "Hide progress bar";
     }
   }
 }
@@ -321,3 +332,43 @@ document.querySelectorAll(".progress_toggle_btn").forEach((toggleProgressBtn) =>
     updateProgressToggleState(toggleProgressBtn, isCollapsed);
   });
 });
+
+
+
+//Chekbox: select one
+function chooseOne(id) {
+  for (var i = 1; i <= 2; i++) {
+    //goes through all the boxes and unchek them
+    document.getElementById("Check" + i).checked = false;
+    }
+    document.getElementById(id).checked = true;
+}
+
+
+
+// HOVER LABLE: HIDE AND SHOW PROFILE
+document.querySelectorAll(".btn_profile").forEach((profileBtn) => {
+  profileBtn.addEventListener("click", () => {
+
+    const dropdown = profileBtn.closest(".dropdown");
+
+    if(!dropdown){
+      return;
+    }
+
+    // dropdownButton listener already toggled active
+    const isOpen = dropdown.classList.contains("active");
+
+    profileBtn.setAttribute(
+      "aria-label",
+      isOpen ? "Hide profile" : "Show profile"
+    );
+
+    const tooltipBox = dropdown.querySelector(".tooltip_box.header_rigth");
+
+    if(tooltipBox){
+      tooltipBox.textContent = isOpen
+        ? "Hide profile": "Show profile";
+    }
+  });
+}); 

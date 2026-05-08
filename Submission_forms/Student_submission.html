@@ -1,69 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg" />
-    <link rel="stylesheet" href="../style.css" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/>
+    <link rel="stylesheet" href="../style.css"/>
     <script src="file_handeling.js" defer></script>
     <script src="../script.js" defer></script>
-    <title>Exam Ease - Student – Submission Form</title>
+    <title>Exam Ease - Submission Form</title>
 </head>
 <body>
     <div class="container">
-        <!-- TOPBAR -->
         <header class="topbar">
             <div class="topbar_left">
                 <div class="tooltip_container">
-                    <a href="../semester_overview_homepage/semester_overview.html" aria-label="Go to homepage" class="brand"> <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                    <a href="../semester_overview_homepage/semester_overview.html" class="brand" aria-label="Go to homepage">
                         <img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
                         <span class="brand_name">Exam Ease</span>
-                        </a>
+                    </a>
                     <div class="tooltip_box header_left">
                         Navigate to Homepage
                     </div>
-                    </div>
-                <!-- Normal nav (desktop) -->
-                <div class="nav_links">
+                </div>
+                <nav class="nav_links">
                     <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
                     <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                     <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                </div>
-                <!-- Dropdown (mobile) -->
-                <div class="dropdown">
+                </nav>
+                <nav class="dropdown">
                     <button class="btn nav_dropdown dropdownButton">Menu</button>
                     <div class="dropdown_content nav_links">
                         <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
                         <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
-                </div>
+                </nav>
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search">
-                    <img src="../imgs/search-icon.webp" alt="Search icon"/>
+                    <img src="../imgs/search-icon.webp" alt="Search icon">
                 </button>
                 <input class="search_bar" type="text" placeholder="Search"/>
                 <div class="dropdown">
                     <div class="tooltip_container">
-                        <button class="btn btn_profile dropdownButton">
-                            <img src="../imgs/profile_icon.svg" alt="Profile icon" />
-                            </button>
+                        <button class="btn btn_profile dropdownButton" aria-label="Show profile">
+                            <img src="../imgs/profile_icon.svg" alt="Profile icon">
+                        </button>
                         <div class="tooltip_box header_rigth">
                             Show Profile
                         </div>
                     </div>
                     <aside class="popup profile_dropdown dropdown_content">
-                        <p>Sara123!</p>
-                        <hr />
-                        <h4><a href="../my_submission/my_submission.html">My submissions</a></h4>
-                        <hr />
-                        <h4>Profile (Student)</h4>
-                        <p>Sara Hansen</p>
-                        <p>Sara.hansen@student.aau.dk</p>
-                        <p>Aalborg University Copenhagen</p>
-                        <p>1. Semester</p>
-                        <p>Software, Bachelor</p>
+                        <div class="profile_header">Sara123!</div>
+                        <div class="profile_divider">
+                            <hr/>
+                            <a class="profile_link" href="../my_submission/my_submission.html">My submissions</a>
+                            <hr/>
+                        </div>
+                        <div class="profile_section_title">Profile (Student)</div>
+                        <div class="profile_info">
+                            <span>Sara Hansen</span>
+                            <span>Sara.hansen@student.aau.dk</span>
+                            <span>Aalborg University Copenhagen</span>
+                            <span>1. Semester</span>
+                            <span>Software, Bachelor</span>
+                        </div>
                         <div class="buttons">
                             <button class="small_btn btn_logout"><a href="../index.html">Log out</a></button>
                             <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
@@ -72,106 +73,96 @@
                 </div>
             </div>
         </header>
-
-        <!-- MAIN -->
         <main class="main">
             <section class="heading_wrapper">
-                <h1 class="heading">Submission Form - Student</h1>
+                <h1 class="heading">Submission Form</h1>
                 <div class="breadcrumbs back">
                     <a href="../first_semester/first_semester.html">
                         <span class="arrow">‹</span> <!-- &larr; -->
-                        Back to Course Overview (First Semester) <!-- First Semester page-->
+                        Go to Course Overview (First Semester) <!-- First Semester page-->
                     </a>
                 </div>
             </section>
-            <div class="main_components">
-                <div class="main_section">
-                    <div class="submission-card">
-                        <p class="card-hint">Based on where the content should be published, please complete all the information:</p>
+            <div class="main_components no_top_margin">
+                <section class="main_section">
+                    <form class="big_box submission_form">
+                        <p class="intro_text">Please complete all the fields based on where the content should be published.</p>
 
                         <!-- Dropdowns -->
-                        <div class="select-row">
-                            <select>
-                                <option value="" disabled selected>University, field of study</option>
-                                <option>AAU - Software, Bachelor</option>
-                                <option>AAU - Cybersecurity, Bachelor</option>
-                                <option>AAU - Biology, Bachelor</option>
-                                <option>AAU - Psychology, Bachelor</option>
-                                <option>AAU - History, Bachelor</option>
-                                <option>AAU - Biotechnology, Bachelor</option>
+                        <div class="form_field program">
+                            <label for="program">University, Program</label>    <!-- <option value="" disabled selected>University, Program</option> -->
+                            <select id="program" required>                            
+                                <option value="" disabled selected>University, Program</option>
+                                <option>AAU, Software (Bachelor)</option>
+                                <option>AAU, Cybersecurity (Bachelor)</option>
+                                <option>AAU, Biology (Bachelor)</option>
+                                <option>AAU, Psychology (Bachelor)</option>
+                                <option>AAU, History (Bachelor)</option>
+                                <option>AAU, Biotechnology (Bachelor)</option>
                             </select>
+                        </div>
 
-                            <select>
-                                <option value="" disabled selected>Semester, course</option>
-                                <option>Semester 1</option>
-                                <option>Semester 2</option>
-                                <option>Semester 3</option>
-                                <option>Semester 4</option>
-                                <option>Semester 5</option>
-                                <option>Semester 6</option>
+                        <div class="form_field course">
+                            <label for="course">Semester, Course</label>  <!-- <option value="" disabled selected>Semester, Course</option> -->
+                            <select id="course" required>
+                                <option value="" disabled selected>Semester, Course</option>
+                                <option>Semester 1, DTG</option>
+                                <option>Semester 2, IWP</option>
+                                <option>Semester 3, OOP</option>
+                                <option>Semester 4, CAOS</option>
+                                <option>Semester 5, MI</option>
+                                <option>Semester 6, SEC</option>
                             </select>
+                        </div>
 
-                            <select>
-                                <option value="" disabled selected>Type of content</option>
-                                <option>Assignment</option>
+                        <div class="form_field type">
+                            <label for="type">Type of Content</label>  <!-- <option value="" disabled selected>Type of Content</option> -->
+                            <select id="type" required>
+                                <option value="" disabled selected>Type of Content</option>
+                                <option>Previous exams</option>
                                 <option>Add to curriculum</option>
-                                <option>Presentation</option>
+                                <option>Feedback on curriculum</option>
+                                <option>New material</option>
                                 <option>Exam questions</option>
                                 <option>Other</option>
                             </select>
                         </div>
-
-                        <!-- Row 1: Full width main content -->
-                        <div style="margin-bottom:1rem;">
-                            <div class="field-label">Your content</div>
-                            <textarea  class="ta-main" placeholder="Type here…" oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"></textarea>
+                     
+                        <!-- Main textarea -->
+                        <div class="form_field content">
+                            <label for="content">Your content, input and feedback</label>  <!-- <div class="field_label">Your content, input and feedback</div> -->
+                            <textarea class="ta content" id="content" placeholder="Type here…"></textarea>  <!-- oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'" -->
                         </div>
 
-                        <!-- Row 2: Comments + Attachments side by side -->
-                        <div class="text-row">
-                            <div>
-                                <div class="field-label">Additional comments or suggestions</div>
-                                <textarea
-                                    class="ta-comment"
-                                    placeholder="Type here…"
-                                    oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'"
-                                ></textarea>
-                            </div>
-
-                            <div>
-                                <div class="field-label">Attachments</div>
-
-                                <div
-                                    class="attach-box"
-                                    id="attachBox"
-                                    onclick="document.getElementById('fileInput').click()"
-                                >
-                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <!-- Comments + Attachments -->
+                        <div class="form_field comments">
+                            <label for="comments">Additional comments or suggestions</label>  <!-- <div class="field_label">Your content, input and feedback</div> -->
+                            <textarea class="ta comments" id="comments" placeholder="Type here…" ></textarea> <!-- oninput="this.style.height='0px';this.style.height=this.scrollHeight+'px'" -->
+                        </div>
+                        <div class="form_field attachments">
+                            <label for="fileInput">Attachments</label>
+                            <div class="attach_box" id="attachBox" onclick="openFilePicker(event)">
+                                <div class="attach_box_header">
+                                    <svg class="upload_icon" viewBox="0 0 24 24" aria-hidden="true">
                                         <polyline points="16 16 12 12 8 16"></polyline>
                                         <line x1="12" y1="12" x2="12" y2="21"></line>
                                         <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
                                     </svg>
-                                    <span>Click to upload files</span>
+                                    <span class="upload_text">Click to upload files</span>
                                 </div>
-
-                                <input type="file" id="fileInput" multiple onchange="addFiles(this.files)" />
-                                <div class="file-list" id="fileList"></div>
+                                <input type="file" id="fileInput" multiple onchange="addFiles(this.files)">
+                                <div class="file_list" id="fileList"></div>
                             </div>
                         </div>
 
                         <!-- Submit -->
-                        <div class="submit-row">
-                            <button class="btn-submit" onclick="handleSubmit()">Submit</button>
+                        <div class="submit">  <!-- NOT form_field ??why -->
+                            <button type="button" class="btn_submit" onclick="on('submitOverlay')">Submit</button>
                         </div>
-                    </div>
-                </div>
+                    </form>
+                </section>
             </div>
         </main>
-
-        <!-- TOAST -->
-        <div class="toast" id="toast">✓ Submission received!</div>
-
-        <!-- FOOTER -->
         <footer class="footer">
             <div class="footer_column footer_column_left">
                 <h4>Submissions</h4>
@@ -192,9 +183,36 @@
     <!-- Profile Has Been Successfully Deleted -->
     <div class="overlay" id="deleteOverlay">
         <div class="inside_overlay delete_profile">
-            <h1>Your profile has been successfully deleted!</h1>
+            <h2>Your profile has been successfully deleted!</h2>
             <a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
         </div>
     </div>
+
+    <!-- The User Is Asked If They Do Want To Submit -->
+    <div class="overlay" id="submitOverlay">
+        <div class="inside_overlay submission_check">
+            <p>Once you submit the form, it cannot be withdrawn.<br/>Are you ready to submit the form?</p>
+            <div class="buttons">
+                <button class="md_btn cancel" onclick="off('submitOverlay')">Cancel</button>
+                <button class="md_btn submit" onclick="off('submitOverlay'); on('successOverlay'); handleSubmit()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <!-- The Submission Was Successful -->
+    <div class="overlay" id="successOverlay">
+        <div class="inside_overlay submission_succes">
+            <h2>Your submission was successful!</h2>
+            <p>Your efforts to help expand and improve the site's contents are greatly appreciated!</p>
+            <p>
+                Our administrators will carefully review your submission and publish any portions that
+                are deemed appropriate to supplement and enhance the current content of the website.
+            </p>
+            <div class="button yes">
+                <button class="md_btn yes" onclick="handleSubmit()">Close</button> <!-- Go to the previous page -->
+            </div>
+        </div>
+    </div>
+    <!-- Toast -->
+    <div class="toast" id="toast">✓ Submission received!</div>
 </body>
 </html>

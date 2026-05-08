@@ -1,18 +1,53 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" /> <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg" /> <!-- --Picture on the web tab-->
-	<link rel="stylesheet" href="../style.css" /> <!-- --Linking this file to the CSS file-->
+	<meta charset="UTF-8"/> <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/> <!-- --Picture on the web tab-->
+	<link rel="stylesheet" href="../style.css"/> <!-- --Linking this file to the CSS file-->
 <script src="../script.js" defer></script> <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
 	<title>Profile dropdown</title>
 </head>
 <body>
 	<div class="container">
+
+        <!-- NEW profile overlay -->
                 <div class="dropdown">
-                    <button class="btn btn_profile dropdownButton">
-                        <img src="../imgs/profile_icon.svg" alt="Profile icon"/>
+                    <div class="tooltip_container">
+                        <button class="btn btn_profile dropdownButton" aria-label="Show profile">
+                            <img src="../imgs/profile_icon.svg" alt="Profile icon">
+                        </button>
+                        <div class="tooltip_box header_rigth">
+                            Show Profile
+                        </div>
+                    </div>
+                    <aside class="popup profile_dropdown dropdown_content">
+                        <div class="profile_header">Sara123!</div>
+                        <div class="profile_divider">
+                            <hr/>
+                            <a class="profile_link" href="../my_submission/my_submission.html">My submissions</a>
+                            <hr/>
+                        </div>
+                        <div class="profile_section_title">Profile (Student)</div>
+                        <div class="profile_info">
+                            <span>Sara Hansen</span>
+                            <span>Sara.hansen@student.aau.dk</span>
+                            <span>Aalborg University Copenhagen</span>
+                            <span>1. Semester</span>
+                            <span>Software, Bachelor</span>
+                        </div>
+                        <div class="buttons">
+                            <button class="small_btn btn_logout"><a href="../index.html">Log out</a></button>
+                            <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
+                        </div>
+                    </aside>
+                </div>
+                
+        
+        <!-- OLD profile overlay -->
+                <!-- <div class="dropdown">
+                    <button class="btn btn_profile dropdownButton" aria-label="Show profile">
+                        <img src="../imgs/profile_icon.svg" alt="Profile icon">
                     </button>
                     <aside class="popup profile_dropdown dropdown_content">
                         <p>Sara123!</p>
@@ -30,11 +65,8 @@
                             <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
                         </div>
                     </aside>
-                </div>
+                </div> -->
 	</div>
-
-
-
 
 
 		
