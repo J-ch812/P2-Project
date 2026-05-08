@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" /><!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg" /> <!-- --Picture on the web tab-->
-    <link rel="stylesheet" href="../style.css" /> <!-- --Linking this file to the CSS file-->
+    <meta charset="UTF-8"/><!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/> <!-- --Picture on the web tab-->
+    <link rel="stylesheet" href="../style.css"/> <!-- --Linking this file to the CSS file-->
     <script src="../script.js" defer></script><!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
     <title>Exam Ease - DTG Overview</title>
 </head>
@@ -13,10 +13,10 @@
         <header class="topbar">
             <div class="topbar_left">
                 <div class="tooltip_container">
-                    <a href="../semester_overview_homepage/semester_overview.html" aria-label="Go to homepage" class="brand"> <!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+                    <a href="../semester_overview_homepage/semester_overview.html" class="brand" aria-label="Go to homepage">
                         <img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
                         <span class="brand_name">Exam Ease</span>
-                        </a>
+                    </a>
                     <div class="tooltip_box header_left">
                         Navigate to Homepage
                     </div>
@@ -37,13 +37,13 @@
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search">
-                    <img src="../imgs/search-icon.webp" alt="Search icon"/>
+                    <img src="../imgs/search-icon.webp" alt="Search icon">
                 </button>
                 <input class="search_bar" type="text" placeholder="Search"/>
                 <div class="dropdown">
                     <div class="tooltip_container">
                         <button class="btn btn_profile dropdownButton" aria-label="Show profile">
-                            <img src="../imgs/profile_icon.svg" alt="Profile icon" />
+                            <img src="../imgs/profile_icon.svg" alt="Profile icon">
                             </button>
                         <div class="tooltip_box header_rigth">
                             Show Profile
@@ -111,8 +111,8 @@
                                 </div>
                                 <div class="tooltip_container">
                                     <div class="progress_item sub">
-                                        <a href="../DTG_Blocks/DTGBlock2.html" class="progress_bar sub block1">Block 2</a>
-                                        <a href="../DTG_Blocks/DTGBlock2.html" class="progress_percentage sub block1_percentage">0%</a>
+                                        <a href="../DTG_Blocks/DTGBlock2.html" class="progress_bar sub block2">Block 2</a>
+                                        <a href="../DTG_Blocks/DTGBlock2.html" class="progress_percentage sub block2_percentage">0%</a>
                                     </div>
                                     <div class="tooltip_box">
                                         Navigate to Block 2
@@ -120,8 +120,8 @@
                                 </div>
                                 <div class="tooltip_container">
                                     <div class="progress_item sub">
-                                        <a href="../DTG_Blocks/DTGBlock3.html" class="progress_bar sub block1">Block 3</a>
-                                        <a href="../DTG_Blocks/DTGBlock3.html" class="progress_percentage sub block1_percentage">0%</a>
+                                        <a href="../DTG_Blocks/DTGBlock3.html" class="progress_bar sub block3">Block 3</a>
+                                        <a href="../DTG_Blocks/DTGBlock3.html" class="progress_percentage sub block3_percentage">0%</a>
                                     </div>
                                     <div class="tooltip_box">
                                         Navigate to Block 3
@@ -129,8 +129,8 @@
                                 </div>
                                 <div class="tooltip_container">
                                     <div class="progress_item sub">
-                                        <a href="../DTG_Blocks/DTGBlock4.html" class="progress_bar sub block1">Block 4</a>
-                                        <a href="../DTG_Blocks/DTGBlock4.html" class="progress_percentage sub block1_percentage">0%</a>
+                                        <a href="../DTG_Blocks/DTGBlock4.html" class="progress_bar sub block4">Block 4</a>
+                                        <a href="../DTG_Blocks/DTGBlock4.html" class="progress_percentage sub block4_percentage">0%</a>
                                     </div>
                                     <div class="tooltip_box">
                                         Navigate to Block 4
@@ -169,7 +169,10 @@
                         <a href="../DTG_exam_information/dtg_exam_info.html" class="course_card">Exam Information</a>
                         <a href="../DTG_prior_exams/DTG_prior_exams_and_exam_questions.html" class="course_card">Previous Exams</a>
                         <div class="dropdown">
-                            <button class="course_card dropdownButton blocks">Blocks</button>
+                            <button class="course_card dropdownButton blocks_card" aria-label="Show blocks">
+                                Blocks (Topics)
+                                <span class="blocks_arrow">▾</span>
+                            </button>
                             <div class="dropdown_content">
                                 <a href="../DTG_Blocks/DTGBlock1.html">Block 1: Logic, Sets & Relations</a>
                                 <a href="../DTG_Blocks/DTGBlock2.html">Block 2: Functions & Complexity</a>

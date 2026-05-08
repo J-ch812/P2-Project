@@ -42,6 +42,15 @@ document.addEventListener("click", (e) => {
   });
 });
 
+// Hide dropdowns when resizeing the width of the screen (used for all, but made for the nav_dropdown)
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1150) {
+    document.querySelectorAll(".dropdown").forEach((dropdown) => {
+      dropdown.classList.remove("active");
+    });
+  }
+});
+
 
 
 //OVERLAYS
@@ -67,6 +76,8 @@ function off(id) {
   overlay.classList.remove("active");
   document.body.style.overflow = "";
 }
+
+
 
 // LECTURE PROGRESS COUNTERS
 // Sets up the connection between each lecture, its topic checkboxes, its lecture checkbox,
@@ -323,6 +334,7 @@ document.querySelectorAll(".progress_toggle_btn").forEach((toggleProgressBtn) =>
 });
 
 
+
 //Chekbox: select one
 function chooseOne(id) {
   for (var i = 1; i <= 2; i++) {
@@ -331,6 +343,7 @@ function chooseOne(id) {
     }
     document.getElementById(id).checked = true;
 }
+
 
 
 // HOVER LABLE: HIDE AND SHOW PROFILE

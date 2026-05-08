@@ -1,20 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" /><!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg" /><!-- --Picture on the web tab-->
-	<link rel="stylesheet" href="../style.css" /><!-- --Linking this file to the CSS file-->
+	<meta charset="UTF-8"/><!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/><!-- --Picture on the web tab-->
+	<link rel="stylesheet" href="../style.css"/><!-- --Linking this file to the CSS file-->
 	<script src="../script.js" defer></script><!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
 	<title>Exam Ease - Sign up</title>
 </head>
 <body>
 	<div class="container">
-		<header class="topbar">
+		<header class="topbar logged_out">
 			<div class="topbar_left">
 				<div class="tooltip_container">
-					<a href="../index.html" aria-label="Go to Frontpage"
-						class="brand"><!-- aria-label="Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
+					<a href="../index.html" class="brand" aria-label="Go to frontpage">
 						<img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
 						<span class="brand_name">Exam Ease</span>
 					</a>
@@ -36,30 +35,30 @@
 			</div>
 			<div class="topbar_right">
 				<button class="btn btn_search">
-					<img src="../imgs/search-icon.webp" alt="Search icon" />
+					<img src="../imgs/search-icon.webp" alt="Search icon">
 				</button>
-				<input class="search_bar" type="text" placeholder="Search" />
+				<input class="search_bar" type="text" placeholder="Search"/>
 				<a href="../login/login.html" class="btn btn_ghost_login">Log in</a>
 				<a href="../signup/signup.html" class="btn btn_signup">Sign up</a>
 			</div>
 		</header>
 		<main class="main">
-			<div class="signup-container">
+			<div class="signup_container">
 				<h1>Sign up</h1>
-				<div class="signup-grid">
+				<div class="signup_grid">
 					<div class="signup_item">
 						<label for="name">First- and last name</label>
-						<input type="text" class="name" placeholder="E.g. Sara Hansen" />
+						<input class="name" type="text" placeholder="E.g. Sara Hansen"/>
 					</div>
 					<div class="signup_item">
 						<label>I am a...</label>
-						<div class="signup-role">
+						<div class="signup_role">
 							<label class="role_option" for="student">
-								<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)" />
+								<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)"/>
 								<p>Student</p>
 							</label>
 							<label class="role_option" for="professor">
-								<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)" />
+								<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)"/>
 								<p>Professor</p>
 							</label>
 						</div>
@@ -110,7 +109,7 @@
 					<div class="signup-row-four">
 						<div class="signup_item">
 							<label for="username">Username</label>
-							<input type="text" id="username" placeholder="E.g. Sara123!" />
+							<input type="text" id="username" placeholder="E.g. Sara123!"/>
 						</div>
 						<div class="signup_item">
 							<label for="password">Password</label>
