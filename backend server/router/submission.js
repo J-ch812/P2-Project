@@ -1,4 +1,5 @@
-
+import router from "./user.router.js";
+import { upload } from "./upload.js";
 router.route('/submission').post(upload.single('file'), async (req, res) => {
     try {
 
@@ -22,8 +23,4 @@ router.route('/submission').post(upload.single('file'), async (req, res) => {
 });
 
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f
+export default router;

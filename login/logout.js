@@ -15,11 +15,7 @@ logoutBtn.addEventListener('click', async (e) => {
         });
         const data = await response.json();
         if (response.ok) {
-<<<<<<< HEAD
              localStorage.removeItem('user', JSON.stringify(data.user));
-=======
-            console.log(response)
->>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f
 
             
             window.location.href ='../html_components/new_header_logged_out.html';
@@ -35,7 +31,3 @@ logoutBtn.addEventListener('click', async (e) => {
 
  
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f
