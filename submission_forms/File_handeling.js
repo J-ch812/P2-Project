@@ -57,11 +57,6 @@ function removeFile(i) {
   renderFiles();
 }
 
-function handleSubmit() {
-  const toast = document.getElementById('toast');
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 3000);
-}
 
 async function handleSubmit() {
 
