@@ -38,4 +38,6 @@ const role = document.getElementById('Check1').checked? 'student': 'professor';
         alert('Could not connect to server');
     }
 });
+
+
  

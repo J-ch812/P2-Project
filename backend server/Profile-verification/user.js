@@ -122,3 +122,7 @@ const logoutUser = async (req, res)  => {
 }
 
 export{loginUser,logoutUser,registerUser};
+
+
+
+

@@ -1,16 +1,37 @@
 const files = [];
 
+//Auto Grop sections: "Your content, input and feedback" & "Additional comments or suggestions"
 function autoGrow(el) {
-  el.style.height = '0px';
-  el.style.height = el.scrollHeight + 'px';
+  const styles = getComputedStyle(el);
+  const maxHeight = parseInt(styles.maxHeight) || Infinity;
+
+  el.style.height = 'auto'; // better than 0px // '0px' = reset so scrollHeight is accurate
+  
+  if (el.scrollHeight > maxHeight) {
+    el.style.height = maxHeight + 'px';
+    el.style.overflowY = 'auto';
+  } else {
+    el.style.height = el.scrollHeight + 'px';
+    el.style.overflowY = 'hidden';
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('textarea').forEach(ta => {
-    ta.style.height = ta.scrollHeight + 'px';
+    autoGrow(ta);
     ta.addEventListener('input', () => autoGrow(ta));
   });
 });
+
+
+//Can upload files in section: "Attachments"
+function openFilePicker(event) {
+  // Don't trigger if clicking inside file list or on a button
+  if (event.target.closest('.file_list') || event.target.closest('button')) {
+    return;
+  }
+  document.getElementById('fileInput').click();
+}
 
 function addFiles(newFiles) {
   Array.from(newFiles).forEach(f => {
@@ -22,9 +43,9 @@ function addFiles(newFiles) {
 function renderFiles() {
   const list = document.getElementById('fileList');
   list.innerHTML = files.map((f, i) =>
-    `<div class="file-item">
+    `<div class="file_item" onclick="event.stopPropagation()">
       <span>📄 ${f.name}</span>
-      <button onclick="removeFile(${i})" title="Remove">✕</button>
+      <button onclick="event.stopPropagation(); removeFile(${i})" title="Remove">✕</button>
     </div>`
   ).join('');
 }
@@ -79,3 +100,8 @@ async function handleSubmit() {
 
 }
  
+
+
+
+
+
