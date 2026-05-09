@@ -12,10 +12,18 @@ loginBtn.addEventListener('click', async (e) => {
         });
         const data = await response.json();
         if (response.ok) {
+<<<<<<< HEAD
              
             localStorage.setItem('user', JSON.stringify(data.user));
             
             window.location.href = '../html_components/new_header_combined.html';
+=======
+             localStorage.setItem ('user', JSON.stringify(data.user));
+            window.location.href = '../html_components/new_header_logged_in.html';
+
+            // login successful - redirect to next page
+
+>>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f
         } else {
             // show error to user
             alert(data.message);
@@ -24,4 +32,6 @@ loginBtn.addEventListener('click', async (e) => {
         alert('Could not connect to server');
     }
 });
+
+
  

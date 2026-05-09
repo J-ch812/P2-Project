@@ -14,3 +14,7 @@ const Submission = mongoose.model('Submission', submissionSchema);
 export default Submission;
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f

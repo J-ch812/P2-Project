@@ -8,6 +8,7 @@ router.route('/register').post( registerUser );
 router.route('/login').post( loginUser );
 router.route('/logout').post( logoutUser );
 
+<<<<<<< HEAD
 router.post("/submission", upload.single("file"), async (req, res) => {
   try {
         const savedSubmission = await Submission.create({
@@ -31,7 +32,15 @@ router.post("/submission", upload.single("file"), async (req, res) => {
         }
 
         });
+=======
+
+
+>>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f
 export default router;
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f

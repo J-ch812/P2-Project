@@ -13,11 +13,18 @@ web.use(express.json());
 
 
 web.use('/api', userRouter);
+<<<<<<< HEAD
 web.use('/api', submissionRouter);
+=======
+web.use('/uploads', express.static('uploads'));
+            
+>>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f
 
 
   web.get("/", (req, res) => {
    res.send("API WORKING");
+   
+
 
 
 
@@ -30,4 +37,8 @@ web.use('/api', submissionRouter);
 
    export default web;
 // http://localhost:4000/api/
+
+
+
+
 
