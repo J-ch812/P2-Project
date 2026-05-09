@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/>  <!-- --Picture on the web tab-->
     <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
-    <script src="../script.js" defer></script> 
-    <script src="./login.js" defer></script> <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+    <script src="../script.js" defer></script> <!-- ikke ændre -->
+    <script src="./login.js" defer></script> <!-- ikke ændre -->
     <title>Exam Ease - Log in</title>  <!-- --Title on the web tab-->
 </head>
 <body>
@@ -23,57 +23,45 @@
                     </div>
                 </div>
 
-
-
                 <!-- Log in status changes the header components below-->
 
-                <!-- Normal nav (desktop) -->
-                <!-- Normal nav (desktop) logged IN (START) -->
                 <div class="nav_links" id="navLoggedInDesktop">
                     <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
                     <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                     <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                 </div>
-                <!-- Normal nav (desktop) logged IN (SLUT) -->
-                
-            
-                <!-- Normal nav (desktop) logged OUT (START) -->
+
                 <div class="nav_links" id="navLoggedOutDesktop">
                     <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                     <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                 </div>
-                <!-- Normal nav (desktop) logged OUT (SLUT) -->
-                
-                
-                
-                <!-- Dropdown nav(mobile) -->
+
                 <div class="dropdown">
                     <button class="btn nav_dropdown dropdownButton">Menu</button>
-                
-                    <!-- Dropdown nav (mobile) logged IN (START) -->
+
                     <div class="dropdown_content nav_links" id="navLoggedInMobile">
                         <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
                         <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
-                    <!-- Dropdown nav (mobile) logged IN (SLUT) -->
-                
-                    <!-- Dropdown nav (mobile) logged OUT (START) -->
+
                     <div class="dropdown_content nav_links" id="navLoggedOutMobile">
                         <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
-                    <!-- Dropdown nav (mobile) logged OUT (SLUT) -->
-                
                 </div>
             </div>
+
             <div class="topbar_right">
                 <button class="btn btn_search">
                     <img src="../imgs/search-icon.webp" alt="Search icon">
                 </button>
+                <input class="search_bar" type="text" placeholder="Search" />
+                <a href="../login/login.html" class="btn btn_ghost_login">Log in</a>
+                <a href="../signup/signup.html" class="btn btn_signup">Sign up</a>
+                
                 <input class="search_bar" type="text" placeholder="Search"/>
-            
-                <!-- right header logged IN (START) -->
+
                 <div id="userProfile">
                     <div class="dropdown">
                         <div class="tooltip_container">
@@ -84,6 +72,7 @@
                                 Show Profile
                             </div>
                         </div>
+
                         <aside class="popup profile_dropdown dropdown_content">
                             <p>Sara123!</p>
                             <hr/>
@@ -102,17 +91,15 @@
                         </aside>
                     </div>
                 </div>
-                <!-- right header logged IN (SLUT)-->
-            
-                <!-- right header logged OUT (START)-->
-                <div id="authButtons"> <!-- Auth = Authentication -->
+
+                <div id="authButtons">
                     <a href="../login/login.html" class="btn btn_ghost_login">Log in</a>
                     <a href="../signup/signup.html" class="btn btn_signup">Sign up</a>
                 </div>
-                <!-- right header logged OUT (SLUT)-->
-            
+
             </div>
         </header>
+
         <main class="main">
             <div class="signup_container">
                 <h1 class="heading">Log in</h1>
@@ -120,14 +107,15 @@
                     <div class="login-box">
                         <div class="login-row-one-two">
                             <label for="email">E-mail</label>
-                            <input type="text" id="email" placeholder="E.g. Sara123" />
+                            <input type="text" id="email" placeholder="E.g. Sara123" /> <!-- ikke ændre -->
                         </div>
+
                         <div class="login-row-one-two">
                             <label for="password">Password</label>
-                            <input type="password" id="password"/>
+                            <input type="password" id="password"/> <!-- ikke ændre -->
                         </div>
-                        <a href="../first_semester/first_semester.html" class="signup-btn" id="loginBtn">Log in</a> 
 
+                        <button class="signup-btn" id="loginBtn">Log in</button> <!-- ikke ændre -->
 
                         <div class="login-row-four">
                             <a href="../signup/signup.html" class="signup-link">Don’t have an account? Sign up</a>
@@ -136,6 +124,7 @@
                 </div>
             </div>
         </main>
+
         <footer class="footer">
             <div class="footer_column footer_column_left">
                 <h4>Submissions</h4>
@@ -153,3 +142,4 @@
     </div>
 </body>
 </html>
+
