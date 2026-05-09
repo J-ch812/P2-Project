@@ -16,8 +16,6 @@ loginBtn.addEventListener('click', async (e) => {
             localStorage.setItem('user', JSON.stringify(data.user));
             
             window.location.href = '../html_components/new_header_combined.html';
-            // login successful - redirect to next page
-            
         } else {
             // show error to user
             alert(data.message);
