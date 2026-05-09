@@ -1,3 +1,31 @@
+// HEADER STATE ELEMENTS
+const navLoggedInDesktop = document.getElementById('navLoggedInDesktop');
+const navLoggedInMobile = document.getElementById('navLoggedInMobile');
+const userProfile = document.getElementById('userProfile');
+
+const navLoggedOutDesktop = document.getElementById('navLoggedOutDesktop');
+const navLoggedOutMobile = document.getElementById('navLoggedOutMobile');
+const authButtons = document.getElementById('authButtons');
+
+
+// CHANGE HEADER STATE
+function setLoggedInState(isLoggedIn) {
+
+    // LOGGED IN ELEMENTS
+    navLoggedInDesktop.classList.toggle('hidden', !isLoggedIn);
+    navLoggedInMobile.classList.toggle('hidden', !isLoggedIn);
+    userProfile.classList.toggle('hidden', !isLoggedIn);
+
+    // LOGGED OUT ELEMENTS
+    navLoggedOutDesktop.classList.toggle('hidden', isLoggedIn);
+    navLoggedOutMobile.classList.toggle('hidden', isLoggedIn);
+    authButtons.classList.toggle('hidden', isLoggedIn);
+}
+
+
+
+
+
 const loginBtn = document.getElementById('loginBtn');
  
 loginBtn.addEventListener('click', async (e) => {
@@ -12,10 +40,22 @@ loginBtn.addEventListener('click', async (e) => {
         });
         const data = await response.json();
         if (response.ok) {
-            console.log(response)
+            console.log(response);
 
             // login successful - redirect to next page
-            window.location.href = '../first_semester/first_semester.html';
+
+            // save login state
+            localStorage.setItem('isLoggedIn', 'true');
+
+            // update header
+            setLoggedInState(true);
+
+
+
+
+
+
+
         } else {
             // show error to user
             alert(data.message);
@@ -25,3 +65,10 @@ loginBtn.addEventListener('click', async (e) => {
     }
 });
  
+
+
+
+// CHECK LOGIN STATE ON PAGE LOAD
+const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+setLoggedInState(isLoggedIn);
