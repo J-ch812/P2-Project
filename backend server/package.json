@@ -17,7 +17,12 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "mongoose": "^9.6.0"
+<<<<<<< HEAD
+    "mongoose": "^9.6.2",
+=======
+    "mongoose": "^9.6.0",
+>>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f
+    "multer": "^2.1.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

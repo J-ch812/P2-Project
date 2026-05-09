@@ -8,6 +8,7 @@ dotenv.config({
 import web from "./web.js";
 import connectDB from "./database.js";
 import dns from "node:dns/promises";   
+
 dns.setServers(["1.1.1.1", "1.0.0.1"]);   
 
 const startServer = async () => {
@@ -23,7 +24,7 @@ const startServer = async () => {
         console.log(`server is running on port:
 
         ${process.env.PORT}`);
-     })
+     });
 
         }catch (error){
         console.log("MONGODB connection failed", error);
@@ -32,3 +33,6 @@ const startServer = async () => {
         
     };
 startServer();
+
+
+

@@ -7,6 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <script src="../script.js" defer></script> 
+     <script src="../login/logout.js" defer></script> 
+
 </head>
 <body>
 
@@ -53,6 +61,18 @@
                         </div>
                         </div>
                     <aside class="popup profile_dropdown dropdown_content">
+<<<<<<< HEAD
+                        <p id= "profile_username"></p>
+                        <hr />
+                        <h4><a href="../my_submission/my_submission.html">My submissions</a></h4>
+                        <hr />
+                        <h4 id="profile_role"></h4>
+                        <p id="profile_email"></p>
+                        <p id="profile_university"></p>
+                        <p id="profile_fieldofstudy"></p>
+                        <p id="profile_semester"></p>
+                        
+=======
                         <p>Sara123!</p>
                         <hr/>
                         <h4><a href="../my_submission/my_submission.html">My submissions</a></h4>
@@ -63,8 +83,9 @@
                         <p>Aalborg University Copenhagen</p>
                         <p>1. Semester</p>
                         <p>Software, Bachelor</p>
+>>>>>>> 5266dc3525c3b2a8fd5c796770a15b14b54a9a89
                         <div class="buttons">
-                            <button class="small_btn btn_logout"><a href="../index.html">Log out</a></button>
+                            <button class="small_btn btn_logout" id="logoutBtn">Log out</button>
                             <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
                         </div>
                     </aside>
@@ -83,6 +104,18 @@
 		<a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
 		</div>
 	</div>
+    <script>
+   const user = JSON.parse(localStorage.getItem('user'));
+   if (user) {
+       document.getElementById('profile_username').textContent = user.username;
+       document.getElementById('profile_email').textContent = user.email;
+       document.getElementById('profile_university').textContent = user.university;
+       document.getElementById('profile_semester').textContent = user.semester + '. Semester';
+       document.getElementById('profile_fieldofstudy').textContent = user.fieldofstudy;
+       document.getElementById('profile_role').textContent = 'Profile (' + user.role + ')';
+   }
+</script>
 
 </body>
 </html>
+

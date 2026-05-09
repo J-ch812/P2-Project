@@ -28,6 +28,7 @@ const userSchema = new Schema(
             trim: true,
 
         },
+        
 
     },
     {
@@ -37,7 +38,7 @@ const userSchema = new Schema(
 );
 
 userSchema.pre("save", async function() {
-    
+    console.log("pre-save hook fired");
  
     if(!this.isModified("password")) return next();
     this.password = await bcrypt.hash(this.password, 10);
@@ -58,3 +59,9 @@ export const User = mongoose.model("User",userSchema);
 
 
 
+
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f
