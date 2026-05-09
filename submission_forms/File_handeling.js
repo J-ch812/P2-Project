@@ -1,3 +1,5 @@
+// ik ændre noget i denne fil
+
 const files = [];
 
 //Auto Grop sections: "Your content, input and feedback" & "Additional comments or suggestions"
@@ -60,3 +62,48 @@ function handleSubmit() {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3000);
 }
+
+async function handleSubmit() {
+
+    const formData = new FormData();
+
+    if (files.length > 0) {
+
+        formData.append('file', files[0]);
+
+    }
+
+    try {
+
+        const response = await fetch('http://localhost:4000/api/submission', {
+
+            method: 'POST',
+
+            body: formData
+
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+
+            const toast = document.getElementById('toast');
+
+            toast.classList.add('show');
+
+            setTimeout(() => toast.classList.remove('show'), 3000);
+
+        } else {
+
+            alert(data.message);
+
+        }
+
+    } catch (error) {
+
+        alert('Could not connect to server');
+
+    }
+
+}
+ 

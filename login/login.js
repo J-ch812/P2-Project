@@ -12,10 +12,10 @@ loginBtn.addEventListener('click', async (e) => {
         });
         const data = await response.json();
         if (response.ok) {
-            console.log(response)
-
-            // login successful - redirect to next page
-            window.location.href = '../first_semester/first_semester.html';
+             
+            localStorage.setItem('user', JSON.stringify(data.user));
+            
+            window.location.href = '../html_components/new_header_combined.html';
         } else {
             // show error to user
             alert(data.message);
