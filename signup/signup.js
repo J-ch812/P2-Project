@@ -29,12 +29,8 @@ const role = document.getElementById('Check1').checked? 'student': 'professor';
             console.log(response)
 
             // login successful - redirect to next page
-<<<<<<< HEAD
             window.location.href = '../html_components/new_header_combined.html';
 
-=======
-            window.location.href ='../html_components/new_header_logged_in.html';
->>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f
         } else {
             // show error to user
             alert(data.message);
@@ -42,11 +38,4 @@ const role = document.getElementById('Check1').checked? 'student': 'professor';
     } catch (error) {
         alert('Could not connect to server');
     }
-<<<<<<< HEAD
 });
-=======
-});
-
-
- 
->>>>>>> 6b328b3b93ee8ac91d4ffb7d9bd1b22df8ca551f
