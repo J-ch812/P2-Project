@@ -1,0 +1,34 @@
+Pages: starts logged out (header)
+- index (Frontpage)
+- login
+- signup
+
+Pages: logo navigaes to index (Frontpage) instead of Homepage (semester_overview_homepage)
+- index (Frontpage)
+- login
+- signup
+- semester_overview_homepage (Homepage)
+
+
+<!-- 
+/* Default is logged out, so remove logged in components */
+#navLoggedInDesktop, #navLoggedInMobile, #userProfile
+
+#navLoggedOutDesktop, #navLoggedOutMobile, #authButtons 
+-->
+
+
+<!-- 
+changes:
+    id="navLoggedInDesktop"
+    id="navLoggedOutDesktop"
+
+    id="navLoggedInMobile"
+    id="navLoggedOutMobile"
+
+    id="userProfile"
+    id="authButtons"
+
+
+    id="submissionsLink"
+-->

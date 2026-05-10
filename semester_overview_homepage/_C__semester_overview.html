@@ -1,50 +1,86 @@
 <!-- The homepage of the website -->
 
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">  <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/>  <!-- --Picture on the web tab-->
-    <link rel="stylesheet" href="../style.css"/>  <!-- --Linking this file to the CSS file-->
-    <script src="../script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
-    <title>Exam Ease - Semester Overview</title>  <!-- --Title on the web tab-->
+    <meta charset="UTF-8">
+    <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg" /> <!-- --Picture on the web tab-->
+    <link rel="stylesheet" href="../style.css" /> <!-- --Linking this file to the CSS file-->
+    <script src="../script.js" defer></script>
+    <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
+    <script src="../login/login.js" defer></script>
+    <title>Exam Ease - Semester Overview</title> <!-- --Title on the web tab-->
 </head>
+
 <body id="body">
     <div class="container">
-        <header class="topbar">
+        <header class="topbar"> <!-- <header class="topbar logged_out"> -->
             <div class="topbar_left">
                 <div class="tooltip_container">
                     <a href="../index.html" class="brand" aria-label="Go to frontpage">
                         <img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
                         <span class="brand_name">Exam Ease</span>
-                        </a>
+                    </a>
                     <div class="tooltip_box header_left">
                         Navigate to Frontpage
                     </div>
                 </div>
+
+
+
+                <!-- Log in status changes the header components below-->
+
                 <!-- Normal nav (desktop) -->
-                <nav class="nav_links">
-                    <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
+                <!-- Normal nav (desktop) logged IN (START) -->
+                <div class="nav_links" id="navLoggedInDesktop">
+                    <a href="../my_submission/my_submission.html" class="btn logged_in" id="submissionsLink">My Submissions</a>
                     <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                     <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                </nav>
-                <!-- Dropdown (mobile) -->
-                <nav class="dropdown">
+                </div>
+                <!-- Normal nav (desktop) logged IN (SLUT) -->
+
+
+                <!-- Normal nav (desktop) logged OUT (START) -->
+                <!-- <div class="nav_links" id="navLoggedOutDesktop">
+                    <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
+                    <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                </div> -->
+                <!-- Normal nav (desktop) logged OUT (SLUT) -->
+
+
+
+                <!-- Dropdown nav(mobile) -->
+                <div class="dropdown">
                     <button class="btn nav_dropdown dropdownButton">Menu</button>
-                    <div class="dropdown_content nav_links">
-                        <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
+
+                    <!-- Dropdown nav (mobile) logged IN (START) -->
+                    <div class="dropdown_content nav_links" id="navLoggedInMobile">
+                        <a href="../my_submission/my_submission.html" class="btn logged_in" id="submissionsLink">My Submissions</a>
                         <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
-                </nav>
+                    <!-- Dropdown nav (mobile) logged IN (SLUT) -->
+
+                    <!-- Dropdown nav (mobile) logged OUT (START) -->
+                    <!-- <div class="dropdown_content nav_links" id="navLoggedOutMobile">
+                        <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
+                        <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                    </div> -->
+                    <!-- Dropdown nav (mobile) logged OUT (SLUT) -->
+
+                </div>
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search">
                     <img src="../imgs/search-icon.webp" alt="Search icon">
                 </button>
-                <input class="search_bar" type="text" placeholder="Search"/>
-                <div class="dropdown">
+                <input class="search_bar" type="text" placeholder="Search" />
+
+                <!-- right header logged IN (START) -->
+                <div class="dropdown logged_in" id="userProfile">
                     <div class="tooltip_container">
                         <button class="btn btn_profile dropdownButton" aria-label="Show profile">
                             <img src="../imgs/profile_icon.svg" alt="Profile icon">
@@ -56,9 +92,9 @@
                     <aside class="popup profile_dropdown dropdown_content">
                         <div class="profile_header">Sara123!</div>
                         <div class="profile_divider">
-                            <hr/>
+                            <hr />
                             <a class="profile_link" href="../my_submission/my_submission.html">My submissions</a>
-                            <hr/>
+                            <hr />
                         </div>
                         <div class="profile_section_title">Profile (Student)</div>
                         <div class="profile_info">
@@ -74,6 +110,15 @@
                         </div>
                     </aside>
                 </div>
+                <!-- right header logged IN (SLUT)-->
+
+                <!-- right header logged OUT (START)-->
+                <div class="logged_out" id="authButtons"> <!-- Auth = Authentication -->
+                    <a href="../login/login.html" class="btn btn_ghost_login">Log in</a>
+                    <a href="../signup/signup.html" class="btn btn_signup">Sign up</a>
+                </div>
+                <!-- right header logged OUT (SLUT)-->
+
             </div>
         </header>
         <main class="main">
@@ -83,12 +128,12 @@
                 <p>Helping students navigate their courses and curriculum.</p>
             </section>
             <div class="main_components">
-                <section class="main_section">  
+                <section class="main_section">
                     <section class="course_grid course_grid_front_page">
                         <a href="../first_semester/first_semester.html" class="course_card">1. Semester</a>
-                        <a href="#" class="course_card">2. Semester</a>  
+                        <a href="#" class="course_card">2. Semester</a>
                         <a href="#" class="course_card">3. Semester</a>
-                        <a href="#" class="course_card">4. Semester</a>                          
+                        <a href="#" class="course_card">4. Semester</a>
                         <a href="#" class="course_card">5. Semester</a>
                         <a href="#" class="course_card">6. Semester</a>
                     </section>
@@ -110,14 +155,14 @@
             </div>
         </footer>
     </div>
-    
-<!-- FULL SCREEN OVERLAYS -->
-	<!-- Profile Has Been Successfully Deleted -->
-	<div class="overlay" id="deleteOverlay">
-		<div class="inside_overlay delete_profile">
-		    <h1>Your profile has been successfully deleted!</h1>
-		    <a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
-		</div>
-	</div>
+
+    <!-- FULL SCREEN OVERLAYS -->
+    <!-- Profile Has Been Successfully Deleted -->
+    <div class="overlay" id="deleteOverlay">
+        <div class="inside_overlay delete_profile">
+            <h1>Your profile has been successfully deleted!</h1>
+            <a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+        </div>
+    </div>
 </body>
 </html>

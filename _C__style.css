@@ -1725,22 +1725,26 @@ input[type="checkbox"] {
 
 
 
-
-
+/* Show loggedin header when active */
 
 /* Default is logged out, so remove logged in components */
 /* Just to test*/
-#navLoggedInDesktop, #navLoggedInMobile, #userProfile {
+/* #navLoggedInDesktop.active, #navLoggedInMobile.active, #userProfile.active {
   display: none;
-  /* border: 2px solid #fff;   */
 }
-
-/* #navLoggedOutDesktop, #navLoggedOutMobile, #authButtons {
-  border: 2px solid #dc1919;  
+#navLoggedOutDesktop.active, #navLoggedOutMobile.active, #authButtons.active {
+  display: none;
 } */
 
 
 
+.logged_out.active {
+  display: none;
+}
+
+.logged_in.active {
+  display: none;
+}
 
 
 
