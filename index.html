@@ -1,49 +1,147 @@
 <!-- The frontpage of the website -->
 <!-- -- "#" == Not linked -->
- 
 
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <meta charset="UTF-8">  <!-- --Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly.-->
+    <meta charset="UTF-8">  <!-- Sets character encoding to UTF-8. Allows special characters (like æ, ø, å, emojis, etc.) to display correctly -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/svg+xml" href="imgs/Logo_website_tab.svg"/>  <!-- --Picture on the web tab-->
-    <link rel="stylesheet" href="style.css"/>  <!-- --Linking this file to the CSS file-->
-    <script src="script.js" defer></script>  <!-- --Linking this file to the corresponding JS file. !!This changes for each html page, it should be the name of the js file in the same folder. -->
-    <title>Exam Ease - Front Page</title>  <!-- --Title on the web tab-->
+    <link rel="icon" type="image/svg+xml" href="imgs/Logo_website_tab.svg"/>  <!-- Picture on the web tab-->
+    <link rel="stylesheet" href="style.css"/>  <!-- Links this file to the CSS file "style.css" -->
+    <script src="script.js" defer></script>  <!-- Links this file to the JS file "script.js". The "defer" attribute makes sure the script is executed after the HTML is fully parsed, which can improve page load performance -->
+    <script src="js/logout.js" defer></script> <!-- --This is the script for the log out button in the profile dropdown. It is linked to all pages, because the header is the same on all pages. -->
+    <script src="js/header.js" defer></script> <!-- --This is the script for the log in status in the header. It is linked to all pages, because the header is the same on all pages. -->
+    <script src="js/profile.js" defer></script> <!-- --This is the script for the profile dropdown in the header. It is linked to all pages, because the header is the same on all pages. -->
+    <title>Front Page - Exam Ease</title>  <!-- Title on the web tab-->
 </head>
 <body>
     <div class="container">
         <!-- TOPBAR -->
-        <header class="topbar logged_out">
+        <header class="topbar">
             <div class="topbar_left">
                 <a href="index.html" class="brand" aria-label="Go to frontpage">  <!-- aria-label="Go to frontpage" or "Go to homepage": improves accessibility for screen readers (clarifies action, not just image)-->
                     <img src="imgs/Logo_header.svg" alt="Exam Ease logo">
                     <span class="brand_name">Exam Ease</span>
                 </a>
-                <!-- Normal nav (desktop) -->
-                <nav class="nav_links">
-                    <a href="submission_forms/student_submission.html" class="btn">Submission Form</a>
-                    <a href="submission_info/submission_info.html" class="btn">Submission Information</a>
-                </nav>
-                <!-- Dropdown (mobile) -->
-                <nav class="dropdown">
-                    <button class="btn nav_dropdown dropdownButton">Menu</button>
-                    <div class="dropdown_content nav_links">
+        <!-- Log in status changes the header components below -->
+
+            <!-- Normal nav (desktop) -->
+                <!-- Normal nav (desktop) logged IN (START) -->
+                <div class="logged_in">
+                    <div class="nav_links">
+                        <a href="my_submission/my_submission.html" class="btn">My Submissions</a>
                         <a href="submission_forms/student_submission.html" class="btn">Submission Form</a>
                         <a href="submission_info/submission_info.html" class="btn">Submission Information</a>
                     </div>
-                </nav>
+                </div>
+                <!-- Normal nav (desktop) logged IN (SLUT) -->
+
+                <!-- Normal nav (desktop) logged OUT (START) -->
+                <div class="logged_out">
+                    <div class="nav_links">
+                        <a href="submission_forms/student_submission.html" class="btn">Submission Form</a>
+                        <a href="submission_info/submission_info.html" class="btn">Submission Information</a>
+                    </div>
+                </div>
+                <!-- Normal nav (desktop) logged OUT (SLUT) -->
+
+
+            <!-- Small nav (mobile) -->
+                <!-- Dropdown nav(mobile) -->
+                <div class="dropdown">
+                    <button class="btn nav_dropdown dropdownButton">Menu</button>
+
+                    <!-- Dropdown nav (mobile) logged IN (START) -->
+                    <div class="logged_in">
+                        <div class="dropdown_content nav_links">
+                            <a href="my_submission/my_submission.html" class="btn">My Submissions</a>
+                            <a href="submission_forms/student_submission.html" class="btn">Submission Form</a>
+                            <a href="submission_info/submission_info.html" class="btn">Submission Information</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown nav (mobile) logged IN (SLUT) -->
+
+                    <!-- Dropdown nav (mobile) logged OUT (START) -->
+                    <div class="logged_out">
+                        <div class="dropdown_content nav_links">
+                            <a href="submission_forms/student_submission.html" class="btn">Submission Form</a>
+                            <a href="submission_info/submission_info.html" class="btn">Submission Information</a>
+                        </div>
+                    </div>
+                    <!-- Dropdown nav (mobile) logged OUT (SLUT) -->
+                </div>
             </div>
             <div class="topbar_right">
                 <button class="btn btn_search">
                     <img src="imgs/search-icon.webp" alt="Search icon">
                 </button>
-                <input class="search_bar" type="text" placeholder="Search"/>
-                <a href="login/login.html" class="btn btn_ghost_login">Log in</a>
-                <a href="signup/signup.html" class="btn btn_signup">Sign up</a>
+                <input class="search_bar" type="text" placeholder="Search" />
+
+                <!-- right header logged IN (START) -->
+                <div class="logged_in">
+
+                    <div class="dropdown" id="userProfile">
+                        <div class="tooltip_container">
+                            <button class="btn btn_profile dropdownButton" aria-label="Show profile">
+                                <img src="imgs/profile_icon.svg" alt="Profile icon">
+                            </button>
+                            <div class="tooltip_box header_rigth">
+                                Show Profile
+                            </div>
+                        </div>
+                        <aside class="popup profile_dropdown dropdown_content">
+                            <!-- <div class="profile_header">Sara123!</div> -->
+                             <div class="profile_header" id= "profile_username"></div> <!-- --Username from profile.js -->
+                            <!-- <p class="profile_header" ></p> -->
+
+                            <div class="profile_divider">
+                                <hr />
+                                <a class="profile_link" href="my_submission/my_submission.html">My submissions</a>
+                                <hr />
+                            </div>
+                            <div class="profile_section_title" id="profile_role"></div> <!-- --Role from profile.js -->
+                            <div class="profile_info">
+                                <!-- <span>Sara Hansen</span>
+                                <span>Sara.hansen@student.aau.dk</span>
+                                <span>Aalborg University Copenhagen</span>
+                                <span>1. Semester</span>
+                                <span>Software, Bachelor</span> -->
+
+                                
+                                
+                                <span id="profile_email"></span>
+                                <span id="profile_university"></span>
+                                <span id="profile_semester"></span>
+                                <span id="profile_fieldofstudy"></span>
+
+                                <!-- <h4 id="profile_role"></h4>
+                                <p id="profile_email"></p>
+                                <p id="profile_university"></p>
+                                <p id="profile_fieldofstudy"></p>
+                                <p id="profile_semester"></p> -->
+
+                            </div>
+                            <div class="buttons">
+                                <button class="small_btn btn_logout" id="logoutBtn">Log out</button> <!-- NEW LOG OUT BUTTON -->
+                                <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                <!-- right header logged IN (SLUT)-->
+
+                <!-- right header logged OUT (START)-->
+                <div class="logged_out">
+                    <a href="login/login.html" class="btn btn_ghost_login">Log in</a>
+                    <a href="signup/signup.html" class="btn btn_signup">Sign up</a>
+                </div>
+                <!-- right header logged OUT (SLUT)-->
             </div>
         </header>
+
+
+
+
         <!-- MAIN -->
         <main class="main">
             <section class="heading_wrapper">
