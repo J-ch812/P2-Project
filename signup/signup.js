@@ -29,7 +29,7 @@ const role = document.getElementById('Check1').checked? 'student': 'professor';
             console.log(response)
 
             // login successful - redirect to next page
-            window.location.href = '../html_components/new_header_combined.html';
+            window.location.href = '../first_semester/first_semester.html';
 
         } else {
             // show error to user
