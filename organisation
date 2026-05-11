@@ -8,3 +8,51 @@ Pages: logo navigaes to index (Frontpage) instead of Homepage (semester_overview
 - login
 - signup
 - semester_overview_homepage (Homepage)
+
+
+<!-- 
+/* Default is logged out, so remove logged in components */
+#navLoggedInDesktop, #navLoggedInMobile, #userProfile
+
+#navLoggedOutDesktop, #navLoggedOutMobile, #authButtons 
+-->
+
+
+<!-- 
+changes:
+    id="navLoggedInDesktop"
+    id="navLoggedOutDesktop"
+
+    id="navLoggedInMobile"
+    id="navLoggedOutMobile"
+
+    id="userProfile"
+    id="authButtons"
+
+
+    id="submissionsLink"
+-->
+
+
+
+
+js files for login + log out + profile
+    header.js
+    profile.js
+    login.js
+    logout.js
+
+    Where?
+    Login page:
+        <script src="login.js" defer></script>                      // ONLY LOGIN PAGE -- The login logic. Logs the user in if their profile exists 
+    
+    semester_overview_homepage:
+        <script src="../login/logout.js" defer></script>            // ALL PAGES -- Logs the user out when clicking on the log out btn under the profile
+        <script src="../login/header.js" defer></script>            // ALL PAGES -- Changes the header component based on id the: loggedIn === true or false
+        <script src="../login/profile.js" defer></script>           // ALL PAGES -- Creates the profile dropdown for the specific user
+    IDK
+        Login, signup     
+
+
+When logged out they should not be able to see the progressbar or at least their progress??
+Link the deleprofile overlay to the logged out function
