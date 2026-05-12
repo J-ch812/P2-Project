@@ -180,7 +180,11 @@ textarea::placeholder {
   color: var(--color-placeholder-text);
 }
 
-
+hr {
+  width: 100%;
+  margin: 0.3rem 0;
+  border-top: 2px solid var(--color-white);
+}
 
 
 /*---- PAGE LAYOUT CONTAINER ----*/
@@ -734,15 +738,21 @@ textarea::placeholder {
 
 /*- Grid of course cards -*/
 /** --Course grid - for the pages with a grid of buttons (eg. Course Overview - First Semester and front page) **/
-.course_grid {
+/* .course_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 3rem;
   column-gap: 5rem;
+} */
+
+.course_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1rem, 3vw, 3rem) clamp(1rem, 5vw, 5rem);
 }
 
 .course_card {
-  min-height: 56px;
+  min-height: 70px;
   padding: 1rem;
   border: var(--border-light-background);
   border-radius: var(--radius-md);
@@ -752,6 +762,10 @@ textarea::placeholder {
   text-align: center;
   font: inherit;
   cursor: pointer;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease;
@@ -768,9 +782,9 @@ textarea::placeholder {
   column-gap: clamp(1.25rem, 5vw, 5rem);
 }
 
-.course_grid_semester_page {
+/* .course_grid_semester_page {
   grid-template-columns: repeat(2, 1fr);
-}
+} */
 
 /* --No hover effect on page: DTG - Previous Exams */
 .course_card.prior_exams {
@@ -881,15 +895,14 @@ textarea::placeholder {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: var(--gap-between-elements);
 }
 
 .footer_column_left {
-  margin: 0.6rem 0 0.6rem var(--margin-sides-largescreen);
+  margin: 0.6rem 0 0 var(--margin-sides-largescreen);
 }
 
 .footer_column_right {
-  margin: 0.6rem var(--margin-sides-largescreen) 0.6rem 0;
+  margin: 0.6rem var(--margin-sides-largescreen) 0 0;
 }
 
 /** --Font size and -margin/padding -- Footer **/
@@ -917,6 +930,26 @@ textarea::placeholder {
 
 .footer_column a:hover, .footer_column li:hover {
   color: var(--color-hover-text);
+}
+
+.footer.one{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.footer hr {
+  margin: 0.75rem 0;
+}
+
+.footer_column.three {
+  line-height: 150%;
+  background-color: var(--color-white);
+  border: var(--border-light-background); 
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+
+  margin-inline: auto;
 }
 
 /*---- POPUPS, DROPDOWN, & OVERLAYS ----*/
@@ -1045,7 +1078,7 @@ textarea::placeholder {
 .submission_check {
   max-height: 210px;
   width: min(50%, 600px);
-  row-gap: var(--margin-sides-largescreen);
+  font-size: 20px;
 }
 
 .md_btn.cancel {
@@ -1064,6 +1097,7 @@ textarea::placeholder {
 .submission_succes {
   width: min(65%, 800px); /*   width: 773px; */
   max-height: 562px;
+  font-size: 20px;
 }
 
 .md_btn.yes {
@@ -1493,6 +1527,8 @@ input[type="checkbox"] {
   padding: 8px 10px;
   display: flex;
   justify-content: space-between;
+  border-radius: var(--radius-md);
+  border: var(--border-dark-background);
 }
 
 .submission_header h2 {
@@ -1511,6 +1547,8 @@ input[type="checkbox"] {
   padding: 5px 10px;
   font-size: 20px;
   color: var(--color-text);
+  border: var(--border-light-background);
+  border-radius: var(--radius-md);
 }
 
 .date {
@@ -1797,7 +1835,7 @@ input[type="checkbox"] {
 
 @media screen and (max-width: 1000px) {
   /** The Path/Breadcrumbs **/
-  .heading_wrapper {
+  .heading_wrapper:has(.breadcrumbs) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1820,15 +1858,15 @@ input[type="checkbox"] {
 
 @media screen and (max-width: 900px) {
   /* --The grid of buttons becomes one column instead of two - on a semester page*/
-  .course_grid_semester_page {
+/*   .course_grid_semester_page {
     grid-template-columns: 1fr;
     row-gap: clamp(0.5rem, 2vw, 2rem);
-  }
+  } */
 
   /* --The grid of buttons becomes two columns instead of three - on a front page*/
-  .course_grid_front_page {
+/*   .course_grid_front_page {
     grid-template-columns: repeat(2, 1fr);
-  }
+  } */
 
   /* --Overlays */
   .inside_overlay h2 {
@@ -1864,6 +1902,12 @@ input[type="checkbox"] {
       "attachments"
       "submit";
     row-gap: var(--margin-sides-smallscreen);
+  }
+}
+
+@media (min-width: 711px) {
+  .footer.three {
+    padding: 0 var(--margin-sides-largescreen) 1.75rem var(--margin-sides-largescreen);
   }
 }
 
@@ -1939,12 +1983,23 @@ input[type="checkbox"] {
 @media screen and (max-width: 540px) {
   /* Reduce side margins on small screens */
   /* --The left side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_left, .main, .footer_column_left {
-    margin-left: var(--margin-sides-smallscreen);
-  }
-
   /* The right side margins are changed to become slimmer - sides of the screen to the first element */
-  .topbar_right, .main, .footer_column_right {
+  .topbar_left, .topbar_right, .main, .footer_column_left, .footer_column_right {
+    margin-left: var(--margin-sides-smallscreen);
     margin-right: var(--margin-sides-smallscreen);
+    justify-content: center;
+  }
+}
+
+
+@media (min-width: 1400px) {
+  .course_grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 631px) {
+  .main_components {
+    margin-bottom: clamp(5rem, 7vw, 8rem);
   }
 }
