@@ -11,6 +11,7 @@ const registerUser = async (req,res) => {
      if (existing) {
         return res.status(400).json({message:"email already exist"})
      };
+     
 
      const user = await User.create( {
       username,
@@ -24,8 +25,21 @@ const registerUser = async (req,res) => {
       
      });
 
-     res.status(201).json({message:" You succesfully created an account",
-      user:{id: user._id, email:user.email, username: user.username} 
+
+      res.status(200).json({
+    message: "You succesfully logged in",
+    
+    user:{
+      id: user._id ,
+   email: user.email,
+   username: user.username,
+   semester: user.semester,
+   fieldofstudy: user.fieldofstudy,
+   university: user.university,
+   role: user.role
+   
+
+   }
      });
 
     } catch (error){

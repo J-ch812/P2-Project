@@ -28,6 +28,26 @@ const userSchema = new Schema(
             trim: true,
 
         },
+
+  
+    
+    fieldofstudy: {
+      type: String,
+         required: true,
+            lowercase: true,
+            trim: true,
+
+    },
+
+    university: {
+      type: String,
+      default: ""
+    },
+
+    role: {
+      type: String,
+      default: ""
+    }
         
 
     },

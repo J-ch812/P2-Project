@@ -18,9 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
         user.university || "";
 
     document.getElementById("profile_semester").textContent =
-        user.semester
-            ? `${user.semester}. Semester`
-            : "";
+        user.semester||"";
+            
 
     document.getElementById("profile_fieldofstudy").textContent =
         user.fieldofstudy || "";
