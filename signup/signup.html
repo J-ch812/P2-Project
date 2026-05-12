@@ -1,138 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/>
-    <link rel="stylesheet" href="../style.css"/>
-    <script src="../script.js" defer></script>
-	<!-- <script src="../js/login.js" defer></script> -->
+	<meta charset="UTF-8"/><!-- ikke ændre -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/><!-- ikke ændre -->
+	<link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/><!-- ikke ændre -->
+	<link rel="stylesheet" href="../style.css"/><!-- ikke ændre -->
+	<script src="../script.js" defer></script><!-- ikke ændre -->
 	<script src="../js/signup.js" defer></script><!-- ikke ændre -->
-<!--     <script src="../js/logout.js" defer></script> -->
     <script src="../js/header.js" defer></script>
-<!--     <script src="../js/profile.js" defer></script> -->
+    <script src="../js/logout.js" defer></script>
+    <script src="../js/profile.js" defer></script>
+    <script src="../js/progressbar.js" defer></script>
+    <script src="../js/delete_profile.js" defer></script>
     <title>Sign up - Exam Ease</title>
 </head>
-<body id="body">
-    <div class="container">
-        <header class="topbar">
-            <div class="topbar_left">
-                <div class="tooltip_container">
-                    <a href="../index.html" class="brand" aria-label="Go to frontpage">
-                        <img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
-                        <span class="brand_name">Exam Ease</span>
-                    </a>
-                    <div class="tooltip_box header_left">
-                        Navigate to Homepage
-                    </div>
-                </div>
-            <!-- Normal nav (desktop) -->
-                <!-- Normal nav (desktop) logged IN -->
-                <div class="logged_in">
-                    <nav class="nav_links">
-                        <a href="../my_submission/my_submission.html" class="btn">My Submissions</a>
-                        <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
-                        <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                    </nav>
-                </div>
-                <!-- Normal nav (desktop) logged OUT -->
-                <div class="logged_out">
-                    <nav class="nav_links">
-                        <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
-                        <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                    </nav>
-                </div>
-            <!-- Small nav (mobile) -->
-                <!-- Dropdown nav (mobile) -->
-                <div class="dropdown">
-                    <button class="btn nav_dropdown dropdownButton">Menu</button>
-                    <!-- Dropdown nav (mobile) logged IN -->
-                    <div class="logged_in">
-                        <nav class="dropdown_content nav_links">
-                            <a href="../my_submission/my_submission.html" class="btn">My Submissions</a>
-                            <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
-                            <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                        </nav>
-                    </div>
-                    <!-- Dropdown nav (mobile) logged OUT -->
-                    <div class="logged_out">
-                        <nav class="dropdown_content nav_links">
-                            <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
-                            <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="topbar_right">
-                <button class="btn btn_search">
-                    <img src="../imgs/search-icon.webp" alt="Search icon">
-                </button>
-                <input class="search_bar" type="text" placeholder="Search">
-                <!-- right header logged IN -->
-                <div class="logged_in">
-                    <div class="dropdown" id="userProfile">
-                        <div class="tooltip_container">
-                            <button class="btn btn_profile dropdownButton" aria-label="Show profile">
-                                <img src="../imgs/profile_icon.svg" alt="Profile icon">
-                            </button>
-                            <div class="tooltip_box header_rigth">
-                                Show Profile
-                            </div>
-                        </div>
-                        <aside class="popup profile_dropdown dropdown_content">
-                            <div class="profile_header" id= "profile_username"></div> <!-- --Username from profile.js -->
-                            <div class="profile_divider">
-                                <hr/>
-                                <a href="../my_submission/my_submission.html" class="profile_link">My submissions</a>
-                                <hr/>
-                            </div>
-                            <div class="profile_section_title" id="profile_role"></div> <!-- --Role from profile.js -->
-                            <div class="profile_info">
-                                <span id="profile_email"></span>
-                                <span id="profile_university"></span>
-                                <span id="profile_semester"></span>
-                                <span id="profile_fieldofstudy"></span>
-                            </div>
-                            <div class="buttons">
-                                <button class="small_btn btn_logout" id="logoutBtn">Log out</button> <!-- NEW LOG OUT BUTTON -->
-                                <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
-                            </div>
-                        </aside>
-                    </div>
-                </div>
-                <!-- right header logged OUT -->
-                <div class="logged_out">
-                    <a href="../login/login.html" class="btn btn_ghost_login">Log in</a>
-                    <a href="signup.html" class="btn btn_signup">Sign up</a>
-                </div>
-            </div>
-        </header>
+<body>
+	<div class="container">
+		<header class="topbar logged_out">
+			<div class="topbar_left">
+				<div class="tooltip_container">
+					<a href="../index.html" class="brand" aria-label="Go to frontpage"><!-- ikke ændre -->
+						<img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
+						<span class="brand_name">Exam Ease</span>
+					</a>
+					<div class="tooltip_box header_left">
+						Navigate to Frontpage
+					</div>
+				</div>
+				<nav class="nav_links">
+					<a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
+					<a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+				</nav>
+				<nav class="dropdown">
+					<button class="btn nav_dropdown dropdownButton">Menu</button>
+					<div class="dropdown_content nav_links">
+						<a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
+						<a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+					</div>
+				</nav>
+			</div>
+			<div class="topbar_right">
+				<a href="../login/login.html" class="btn btn_ghost_login">Log in</a>
+				<a href="../signup/signup.html" class="btn btn_signup">Sign up</a>
+			</div>
+		</header>
+
 		<main class="main">
 			<div class="signup_container">
-				<section class="heading_wrapper">
-					<h1 class="heading">Sign up</h1>
-				</section>
+				<h1>Sign up</h1>
 				<div class="signup_grid">
-					<div class="signup_row">
-						<div class="signup_item">
-							<label for="name">First- and last name</label><!-- ikke ændre -->
-							<input class="name" type="text" placeholder="E.g. Sara Hansen"/>
-						</div>
-						<div class="signup_item">
-							<label>I am a...</label><!-- ikke ændre -->
-							<div class="signup_role">
-								<label class="role_option" for="student">
-									<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
-									<p>Student</p>
-								</label>
-								<label class="role_option" for="professor">
-									<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
-									<p>Professor</p>
-								</label>
-							</div>
+					<div class="signup_item">
+						<label for="name">First- and last name</label><!-- ikke ændre -->
+						<input class="name" type="text" placeholder="E.g. Sara Hansen"/>
+					</div>
+					<div class="signup_item">
+						<label>I am a...</label><!-- ikke ændre -->
+						<div class="signup_role">
+							<label class="role_option" for="student">
+								<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
+								<p>Student</p>
+							</label>
+							<label class="role_option" for="professor">
+								<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
+								<p>Professor</p>
+							</label>
 						</div>
 					</div>
-					<div class="signup_row">
+					<div class="signup-row-two">
 						<div class="signup_item">
 							<label for="university">University</label><!-- ikke ændre -->
 							<select name="university" id="university"><!-- ikke ændre -->
@@ -167,49 +101,40 @@
 					</div>
 					<div class="signup_item emails">
 						<label for="email">E-mail</label><!-- ikke ændre -->
-						<input type="email" class="email" placeholder="E.g. Sara.hansen@student.aau.dk"/> <!-- id="email" --??-- -->
+						<input type="email" class="email" placeholder="E.g. Sara.hansen@student.aau.dk"/>
 					</div>
-					<div class="signup_row">
+					<div class="signup-row-four">
 						<div class="signup_item">
 							<label for="username">Username</label><!-- ikke ændre -->
 							<input type="text" id="username" placeholder="E.g. Sara123!"/>
 						</div>
+
 						<div class="signup_item">
 							<label for="password">Password</label><!-- ikke ændre -->
 							<input type="password" id="password" placeholder="E.g. Exam!ease1234"/>
 						</div>
 					</div>
-
 				</div>
 				<button class="signup-btn" id="signupBtn">Sign up</button><!-- ikke ændre -->
 			</div>
 		</main>
 
-        <footer class="footer">
-            <div class="footer_column footer_column_left">
-                <h4>Submissions</h4>
-                <ul>
-                    <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
-                    <li><a href="../submission_forms/student_submission.html">Submission Form</a></li>
-                </ul>
-            </div>
-            <div class="footer_column footer_column_right visible_link">
-                <h4>IT Support</h4>
-                <p><a href="#">Tel: +45 00 00 00 00</a></p>
-                <p><a href="#">E-mail: itservice@support.dk</a></p>
-            </div>
-        </footer>
-	</div>
+		<footer class="footer">
+			<div class="footer_column footer_column_left">
+				<h4>Submissions</h4>
+				<ul>
+					<li><a href="../submission_info/submission_info.html">Submission Information</a></li>
+					<li><a href="../submission_forms/student_submission.html">Submission Form</a></li>
+				</ul>
+			</div>
+			<div class="footer_column footer_column_right visible_link">
+				<h4>IT Support</h4>
+				<p><a href="#">Tel: +45 00 00 00 00</a></p>
+				<p><a href="#">E-mail: itservice@support.dk</a></p>
+			</div>
+		</footer>
 
-	<!-- OVERLAYS -->
-	<!-- Profile Has Been Successfully Deleted -->
-	<div class="overlay" id="deleteOverlay">
-		<div class="inside_overlay delete_profile">
-		<h1>Your profile has been successfully deleted!</h1>
-		<a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
-		</div>
 	</div>
 </body>
 </html>
-
 
