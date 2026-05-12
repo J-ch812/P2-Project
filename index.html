@@ -12,7 +12,8 @@
     <script src="js/logout.js" defer></script> <!-- --This is the script for the log out button in the profile dropdown. It is linked to all pages, because the header is the same on all pages. -->
     <script src="js/header.js" defer></script> <!-- --This is the script for the log in status in the header. It is linked to all pages, because the header is the same on all pages. -->
     <script src="js/profile.js" defer></script> <!-- --This is the script for the profile dropdown in the header. It is linked to all pages, because the header is the same on all pages. -->
-    <!-- <script src="js/progressbar.js" defer></script> --> <!-- --This is the script for the progress bar. It is linked to all pages, because the header is the same on all pages. -->
+    <script src="js/progressbar.js" defer></script> <!-- --This is the script for the progress bar. It is linked to all pages, because the header is the same on all pages. -->
+    <script src="js/delete_profile.js" defer></script>
     <title>Front Page - Exam Ease</title>  <!-- Title on the web tab-->
 </head>
 <body id="body">
@@ -193,15 +194,12 @@
         </footer> -->
     </div>
     <!-- OVERLAYS --> <!-- NOT DONE -->
-    <div class="overlay" id="deleteOverlay">
-        <div class="inside_overlay delete_profile">
-            <h2>Delete Profile</h2>
-            <p>Are you sure you want to delete your profile? This action cannot be undone.</p>
-            <div class="button">
-                <button class="md_btn cancel" onclick="off('deleteOverlay')">Cancel</button>
-                <button class="md_btn submit" onclick="confirmDelete()">Delete</button>
-            </div>
-        </div>
-    </div>
+	<!-- Profile Has Been Successfully Deleted -->
+	<div class="overlay" id="deleteOverlay">
+		<div class="inside_overlay delete_profile">
+		<h1>Your profile has been successfully deleted!</h1>
+		<a href="index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+		</div>
+	</div>
 </body>
 </html>

@@ -228,20 +228,13 @@
     </div>
 
     <!-- OVERLAYS -->
-    <div class="overlay" id="deleteOverlay">
-        <div class="inside_overlay delete_profile">
-            <h2>Delete Profile</h2>
-            <p>Are you sure you want to delete your profile? This action cannot be undone.</p>
-            <div class="button">
-                <button class="md_btn cancel" onclick="off('deleteOverlay')">Cancel</button>
-                <button class="md_btn submit" onclick="confirmDelete()">Delete</button>
-            </div>
-        </div>
+	<!-- Profile Has Been Successfully Deleted -->
+	<div class="overlay" id="deleteOverlay">
+		<div class="inside_overlay delete_profile">
+		<h1>Your profile has been successfully deleted!</h1>
+		<a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+		</div>
+	</div>
     </div>
-
-    <!-- SCRIPTS -->
-    <script src="../js/header.js" defer></script>
-    <script src="../js/logout.js" defer></script>
-    <script src="../js/profile.js" defer></script>
 </body>
 </html>
