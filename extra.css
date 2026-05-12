@@ -1,0 +1,32 @@
+/* TYPOGRAPHY *//* --Global typography styles for headings, paragraphs, and links. */
+
+/* Titles/Headlines */
+/* h1 {    
+  font: var(--font-headlines);
+  letter-spacing: 1%;
+} */
+
+/* Overlays */
+/* h2 {    
+  font: var(--font-small-headline);
+  letter-spacing: 1%;
+} */
+/* bold text */
+/* h3 {    
+  font: var(--font-bold-paragraphs);
+  letter-spacing: 0%;
+}
+ */
+/* Normal text */
+/* p {     
+  font: var(--font-paragraphs);
+  letter-spacing: 1%;
+} */
+
+/* Normal text */
+/* a {     
+  font: var(--font-paragraphs);
+  letter-spacing: 1%;
+} */
+
+

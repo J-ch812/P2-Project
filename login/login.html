@@ -109,7 +109,9 @@
 
         <main class="main">
             <div class="signup_container">
-                <h1 class="heading">Log in</h1>
+                <section class="heading_wrapper">
+					<h1 class="heading">Log in</h1>
+				</section>
                 <div class="login-item">
                     <div class="login-box">
                         <div class="login-row-one-two">
@@ -126,9 +128,6 @@
 
                         <!-- LOG IN KNAPPEN -->
                         <button class="signup-btn" id="loginBtn">Log in</button> <!-- ikke ændre -->
-
-
-
                         <div class="login-row-four">
                             <a href="../signup/signup.html" class="signup-link">Don’t have an account? Sign up</a>
                         </div>
@@ -136,6 +135,54 @@
                 </div>
             </div>
         </main>
+
+
+				<div class="signup_grid">
+					<div class="signup_row">
+						<div class="signup_item">
+							<label for="name">First- and last name</label><!-- ikke ændre -->
+							<input class="name" type="text" placeholder="E.g. Sara Hansen"/>
+						</div>
+						<div class="signup_item">
+							<label>I am a...</label><!-- ikke ændre -->
+							<div class="signup_role">
+								<label class="role_option" for="student">
+									<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
+									<p>Student</p>
+								</label>
+								<label class="role_option" for="professor">
+									<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
+									<p>Professor</p>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="signup_row">
+						<div class="signup_item">
+							<label for="university">University</label><!-- ikke ændre -->
+							<select name="university" id="university"><!-- ikke ændre -->
+								<option value="" disabled selected>Select a university</option>
+								<option value="Aalborg university CPH">Aalborg University (CPH)</option>
+							</select>
+						</div>
+					</div>
+					<div class="signup_item emails">
+						<label for="email">E-mail</label><!-- ikke ændre -->
+						<input type="email" class="email" placeholder="E.g. Sara.hansen@student.aau.dk"/> <!-- id="email" --??-- -->
+					</div>
+					<div class="signup_row">
+						<div class="signup_item">
+							<label for="username">Username</label><!-- ikke ændre -->
+							<input type="text" id="username" placeholder="E.g. Sara123!"/>
+						</div>
+						<div class="signup_item">
+							<label for="password">Password</label><!-- ikke ændre -->
+							<input type="password" id="password" placeholder="E.g. Exam!ease1234"/>
+						</div>
+					</div>
+				</div>
+				
+		</main>
 
         <footer class="footer">
             <div class="footer_column_left">

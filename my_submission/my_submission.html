@@ -117,12 +117,10 @@
                     </a>
                 </div>
             </section>
-            <div class="main_components no_top_margin">
+            <div class="main_components">
                 <aside class="progress_section">
                     <div class="progress_toggle_tooltip_container">
-                        <button class="progress_toggle_btn" aria-label="Hide progress">
-                            &lt;
-                        </button>
+                        <button class="progress_toggle_btn" aria-label="Hide progress"></button>
                         <div class="progress_toggle tooltip_box">
                             Hide Progress bar
                         </div>
@@ -205,73 +203,51 @@
                     </div>
                 </aside>
                 <section class="main_section">
-                    <section class="big_box">  
-    
-                        <button class="btn_submission">Collapse all</button>
-                    
-                    <details class="submission_dropdown">
-                        <summary class="submission_header">
-                            <h2>Submissions in progress</h2>
-                            <span class="lecture_arrow">▾</span>
-                        </summary>
-                    
-                        <div class="submission_row">
-                            <span>
-                                AAU, Software; 1. Semester, DTG; Previous Exams
-                            </span>
-                            <span>20%</span>
-                        </div>
-                    
-                        <div class="submission_row">
-                            <span>AAU, Software; 1. Semester, PBL; Exam information</span>
-                            <span>60%</span>
-                        </div>
-                    </details>
-                    
-                    <details class="submission_dropdown">
-                        <summary class="submission_header">
-                            <h2>
-                                Submissions completed (Submitted, sent in), NOT processed by
-                                admin
-                            </h2>
-                            <span class="lecture_arrow">▾</span>
-                        </summary>
-                    
-                        <div class="submission_row">
-                            <span>
-                                AAU, Software; 1. Semester, PBL; Previous Exams
-                            </span>
-                            <span class="date">(Submitted: 10/01/2026)</span>
-                        </div>
-                    </details>
-                    
-                    <details class="submission_dropdown">
-                        <summary class="submission_header">
-                            <h2 class="green">
-                                Submissions completed (Submitted, sent in), processed by admin
-                            </h2>
-                            <span class="lecture_arrow">▾</span>
-                        </summary>
-                    
-                        <div class="submission_row">
-                            <span>
-                                AAU, Software; 1. Semester, P0; Previous Exams
-                            </span>
-                            <span class="date">(Submitted: 12/10/2025)</span>
-                        </div>
-                    
-                        <div class="submission_row">
-                            <span>AAU, Software; 1. Semester, P0; Exam information</span>
-                            <span class="date">(Submitted: 29/09/2025)</span>
-                        </div>
-                    </details>
-
+                    <section class="big_box submission_box">  
+                        <!-- <button class="btn_submission">Collapse all</button> -->
+                        <details class="submission_dropdown">
+                            <summary class="submission_header">
+                                <h2>Submissions in progress</h2>
+                                <span class="lecture_arrow">▾</span>
+                            </summary>
+                            <div class="submission_row">
+                                <span>
+                                    AAU, Software; 1. Semester, DTG; Previous Exams
+                                </span>
+                                <span>20%</span>
+                            </div>
+                            <div class="submission_row">
+                                <span>AAU, Software; 1. Semester, PBL; Exam information</span>
+                                <span>60%</span>
+                            </div>
+                        </details>
+                        <details class="submission_dropdown">
+                            <summary class="submission_header">
+                                <h2>Submissions completed (Submitted, sent in), NOT processed by admin</h2>
+                                <span class="lecture_arrow">▾</span>
+                            </summary>
+                            <div class="submission_row">
+                                <span>AAU, Software; 1. Semester, PBL; Previous Exams</span>
+                                <span class="date">(Submitted: 10/01/2026)</span>
+                            </div>
+                        </details>
+                        <details class="submission_dropdown">
+                            <summary class="submission_header">
+                                <h2 class="green">Submissions completed (Submitted, sent in), processed by admin</h2>
+                                <span class="lecture_arrow">▾</span>
+                            </summary>
+                            <div class="submission_row">
+                                <span>AAU, Software; 1. Semester, P0; Previous Exams</span>
+                                <span class="date">(Submitted: 12/10/2025)</span>
+                            </div>
+                            <div class="submission_row">
+                                <span>AAU, Software; 1. Semester, P0; Exam information</span>
+                                <span class="date">(Submitted: 29/09/2025)</span>
+                            </div>
+                        </details>
                     </section>
                 </section>
             </div>
-
-
-
         </main>
         <footer class="footer">
             <div class="footer_column_left">

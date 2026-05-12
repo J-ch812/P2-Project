@@ -183,34 +183,6 @@ textarea::placeholder {
 
 
 
-
-
-/* figure out */
-/* remove all vh units */
-/* For images --??-- */
-img {
-  /* display: block; */ /* --Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
-  /* max-width: 100%; */ /* --Prevents images from overflowing their containers */
-  /* height: auto; */    /* --Maintains aspect ratio */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*---- PAGE LAYOUT CONTAINER ----*/
 /* --Wraps the entire page structure */
 .container {
@@ -556,8 +528,10 @@ img {
 .main_components {
   grid-area: main_components;
   display: grid;
+  grid-template-columns: 260px 1fr;
   grid-template-areas: 
     "progress_section main_section";
+  column-gap: 5rem;
 }
 
 
@@ -762,9 +736,7 @@ img {
 /** --Course grid - for the pages with a grid of buttons (eg. Course Overview - First Semester and front page) **/
 .course_grid {
   display: grid;
-  grid-template-columns: 
-    /* repeat(3, 1fr); */
-    repeat(auto-fit, minmax(110px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 3rem;
   column-gap: 5rem;
 }
@@ -793,7 +765,7 @@ img {
 }
 
 .course_grid_front_page {
-  column-gap: clamp(1.25rem, 5vJJw, 5rem);
+  column-gap: clamp(1.25rem, 5vw, 5rem);
 }
 
 .course_grid_semester_page {
@@ -907,6 +879,7 @@ img {
 .footer {
   background-color: var(--color-primary);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--gap-between-elements);
 }
@@ -1808,6 +1781,7 @@ input[type="checkbox"] {
 
 
 
+
 /*---- RESPONSIVE DESIGN ----*/
 
 @media screen and (max-width: 1190px) {
@@ -1974,4 +1948,3 @@ input[type="checkbox"] {
     margin-right: var(--margin-sides-smallscreen);
   }
 }
-
