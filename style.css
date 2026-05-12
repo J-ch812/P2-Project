@@ -2293,10 +2293,3 @@ input[type="checkbox"] {
     margin-right: var(--margin-sides-smallscreen);
   }
 }
-
-@media (min-width: 1400px) {
-  .main {
-    max-width: 1000px;
-    margin-inline: auto; /* Centers the main content horizontally */ 
-  }
-}
