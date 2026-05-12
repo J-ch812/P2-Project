@@ -9,6 +9,8 @@
     <script src="../js/logout.js" defer></script>
     <script src="../js/header.js" defer></script>
     <script src="../js/profile.js" defer></script>
+    <script src="../js/delete_profile.js" defer></script>
+    <script src="../js/progressbar.js" defer></script>
     <title>My Submissions - Exam Ease</title>
 </head>
 <body id="body">
@@ -115,12 +117,10 @@
                     </a>
                 </div>
             </section>
-            <div class="main_components no_top_margin">
+            <div class="main_components">
                 <aside class="progress_section">
                     <div class="progress_toggle_tooltip_container">
-                        <button class="progress_toggle_btn" aria-label="Hide progress">
-                            &lt;
-                        </button>
+                        <button class="progress_toggle_btn" aria-label="Hide progress"></button>
                         <div class="progress_toggle tooltip_box">
                             Hide Progress bar
                         </div>
@@ -203,80 +203,63 @@
                     </div>
                 </aside>
                 <section class="main_section">
-                    <section class="big_box">  
-    
-                        <button class="btn_submission">Collapse all</button>
-                    
-                    <details class="submission_dropdown">
-                        <summary class="submission_header">
-                            <h2>Submissions in progress</h2>
-                            <span class="lecture_arrow">▾</span>
-                        </summary>
-                    
-                        <div class="submission_row">
-                            <span>
-                                AAU, Software; 1. Semester, DTG; Previous Exams
-                            </span>
-                            <span>20%</span>
-                        </div>
-                    
-                        <div class="submission_row">
-                            <span>AAU, Software; 1. Semester, PBL; Exam information</span>
-                            <span>60%</span>
-                        </div>
-                    </details>
-                    
-                    <details class="submission_dropdown">
-                        <summary class="submission_header">
-                            <h2>
-                                Submissions completed (Submitted, sent in), NOT processed by
-                                admin
-                            </h2>
-                            <span class="lecture_arrow">▾</span>
-                        </summary>
-                    
-                        <div class="submission_row">
-                            <span>
-                                AAU, Software; 1. Semester, PBL; Previous Exams
-                            </span>
-                            <span class="date">(Submitted: 10/01/2026)</span>
-                        </div>
-                    </details>
-                    
-                    <details class="submission_dropdown">
-                        <summary class="submission_header">
-                            <h2 class="green">
-                                Submissions completed (Submitted, sent in), processed by admin
-                            </h2>
-                            <span class="lecture_arrow">▾</span>
-                        </summary>
-                    
-                        <div class="submission_row">
-                            <span>
-                                AAU, Software; 1. Semester, P0; Previous Exams
-                            </span>
-                            <span class="date">(Submitted: 12/10/2025)</span>
-                        </div>
-                    
-                        <div class="submission_row">
-                            <span>AAU, Software; 1. Semester, P0; Exam information</span>
-                            <span class="date">(Submitted: 29/09/2025)</span>
-                        </div>
-                    </details>
-
+                    <section class="big_box submission_box">  
+                        <!-- <button class="btn_submission">Collapse all</button> -->
+                        <details class="submission_dropdown">
+                            <summary class="submission_header">
+                                <h2>Submissions in progress</h2>
+                                <span class="lecture_arrow">▾</span>
+                            </summary>
+                            <div class="submission_row">
+                                <span>
+                                    AAU, Software; 1. Semester, DTG; Previous Exams
+                                </span>
+                                <span>20%</span>
+                            </div>
+                            <div class="submission_row">
+                                <span>AAU, Software; 1. Semester, PBL; Exam information</span>
+                                <span>60%</span>
+                            </div>
+                        </details>
+                        <details class="submission_dropdown">
+                            <summary class="submission_header">
+                                <h2>Submissions completed (Submitted, sent in), NOT processed by admin</h2>
+                                <span class="lecture_arrow">▾</span>
+                            </summary>
+                            <div class="submission_row">
+                                <span>AAU, Software; 1. Semester, PBL; Previous Exams</span>
+                                <span class="date">(Submitted: 10/01/2026)</span>
+                            </div>
+                        </details>
+                        <details class="submission_dropdown">
+                            <summary class="submission_header">
+                                <h2 class="green">Submissions completed (Submitted, sent in), processed by admin</h2>
+                                <span class="lecture_arrow">▾</span>
+                            </summary>
+                            <div class="submission_row">
+                                <span>AAU, Software; 1. Semester, P0; Previous Exams</span>
+                                <span class="date">(Submitted: 12/10/2025)</span>
+                            </div>
+                            <div class="submission_row">
+                                <span>AAU, Software; 1. Semester, P0; Exam information</span>
+                                <span class="date">(Submitted: 29/09/2025)</span>
+                            </div>
+                        </details>
                     </section>
                 </section>
             </div>
-
-
-
         </main>
         <footer class="footer">
-            <div class="footer_column footer_column_left">
-                <h4>Submissions</h4>
+            <div class="footer_column_left">
+                <h4>Exam Ease</h4>
+                <p>Your comprehensive platform for exam preparation and submission management.</p>
+            </div>
+            <div class="footer_column_right">
+                <h4>Quick Links</h4>
                 <ul>
                     <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
-                    <li><a href="../submission_forms/student_submission.html">Submission Form</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../login/login.html">Login</a></li>
                 </ul>
             </div>
             <div class="footer_column footer_column_right visible_link">
@@ -286,5 +269,22 @@
             </div>
         </footer>
     </div>
+
+    <!-- OVERLAYS -->
+    <div class="overlay" id="deleteOverlay">
+        <div class="inside_overlay delete_profile">
+            <h2>Delete Profile</h2>
+            <p>Are you sure you want to delete your profile? This action cannot be undone.</p>
+            <div class="button">
+                <button class="md_btn cancel" onclick="off('deleteOverlay')">Cancel</button>
+                <button class="md_btn submit" onclick="confirmDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../js/header.js" defer></script>
+    <script src="../js/logout.js" defer></script>
+    <script src="../js/profile.js" defer></script>
 </body>
 </html>

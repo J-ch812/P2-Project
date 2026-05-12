@@ -3,7 +3,7 @@ const registerUser = async (req,res) => {
 
     try{ const {email, username, password,semester,fieldofstudy,university,role} = req.body;
 
-     if (!username||!email||!password) {
+     if (!username||!email||!password||!semester||!fieldofstudy||!university||!role) {
         return res.status(400).json({ message:"Fill in all your information"})
      };
 
@@ -27,6 +27,7 @@ const registerUser = async (req,res) => {
      res.status(201).json({message:" You succesfully created an account",
       user:{id: user._id, email:user.email, username: user.username} 
      });
+     console.log("User",userSchema);
 
     } catch (error){
       res.status(500).json({message: "Technical issue", error} )

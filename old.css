@@ -1,25 +1,9 @@
 /*---- GLOBAL VARIABLES (Style Sheet) ----*/
 /* --Reusable values for colors, spacing, borders, and shadows. Helps maintain consistency and simplifies updates. */
 :root {
-
-/*   New color palette:
-  - #112A46 (Dark Blue)
-  - #ACC8E5 (Light Blue) */
-
-
-
-
-
-
-
-
-
-
-
-
-
   --color-bg: hsl(201, 49%, 88%); /* --color-bg: #cbe2ed; */ /* A lighter version of --color-primary */
-  --color-primary: hsl(201, 49%, 62%); /* --color-primary: #76add0; */ /*--color-primary-dark: #5e9bc3;*/
+  --color-primary: hsl(201, 49%, 62%); /* --color-primary: #76add0; */
+  /*--color-primary-dark: #5e9bc3;*/
   --color-hover-bg: hsl(201, 49%, 82%);  /* A less lighter version of --color-primary */
   --color-hover-text: hsl(45, 100%, 62%);
   --color-hover-bg-light: hsl(201, 49%, 92%);
@@ -56,7 +40,6 @@
   --radius-lg: 25px;  /* --Border radius of corners on OVERLAY */
 
 
-  /* Typography */
   /* Font Size & Line height */
   --font-headlines: 600 32pt/100% Trebuchet MS, Georgia, monospace, serif;  /* letter-spacing: -1%; */  /* Names of the pages */ /* h1 */
   
@@ -72,8 +55,6 @@
   
 
 
-    --font-headlines-size: clamp(1.6rem, 2.5vw, 2.2rem);
-  --font-text-size: clamp(1rem, 1.2vw, 1.25rem);
 
 /*
 h1 is    32px    (2em)
@@ -142,110 +123,58 @@ font: 20px Arial, sans-serif;
 
   /* Effects */
   /*--shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.38);*/
-
-
-
-
-
-
-
-  /* Intrinsic spacing */
-  --space-xs: clamp(0.25rem, 1vw, 0.5rem);
-  --space-sm: clamp(0.5rem, 2vw, 0.75rem);
-  --space-md: clamp(0.75rem, 3vw, 1.25rem);
-  --space-lg: clamp(1rem, 4vw, 2rem);
-  --space-xl: clamp(1.5rem, 6vw, 4rem);
-
-  --page-padding: clamp(1rem, 5vw, 5rem);
-  --content-width: 80rem;
-
-  /* Radius */
-  --radius-sm: 0.3125rem;
-  --radius-md: 0.625rem;
-  --radius-lg: 1.5rem;
-
-  /* Borders */
-  --border-default: 1.5px solid var(--color-bg);
-  --border-small-btn: 1.5px solid var(--color-primary);
-  --border-light-background: 2px solid var(--color-primary);
-  --border-dark-background: 2px solid var(--color-hover-bg);
-
-  /* Typography */
-  --font-family: Trebuchet MS, Georgia, monospace, serif;  /* Georgia, monospace, Trebuchet MS, serif, Courier New */
-
-  --step--1: clamp(0.875rem, 0.82rem + 0.25vw, 1rem);
-  --step-0: clamp(1rem, 0.92rem + 0.4vw, 1.125rem);
-  --step-1: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
-  --step-2: clamp(1.5rem, 1.2rem + 1vw, 2rem);
-  --step-3: clamp(2rem, 1.5rem + 2vw, 2.75rem);
 }
 
 /*---- --GLOBAL RESET & BASE STYLES ----*/
 /* --Ensures consistent layout across browsers. */
 /**** --Overall structure & layout of the page on the website ****/
-*, *::before, *::after {  /* --* = All elements */
+* {
+  /* --* = All elements */
   box-sizing: border-box;  /* --When the width is calculated the padding is factored in */
 }
 
 body {
   margin: 0;  /* --Removes the default spacing from browsers */
   padding: 0;  /* --Removes the default spacing from browsers */
-  /* min-width: 320px; */ /* --Prevents layout from breaking on very small screens */
-  min-height: 100dvh; 
-  font-family: var(--font-family); 
+  min-height: 100vh; 
+  font-family: Trebuchet MS, Georgia, monospace, serif; /* Georgia, monospace, Trebuchet MS, serif, Courier New */ /* --!--Inria Sans dose not work*/ /* -Fallback fonts are used if Inria Sans does not load */
   color: var(--color-text);
   background-color: var(--color-bg);
-  line-height: 1.5;
 }
 
 /* Global styling*/
 
-input, button, textarea, select {
-  font: inherit;
+input, select, textarea, button {
   min-width: 0;
 }
 
-/* ?? */
-img, svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-
-/* TYPOGRAPHY *//* --Global typography styles for headings, paragraphs, and links. */
-h1 {
-  font-size: var(--step-3);
-  line-height: 1.1;
+h1 {    /* Titles/Headlines */
+  font: var(--font-headlines);
   letter-spacing: 1%;
 }
 
-h2 {
-  font-size: var(--step-2);
-  line-height: 1.15;
+h2 {    /* Overlays */
+  font: var(--font-small-headline);
   letter-spacing: 1%;
 }
 
-h3 {
-  font-size: var(--step-1);
-  line-height: 1.2;
+h3 {    /* bold text */
+  font: var(--font-bold-paragraphs);
   letter-spacing: 0%;
 }
 
-p, a, label {
-  font-size: var(--step-0);
-  line-height: 1.5;
-  letter-spacing: 2%;
-}
+/* Normal text */
+/* p {     
+  font: var(--font-paragraphs);
+  letter-spacing: 1%;
+} */
 
-/* 
-h1 { font-size: var(--font-headlines-size); }
-p, a, label { font-size: var(--font-text-size); }
- */
+/* Normal text */
+/* a {     
+  font: var(--font-paragraphs);
+  letter-spacing: 1%;
+} */
 
-p, a, label, input, textarea, select {
-  font-size: var(--step-0);
-}
 
 textarea::placeholder {
   color: var(--color-placeholder-text);
@@ -255,15 +184,40 @@ textarea::placeholder {
 
 
 
+
+/* figure out */
+/* remove all vh units */
+/* For images --??-- */
+img {
+  /* display: block; */ /* --Removes the unwanted bottom gap. Makes sizing/layout more predictable. Lets margins behave normally (e.g., centering with margin: auto) */
+  /* max-width: 100%; */ /* --Prevents images from overflowing their containers */
+  /* height: auto; */    /* --Maintains aspect ratio */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*---- PAGE LAYOUT CONTAINER ----*/
 /* --Wraps the entire page structure */
 .container {
-  min-height: 100dvh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  /* gap: clamp(0.5rem, 1vw, 1rem); */
-  gap: var(--space-md); /* ?? */
+  gap: clamp(0.5rem, 1vw, 1rem);
 }
 
 /*---- COMPONENTS ----*/
@@ -366,10 +320,11 @@ textarea::placeholder {
 .topbar {
   background-color: var(--color-primary);
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
- /*  gap: var(--gap-between-elements); */
-  gap: var(--space-sm);
+  gap: var(--gap-between-elements);
+
   /* Makes the header stay at the top*/
   position: sticky;
   top: 0;
@@ -379,7 +334,7 @@ textarea::placeholder {
 .topbar_left, .topbar_right {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--gap-between-elements);
   min-width: 0;  /* --Allows flex items to shrink properly */
 }
 
@@ -392,13 +347,6 @@ textarea::placeholder {
 .topbar_right {
   margin: 0.45rem var(--margin-sides-largescreen) 0.45rem 0;
 }
-
-
-/* .topbar_left, .topbar_right {
-  margin-inline: clamp(0.75rem, 4vw, 5rem);
-}
- */
-
 
 /*---- Header Elements (Icons and buttons) ----*/
 
@@ -533,6 +481,8 @@ textarea::placeholder {
 /*** --Structure/layout of the main part of the page ***/
 .main {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas:
     "heading"
     "main_components";
@@ -543,22 +493,14 @@ textarea::placeholder {
   margin-bottom: var(--margin-sides-largescreen);
 }
 
-/* .main {
-  width: min(100% - 2rem, var(--content-width));
-  margin-inline: auto;
-  margin-bottom: var(--space-xl);
-
-  display: grid;
-  grid-template-areas:
-    "heading"
-    "main_components";
-  gap: var(--space-lg);
-} */
-
-
-/** Header & Breadcrumbs **/
-.heading_wrapper {
+.heading {
   grid-area: heading;
+  text-align: center;
+}
+
+
+/** Header with the Path/Breadcrumbs **/
+.heading_wrapper {
   position: relative;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -574,7 +516,7 @@ textarea::placeholder {
   letter-spacing: 2%;
   font-weight: 100;
   /* If the text is longer than the page the overflowing will be hidden and end in ellipsis instead*/
-  max-width: 80%;
+  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -611,24 +553,13 @@ textarea::placeholder {
 
 /* Main layout with sidebar (progress section) and content */
 /* --Default layout - If a page has a progress_section then it gets a layout with two columns */
-/* .main_components {
-  grid-area: main_components;
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  grid-template-areas: 
-    "progress_section main_section";
-  column-gap: 5rem;
-} */
-
-
 .main_components {
   grid-area: main_components;
   display: grid;
-  grid-template-columns: 260px 1fr; 
   grid-template-areas: 
     "progress_section main_section";
-  gap: clamp(1rem, 4vw, 5rem);
 }
+
 
 /* Fallback layout when no progress section exists */
 /* --If progress_section does not exist then switch to a full width layout */
@@ -669,11 +600,9 @@ textarea::placeholder {
 /** --Layout/structure of the progressbars - Progress bar **/
 .progress_grid {
   display: grid;
-  /* grid-template-columns: 1fr; */
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: 1fr;
   gap: 0.6rem 2.5rem;
-  margin-top: 0;  
-  /* font-size: 16px; */
+  font-size: 16px;
 }
 
 /* Individual progress row */
@@ -831,21 +760,17 @@ textarea::placeholder {
 
 /*- Grid of course cards -*/
 /** --Course grid - for the pages with a grid of buttons (eg. Course Overview - First Semester and front page) **/
-/* .course_grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 3rem;
-  column-gap: 5rem;
-} */
-
 .course_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(1rem, 3vw, 3rem) clamp(1rem, 5vw, 5rem);
+  grid-template-columns: 
+    /* repeat(3, 1fr); */
+    repeat(auto-fit, minmax(110px, 1fr));
+  row-gap: 3rem;
+  column-gap: 5rem;
 }
 
 .course_card {
-  min-height: 70px;
+  min-height: 56px;
   padding: 1rem;
   border: var(--border-light-background);
   border-radius: var(--radius-md);
@@ -855,10 +780,6 @@ textarea::placeholder {
   text-align: center;
   font: inherit;
   cursor: pointer;
-  display: flex;
-  justify-content: center; /* horizontal */
-  align-items: center;     /* vertical */
-
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease;
@@ -871,13 +792,13 @@ textarea::placeholder {
   background-color: var(--color-hover-bg);
 }
 
-/* .course_grid_front_page {
-  column-gap: clamp(1.25rem, 5vw, 5rem);
-} */
+.course_grid_front_page {
+  column-gap: clamp(1.25rem, 5vJJw, 5rem);
+}
 
-/* .course_grid_semester_page {
+.course_grid_semester_page {
   grid-template-columns: repeat(2, 1fr);
-} */
+}
 
 /* --No hover effect on page: DTG - Previous Exams */
 .course_card.prior_exams {
@@ -986,7 +907,6 @@ textarea::placeholder {
 .footer {
   background-color: var(--color-primary);
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--gap-between-elements);
 }
@@ -1183,34 +1103,28 @@ textarea::placeholder {
 }
 
 .signup_container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-inline: auto;
-
-  min-width: 100%;
-  /* max-width: 750px; */
-  /* min-height: 560px; */
-/*   height: auto; */
+  width: 100%;
+  max-width: 750px;
+  min-height: 560px;
+  height: auto;
   background-color: var(--color-primary);
   border-radius: var(--radius-lg);
   padding: 2rem 5rem;
-/*   box-sizing: border-box; */
-  /* margin: 0 auto; */
-  margin-top: 2rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 15px;
 }
-/*   
+
 .signup_container h1 {
   text-align: center;
   margin-top: 0px;
   font-size: 44px;
-  margin-bottom: 1rem;
-} */
+  margin-bottom: 15px;
+}
 
 .signup_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: 1fr 1fr;
   gap: 1.2rem 2rem;
 }
 
@@ -1219,17 +1133,9 @@ textarea::placeholder {
   flex-direction: column;
 }
 
-.signup_row {
-  display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  column-gap: 1.5rem;
-  grid-column: 1 / 3;
-}
-
 .signup_item label {
   font-size: 20px;
-  margin-bottom: 0.25rem;
+  margin-bottom: 5px;
   color: var(--color-text);
 }
 
@@ -1299,33 +1205,25 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+.signup_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  grid-column: 1 / 3;
+}
+
 .signup_item [option="value"] {
   color: var(--color-text);
 }
 
-#field, #semester, #university { 
-  width: 100%; 
-  height: 45px;
-  padding: 0 1rem;
-  border: var(--border-dark-background);
-  border-radius: var(--radius-md);
-  background-color: var(--color-white);
-  font-size: 0.95rem;
-  box-sizing: border-box;
-  color: var(--color-placeholder-text);
-  font-family: inherit;
-
-  cursor: pointer;
-}
-
-/* #field {
+#field {
   width: 198px;
   height: 45px;
   cursor: pointer;
   font-family: inherit;
-} */
+}
 
-/* #semester {
+#semester {
   width: 155px;
   height: 45px;
   cursor: pointer;
@@ -1336,12 +1234,18 @@ input[type="checkbox"] {
   height: 45px;
   cursor: pointer;
   font-family: inherit;
-} */
+}
 
 .emails {
   grid-column: 1 / 3;
 }
 
+.signup_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  grid-column: 1 / 3;
+}
 
 .signup-btn {
   display: block;
@@ -1362,6 +1266,25 @@ input[type="checkbox"] {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Submission info Page*/
 .big_box {
   background-color: var(--color-white);
@@ -1371,11 +1294,23 @@ input[type="checkbox"] {
   justify-self: center;
   width: 100%; /* 85%? */
   line-height: 1.5;
-  display: flex;
-  flex-direction: column;
-  font-family: inherit;
-   font-size: 18px;
 }
+
+
+/* .submission_box {
+  width: 1170px;
+  height: 490px;
+  margin: 0px auto 0px;
+  background-color: var(--color-white);
+  border: var(--border-small-btn);
+  border-radius: var(--radius-lg);
+  padding: 65px 20px 0px;
+  position: relative;
+  box-sizing: border-box;
+} */
+
+
+
 
 .small_submit_header.one, .big_box h3, .big_box p {
   margin: 0;
@@ -1409,12 +1344,19 @@ input[type="checkbox"] {
   padding: 0.25rem 0.75rem;
 }
 
-/* .login-box{
+
+
+
+
+
+
+
+.login-box{
   display: flex;
   flex-direction: column;
   gap: 25px;
   font-size: 18px;
-} */
+}
 
 .login-item {
   display: flex;
@@ -1555,7 +1497,7 @@ input[type="checkbox"] {
   transform: rotate(180deg);
 }
 
-/* .btn_submission {
+.btn_submission {
   width: 120px;
   height: 45px;
   border-radius: var(--radius-md);
@@ -1570,7 +1512,7 @@ input[type="checkbox"] {
   padding: 10px 14px;
   font-style: inherit;
   font: inherit;
-} */
+}
 
 .submission_header {
   background-color: var(--color-primary);
@@ -1578,8 +1520,6 @@ input[type="checkbox"] {
   padding: 8px 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  border-radius: var(--radius-md);
 }
 
 .submission_header h2 {
@@ -1589,6 +1529,7 @@ input[type="checkbox"] {
 }
 
 .submission_row {
+  width: 100x;
   margin: 10px 0px 0px 10px;
   background-color: var(--color-bg);
   display: flex;
@@ -1597,12 +1538,13 @@ input[type="checkbox"] {
   padding: 5px 10px;
   font-size: 20px;
   color: var(--color-text);
-  border-radius: var(--radius-md);
 }
 
 .date {
   color: var(--color-placeholder-text);
 }
+
+
 
 /* ---- Submission Form ---- */
 .submission_form {
@@ -1803,6 +1745,27 @@ input[type="checkbox"] {
   transform: translate(-50%, 0);
 }
 
+
+
+
+
+
+
+
+
+/* Show loggedin header when active */
+
+/* Default is logged out, so remove logged in components */
+/* Just to test*/
+/* #navLoggedInDesktop.active, #navLoggedInMobile.active, #userProfile.active {
+  display: none;
+}
+#navLoggedOutDesktop.active, #navLoggedOutMobile.active, #authButtons.active {
+  display: none;
+} */
+
+
+
 .logged_out.active {
   display: none;
 }
@@ -1810,6 +1773,9 @@ input[type="checkbox"] {
 .logged_in.active {
   display: none;
 }
+
+
+
 
 /* DTG - Previous Exams --Page */
 .exam_list {
@@ -1825,157 +1791,6 @@ input[type="checkbox"] {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* New footer */
-/*---- FOOTER (FOOTER) ----*/
-.footer {
-  background-color: var(--color-primary);
-
-}
-
-.footer_row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--gap-between-elements);
-}
-
-.footer_column_left {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--gap-between-elements);
-  margin: 0.6rem 0 0.6rem var(--margin-sides-largescreen);
-}
-
-.footer_column_right {
-  margin: 0.6rem var(--margin-sides-largescreen) 0.6rem 0;
-}
-
-.footer_column.two {
-  margin: 0.6rem var(--margin-sides-largescreen) 0.6rem var(--margin-sides-largescreen);
-}
-
-/** --Font size and -margin/padding -- Footer **/
-.footer_column h4 {
-  margin: 0 0 0.5rem;
-  font-size: 16px;
-}
-
-.footer_column ul, .footer_column li, .footer_column p {
-  margin: 0.35rem 0 0;
-}
-
-.footer_column ul, .footer_column p {
-  padding-left: 1.5rem;
-}
-
-.footer_column a {
-  color: var(--color-text);
-  text-decoration: none;
-}
-
-.footer_column.visible_link a:hover {
-  text-decoration: underline;
-}
-
-.footer_column a:hover, .footer_column li:hover {
-  color: var(--color-hover-text);
-}¨
-
-
-/* Feature cards */
-.feature_card {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: clamp(1rem, 2vw, 2rem);
-  background-color: var(--color-white);
-  border: var(--border-light-background);
-  border-radius: var(--radius-lg);
-  min-block-size: 100%;
-  max-width: 50px;
-}
-
-.feature_card h4 {
-  margin: 0;
-}
-
-.feature_card p {
-  margin: 0;
-  flex-grow: 1;
-}
-
-/* Footer buttons */
-/* .hero_buttons {
-  align-self: start;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.85rem 1.25rem;
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  background-color: var(--color-bg);
-  border: var(--border-light-background);
-  color: var(--color-text);
-} */
-
-/* .hero_buttons:hover {
-  background-color: var(--color-hover-bg-light);
-} */
-
-
-/* About section */
-
-.footer_row.two {
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--gap-between-elements);
-}
-
-
-.footer_row:last-child {
-  padding: clamp(1rem, 2vw, 2rem);
-  background-color: var(--color-white);
-  border-radius: var(--radius-lg);
-  border: var(--border-light-background);
-}
-
-.footer_row:last-child h4 {
-  margin-top: 0;
-}
-
-.footer_row:last-child p {
-  margin: 0;
-  line-height: 1.7;
-}
-
-
-
-
-
-
-
-
-/* Desktop layout */
-/* @media (min-width: 70rem) {
-  .footer_row:first-child {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: start;
-  }
-} */
 
 
 
@@ -2022,9 +1837,25 @@ input[type="checkbox"] {
     padding-left: 0;
     margin-bottom: 0.25rem;
   }
+
+  /* -Submission info page*/
+  /* .big_box {
+    width: 100%;
+  } */
 }
 
 @media screen and (max-width: 900px) {
+  /* --The grid of buttons becomes one column instead of two - on a semester page*/
+  .course_grid_semester_page {
+    grid-template-columns: 1fr;
+    row-gap: clamp(0.5rem, 2vw, 2rem);
+  }
+
+  /* --The grid of buttons becomes two columns instead of three - on a front page*/
+  .course_grid_front_page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   /* --Overlays */
   .inside_overlay h2 {
     font-size: large;
@@ -2095,6 +1926,12 @@ input[type="checkbox"] {
     margin-bottom: 1.5rem;
   }
 
+  /* Progress grid becomes two columns */
+  /* --The progress bars becomes two columns instead of one */
+  .progress_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   /* --Overlays */
   .inside_overlay {
     padding: var(--margin-sides-smallscreen);
@@ -2114,11 +1951,18 @@ input[type="checkbox"] {
 }
 
 @media screen and (max-width: 610px) {
-  /** Hide brand_name (Site title) **/
-  .topbar .brand_name {
-    display: none;
+  /* Pages without a sidebar becomes one column */
+  .main_components:not(:has(.progress_section)) {
+    grid-template-columns: 1fr;
   }
 
+  /** Hide brand_name (Site title) **/
+  .topbar.logged_out .brand_name {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 540px) {
   /* Reduce side margins on small screens */
   /* --The left side margins are changed to become slimmer - sides of the screen to the first element */
   .topbar_left, .main, .footer_column_left {
@@ -2131,9 +1975,3 @@ input[type="checkbox"] {
   }
 }
 
-@media (min-width: 1100px) {
-  .main {
-    max-width: 1000px;
-    margin-inline: auto; /* Centers the main content horizontally */ 
-  }
-}
