@@ -1837,12 +1837,12 @@ input[type="checkbox"] {
 
   /** Replace search bar with icon **/
   /* --Hide full search bar */
-  .topbar.logged_out .search_bar {
+  .topbar .search_bar {
     display: none;
   }
   
   /* --Show icon instead of search bar */
-  .topbar.logged_out .btn_search {
+  .topbar .btn_search {
     display: block;
   }
 
@@ -1931,7 +1931,7 @@ input[type="checkbox"] {
   }
 
   /** Hide brand_name (Site title) **/
-  .topbar.logged_out .brand_name {
+  .topbar .brand_name {
     display: none;
   }
 }
