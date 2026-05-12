@@ -11,6 +11,8 @@
     <script src="../js/logout.js" defer></script>
     <script src="../js/header.js" defer></script>
     <script src="../js/profile.js" defer></script>
+    <script src="../js/delete_profile.js" defer></script>
+    <script src="../js/progressbar.js" defer></script>
     <title>Semester Overview - Exam Ease</title>
 </head>
 <body id="body">
@@ -141,13 +143,14 @@
             </div>
         </footer>
     </div>
-<!-- FULL SCREEN OVERLAYS -->
-    <!-- Profile Has Been Successfully Deleted -->
-    <div class="overlay" id="deleteOverlay">
-        <div class="inside_overlay delete_profile">
-            <h1>Your profile has been successfully deleted!</h1>
-            <a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
-        </div>
-    </div>
+
+    <!-- OVERLAYS -->
+	<!-- Profile Has Been Successfully Deleted -->
+	<div class="overlay" id="deleteOverlay">
+		<div class="inside_overlay delete_profile">
+		<h1>Your profile has been successfully deleted!</h1>
+		<a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+		</div>
+	</div>
 </body>
 </html>

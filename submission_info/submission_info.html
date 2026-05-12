@@ -9,6 +9,8 @@
     <script src="../js/logout.js" defer></script>
     <script src="../js/header.js" defer></script>
     <script src="../js/profile.js" defer></script>
+    <script src="../js/delete_profile.js" defer></script>
+    <script src="../js/progressbar.js" defer></script>
     <title>Submission Information - Exam Ease</title>
 </head>
 <body id="body">
@@ -118,9 +120,7 @@
             <div class="main_components no_top_margin">
                 <aside class="progress_section">
                     <div class="progress_toggle_tooltip_container">
-                        <button class="progress_toggle_btn" aria-label="Hide progress">
-                            &lt;
-                        </button>
+                        <button class="progress_toggle_btn" aria-label="Hide progress"></button>
                         <div class="progress_toggle tooltip_box">
                             Hide Progress bar
                         </div>
@@ -252,8 +252,8 @@
             </div>
         </footer>
     </div>
-    
-<!-- FULL SCREEN OVERLAYS -->
+
+    <!-- OVERLAYS -->
 	<!-- Profile Has Been Successfully Deleted -->
 	<div class="overlay" id="deleteOverlay">
 		<div class="inside_overlay delete_profile">

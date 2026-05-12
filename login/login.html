@@ -110,7 +110,9 @@
 
         <main class="main">
             <div class="signup_container">
-                <h1 class="heading">Log in</h1>
+                <section class="heading_wrapper">
+					<h1 class="heading">Log in</h1>
+				</section>
                 <div class="login-item">
                     <div class="login-box">
                         <div class="login-row-one-two">
@@ -127,9 +129,6 @@
 
                         <!-- LOG IN KNAPPEN -->
                         <button class="signup-btn" id="loginBtn">Log in</button> <!-- ikke ændre -->
-
-
-
                         <div class="login-row-four">
                             <a href="../signup/signup.html" class="signup-link">Don’t have an account? Sign up</a>
                         </div>
@@ -137,7 +136,6 @@
                 </div>
             </div>
         </main>
-
         <footer class="footer">
             <div class="footer_column footer_column_left">
                 <h4>Submissions</h4>
@@ -153,6 +151,17 @@
             </div>
         </footer>
     </div>
+
+    <!-- OVERLAYS -->
+	<!-- Profile Has Been Successfully Deleted -->
+	<div class="overlay" id="deleteOverlay">
+		<div class="inside_overlay delete_profile">
+		<h1>Your profile has been successfully deleted!</h1>
+		<a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+		</div>
+	</div>
+
+
 </body>
 </html>
 

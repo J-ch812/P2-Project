@@ -56,3 +56,41 @@ js files for login + log out + profile
 
 When logged out they should not be able to see the progressbar or at least their progress??
 Link the deleprofile overlay to the logged out function
+
+
+
+
+add to footer:
+<p class="subtitle">Your comprehensive platform for exam preparation and submission management</p>
+<p>Your comprehensive platform for exam preparation and submission management.</p>
+                <section class="main_section">
+                    <!-- Front page content goes here -->
+                    <div class="hero_section">
+                        <h2>Streamline Your Exam Process</h2>
+                        <p>Access course materials, submit assignments, and track your progress all in one place.</p>
+                        <div class="hero_buttons">
+                            <a href="semester_overview_homepage/semester_overview.html" class="btn btn_signup">Get Started</a>
+                            <a href="submission_info/submission_info.html" class="btn btn_ghost_login">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="features_grid">
+                        <div class="feature_card">
+                            <h3>Course Overview</h3>
+                            <p>Access detailed course information and semester planning tools.</p>
+                            <a href="semester_overview_homepage/semester_overview.html" class="btn">Explore Courses</a>
+                        </div>
+                        <div class="feature_card">
+                            <h3>Easy Submissions</h3>
+                            <p>Submit your assignments and track submission status effortlessly.</p>
+                            <a href="submission_forms/student_submission.html" class="btn">Submit Now</a>
+                        </div>
+                        <div class="feature_card">
+                            <h3>Progress Tracking</h3>
+                            <p>Monitor your academic progress and stay on top of deadlines.</p>
+                            <a href="my_submission/my_submission.html" class="btn">View Progress</a>
+                        </div>
+                    </div>
+                </section>
+
+-look at delete overlay -- id="deleteOverlay" - old on firststemester overview

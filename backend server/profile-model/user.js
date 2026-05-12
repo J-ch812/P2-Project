@@ -59,7 +59,7 @@ const userSchema = new Schema(
 
 userSchema.pre("save", async function() {
     console.log("pre-save hook fired");
- 
+
     if(!this.isModified("password")) return next();
     this.password = await bcrypt.hash(this.password, 10);
 

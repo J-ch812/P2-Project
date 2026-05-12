@@ -9,6 +9,8 @@
     <script src="../js/logout.js" defer></script>
     <script src="../js/header.js" defer></script>
     <script src="../js/profile.js" defer></script>
+    <script src="../js/delete_profile.js" defer></script>
+    <script src="../js/progressbar.js" defer></script>
     <title>DTG Block 4 - Exam Ease</title>
 </head>
 <body id="body">
@@ -317,7 +319,7 @@
         </main>
         <footer class="footer">
             <div class="footer_column footer_column_left">
-                <h4>Submissions</h4> <!-- --?-- "Submissions" instead of "Submit Your Input" or something else? -->
+                <h4>Submissions</h4>
                 <ul>
                     <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
                     <li><a href="../submission_forms/student_submission.html">Submission Form</a></li>
@@ -330,13 +332,25 @@
             </div>
         </footer>
     </div>
-<!-- FULL SCREEN OVERLAYS -->
-	<!-- Profile Has Been Successfully Deleted -->
+
+    <!-- OVERLAYS -->
+
+    <!-- Profile Has Been Successfully Deleted -->
 	<div class="overlay" id="deleteOverlay">
 		<div class="inside_overlay delete_profile">
 		<h1>Your profile has been successfully deleted!</h1>
 		<a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
 		</div>
 	</div>
+<!--     <div class="overlay" id="deleteOverlay">
+        <div class="inside_overlay delete_profile">
+            <h2>Delete Profile</h2>
+            <p>Are you sure you want to delete your profile? This action cannot be undone.</p>
+            <div class="button">
+                <button class="md_btn cancel" onclick="off('deleteOverlay')">Cancel</button>
+                <button class="md_btn submit" onclick="confirmDelete()">Delete</button>
+            </div>
+        </div>
+    </div> -->
 </body>
 </html>

@@ -11,7 +11,8 @@ try {
         
     } catch (error) {
         console.log("mongoose connection failed", error);
-            process.exit(1)
+            // Don't exit process, just log the error
+            // process.exit(1)
 
             };
 

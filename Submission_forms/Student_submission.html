@@ -10,6 +10,8 @@
     <script src="../js/logout.js" defer></script>
     <script src="../js/header.js" defer></script>
     <script src="../js/profile.js" defer></script>
+    <script src="../js/delete_profile.js" defer></script>
+    <script src="../js/progressbar.js" defer></script>
     <title>Submission Form - Exam Ease</title>
 </head>
 <body id="body">
@@ -287,7 +289,7 @@
                 <h4>Submissions</h4>
                 <ul>
                     <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
-                    <li><a href="student_submission.html">Submission Form</a></li>
+                    <li><a href="../submission_forms/student_submission.html">Submission Form</a></li>
                 </ul>
             </div>
             <div class="footer_column footer_column_right visible_link">
@@ -298,15 +300,15 @@
         </footer>
     </div>
 
-<!-- FULL SCREEN OVERLAYS -->
-    <!-- Profile Has Been Successfully Deleted -->
-    <div class="overlay" id="deleteOverlay">
-        <div class="inside_overlay delete_profile">
-            <h2>Your profile has been successfully deleted!</h2>
-            <a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
-        </div>
-    </div>
-
+    <!-- OVERLAYS -->
+	<!-- Profile Has Been Successfully Deleted -->
+	<div class="overlay" id="deleteOverlay">
+		<div class="inside_overlay delete_profile">
+		<h1>Your profile has been successfully deleted!</h1>
+		<a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+		</div>
+	</div>
+    
     <!-- The User Is Asked If They Do Want To Submit -->
     <div class="overlay" id="submitOverlay">
         <div class="inside_overlay submission_check">

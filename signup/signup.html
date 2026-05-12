@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style.css"/>
     <script src="../script.js" defer></script>
 	<!-- <script src="../js/login.js" defer></script> -->
-	<script src="../signup/signup.js" defer></script><!-- ikke ændre -->
+	<script src="../js/signup.js" defer></script><!-- ikke ændre -->
 <!--     <script src="../js/logout.js" defer></script> -->
     <script src="../js/header.js" defer></script>
 <!--     <script src="../js/profile.js" defer></script> -->
@@ -107,34 +107,32 @@
                 </div>
             </div>
         </header>
-
 		<main class="main">
 			<div class="signup_container">
-
-				<h1>Sign up</h1>
-
+				<section class="heading_wrapper">
+					<h1 class="heading">Sign up</h1>
+				</section>
 				<div class="signup_grid">
-
-					<div class="signup_item">
-						<label for="name">First- and last name</label><!-- ikke ændre -->
-						<input class="name" type="text" placeholder="E.g. Sara Hansen"/>
-					</div>
-
-					<div class="signup_item">
-						<label>I am a...</label><!-- ikke ændre -->
-						<div class="signup_role">
-							<label class="role_option" for="student">
-								<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
-								<p>Student</p>
-							</label>
-							<label class="role_option" for="professor">
-								<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
-								<p>Professor</p>
-							</label>
+					<div class="signup_row">
+						<div class="signup_item">
+							<label for="name">First- and last name</label><!-- ikke ændre -->
+							<input class="name" type="text" placeholder="E.g. Sara Hansen"/>
+						</div>
+						<div class="signup_item">
+							<label>I am a...</label><!-- ikke ændre -->
+							<div class="signup_role">
+								<label class="role_option" for="student">
+									<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
+									<p>Student</p>
+								</label>
+								<label class="role_option" for="professor">
+									<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
+									<p>Professor</p>
+								</label>
+							</div>
 						</div>
 					</div>
-
-					<div class="signup-row-two">
+					<div class="signup_row">
 						<div class="signup_item">
 							<label for="university">University</label><!-- ikke ændre -->
 							<select name="university" id="university"><!-- ikke ændre -->
@@ -142,7 +140,6 @@
 								<option value="Aalborg university CPH">Aalborg University (CPH)</option>
 							</select>
 						</div>
-
 						<div class="signup_item">
 							<label for="field">Field of study</label><!-- ikke ændre -->
 							<select name="field" id="field"><!-- ikke ændre -->
@@ -155,7 +152,6 @@
 								<option value="Biotechnology">Biotechnology, Bachelor</option>
 							</select>
 						</div>
-
 						<div class="signup_item semester">
 							<label for="semester">Semester</label><!-- ikke ændre -->
 							<select name="semester" id="semester"><!-- ikke ændre -->
@@ -169,18 +165,15 @@
 							</select>
 						</div>
 					</div>
-
 					<div class="signup_item emails">
 						<label for="email">E-mail</label><!-- ikke ændre -->
 						<input type="email" class="email" placeholder="E.g. Sara.hansen@student.aau.dk"/> <!-- id="email" --??-- -->
 					</div>
-
-					<div class="signup-row-four">
+					<div class="signup_row">
 						<div class="signup_item">
 							<label for="username">Username</label><!-- ikke ændre -->
 							<input type="text" id="username" placeholder="E.g. Sara123!"/>
 						</div>
-
 						<div class="signup_item">
 							<label for="password">Password</label><!-- ikke ændre -->
 							<input type="password" id="password" placeholder="E.g. Exam!ease1234"/>
@@ -188,28 +181,33 @@
 					</div>
 
 				</div>
-
 				<button class="signup-btn" id="signupBtn">Sign up</button><!-- ikke ændre -->
-
 			</div>
 		</main>
 
-		<footer class="footer">
-			<div class="footer_column footer_column_left">
-				<h4>Submissions</h4>
-				<ul>
-					<li><a href="../submission_info/submission_info.html">Submission Information</a></li>
-					<li><a href="../submission_forms/student_submission.html">Submission Form</a></li>
-				</ul>
-			</div>
+        <footer class="footer">
+            <div class="footer_column footer_column_left">
+                <h4>Submissions</h4>
+                <ul>
+                    <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
+                    <li><a href="../submission_forms/student_submission.html">Submission Form</a></li>
+                </ul>
+            </div>
+            <div class="footer_column footer_column_right visible_link">
+                <h4>IT Support</h4>
+                <p><a href="#">Tel: +45 00 00 00 00</a></p>
+                <p><a href="#">E-mail: itservice@support.dk</a></p>
+            </div>
+        </footer>
+	</div>
 
-			<div class="footer_column footer_column_right visible_link">
-				<h4>IT Support</h4>
-				<p><a href="#">Tel: +45 00 00 00 00</a></p>
-				<p><a href="#">E-mail: itservice@support.dk</a></p>
-			</div>
-		</footer>
-
+	<!-- OVERLAYS -->
+	<!-- Profile Has Been Successfully Deleted -->
+	<div class="overlay" id="deleteOverlay">
+		<div class="inside_overlay delete_profile">
+		<h1>Your profile has been successfully deleted!</h1>
+		<a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+		</div>
 	</div>
 </body>
 </html>

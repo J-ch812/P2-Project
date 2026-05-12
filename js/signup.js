@@ -21,16 +21,10 @@ signupBtn.addEventListener('click', async (e) => {
         
         if (response.ok) {
             console.log(response)
-
-            // Save user data for later use 
-            localStorage.setItem('user', JSON.stringify(data.user));
-
-            // login successful - redirect to next page
-            window.location.href = '../first_semester/first_semester.html';
-
+            localStorage.setItem('user', JSON.stringify(data.user));  // Save user data for later use 
+            window.location.href = '../first_semester/first_semester.html';  // login successful - redirect to next page
         } else {
-            // show error to user
-            alert(data.message);
+            alert(data.message);  // show error to user
         }
     } catch (error) {
         alert('Could not connect to server');

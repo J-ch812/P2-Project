@@ -264,11 +264,16 @@
 
         <!-- FOOTER -->
         <footer class="footer">
-            <div class="footer_column footer_column_left">
-                <h4>Submissions</h4>
+            <div class="footer_column_left">
+                <h4>Exam Ease</h4>
+                <p>Your comprehensive platform for exam preparation and submission management.</p>
+            </div>
+            <div class="footer_column_right">
+                <h4>Quick Links</h4>
                 <ul>
                     <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
-                    <li><a href="professor_submission.html">Submission Form</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../login/login.html">Login</a></li>
                 </ul>
             </div>
             <div class="footer_column footer_column_right visible_link">
@@ -279,12 +284,15 @@
         </footer>
     </div>
 
-<!-- FULL SCREEN OVERLAYS -->
-    <!-- Profile Has Been Successfully Deleted -->
+    <!-- OVERLAYS -->
     <div class="overlay" id="deleteOverlay">
         <div class="inside_overlay delete_profile">
-            <h1>Your profile has been successfully deleted!</h1>
-            <a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+            <h2>Delete Profile</h2>
+            <p>Are you sure you want to delete your profile? This action cannot be undone.</p>
+            <div class="button">
+                <button class="md_btn cancel" onclick="off('deleteOverlay')">Cancel</button>
+                <button class="md_btn submit" onclick="confirmDelete()">Delete</button>
+            </div>
         </div>
     </div>
 
