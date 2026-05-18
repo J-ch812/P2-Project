@@ -1,19 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/>
-    <link rel="stylesheet" href="../style.css"/>
-    <script src="../script.js" defer></script>
-	<!-- <script src="../js/login.js" defer></script> -->
+	<meta charset="UTF-8"/><!-- ikke ændre -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/><!-- ikke ændre -->
+	<link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/><!-- ikke ændre -->
+	<link rel="stylesheet" href="../style.css"/><!-- ikke ændre -->
+	<script src="../script.js" defer></script><!-- ikke ændre -->
 	<script src="../js/signup.js" defer></script><!-- ikke ændre -->
-<!--     <script src="../js/logout.js" defer></script> -->
     <script src="../js/header.js" defer></script>
-<!--     <script src="../js/profile.js" defer></script> -->
+    <script src="../js/logout.js" defer></script>
+    <script src="../js/profile.js" defer></script>
+    <script src="../js/progressbar.js" defer></script>
+    <script src="../js/delete_profile.js" defer></script>
     <title>Sign up - Exam Ease</title>
 </head>
-<body id="body">
+<body>
+	<div class="container">
     <div class="container">
         <header class="topbar">
             <div class="topbar_left">
@@ -103,36 +105,35 @@
                 <!-- right header logged OUT -->
                 <div class="logged_out">
                     <a href="../login/login.html" class="btn btn_ghost_login">Log in</a>
-                    <a href="signup.html" class="btn btn_signup">Sign up</a>
+                    <a href="signup/signup.html" class="btn btn_signup">Sign up</a>
                 </div>
             </div>
         </header>
+
 		<main class="main">
 			<div class="signup_container">
-				<section class="heading_wrapper">
+                <section class="heading_wrapper">
 					<h1 class="heading">Sign up</h1>
 				</section>
 				<div class="signup_grid">
-					<div class="signup_row">
-						<div class="signup_item">
-							<label for="name">First- and last name</label><!-- ikke ændre -->
-							<input class="name" type="text" placeholder="E.g. Sara Hansen"/>
-						</div>
-						<div class="signup_item">
-							<label>I am a...</label><!-- ikke ændre -->
-							<div class="signup_role">
-								<label class="role_option" for="student">
-									<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
-									<p>Student</p>
-								</label>
-								<label class="role_option" for="professor">
-									<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
-									<p>Professor</p>
-								</label>
-							</div>
+					<div class="signup_item">
+						<label for="name">First- and last name</label><!-- ikke ændre -->
+						<input class="name" type="text" placeholder="E.g. Sara Hansen"/>
+					</div>
+					<div class="signup_item">
+						<label>I am a...</label><!-- ikke ændre -->
+						<div class="signup_role">
+							<label class="role_option" for="student">
+								<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
+								<p>Student</p>
+							</label>
+							<label class="role_option" for="professor">
+								<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
+								<p>Professor</p>
+							</label>
 						</div>
 					</div>
-					<div class="signup_row">
+					<div class="signup_row_two">
 						<div class="signup_item">
 							<label for="university">University</label><!-- ikke ændre -->
 							<select name="university" id="university"><!-- ikke ændre -->
@@ -167,49 +168,57 @@
 					</div>
 					<div class="signup_item emails">
 						<label for="email">E-mail</label><!-- ikke ændre -->
-						<input type="email" class="email" placeholder="E.g. Sara.hansen@student.aau.dk"/> <!-- id="email" --??-- -->
+						<input type="email" class="email" placeholder="E.g. Sara.hansen@student.aau.dk"/>
 					</div>
-					<div class="signup_row">
+					<div class="signup_row_four">
 						<div class="signup_item">
 							<label for="username">Username</label><!-- ikke ændre -->
 							<input type="text" id="username" placeholder="E.g. Sara123!"/>
 						</div>
+
 						<div class="signup_item">
 							<label for="password">Password</label><!-- ikke ændre -->
 							<input type="password" id="password" placeholder="E.g. Exam!ease1234"/>
 						</div>
 					</div>
-
 				</div>
 				<button class="signup-btn" id="signupBtn">Sign up</button><!-- ikke ændre -->
 			</div>
 		</main>
-
-        <footer class="footer">
-            <div class="footer_column footer_column_left">
-                <h4>Submissions</h4>
-                <ul>
-                    <li><a href="../submission_info/submission_info.html">Submission Information</a></li>
-                    <li><a href="../submission_forms/student_submission.html">Submission Form</a></li>
-                </ul>
+        <footer class="footer one">
+            <div class="footer">
+                <div class="footer_column footer_column_left">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="../first_semester/first_semester.html">Explore First Semester Courses</a></li>
+                        <li><a href="../DTG_Blocks/DTGBlock1.html">View DTG Curriculum</a></li>
+                    </ul>
+                </div>
+                <div class="footer_column footer_column_right visible_link">
+                    <h4>IT Support</h4>
+                    <p><a href="#">Tel: +45 00 00 00 00</a></p>
+                    <p><a href="#">E-mail: itservice@support.dk</a></p>
+                </div>
             </div>
-            <div class="footer_column footer_column_right visible_link">
-                <h4>IT Support</h4>
-                <p><a href="#">Tel: +45 00 00 00 00</a></p>
-                <p><a href="#">E-mail: itservice@support.dk</a></p>
+            <hr/>
+            <div class="footer three">
+                <div class="footer_column footer_column_left footer_column_right three">
+                    <h4>About Exam Ease</h4>
+                    <!-- <p>Streamline Your Exam Preparation Process - Stay Organized and Prepared for Your Exams with Exam Ease.</p> -->
+                    <p>Exam Ease is a platform designed to simplify exam preparation and study management for students across multiple Aalborg University programs and semesters.</p>
+                    <p> 
+                        By gathering up-to-date exam information, previous exam sets, curriculum overviews detailing the topics covered in the course, and course details, in one convenient place, 
+                        Exam Ease makes it easier for students to access information they need to know about their courses and exams.
+                    </p>
+                    <p>
+                        The platform provides students with a starting point for exam preparation. 
+                        Making it easier for students to start creating effective study plans while the integrated progress tracker allows them to easily monitor their study progress and stay on top of their goals.
+                        Helping students feel prepared for their exams, stay organized, and navigate their courses and curriculum stress-free.
+                    </p>
+                </div>
             </div>
         </footer>
 	</div>
-
-	<!-- OVERLAYS -->
-	<!-- Profile Has Been Successfully Deleted -->
-	<div class="overlay" id="deleteOverlay">
-		<div class="inside_overlay delete_profile">
-		<h1>Your profile has been successfully deleted!</h1>
-		<a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
-		</div>
-	</div>
 </body>
 </html>
-
 
