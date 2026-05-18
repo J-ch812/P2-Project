@@ -43,9 +43,10 @@ const registerUser = async (req,res) => {
      });
 
     } catch (error){
-       
+       console.log("REGISTER ERROR:", error.message);
+   res.status(500).json({message: "Technical issue", error});
 
-      res.status(500).json({message: "Technical issue", error} )
+
 
       
 
