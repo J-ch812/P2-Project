@@ -33,9 +33,8 @@ const userSchema = new Schema(
     
     fieldofstudy: {
       type: String,
-         required: true,
-            lowercase: true,
-            trim: true,
+         default: ""
+            
 
     },
 
@@ -60,7 +59,7 @@ const userSchema = new Schema(
 userSchema.pre("save", async function() {
     console.log("pre-save hook fired");
 
-    if(!this.isModified("password")) return next();
+    if(!this.isModified("password")) return;
     this.password = await bcrypt.hash(this.password, 10);
 
     
