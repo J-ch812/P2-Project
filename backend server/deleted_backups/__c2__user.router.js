@@ -1,8 +1,7 @@
-import { Router } from 'express';
-import { registerUser, loginUser, logoutUser} from '../Profile-verification/user.js';
-/* import { registerUser, loginUser, logoutUser, profileForUser, deleteUser} from '../Profile-verification/user.js'; */
-/* import { upload } from './upload.js';
-import Submission from '../profile-model/sub.js'; */
+import { Router } from "express";
+import { registerUser, loginUser, logoutUser } from "../Profile-verification/user.js";
+import { upload } from "../router/upload.js";
+import Submission from "../profile-model/sub.js";
 
 import User from "../models/user.model.js"; /* for delete profile route --??-- is this the correct way to import it? */
 
@@ -36,7 +35,7 @@ router.route('/logout').post( logoutUser );
             message: "upload failed",
             error
         });
-        
+
 
         }
 

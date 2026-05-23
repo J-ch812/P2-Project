@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 dotenv.config({
   path: "./.env",
 });
-import web from "web.js";
-import connectDB from "database.js";
+import web from "./web.js";
+import connectDB from "./database.js";
 import dns from "node:dns/promises";
 
 dns.setServers(["1.1.1.1", "1.0.0.1"]);

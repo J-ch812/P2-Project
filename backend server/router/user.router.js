@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {registerUser, loginUser, logoutUser,} from "../Profile-verification/user.js";
-import { upload } from "upload.js";
+import { upload } from "./upload.js";
 import Submission from "../profile-model/sub.js";
 import { User } from "../profile-model/user.js";
 const router = Router();

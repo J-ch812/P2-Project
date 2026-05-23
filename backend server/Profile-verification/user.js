@@ -1,10 +1,10 @@
-import {User} from "../profile-model/sub.js";
-const registerUser = async (req,res) => {
+import { User } from "../profile-model/user.js";
+const registerUser = async (req, res) => {
   try {
-    const {email, username, password, semester, fieldofstudy, university, role} = req.body;
-    if (!username||!email||!password) {
-      return res.status(400).json({ message:"Fill in all your information"})
-    };
+    const { email, username, password, university, role, semester, fieldofstudy } = req.body;
+    if (!username || !email || !password || !university || !role) {
+      return res.status(400).json({ message: "Fill in all your information" });
+    }
     const existing = await User.findOne({email: email.toLowerCase()})
     if (existing) {
       return res.status(400).json({message:"Email already exist"})
@@ -21,8 +21,8 @@ const registerUser = async (req,res) => {
       loggedIn: false, /* loggedIn should be true when registration is complete --??--*/
     });
 
-    res.status(200).json({
-      message: "You succesfully logged in",
+    res.status(201).json({
+      message: "You successfully created an account",
       user:{
         id: user._id ,
         email: user.email,

@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
         user.university || "";
 
 
-    document.getElementById("profile_semester").textContent =
-        `Semester (${user.semester || ""})`;
-
     // document.getElementById("profile_semester").textContent =
-    //     user.semester || "";
-            
+    //     `Semester${user.semester || ""}`;
+
+    document.getElementById("profile_semester").textContent =
+        user.semester || "";
+
 
     document.getElementById("profile_fieldofstudy").textContent =
         user.fieldofstudy || "";

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { upload } from "upload.js";
+import { upload } from "./upload.js";
 import Submission from "../profile-model/sub.js";
 
 const router = Router();
