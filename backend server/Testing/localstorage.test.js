@@ -1,42 +1,31 @@
-describe('localStorage tests', () => {
+describe("localStorage tests", () => {
+  beforeEach(() => {
+    global.localStorage = {
+      store: {},
 
-    beforeEach(() => {
+      setItem(key, value) {
+        this.store[key] = value;
+      },
 
-      
+      getItem(key) {
+        return this.store[key] || null;
+      },
 
-        global.localStorage = {
+      clear() {
+        this.store = {};
+      },
+    };
+  });
 
-            store: {},
+  test("saves user to localStorage on login", () => {
+    const user = { username: "testuser", email: "test@test.com" };
+    localStorage.setItem("user", JSON.stringify(user));
+    const saved = JSON.parse(localStorage.getItem("user"));
+    expect(saved.username).toBe("testuser");
+  });
 
-            setItem(key, value) { this.store[key] = value; },
-
-            getItem(key) { return this.store[key] || null; },
-
-            clear() { this.store = {}; }
-
-        };
-
-    });
-
-    test('saves user to localStorage on login', () => {
-
-        const user = { username: 'testuser', email: 'test@test.com' };
-
-        localStorage.setItem('user', JSON.stringify(user));
-
-        const saved = JSON.parse(localStorage.getItem('user'));
-
-        expect(saved.username).toBe('testuser');
-
-    });
-
-    test('returns null if no user in localStorage', () => {
-
-        const user = localStorage.getItem('user');
-
-        expect(user).toBeNull();
-
-    });
-
+  test("returns null if no user in localStorage", () => {
+    const user = localStorage.getItem("user");
+    expect(user).toBeNull();
+  });
 });
- 
