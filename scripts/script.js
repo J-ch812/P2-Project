@@ -1,23 +1,21 @@
 // GO BACK FUNCTION
 // --Go back to previous page when clicking on the Back button
-  // --?-- if the same page is loaded multiple times it just goes back to the same page.
-  // --?-- if the page is opened on another page than index.html and the user have gone to other pages and then back to the original page the button will not go to index.com (as it should based on the fallback), because the history is longer than 1, but there is no more history.
-  // --?-- maybe we should include a history tracker or something.
+// --?-- if the same page is loaded multiple times it just goes back to the same page.
+// --?-- if the page is opened on another page than index.html and the user have gone to other pages and then back to the original page the button will not go to index.com (as it should based on the fallback), because the history is longer than 1, but there is no more history.
+// --?-- maybe we should include a history tracker or something.
 // The buttions in which the goBack() function is applied
-document.querySelectorAll(".btn_back, .md_btn.no, .md_btn.yes").forEach(btn => {
-  btn.addEventListener("click", goBack);
+document.querySelectorAll(".btn_back, .md_btn.no, .md_btn.yes").forEach((btn) => {
+    btn.addEventListener("click", goBack);
 });
 
 // --The actual function for goBack()
 function goBack() {
   if (history.length > 1) {
-    history.back();  //Or: history.go(-1);
+    history.back(); //Or: history.go(-1);
   } else {
-    window.location.href = "../index.html";  //Fallback
+    window.location.href = "../index.html"; //Fallback
   }
 }
-
-
 
 //DROPDOWN BLOCKS & Profile
 // Show dropdown when cliked
@@ -51,11 +49,9 @@ window.addEventListener("resize", () => {
   }
 });
 
-
-
 //OVERLAYS
-document.querySelectorAll(".overlay").forEach(overlay => {
-  overlay.addEventListener("click", e => {
+document.querySelectorAll(".overlay").forEach((overlay) => {
+  overlay.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 });
@@ -64,7 +60,7 @@ function on(id) {
   const overlay = document.getElementById(id);
   overlay.classList.add("active");
   // close dropdowns
-  document.querySelectorAll(".dropdown").forEach(d => {
+  document.querySelectorAll(".dropdown").forEach((d) => {
     d.classList.remove("active");
   });
   //Removes the ability to scroll
@@ -77,26 +73,21 @@ function off(id) {
   document.body.style.overflow = "";
 }
 
-
-
 //Chekbox: select one
 function chooseOne(id) {
   for (var i = 1; i <= 2; i++) {
     //goes through all the boxes and unchek them
     document.getElementById("Check" + i).checked = false;
-    }
-    document.getElementById(id).checked = true;
+  }
+  document.getElementById(id).checked = true;
 }
-
-
 
 // HOVER LABLE: HIDE AND SHOW PROFILE
 document.querySelectorAll(".btn_profile").forEach((profileBtn) => {
   profileBtn.addEventListener("click", () => {
-
     const dropdown = profileBtn.closest(".dropdown");
 
-    if(!dropdown){
+    if (!dropdown) {
       return;
     }
 
@@ -105,14 +96,13 @@ document.querySelectorAll(".btn_profile").forEach((profileBtn) => {
 
     profileBtn.setAttribute(
       "aria-label",
-      isOpen ? "Hide profile" : "Show profile"
+      isOpen ? "Hide profile" : "Show profile",
     );
 
     const tooltipBox = dropdown.querySelector(".tooltip_box.header_rigth");
 
-    if(tooltipBox){
-      tooltipBox.textContent = isOpen
-        ? "Hide profile": "Show profile";
+    if (tooltipBox) {
+      tooltipBox.textContent = isOpen ? "Hide profile" : "Show profile";
     }
   });
-}); 
+});
