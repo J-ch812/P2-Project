@@ -1180,7 +1180,12 @@ hr {
   background-color: var(--color-white);
   font-size: 0.95rem;
   box-sizing: border-box;
-  color: var(--color-placeholder-text);
+  color: var(--color-placeholder-text); /* default = grey */
+}
+
+/* only the placeholder option stays grey */
+.signup_item select:valid {
+  color: var(--color-text);
 }
 
 .signup_role {
@@ -1236,21 +1241,10 @@ input[type="checkbox"] {
   color: var(--color-text);
 }
 
-#field {
-  width: 198px;
-  height: 45px;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-#semester {
-  width: 155px;
-  height: 45px;
-  cursor: pointer;
-  font-family: inherit;
-}
+#field,
+#semester,
 #university {
-  width: 206px;
+  width: 100%;
   height: 45px;
   cursor: pointer;
   font-family: inherit;
@@ -1542,6 +1536,7 @@ input[type="checkbox"] {
   justify-content: space-between;
   border-radius: var(--radius-md);
   border: var(--border-dark-background);
+  cursor: pointer;
 }
 
 .submission_header h2 {
@@ -1562,13 +1557,21 @@ input[type="checkbox"] {
   color: var(--color-text);
   border: var(--border-light-background);
   border-radius: var(--radius-md);
+  cursor: pointer;
 }
 
 .date {
   color: var(--color-placeholder-text);
 }
 
+.submission_arrow {
+  font-size: 1.15rem;
+  transition: transform 0.3s ease;
+}
 
+.submission_dropdown[open] .submission_arrow {
+  transform: rotate(180deg);
+}
 
 /* ---- Submission Form ---- */
 .submission_form {
