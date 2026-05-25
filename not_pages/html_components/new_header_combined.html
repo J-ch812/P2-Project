@@ -1,0 +1,165 @@
+<!-- This is the combined header that should be used with the "isLoggedIn function" -->
+<!-- It is implemented in: index, DTG_overview -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--
+    changes:
+        id="navLoggedInDesktop"
+        id="navLoggedOutDesktop"
+        id="navLoggedInMobile"
+        id="navLoggedOutMobile"
+
+        id="userProfile"
+        id="authButtons"
+    -->
+
+
+    <header class="topbar">
+        <div class="topbar_left">
+            <div class="tooltip_container">
+
+                <!-- Brand --not dependent on login status but on what pages its on, so this should just be as currently is-->
+
+                <!-- left header logged IN (START) OR not dependent on login status but just for all pages exept: index, signup, login-->
+                <a href="../semester_overview_homepage/semester_overview.html" aria-label="Go to homepage" class="brand">
+                    <img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
+                    <span class="brand_name">Exam Ease</span>
+                </a>
+                <div class="tooltip_box header_left">
+                    Navigate to Homepage
+                </div>
+                <!-- left header logged IN (SLUT)-->
+
+                <!-- left header logged OUT (START) OR not dependent on login status but just for the pages: index, signup, login -->
+                <a href="../index.html" aria-label="Go to Frontpage" class="brand">
+                    <img src="../imgs/Logo_header.svg" alt="Exam Ease logo">
+                    <span class="brand_name">Exam Ease</span>
+                </a>
+                <div class="tooltip_box header_left">
+                    Navigate to Frontpage
+                </div>
+                <!-- left header logged OUT (SLUT)-->
+
+            </div>
+
+            <!-- Normal nav (desktop) -->
+            <!-- Normal nav (desktop) logged IN (START) -->
+            <div class="nav_links" id="navLoggedInDesktop">
+                <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
+                <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
+                <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+            </div>
+            <!-- Normal nav (desktop) logged IN (SLUT) -->
+
+
+            <!-- Normal nav (desktop) logged OUT (START) -->
+            <div class="nav_links" id="navLoggedOutDesktop">
+                <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
+                <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+            </div>
+            <!-- Normal nav (desktop) logged OUT (SLUT) -->
+
+
+
+            <!-- Dropdown nav(mobile) -->
+            <div class="dropdown">
+                <button class="btn nav_dropdown dropdownButton">Menu</button>
+
+                <!-- Dropdown nav (mobile) logged IN (START) -->
+                <div class="dropdown_content nav_links" id="navLoggedInMobile">
+                    <a href="../my_submission/my_submission.html" class="btn" id="submissionsLink">My Submissions</a>
+                    <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
+                    <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                </div>
+                <!-- Dropdown nav (mobile) logged IN (SLUT) -->
+
+                <!-- Dropdown nav (mobile) logged OUT (START) -->
+                <div class="dropdown_content nav_links" id="navLoggedOutMobile">
+                    <a href="../submission_forms/student_submission.html" class="btn">Submission Form</a>
+                    <a href="../submission_info/submission_info.html" class="btn">Submission Information</a>
+                </div>
+                <!-- Dropdown nav (mobile) logged OUT (SLUT) -->
+
+            </div>
+        </div>
+        <div class="topbar_right">
+            <button class="btn btn_search">
+                <img src="../imgs/search-icon.webp" alt="Search icon">
+            </button>
+            <input class="search_bar" type="text" placeholder="Search"/>
+
+            <!-- right header logged IN (START) -->
+            <div id="userProfile">
+                <div class="dropdown">
+                    <div class="tooltip_container">
+                        <button class="btn btn_profile dropdownButton" aria-label="Show profile">
+                            <img src="../imgs/profile_icon.svg" alt="Profile icon">
+                        </button>
+                        <div class="tooltip_box header_rigth">
+                            Show Profile
+                        </div>
+                    </div>
+                    <aside class="popup profile_dropdown dropdown_content">
+                        <p>Sara123!</p>
+                        <hr/>
+                        <h4><a href="../my_submission/my_submission.html">My Submissions</a></h4>
+                        <hr/>
+                        <h4>Profile (Student)</h4>
+                        <p>Sara Hansen</p>
+                        <p>Sara.hansen@student.aau.dk</p>
+                        <p>Aalborg University Copenhagen</p>
+                        <p>1. Semester</p>
+                        <p>Software, Bachelor</p>
+                        <div class="buttons">
+                            <button class="small_btn btn_logout"><a href="../index.html">Log out</a></button>
+                            <button class="small_btn btn_delete" onclick="on('deleteOverlay')">Delete profile</button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <!-- right header logged IN (SLUT)-->
+
+            <!-- right header logged OUT (START)-->
+            <div id="authButtons">  <!-- Auth = Authentication -->
+                <a href="../login/login.html" class="btn btn_ghost_login">Log in</a>
+                <a href="../signup/signup.html" class="btn btn_signup">Sign up</a>
+            </div>
+            <!-- right header logged OUT (SLUT)-->
+
+        </div>
+    </header>
+
+
+
+
+
+
+
+    </div>
+
+    <!-- header logged IN-->
+
+
+    <!-- FULL SCREEN OVERLAYS -->
+    <!-- Profile Has Been Successfully Deleted -->
+    <div class="overlay" id="deleteOverlay">
+        <div class="inside_overlay delete_profile">
+            <h1>Your profile has been successfully deleted!</h1>
+            <a href="../index.html" class="md_btn close" onclick="off('deleteOverlay')">Close</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

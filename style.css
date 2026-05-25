@@ -25,7 +25,7 @@
   --margin-sides-mdscreen: 2.5rem;
   --margin-sides-smallscreen: 1.25rem; /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
   --gap-between-elements: clamp(0.5rem, 2.5vw, 2.5rem); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
-  --padding-btn: clamp(0.5rem, 1vw, 1rem); 
+  --padding-btn: clamp(0.5rem, 1vw, 1rem);
   --padding-header: 0.5rem clamp(0.5rem, 1vw, 1rem);
 
   /* Borders & radius */
@@ -33,8 +33,8 @@
   --border-small-btn: 1.5px solid var(--color-primary);
   --border-light-background: 2px solid var(--color-primary);
   --border-dark-background: 2px solid var(--color-hover-bg);
-    
-  
+
+
   --radius-sm: 5px;   /* --Border radius of corners on SMALL components (toggle btn, hover lables) */
   --radius-md: 10px;  /* --Border radius of corners on BUTTONS */
   --radius-lg: 25px;  /* --Border radius of corners on OVERLAY */
@@ -42,7 +42,7 @@
 
   /* Font Size & Line height */
   --font-headlines: 600 32pt/100% Trebuchet MS, Georgia, monospace, serif;  /* letter-spacing: -1%; */  /* Names of the pages */ /* h1 */
-  
+
   --font-small-headline: 600 24pt/100% Trebuchet MS, Georgia, monospace, serif;  /* letter-spacing: 0%; */                        /* h2 */
   --font-paragraphs: 400 20pt/150% Trebuchet MS, Georgia, monospace, serif;  /* letter-spacing: 0%; */  /* Normal writing on the pages */
   --font-light-paragraph: 100 20pt/150% Trebuchet MS, Georgia, monospace, serif; /* letter-spacing: 0%; */  /* Light Normal writing on pages - Buttons on the pages */
@@ -52,7 +52,7 @@
 
   --font-banner-icon: 200 18pt/100% Trebuchet MS, Georgia, monospace, serif; /* letter-spacing: 2%; */
   --font-placeholder-text: 300 16pt/100% Trebuchet MS, Georgia, monospace, serif;  /* letter-spacing: 2%; */  /* Used on log in, sign up pages, submission form.  */
-  
+
 
 
 
@@ -73,12 +73,12 @@ p  is    16px?
 
 /*PROFILE: text-decoration-line: overline underline; */
 
-  
+
 
   /*   font-family: Trebuchet MS, Georgia, monospace, serif;   */
 
-/* 
-font: 600 10pt/150% Georgia; 
+/*
+font: 600 10pt/150% Georgia;
 font: italic small-caps bold 15px/30px Georgia, serif;
 font: italic bold 16px Arial, sans-serif;
 font: 20px Arial, sans-serif;
@@ -91,9 +91,9 @@ font: 20px Arial, sans-serif;
 
 
 
-  /* weight: 
+  /* weight:
   thin: 100
-  light: 300 
+  light: 300
   normal: 400
   bold: 700
   heavy: 900
@@ -107,7 +107,7 @@ font: 20px Arial, sans-serif;
 
 
   [ <'font-style'> || <font-variant-css2> || <'font-weight'> || <font-width-css3> ]
-  ? <'font-size'> 
+  ? <'font-size'>
   [ / <'line-height'> ]
   ? <'font-family'># ]
   <system-family-name>
@@ -136,7 +136,7 @@ font: 20px Arial, sans-serif;
 body {
   margin: 0;  /* --Removes the default spacing from browsers */
   padding: 0;  /* --Removes the default spacing from browsers */
-  min-height: 100vh; 
+  min-height: 100vh;
   font-family: Trebuchet MS, Georgia, monospace, serif; /* Georgia, monospace, Trebuchet MS, serif, Courier New */ /* --!--Inria Sans dose not work*/ /* -Fallback fonts are used if Inria Sans does not load */
   color: var(--color-text);
   background-color: var(--color-bg);
@@ -164,13 +164,13 @@ h3 {    /* bold text */
 }
 
 /* Normal text */
-/* p {     
+/* p {
   font: var(--font-paragraphs);
   letter-spacing: 1%;
 } */
 
 /* Normal text */
-/* a {     
+/* a {
   font: var(--font-paragraphs);
   letter-spacing: 1%;
 } */
@@ -333,7 +333,6 @@ hr {
   align-items: center;
   gap: 0.5rem;
   min-width: 0;
-  
   text-decoration: none;
   color: var(--color-text);
   border-radius: var(--radius-md);
@@ -488,7 +487,7 @@ hr {
   padding-left: 2px;  /* 2px is then alligned with the white part of the progressbar, 0px is then alliged witht the boarder*/
   top: 0%; /* Same baseline as heading: 57%; Same center as heading 50% (or 49.4 ish) */
   transform: translateY(-50%);
-  font-size: 16px; 
+  font-size: 16px;
   letter-spacing: 2%;
   font-weight: 100;
   /* If the text is longer than the page the overflowing will be hidden and end in ellipsis instead*/
@@ -533,7 +532,7 @@ hr {
   grid-area: main_components;
   display: grid;
   grid-template-columns: 260px 1fr;
-  grid-template-areas: 
+  grid-template-areas:
     "progress_section main_section";
   column-gap: 5rem;
 }
@@ -747,8 +746,15 @@ hr {
 
 .course_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
   gap: clamp(1rem, 3vw, 3rem) clamp(1rem, 5vw, 5rem);
+}
+
+.course_grid:has(.course_card.prior_exams) {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+  justify-content: center;
 }
 
 .course_card {
@@ -788,6 +794,13 @@ hr {
 
 /* --No hover effect on page: DTG - Previous Exams */
 .course_card.prior_exams {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  text-align: center;
   cursor: default;
 }
 
@@ -945,7 +958,7 @@ hr {
 .footer_column.three {
   line-height: 150%;
   background-color: var(--color-white);
-  border: var(--border-light-background); 
+  border: var(--border-light-background);
   border-radius: var(--radius-md);
   padding: 1rem 1.5rem;
 
@@ -1167,7 +1180,12 @@ hr {
   background-color: var(--color-white);
   font-size: 0.95rem;
   box-sizing: border-box;
-  color: var(--color-placeholder-text);
+  color: var(--color-placeholder-text); /* default = grey */
+}
+
+/* only the placeholder option stays grey */
+.signup_item select:valid {
+  color: var(--color-text);
 }
 
 .signup_role {
@@ -1223,21 +1241,10 @@ input[type="checkbox"] {
   color: var(--color-text);
 }
 
-#field {
-  width: 198px;
-  height: 45px;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-#semester {
-  width: 155px;
-  height: 45px;
-  cursor: pointer;
-  font-family: inherit;
-}
+#field,
+#semester,
 #university {
-  width: 206px;
+  width: 100%;
   height: 45px;
   cursor: pointer;
   font-family: inherit;
@@ -1338,7 +1345,7 @@ input[type="checkbox"] {
 
 .small_text.one, .small_text.two {
   margin-bottom: 10px;
-  font-size: 14px;  /*The same as 10.5pt - pt is used in e.g. words and drev*/ 
+  font-size: 14px;  /*The same as 10.5pt - pt is used in e.g. words and drev*/
 }
 
 .small_text.two {
@@ -1529,6 +1536,7 @@ input[type="checkbox"] {
   justify-content: space-between;
   border-radius: var(--radius-md);
   border: var(--border-dark-background);
+  cursor: pointer;
 }
 
 .submission_header h2 {
@@ -1549,13 +1557,21 @@ input[type="checkbox"] {
   color: var(--color-text);
   border: var(--border-light-background);
   border-radius: var(--radius-md);
+  cursor: pointer;
 }
 
 .date {
   color: var(--color-placeholder-text);
 }
 
+.submission_arrow {
+  font-size: 1.15rem;
+  transition: transform 0.3s ease;
+}
 
+.submission_dropdown[open] .submission_arrow {
+  transform: rotate(180deg);
+}
 
 /* ---- Submission Form ---- */
 .submission_form {
@@ -1792,7 +1808,9 @@ input[type="checkbox"] {
 .exam_list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
+  width: 100%;
 }
 
 
@@ -1878,7 +1896,7 @@ input[type="checkbox"] {
   .topbar .search_bar {
     display: none;
   }
-  
+
   /* --Show icon instead of search bar */
   .topbar .btn_search {
     display: block;
@@ -1903,15 +1921,6 @@ input[type="checkbox"] {
       "submit";
     row-gap: var(--margin-sides-smallscreen);
   }
-}
-
-@media (min-width: 711px) {
-  .footer.three {
-    padding: 0 var(--margin-sides-largescreen) 1.75rem var(--margin-sides-largescreen);
-  }
-}
-
-@media screen and (max-width: 710px) {
 
   /* Replace search bar with icon */
   /* --Hide full search bar */
@@ -1950,6 +1959,10 @@ input[type="checkbox"] {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .course_grid:has(.course_card.prior_exams) {
+    grid-template-columns: 1fr;
+  }
+
   /* --Overlays */
   .inside_overlay {
     padding: var(--margin-sides-smallscreen);
@@ -1965,6 +1978,10 @@ input[type="checkbox"] {
   /* The right side margins are changed to become slimmer - sides of the screen to the first element */
   .topbar_right, .main, .footer_column_right {
     margin-right: var(--margin-sides-mdscreen);
+  }
+
+  .footer.three {
+    padding: 0 var(--margin-sides-largescreen) 1.75rem var(--margin-sides-largescreen);
   }
 }
 
