@@ -27,7 +27,7 @@ document.querySelectorAll(".lecture_dropdown").forEach((lecture) => {
     }else{
       lecture.open = false;
     }
-    
+
     updateLectureCounter(lecture);
     saveCurrentBlockCheckboxStates();
     updateBlockProgress();
@@ -55,7 +55,7 @@ function updateLectureCounter(lecture) {
   }
 }
 
-// Updates the counters for all lectures after saved checkbox states are loaded. 
+// Updates the counters for all lectures after saved checkbox states are loaded.
 // Ensures the visible counters (for example "2/4") match the restored progress when the page is refreshed or revisited.
 function updateAllLectureCounters(){
   document.querySelectorAll(".lecture_dropdown").forEach((lecture) => {
@@ -90,11 +90,9 @@ function updateBlockProgress(){
       checkedTasks = checkedTasks + 1;
     }
   });
-  
   const percentage = totalTasks === 0 ? 0 : Math.round((checkedTasks / totalTasks) * 100);
 
   localStorage.setItem("dtg-block-" + currentBlockNumber + "-progress", percentage);
-
   blockPercentage.textContent = percentage + "%";
   blockBar.style.setProperty("--progress", percentage + "%");
 
@@ -226,7 +224,7 @@ function updateProgressToggleState(toggleProgressBtn, isCollapsed){
 document.querySelectorAll(".progress_section").forEach((progressSection) => {
   const toggleProgressBtn = progressSection.querySelector(".progress_toggle_btn");
   const isCollapsed = localStorage.getItem(progressStorageKey) === "true";
-  
+
   if(isCollapsed){
     progressSection.classList.add("collapsed");
   }

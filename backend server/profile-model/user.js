@@ -27,22 +27,22 @@ const userSchema = new Schema(
       trim: true,
     },
 
-    semester: {
-      type: String,
-      default: "",
-    },
-
-    fieldofstudy: {
-      type: String,
-      default: "",
-    },
-
     university: {
       type: String,
       default: "",
     },
 
     role: {
+      type: String,
+      default: "",
+    },
+
+    semester: {
+      type: String,
+      default: "",
+    },
+
+    fieldofstudy: {
       type: String,
       default: "",
     },
@@ -53,7 +53,7 @@ const userSchema = new Schema(
 );
 
 userSchema.pre("save", async function () {
-  console.log("pre-save hook fired"); //Delte when done
+  console.log("pre-save hook fired");
 
   if (!this.isModified("password")) return;
   this.password = await bcrypt.hash(this.password, 10);

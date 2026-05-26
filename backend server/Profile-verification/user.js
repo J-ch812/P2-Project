@@ -2,7 +2,7 @@ import { User } from "../profile-model/user.js";
 const registerUser = async (req, res) => {
   try {
     const { email, username, password, university, role, semester, fieldofstudy } = req.body;
-    if (!username || !email || !password || !university || !role) {
+    if (!username || !email || !password) {
       return res.status(400).json({ message: "Fill in all your information" });
     }
     const existing = await User.findOne({email: email.toLowerCase()})
@@ -18,7 +18,7 @@ const registerUser = async (req, res) => {
       university,
       semester,
       role,
-      loggedIn: false, /* loggedIn should be true when registration is complete --??--*/
+      loggedIn: false, /* loggedIn should be true when registration is complete --??--*/ //DELETE!! when solved
     });
 
     res.status(201).json({
@@ -39,11 +39,13 @@ const registerUser = async (req, res) => {
   };
 };
 
-const loginUser = async (req,res) => {
+const loginUser = async (req, res) => {
   try{
     const {email,password} = req.body;
     const user = await User.findOne({email:email.toLowerCase()});
+
     if (!user) return res.status(400).json({message:"User not found"});
+
     const isMatch = await user.comparePassword(password);
     if (!isMatch) return res.status(400).json({message:"wrong password"});
 

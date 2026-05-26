@@ -1,7 +1,7 @@
 import { jest } from "@jest/globals";
 const mockCreate = jest.fn();
 
-jest.unstable_mockModule("../Profile-model/sub.js", () => ({
+jest.unstable_mockModule("../profile-model/sub.js", () => ({
   Submission: {
     create: mockCreate,
   },
@@ -23,7 +23,7 @@ describe("upload unit tests", () => {
     }
     expect(statusCode).toBe(500);
   });
-  
+
   test("returns 200 if file is uploaded successfully", async () => {
     mockCreate.mockResolvedValue({
       filename: "test.txt",
