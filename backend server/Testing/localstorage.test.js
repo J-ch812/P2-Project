@@ -2,18 +2,9 @@ describe("localStorage tests", () => {
   beforeEach(() => {
     global.localStorage = {
       store: {},
-
-      setItem(key, value) {
-        this.store[key] = value;
-      },
-
-      getItem(key) {
-        return this.store[key] || null;
-      },
-
-      clear() {
-        this.store = {};
-      },
+      setItem(key, value) { this.store[key] = value; },
+      getItem(key) { return this.store[key] || null; },
+      clear() { this.store = {}; },
     };
   });
 
