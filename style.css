@@ -1,9 +1,8 @@
 /*---- GLOBAL VARIABLES (Style Sheet) ----*/
 /* --Reusable values for colors, spacing, borders, and shadows. Helps maintain consistency and simplifies updates. */
 :root {
-  --color-bg: hsl(201, 49%, 88%); /* --color-bg: #cbe2ed; */ /* A lighter version of --color-primary */
-  --color-primary: hsl(201, 49%, 62%); /* --color-primary: #76add0; */
-  /*--color-primary-dark: #5e9bc3;*/
+  --color-bg: hsl(201, 49%, 88%);  /* A lighter version of --color-primary */
+  --color-primary: hsl(201, 49%, 62%);
   --color-hover-bg: hsl(201, 49%, 82%);  /* A less lighter version of --color-primary */
   --color-hover-text: hsl(45, 100%, 62%);
   --color-hover-bg-light: hsl(201, 49%, 92%);
@@ -14,14 +13,9 @@
   --color-transparent: #55555500;
   --color-red: #dc1919;
 
-
-  /* ----?!---- Letters*/
-  /* letter-spacing: 0.08em; */
-  /*  text-transform: uppercase; */
-
   /* Spacing */
   /* --The margin size between the sides of the screen and the first element */
-  --margin-sides-largescreen: 5rem; /* --Used as primary (default) */
+  --margin-sides-largescreen: 5rem;
   --margin-sides-mdscreen: 2.5rem;
   --margin-sides-smallscreen: 1.25rem; /* --Used when screen width is less than 540: @media screen and (max-width: 540px){} */
   --gap-between-elements: clamp(0.5rem, 2.5vw, 2.5rem); /* --Large screens are 2.5rem, Small screens shrinks toward 0.5rem */
@@ -52,77 +46,6 @@
 
   --font-banner-icon: 200 18pt/100% Trebuchet MS, Georgia, monospace, serif; /* letter-spacing: 2%; */
   --font-placeholder-text: 300 16pt/100% Trebuchet MS, Georgia, monospace, serif;  /* letter-spacing: 2%; */  /* Used on log in, sign up pages, submission form.  */
-
-
-
-
-/*
-h1 is    32px    (2em)
-h2 is    24px  (1.5em)
-h3 is 18.72px (1.17em)
-h4 is    16px    (1em)
-
-p  is    16px?
-
-
-16px should be the lowest font size. 16px = 12pt
-  h5 is 13.28px (0.83em)
-  h6 is 10.72px (0.67em)
-*/
-
-
-/*PROFILE: text-decoration-line: overline underline; */
-
-
-
-  /*   font-family: Trebuchet MS, Georgia, monospace, serif;   */
-
-/*
-font: 600 10pt/150% Georgia;
-font: italic small-caps bold 15px/30px Georgia, serif;
-font: italic bold 16px Arial, sans-serif;
-font: 20px Arial, sans-serif;
-*/
-
-  /*
-    font-size: 1.2rem;
-  line-height: 0;
-  */
-
-
-
-  /* weight:
-  thin: 100
-  light: 300
-  normal: 400
-  bold: 700
-  heavy: 900
-  */
-
-
-  /*
-  | <'font-weight'> |
-  <'font-size'> [ / <'line-height'> ]? <'font-family'># ] |
-   <system-family-name>
-
-
-  [ <'font-style'> || <font-variant-css2> || <'font-weight'> || <font-width-css3> ]
-  ? <'font-size'>
-  [ / <'line-height'> ]
-  ? <'font-family'># ]
-  <system-family-name>
-  */
-
-
-  /* Syntax: [ [ <'font-style'> || <font-variant-css2> || <'font-weight'> || <font-width-css3> ]? <'font-size'> [ / <'line-height'> ]? <'font-family'># ] | <system-family-name> */
-
-
-
-
-
-
-  /* Effects */
-  /*--shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.38);*/
 }
 
 /*---- --GLOBAL RESET & BASE STYLES ----*/
@@ -162,19 +85,6 @@ h3 {    /* bold text */
   font: var(--font-bold-paragraphs);
   letter-spacing: 0%;
 }
-
-/* Normal text */
-/* p {
-  font: var(--font-paragraphs);
-  letter-spacing: 1%;
-} */
-
-/* Normal text */
-/* a {
-  font: var(--font-paragraphs);
-  letter-spacing: 1%;
-} */
-
 
 textarea::placeholder {
   color: var(--color-placeholder-text);
@@ -224,7 +134,7 @@ hr {
   width: 160px;
   height: 40px;
   padding: 0.25rem;
-  border: var(--border-light-background); /* border: 2px solid var(--color-primary-dark);*/
+  border: var(--border-light-background);
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -300,11 +210,9 @@ hr {
   justify-content: space-between;
   align-items: center;
   gap: var(--gap-between-elements);
-
-  /* Makes the header stay at the top*/
-  position: sticky;
+  position: sticky;  /* Makes the header stay at the top*/
   top: 0;
-  z-index: 100;
+  z-index: 99;
 }
 
 .topbar_left, .topbar_right {
@@ -365,8 +273,6 @@ hr {
   width: fit-content;
   border: var(--color-transparent);
   background-color: var(--color-transparent);
-  /* padding: 0.4rem 0.6rem; */
-  /*color: #525960;*/
 }
 
 .nav_links a:hover, .brand:hover {
@@ -429,25 +335,6 @@ hr {
   display: none;
   /* --Hidden by default (visible on small screens) */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -737,13 +624,6 @@ hr {
 
 /*- Grid of course cards -*/
 /** --Course grid - for the pages with a grid of buttons (eg. Course Overview - First Semester and front page) **/
-/* .course_grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 3rem;
-  column-gap: 5rem;
-} */
-
 .course_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -791,11 +671,6 @@ hr {
   column-gap: clamp(1.25rem, 5vw, 5rem);
 }
 
-/* .course_grid_semester_page {
-  grid-template-columns: repeat(2, 1fr);
-} */
-
-/* --No hover effect on page: DTG - Previous Exams */
 .course_card.prior_exams {
   width: 100%;
   display: flex;
@@ -807,9 +682,9 @@ hr {
   cursor: default;
 }
 
+/* --No hover effect on page: DTG - Previous Exams */
 .course_card.prior_exams:hover{
   transform: translateY(0);
-  /* box-shadow: var(--shadow-soft); */
   background-color: var(--color-white);
 }
 
@@ -822,7 +697,7 @@ hr {
   background-color: var(--color-white);
   border: var(--border-light-background);
   border-radius: var(--radius-md);
-  padding: 0rem 1.5rem 1.2rem 1.5rem; /*    padding: 0rem 1rem 1rem;    ******//**************************************************/
+  padding: 0rem 1.5rem 1.2rem 1.5rem;
   height: max-content;
 }
 
@@ -1062,8 +937,7 @@ hr {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
-  /* var(--color-hover-bg) */
-  z-index: 3;
+  z-index: 100;
   justify-content: center;
   align-items: center;
 }
@@ -1111,7 +985,7 @@ hr {
 
 /*---- Submission Successful Overlay ----*/
 .submission_succes {
-  width: min(65%, 800px); /*   width: 773px; */
+  width: min(65%, 800px);
   max-height: 562px;
   font-size: 20px;
 }
@@ -1244,9 +1118,7 @@ input[type="checkbox"] {
   color: var(--color-text);
 }
 
-#field,
-#semester,
-#university {
+#field, #semester, #university {
   width: 100%;
   height: 45px;
   cursor: pointer;
@@ -1267,7 +1139,7 @@ input[type="checkbox"] {
 .signup-btn {
   display: block;
   width: 220px;
-  margin: 1.5rem auto 0; /* centrerer */
+  margin: 1.5rem auto 0;
   padding: 0.9rem 1rem;
   text-align: center;
   text-decoration: none;
@@ -1283,25 +1155,6 @@ input[type="checkbox"] {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Submission info Page*/
 .big_box {
   background-color: var(--color-white);
@@ -1312,22 +1165,6 @@ input[type="checkbox"] {
   width: 100%; /* 85%? */
   line-height: 1.5;
 }
-
-
-/* .submission_box {
-  width: 1170px;
-  height: 490px;
-  margin: 0px auto 0px;
-  background-color: var(--color-white);
-  border: var(--border-small-btn);
-  border-radius: var(--radius-lg);
-  padding: 65px 20px 0px;
-  position: relative;
-  box-sizing: border-box;
-} */
-
-
-
 
 .small_submit_header.one, .big_box h3, .big_box p {
   margin: 0;
@@ -1348,7 +1185,7 @@ input[type="checkbox"] {
 
 .small_text.one, .small_text.two {
   margin-bottom: 10px;
-  font-size: 14px;  /*The same as 10.5pt - pt is used in e.g. words and drev*/
+  font-size: 14px;
 }
 
 .small_text.two {
@@ -1360,13 +1197,6 @@ input[type="checkbox"] {
   color: var(--color-text);
   padding: 0.25rem 0.75rem;
 }
-
-
-
-
-
-
-
 
 .login-box{
   display: flex;
@@ -1437,19 +1267,6 @@ input[type="checkbox"] {
   font-size: 18px;
   color: var(--color-text);
 }
-
-
-
-
-
-
-/* HERE DID THE OLD RESPONSIVE DESIGN START */
-
-
-
-
-
-
 
 .block_section {
   grid-column: 1 / -1;
@@ -1588,7 +1405,6 @@ input[type="checkbox"] {
     "submit submit submit";
   gap: var(--gap-between-elements);
   align-items: stretch;
-  /* margin-top: 1.75rem; */
   justify-content: center;
 }
 
@@ -1656,7 +1472,6 @@ input[type="checkbox"] {
 .form_field select {
   height: 40px;
   cursor: pointer;
-  /* padding: 0 0.75rem; */
   color: var(--color-placeholder-text); /* default = grey */
 }
 
@@ -1685,7 +1500,7 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  overflow: hidden; /* important */
+  overflow: hidden;
 }
 
 /* top section (icon + text stays visible always) */
@@ -1777,38 +1592,6 @@ input[type="checkbox"] {
   transform: translate(-50%, 0);
 }
 
-
-
-
-
-
-
-
-
-/* Show loggedin header when active */
-
-/* Default is logged out, so remove logged in components */
-/* Just to test*/
-/* #navLoggedInDesktop.active, #navLoggedInMobile.active, #userProfile.active {
-  display: none;
-}
-#navLoggedOutDesktop.active, #navLoggedOutMobile.active, #authButtons.active {
-  display: none;
-} */
-
-
-
-.logged_out.active {
-  display: none;
-}
-
-.logged_in.active {
-  display: none;
-}
-
-
-
-
 /* DTG - Previous Exams --Page */
 .exam_list {
   display: flex;
@@ -1819,26 +1602,15 @@ input[type="checkbox"] {
 }
 
 
+/* Show loggedin header when active */
+/* Default is logged out, so remove logged in components */
+.logged_out.active {
+  display: none;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.logged_in.active {
+  display: none;
+}
 
 
 
@@ -1867,30 +1639,13 @@ input[type="checkbox"] {
   .breadcrumbs {
     position: static;
     transform: none;
-    /* margin-top: 0.25rem; */
     text-align: center;
     padding-left: 0;
     margin-bottom: 0.25rem;
   }
-
-  /* -Submission info page*/
-  /* .big_box {
-    width: 100%;
-  } */
 }
 
 @media screen and (max-width: 900px) {
-  /* --The grid of buttons becomes one column instead of two - on a semester page*/
-/*   .course_grid_semester_page {
-    grid-template-columns: 1fr;
-    row-gap: clamp(0.5rem, 2vw, 2rem);
-  } */
-
-  /* --The grid of buttons becomes two columns instead of three - on a front page*/
-/*   .course_grid_front_page {
-    grid-template-columns: repeat(2, 1fr);
-  } */
-
   /* --Overlays */
   .inside_overlay h2 {
     font-size: large;
@@ -1911,8 +1666,6 @@ input[type="checkbox"] {
     width: clamp((90/16) * 1rem, (140/16) * 1vh, (140/16) * 1rem);
   }
 }
-
-
 
 @media screen and (max-width: 900px) {
   .submission_form {
@@ -2018,7 +1771,6 @@ input[type="checkbox"] {
   }
 }
 
-
 @media (min-width: 1400px) {
   .course_grid {
     grid-template-columns: 1fr 1fr 1fr;
@@ -2029,48 +1781,4 @@ input[type="checkbox"] {
   .main_components {
     margin-bottom: clamp(5rem, 7vw, 8rem);
   }
-}
-
-
-
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-}
-
-
-footer {
-    background-color: #222;
-    color: white;
-}
-
-.footer {
-    padding: 20px;
-}
-
-.footer_main {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer_about {
-    max-width: 900px;
-}
-
-.footer_bottom {
-    text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.8;
-    padding: 10px;
 }
