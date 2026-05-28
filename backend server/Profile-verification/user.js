@@ -18,7 +18,7 @@ const registerUser = async (req, res) => {
       university,
       semester,
       role,
-      loggedIn: false, /* loggedIn should be true when registration is complete --??--*/ //DELETE!! when solved
+      loggedIn: false,
     });
 
     res.status(201).json({

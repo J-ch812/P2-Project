@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8"/><!-- ikke ændre -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/><!-- ikke ændre -->
-	<link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/><!-- ikke ændre -->
-	<link rel="stylesheet" href="../style.css"/><!-- ikke ændre -->
-	<script src="../scripts/script.js" defer></script><!-- ikke ændre -->
-	<script src="../scripts/signup.js" defer></script><!-- ikke ændre -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="icon" type="image/svg+xml" href="../imgs/Logo_website_tab.svg"/>
+	<link rel="stylesheet" href="../style.css"/>
+	<script src="../scripts/script.js" defer></script>
+	<script src="../scripts/signup.js" defer></script>
     <script src="../scripts/header.js" defer></script>
     <script src="../scripts/logout.js" defer></script>
     <script src="../scripts/profile.js" defer></script>
@@ -81,13 +81,13 @@
                             </div>
                         </div>
                         <aside class="popup profile_dropdown dropdown_content">
-                            <div class="profile_header" id= "profile_username"></div> <!-- --Username from profile.js -->
+                            <div class="profile_header" id= "profile_username"></div> <!-- Username from profile.js -->
                             <div class="profile_divider">
                                 <hr/>
                                 <a href="./submissions/my_submission.html" class="profile_link">My Submissions</a>
                                 <hr/>
                             </div>
-                            <div class="profile_section_title" id="profile_role"></div> <!-- --Role from profile.js -->
+                            <div class="profile_section_title" id="profile_role"></div> <!-- Role from profile.js -->
                             <div class="profile_info">
                                 <span id="profile_email"></span>
                                 <span id="profile_university"></span>
@@ -95,7 +95,7 @@
                                 <span id="profile_fieldofstudy"></span>
                             </div>
                             <div class="buttons">
-                                <button class="small_btn btn_logout" id="logoutBtn">Log out</button> <!-- NEW LOG OUT BUTTON -->
+                                <button class="small_btn btn_logout" id="logoutBtn">Log out</button>
                                 <button class="small_btn btn_delete">Delete profile</button>
                             </div>
                         </aside>
@@ -108,7 +108,6 @@
                 </div>
             </div>
         </header>
-
 		<main class="main">
 			<div class="signup_container">
                 <section class="heading_wrapper">
@@ -123,11 +122,11 @@
 						<label>I am a...</label>
 						<div class="signup_role">
 							<label class="role_option" for="Check1">
-								<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre -->
+								<input type="checkbox" class="checkbox" id="Check1" value="Value1" onclick="chooseOne(this.id)"/>
 								<p>Student</p>
 							</label>
 							<label class="role_option" for="Check2">
-								<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)"/><!-- ikke ændre --> <!-- Skal "value=Value2" ? -->
+								<input type="checkbox" class="checkbox" id="Check2" value="Value1" onclick="chooseOne(this.id)"/>
 								<p>Professor</p>
 							</label>
 						</div>
@@ -166,22 +165,22 @@
 						</div>
 					</div>
 					<div class="signup_item emails">
-						<label for="email">E-mail</label><!-- ikke ændre -->
+						<label for="email">E-mail</label>
 						<input type="email" id="email" placeholder="E.g. Sara.hansen@student.aau.dk"/>
 					</div>
 					<div class="signup_row_four">
 						<div class="signup_item">
-							<label for="username">Username</label><!-- ikke ændre -->
+							<label for="username">Username</label>
 							<input type="text" id="username" placeholder="E.g. Sara123!"/>
 						</div>
 
 						<div class="signup_item">
-							<label for="password">Password (min. 8 characters)</label><!-- ikke ændre -->
+							<label for="password">Password (min. 8 characters)</label>
 							<input type="password" id="password" placeholder="E.g. Exam!ease1234"/>
 						</div>
 					</div>
 				</div>
-				<button class="signup-btn" id="signupBtn">Sign up</button><!-- ikke ændre -->
+				<button class="signup-btn" id="signupBtn">Sign up</button>
 			</div>
 		</main>
         <footer class="footer one">
@@ -203,7 +202,6 @@
             <div class="footer three">
                 <div class="footer_column footer_column_left footer_column_right three">
                     <h4>About Exam Ease</h4>
-                    <!-- <p>Streamline Your Exam Preparation Process - Stay Organized and Prepared for Your Exams with Exam Ease.</p> -->
                     <p>Exam Ease is a platform designed to simplify exam preparation and study management for students across multiple Aalborg University programs and semesters.</p>
                     <p>
                         By gathering up-to-date exam information, previous exam sets, curriculum overviews detailing the topics covered in the course, and course details, in one convenient place,
@@ -220,4 +218,3 @@
 	</div>
 </body>
 </html>
-
