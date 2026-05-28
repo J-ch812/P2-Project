@@ -22,8 +22,10 @@
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "modules": "^0.4.0",
     "mongoose": "^9.6.2",
-    "multer": "^2.1.1"
+    "multer": "^2.1.1",
+    "node": "^24.16.0"
   },
   "devDependencies": {
     "axios": "^1.16.1",
