@@ -102,7 +102,7 @@ function updateBlockProgress(){
 
 // Reads the block number from the current file path, for example "DTGBlock3.html" returns "3".
 function getCurrentBlockNumber(){
-  const match = window.location.pathname.match(/DTGBlock(\d)\.html$/);
+  const match = window.location.pathname.match(/dtg_block(\d)\.html$/);
   return match ? match[1] : null;
 }
 
